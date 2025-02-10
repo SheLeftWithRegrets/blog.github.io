@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2400e9;
+  background: #ff74ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2292,7 +2292,7 @@ embed {
 }
 /* 设置 body 元素的背景图片及样式 */
 body {
-  background: url("/SheLeftWithRegeat.github.io/images/background.png");
+  background: url("/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
