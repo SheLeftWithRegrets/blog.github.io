@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #5459a7;
+  background: #0db3ac;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2290,10 +2290,14 @@ embed {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* 设置 body 元素的背景图片及样式 */
 body {
-  background: url("/images/background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
+  background: url("/images/background.png") 50% 50%/cover no-repeat fixed;
+}
+/* 设置 .post 类元素的样式 */
+.post {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 25px;
+  box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
