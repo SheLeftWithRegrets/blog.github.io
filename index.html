@@ -164,7 +164,7 @@
       </div>
 
       <div class="welcome-text" style="font-size: 1.1em; color: #666; line-height: 1.8; margin: 20px auto; max-width: 800px;">
-        <p id="typing-text"></p>
+        <p id="typing-text" style="min-height: 1.8em;">&nbsp;</p>
       </div>
 
       <script>
@@ -172,15 +172,15 @@
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        let typingDelay = 150;
-        let erasingDelay = 100;
-        let newTextDelay = 2000;
+        let typingDelay = 200;    // 打字速度改为200ms
+        let erasingDelay = 150;   // 删除速度改为150ms
+        let newTextDelay = 3000;  // 切换文本前等待时间改为3秒
 
         function type() {
           const currentText = texts[textIndex];
           
           if (isDeleting) {
-            document.getElementById('typing-text').textContent = currentText.substring(0, charIndex - 1);
+            document.getElementById('typing-text').textContent = currentText.substring(0, charIndex - 1) || '\u00A0';  // 使用不换行空格作为占位符
             charIndex--;
             setTimeout(type, erasingDelay);
           } else {
