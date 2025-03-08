@@ -28,9 +28,8 @@
 <meta property="og:description" content="JavaScript基础性能优化防抖和节流的区别及应用场景？防抖(Debounce)：  定义：多次点击同一个按钮，只响应最后一次 应用：search搜索时，用户不断输入值，用防抖来节约请求资源  节流(Throttle)：  定义：高频率触发的事件，指定单位时间内只响应第一次 应用： 鼠标不断点击触发mousedown(单位时间内只触发一次) 监听滚动事件    闭包什么是闭包？它的作用和问题是">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-02-24T03:33:15.965Z">
-<meta property="article:modified_time" content="2025-02-24T03:36:05.098Z">
+<meta property="article:modified_time" content="2025-03-08T06:02:58.596Z">
 <meta property="article:author" content="她带着遗憾走了">
-<meta property="article:tag" content="面试题">
 <meta property="article:tag" content="前端基础">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -187,17 +186,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-02-24 11:33:15 / 修改时间：11:36:05" itemprop="dateCreated datePublished" datetime="2025-02-24T11:33:15+08:00">2025-02-24</time>
+              <time title="创建时间：2025-02-24 11:33:15" itemprop="dateCreated datePublished" datetime="2025-02-24T11:33:15+08:00">2025-02-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-03-08 14:02:58" itemprop="dateModified" datetime="2025-03-08T14:02:58+08:00">2025-03-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/SheLeftWithRegret.github.io/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                  <a href="/SheLeftWithRegret.github.io/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">前端学习</span></a>
                 </span>
             </span>
 
@@ -263,7 +268,231 @@
 <li>原型还可以有它自己的原型</li>
 <li>属性查找机制：当需要查找一个对象的属性时，如果对象本身没有这个属性，则会沿着原型链向上查找</li>
 </ul>
-<p>[未完待续…] </p>
+<h2 id="作用域与变量提升"><a href="#作用域与变量提升" class="headerlink" title="作用域与变量提升"></a>作用域与变量提升</h2><h3 id="var、let、const的区别是什么？"><a href="#var、let、const的区别是什么？" class="headerlink" title="var、let、const的区别是什么？"></a>var、let、const的区别是什么？</h3><p><strong>声明方式：</strong></p>
+<ol>
+<li><p><strong>var</strong></p>
+<ul>
+<li>存在变量提升</li>
+<li>可以重复声明</li>
+<li>函数作用域</li>
+</ul>
+</li>
+<li><p><strong>let</strong></p>
+<ul>
+<li>不存在变量提升</li>
+<li>不可重复声明</li>
+<li>块级作用域</li>
+<li>暂时性死区</li>
+</ul>
+</li>
+<li><p><strong>const</strong></p>
+<ul>
+<li>声明时必须赋值</li>
+<li>不可重复声明</li>
+<li>块级作用域</li>
+<li>不可修改（对象属性可修改）</li>
+</ul>
+</li>
+</ol>
+<h2 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h2><h3 id="Promise、async-await、Generator的区别和使用场景？"><a href="#Promise、async-await、Generator的区别和使用场景？" class="headerlink" title="Promise、async&#x2F;await、Generator的区别和使用场景？"></a>Promise、async&#x2F;await、Generator的区别和使用场景？</h3><ol>
+<li><p><strong>Promise</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 异步操作</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="comment">/* 成功 */</span>) &#123;</span><br><span class="line">    <span class="title function_">resolve</span>(value)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">reject</span>(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>async&#x2F;await</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="title function_">fetchData</span>()</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Generator</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">gen</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Event-Loop（事件循环）机制是什么？"><a href="#Event-Loop（事件循环）机制是什么？" class="headerlink" title="Event Loop（事件循环）机制是什么？"></a>Event Loop（事件循环）机制是什么？</h3><p><strong>执行顺序：</strong></p>
+<ol>
+<li>同步代码</li>
+<li>微任务队列<ul>
+<li>Promise.then</li>
+<li>MutationObserver</li>
+<li>process.nextTick(Node.js)</li>
+</ul>
+</li>
+<li>宏任务队列<ul>
+<li>setTimeout&#x2F;setInterval</li>
+<li>setImmediate(Node.js)</li>
+<li>requestAnimationFrame(浏览器)</li>
+</ul>
+</li>
+</ol>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="JavaScript有哪些数据类型？如何判断？"><a href="#JavaScript有哪些数据类型？如何判断？" class="headerlink" title="JavaScript有哪些数据类型？如何判断？"></a>JavaScript有哪些数据类型？如何判断？</h3><p><strong>基本数据类型：</strong></p>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Undefined</li>
+<li>Null</li>
+<li>Symbol(ES6)</li>
+<li>BigInt(ES2020)</li>
+</ul>
+<p><strong>引用数据类型：</strong></p>
+<ul>
+<li>Object</li>
+<li>Array</li>
+<li>Function</li>
+<li>Date</li>
+<li>RegExp</li>
+</ul>
+<p><strong>类型判断方法：</strong></p>
+<ol>
+<li>typeof</li>
+<li>instanceof</li>
+<li>Object.prototype.toString.call()</li>
+<li>Array.isArray()</li>
+</ol>
+<h2 id="ES6-新特性"><a href="#ES6-新特性" class="headerlink" title="ES6+新特性"></a>ES6+新特性</h2><h3 id="ES6及以后版本有哪些重要特性？"><a href="#ES6及以后版本有哪些重要特性？" class="headerlink" title="ES6及以后版本有哪些重要特性？"></a>ES6及以后版本有哪些重要特性？</h3><ol>
+<li><p><strong>ES6(ES2015)</strong></p>
+<ul>
+<li>let&#x2F;const</li>
+<li>箭头函数</li>
+<li>解构赋值</li>
+<li>Promise</li>
+<li>Class</li>
+<li>Module</li>
+<li>Symbol</li>
+<li>Set&#x2F;Map</li>
+</ul>
+</li>
+<li><p><strong>ES7(ES2016)</strong></p>
+<ul>
+<li>Array.prototype.includes()</li>
+<li>指数运算符(**)</li>
+</ul>
+</li>
+<li><p><strong>ES8(ES2017)</strong></p>
+<ul>
+<li>async&#x2F;await</li>
+<li>Object.values&#x2F;entries</li>
+<li>String padding</li>
+</ul>
+</li>
+<li><p><strong>ES9(ES2018)</strong></p>
+<ul>
+<li>异步迭代</li>
+<li>Rest&#x2F;Spread 属性</li>
+<li>Promise.finally()</li>
+</ul>
+</li>
+<li><p><strong>ES10(ES2019)</strong></p>
+<ul>
+<li>Array.prototype.flat()</li>
+<li>Object.fromEntries()</li>
+</ul>
+</li>
+</ol>
+<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="DOM操作的常用方法有哪些？"><a href="#DOM操作的常用方法有哪些？" class="headerlink" title="DOM操作的常用方法有哪些？"></a>DOM操作的常用方法有哪些？</h3><p><strong>节点查找：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>()</span><br></pre></td></tr></table></figure>
+
+<p><strong>节点操作：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">createElement</span>()</span><br><span class="line"><span class="title function_">appendChild</span>()</span><br><span class="line"><span class="title function_">removeChild</span>()</span><br><span class="line"><span class="title function_">replaceChild</span>()</span><br><span class="line"><span class="title function_">insertBefore</span>()</span><br></pre></td></tr></table></figure>
+
+<p><strong>属性操作：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">getAttribute</span>()</span><br><span class="line"><span class="title function_">setAttribute</span>()</span><br><span class="line"><span class="title function_">hasAttribute</span>()</span><br><span class="line"><span class="title function_">removeAttribute</span>()</span><br></pre></td></tr></table></figure>
+
+<h2 id="性能优化-1"><a href="#性能优化-1" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="JavaScript性能优化的方法有哪些？"><a href="#JavaScript性能优化的方法有哪些？" class="headerlink" title="JavaScript性能优化的方法有哪些？"></a>JavaScript性能优化的方法有哪些？</h3><ol>
+<li><p><strong>代码层面</strong></p>
+<ul>
+<li>减少DOM操作</li>
+<li>使用事件委托</li>
+<li>防抖节流</li>
+<li>避免全局变量</li>
+<li>使用Web Workers处理大量计算</li>
+</ul>
+</li>
+<li><p><strong>加载优化</strong></p>
+<ul>
+<li>代码分割</li>
+<li>懒加载</li>
+<li>预加载</li>
+<li>缓存机制</li>
+<li>CDN加速</li>
+</ul>
+</li>
+<li><p><strong>执行优化</strong></p>
+<ul>
+<li>避免内存泄漏</li>
+<li>减少回流重绘</li>
+<li>使用requestAnimationFrame</li>
+<li>优化循环</li>
+</ul>
+</li>
+</ol>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="JavaScript常用的设计模式有哪些？"><a href="#JavaScript常用的设计模式有哪些？" class="headerlink" title="JavaScript常用的设计模式有哪些？"></a>JavaScript常用的设计模式有哪些？</h3><ol>
+<li><p><strong>单例模式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Singleton</span> = (<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> instance</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="title function_">getInstance</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!instance) &#123;</span><br><span class="line">        instance = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> instance</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>观察者模式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Subject</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">observers</span> = []</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">addObserver</span>(<span class="params">observer</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">observers</span>.<span class="title function_">push</span>(observer)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">notify</span>(<span class="params">data</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">observers</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">observer</span> =&gt;</span> observer.<span class="title function_">update</span>(data))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>工厂模式</strong></p>
+</li>
+<li><p><strong>代理模式</strong></p>
+</li>
+<li><p><strong>策略模式</strong></p>
+</li>
+<li><p><strong>发布订阅模式</strong></p>
+</li>
+</ol>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="模块化的规范有哪些？"><a href="#模块化的规范有哪些？" class="headerlink" title="模块化的规范有哪些？"></a>模块化的规范有哪些？</h3><ol>
+<li><p><strong>CommonJS</strong></p>
+<ul>
+<li>Node.js采用</li>
+<li>require&#x2F;module.exports</li>
+<li>同步加载</li>
+</ul>
+</li>
+<li><p><strong>AMD</strong></p>
+<ul>
+<li>RequireJS实现</li>
+<li>define&#x2F;require</li>
+<li>异步加载</li>
+</ul>
+</li>
+<li><p><strong>ES6 Module</strong></p>
+<ul>
+<li>import&#x2F;export</li>
+<li>静态分析</li>
+<li>树摇优化</li>
+</ul>
+</li>
+</ol>
+<h2 id="浏览器存储"><a href="#浏览器存储" class="headerlink" title="浏览器存储"></a>浏览器存储</h2><h3 id="浏览器存储方式有哪些？"><a href="#浏览器存储方式有哪些？" class="headerlink" title="浏览器存储方式有哪些？"></a>浏览器存储方式有哪些？</h3><ol>
+<li><p><strong>Cookie</strong></p>
+<ul>
+<li>大小限制4KB</li>
+<li>随HTTP请求发送</li>
+<li>可设置过期时间</li>
+</ul>
+</li>
+<li><p><strong>localStorage</strong></p>
+<ul>
+<li>永久存储</li>
+<li>大小一般为5MB</li>
+<li>不随请求发送</li>
+</ul>
+</li>
+<li><p><strong>sessionStorage</strong></p>
+<ul>
+<li>会话期间存储</li>
+<li>标签页隔离</li>
+<li>大小一般为5MB</li>
+</ul>
+</li>
+<li><p><strong>IndexedDB</strong></p>
+<ul>
+<li>键值对存储</li>
+<li>支持索引</li>
+<li>异步操作</li>
+<li>支持事务</li>
+</ul>
+</li>
+</ol>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43106777/article/details/96842011">https://blog.csdn.net/weixin_43106777&#x2F;article&#x2F;details&#x2F;96842011</a> </p>
 
     </div>
 
@@ -273,7 +502,6 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/SheLeftWithRegret.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"># 面试题</a>
               <a href="/SheLeftWithRegret.github.io/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" rel="tag"># 前端基础</a>
               <a href="/SheLeftWithRegret.github.io/tags/JavaScript/" rel="tag"># JavaScript</a>
           </div>
@@ -349,7 +577,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">JavaScript基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">防抖和节流的区别及应用场景？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-number">1.2.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F%E5%AE%83%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E9%97%AE%E9%A2%98%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是闭包？它的作用和问题是什么？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="nav-number">1.3.</span> <span class="nav-text">原型与原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%85%B3%E7%B3%BB"><span class="nav-number">1.3.1.</span> <span class="nav-text">请详细说明原型和原型链的概念及关系</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">JavaScript基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">防抖和节流的区别及应用场景？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-number">1.2.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F%E5%AE%83%E7%9A%84%E4%BD%9C%E7%94%A8%E5%92%8C%E9%97%AE%E9%A2%98%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是闭包？它的作用和问题是什么？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="nav-number">1.3.</span> <span class="nav-text">原型与原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E6%A6%82%E5%BF%B5%E5%8F%8A%E5%85%B3%E7%B3%BB"><span class="nav-number">1.3.1.</span> <span class="nav-text">请详细说明原型和原型链的概念及关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%8E%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87"><span class="nav-number">1.4.</span> <span class="nav-text">作用域与变量提升</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#var%E3%80%81let%E3%80%81const%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.4.1.</span> <span class="nav-text">var、let、const的区别是什么？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B"><span class="nav-number">1.5.</span> <span class="nav-text">异步编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise%E3%80%81async-await%E3%80%81Generator%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9F"><span class="nav-number">1.5.1.</span> <span class="nav-text">Promise、async&#x2F;await、Generator的区别和使用场景？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event-Loop%EF%BC%88%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%89%E6%9C%BA%E5%88%B6%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.5.2.</span> <span class="nav-text">Event Loop（事件循环）机制是什么？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.6.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript%E6%9C%89%E5%93%AA%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9F%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%EF%BC%9F"><span class="nav-number">1.6.1.</span> <span class="nav-text">JavaScript有哪些数据类型？如何判断？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">1.7.</span> <span class="nav-text">ES6+新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6%E5%8F%8A%E4%BB%A5%E5%90%8E%E7%89%88%E6%9C%AC%E6%9C%89%E5%93%AA%E4%BA%9B%E9%87%8D%E8%A6%81%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="nav-number">1.7.1.</span> <span class="nav-text">ES6及以后版本有哪些重要特性？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM%E6%93%8D%E4%BD%9C"><span class="nav-number">1.8.</span> <span class="nav-text">DOM操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM%E6%93%8D%E4%BD%9C%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="nav-number">1.8.1.</span> <span class="nav-text">DOM操作的常用方法有哪些？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-1"><span class="nav-number">1.9.</span> <span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="nav-number">1.9.1.</span> <span class="nav-text">JavaScript性能优化的方法有哪些？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.10.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript%E5%B8%B8%E7%94%A8%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="nav-number">1.10.1.</span> <span class="nav-text">JavaScript常用的设计模式有哪些？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="nav-number">1.11.</span> <span class="nav-text">模块化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E8%A7%84%E8%8C%83%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="nav-number">1.11.1.</span> <span class="nav-text">模块化的规范有哪些？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8"><span class="nav-number">1.12.</span> <span class="nav-text">浏览器存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="nav-number">1.12.1.</span> <span class="nav-text">浏览器存储方式有哪些？</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -365,20 +593,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/SheLeftWithRegret.github.io/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/SheLeftWithRegret.github.io/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/SheLeftWithRegret.github.io/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
