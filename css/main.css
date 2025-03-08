@@ -1168,7 +1168,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2f8ca6;
+  background: #ff25cb;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2591,7 +2591,7 @@ ul.breadcrumb li + li:last-child {
   margin-top: 16px;
 }
 body {
-  background: url("/SheLeftWithRegret.github.io/images/background.png");
+  background: url("/blog.github.io/images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
