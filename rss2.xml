@@ -9,7 +9,7 @@
     <atom:link href="https://sheleftwithregrets.github.io/blog.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>选择有时候比努力更重要</description>
-    <pubDate>Sat, 08 Mar 2025 09:27:50 GMT</pubDate>
+    <pubDate>Sat, 08 Mar 2025 09:41:11 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -25,7 +25,7 @@
       
       
       
-      <content:encoded><![CDATA[<h1 id="3-8周记"><a href="#3-8周记" class="headerlink" title="3.8周记"></a>3.8周记</h1><h2 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h2><h3 id="3-3-3-4"><a href="#3-3-3-4" class="headerlink" title="3.3-3.4"></a>3.3-3.4</h3><p>编写了自己的毕业设计。实现了数据分析，数据可视化等功能。<br>主要技术栈为vue3+iview+echarts+python+flask+mysql。<br>线下面试了一家公司，面试岗位为前端开发（实习生）。<br>面试流程：一套笔试题，主要问到原型链，this指向，call，apply，bind。vue23的区别等技术栈。<br>但面试结束后告知我面试的岗位不招人了。。。。。。</p><h3 id="3-5-3-6"><a href="#3-5-3-6" class="headerlink" title="3.5-3.6"></a>3.5-3.6</h3><p>接了一单毕业设计，实现多种功能，按照甲方的需求实现代码。主要针对于python爬虫，数据分析，数据可视化，Hadoop集群和hive。</p><h3 id="3-7-3-8"><a href="#3-7-3-8" class="headerlink" title="3.7-3.8"></a>3.7-3.8</h3><p>1.面试了一家深圳的公司，面试岗位为前端开发（实习生）。主要面试了promise，echarts和个人项目的痛点。<br>2.修改了个人博客，增加了一些next主题的各种配置，添加了评论功能，添加了文章的分类，添加了文章的标签，添加了文章的搜索功能，添加了文章的归档功能。</p><h2 id="主要收获"><a href="#主要收获" class="headerlink" title="主要收获"></a>主要收获</h2><h2 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h2><h2 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="3-8周记"><a href="#3-8周记" class="headerlink" title="3.8周记"></a>3.8周记</h1><h2 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h2><h3 id="3-3-3-4"><a href="#3-3-3-4" class="headerlink" title="3.3-3.4"></a>3.3-3.4</h3><p>编写了自己的毕业设计。实现了数据分析，数据可视化等功能。并使用nginx对项目进行反向代理。<br>主要技术栈为vue3+iview+echarts+python+flask+mysql。<br>线下面试了一家公司，面试岗位为前端开发（实习生）。<br>面试流程：一套笔试题，主要问到原型链，this指向，call，apply，bind。vue23的区别等技术栈。<br>但面试结束后告知我面试的岗位不招人了。。。。。。</p><h3 id="3-5-3-6"><a href="#3-5-3-6" class="headerlink" title="3.5-3.6"></a>3.5-3.6</h3><p>接了一单毕业设计，实现多种功能，按照甲方的需求实现代码。主要针对于python爬虫，数据分析，数据可视化，Hadoop集群和hive。</p><h3 id="3-7-3-8"><a href="#3-7-3-8" class="headerlink" title="3.7-3.8"></a>3.7-3.8</h3><p>1.面试了一家深圳的公司，面试岗位为前端开发（实习生）。主要面试了promise，echarts和个人项目的痛点。<br>2.修改了个人博客，增加了一些next主题的各种配置，添加了评论功能，修改了主题样式，没之前那么华丽了。</p><h2 id="主要收获"><a href="#主要收获" class="headerlink" title="主要收获"></a>主要收获</h2><p>1.学会了使用DrissionPage对淘宝的母婴商品进行数据爬取，并进行数据分析和数据可视化。<br>2.对于简单系统的搭建有一定的了解。稍微熟悉了使用nginx反向代理。</p><h2 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h2><p>能约到面试，但是自身的基础还是不太牢固。还是需要对于js，vue，css，html等基础知识进行巩固。</p><h2 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h2><p>1.做一个简单的小程序项目，熟悉一下小程序开发。<br>2.争取开发一个网站，实现web前端知识的模拟练题。而不是只靠背，最好配合代码块。</p>]]></content:encoded>
       
       
       <category domain="https://sheleftwithregrets.github.io/blog.github.io/categories/%E5%91%A8%E8%AE%B0/">周记</category>
