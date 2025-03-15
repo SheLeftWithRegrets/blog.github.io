@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"sheleftwithregrets.github.io","root":"/blog.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":{"enable":false},"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Vue基础组件通信Vue组件之间有哪些通信方式？组件通信的基本原则：谁向谁传，数据写在发送方。主要通信方式包括：  父传子：props 子传父：$emit 兄弟组件： $attrs&#x2F;$emit $parent&#x2F;$root Vuex Event Bus($emit&#x2F;$on)    注：$attrs 是一个包含父组件传递给子组件但未在子组件的 props 中定义的属性的对">
+  <meta name="description" content="事件循环浏览器的进程模型什么是进程？程序运行时需要有自己专属的内存空间，可以把这块内存空间简单的理解为进程。每个应用至少有一个进程，进程之间相互独立，即使要通信，也需要双方同意。 什么是线程？一个进程至少有一个线程，所以在进程开启后，会自动创建一个线程来运行代码，该线程称之为主线程。tips：主线程是唯一的，其他线程都是由主线程创建的。当主线程关闭后进程也就关闭了 如果程序需要同时执行多个代码块，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue基础">
-<meta property="og:url" content="https://sheleftwithregrets.github.io/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="事件循环">
+<meta property="og:url" content="https://sheleftwithregrets.github.io/blog.github.io/2025/03/15/%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/index.html">
 <meta property="og:site_name" content="37的技术博客">
-<meta property="og:description" content="Vue基础组件通信Vue组件之间有哪些通信方式？组件通信的基本原则：谁向谁传，数据写在发送方。主要通信方式包括：  父传子：props 子传父：$emit 兄弟组件： $attrs&#x2F;$emit $parent&#x2F;$root Vuex Event Bus($emit&#x2F;$on)    注：$attrs 是一个包含父组件传递给子组件但未在子组件的 props 中定义的属性的对">
+<meta property="og:description" content="事件循环浏览器的进程模型什么是进程？程序运行时需要有自己专属的内存空间，可以把这块内存空间简单的理解为进程。每个应用至少有一个进程，进程之间相互独立，即使要通信，也需要双方同意。 什么是线程？一个进程至少有一个线程，所以在进程开启后，会自动创建一个线程来运行代码，该线程称之为主线程。tips：主线程是唯一的，其他线程都是由主线程创建的。当主线程关闭后进程也就关闭了 如果程序需要同时执行多个代码块，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-02-24T03:38:00.000Z">
-<meta property="article:modified_time" content="2025-03-08T06:03:38.080Z">
+<meta property="article:published_time" content="2025-03-15T07:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-15T11:16:51.420Z">
 <meta property="article:author" content="她带着遗憾走了">
-<meta property="article:tag" content="Vue">
-<meta property="article:tag" content="前端框架">
+<meta property="article:tag" content="事件循环">
+<meta property="article:tag" content="前端学习">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://sheleftwithregrets.github.io/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/">
+<link rel="canonical" href="https://sheleftwithregrets.github.io/blog.github.io/2025/03/15/%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Vue基础 | 37的技术博客</title>
+  <title>事件循环 | 37的技术博客</title>
   
   
 
@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sheleftwithregrets.github.io/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="https://sheleftwithregrets.github.io/blog.github.io/2025/03/15/%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog.github.io/images/avatar.png">
@@ -196,7 +196,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Vue基础
+          事件循环
         </h1>
 
         <div class="post-meta">
@@ -207,23 +207,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2025-02-24 11:38:00" itemprop="dateCreated datePublished" datetime="2025-02-24T11:38:00+08:00">2025-02-24</time>
+              <time title="创建时间：2025-03-15 15:00:00 / 修改时间：19:16:51" itemprop="dateCreated datePublished" datetime="2025-03-15T15:00:00+08:00">2025-03-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-03-08 14:03:38" itemprop="dateModified" datetime="2025-03-08T14:03:38+08:00">2025-03-08</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog.github.io/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index"><span itemprop="name">前端框架</span></a>
+                  <a href="/blog.github.io/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">前端学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog.github.io/categories/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" itemprop="url" rel="index"><span itemprop="name">事件循环</span></a>
                 </span>
             </span>
 
@@ -238,120 +236,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Vue基础"><a href="#Vue基础" class="headerlink" title="Vue基础"></a>Vue基础</h1><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h3 id="Vue组件之间有哪些通信方式？"><a href="#Vue组件之间有哪些通信方式？" class="headerlink" title="Vue组件之间有哪些通信方式？"></a>Vue组件之间有哪些通信方式？</h3><p>组件通信的基本原则：谁向谁传，数据写在发送方。主要通信方式包括：</p>
-<ol>
-<li><strong>父传子</strong>：props</li>
-<li><strong>子传父</strong>：$emit</li>
-<li><strong>兄弟组件</strong>：<ul>
-<li>$attrs&#x2F;$emit</li>
-<li>$parent&#x2F;$root</li>
-<li>Vuex</li>
-<li>Event Bus($emit&#x2F;$on)</li>
-</ul>
-</li>
-</ol>
-<p>注：$attrs 是一个包含父组件传递给子组件但未在子组件的 props 中定义的属性的对象。</p>
-<h2 id="指令优先级"><a href="#指令优先级" class="headerlink" title="指令优先级"></a>指令优先级</h2><h3 id="v-if和v-for的优先级是怎样的？"><a href="#v-if和v-for的优先级是怎样的？" class="headerlink" title="v-if和v-for的优先级是怎样的？"></a>v-if和v-for的优先级是怎样的？</h3><ul>
-<li>Vue2中v-for优先级更高</li>
-<li>Vue3中v-if优先级更高</li>
-<li>官方文档明确表明不要在同一个标签中同时使用这两个指令</li>
-</ul>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="Vue的生命周期有哪些？各自的作用是什么？"><a href="#Vue的生命周期有哪些？各自的作用是什么？" class="headerlink" title="Vue的生命周期有哪些？各自的作用是什么？"></a>Vue的生命周期有哪些？各自的作用是什么？</h3><p><strong>Vue2生命周期：</strong></p>
-<ol>
-<li><p><strong>beforeCreate</strong></p>
-<ul>
-<li>在实例初始化之后，数据观测和事件配置之前调用</li>
-<li>用途：初始化操作，但不能访问响应式数据</li>
-</ul>
-</li>
-<li><p><strong>created</strong></p>
-<ul>
-<li>实例创建完成后调用</li>
-<li>已完成数据观测、属性和方法的运算，watch&#x2F;event事件回调</li>
-<li>用途：数据获取、事件监听等初始化操作</li>
-</ul>
-</li>
-<li><p><strong>beforeMount</strong></p>
-<ul>
-<li>挂载开始前调用</li>
-<li>用途：渲染前的准备工作，如数据格式化</li>
-</ul>
-</li>
-<li><p><strong>mounted</strong></p>
-<ul>
-<li>DOM挂载完成后调用</li>
-<li>用途：DOM操作、第三方库初始化</li>
-</ul>
-</li>
-<li><p><strong>beforeUpdate</strong></p>
-<ul>
-<li>数据更新时调用，发生在虚拟DOM打补丁之前</li>
-<li>用途：更新前访问现有DOM，如移除事件监听器</li>
-</ul>
-</li>
-<li><p><strong>updated</strong></p>
-<ul>
-<li>虚拟DOM重新渲染和打补丁之后调用</li>
-<li>用途：更新后的DOM操作，但应避免在此阶段更改状态</li>
-</ul>
-</li>
-<li><p><strong>beforeDestroy</strong></p>
-<ul>
-<li>实例销毁前调用</li>
-<li>用途：清理操作，如移除事件监听器、定时器</li>
-</ul>
-</li>
-<li><p><strong>destroyed</strong></p>
-<ul>
-<li>实例销毁后调用</li>
-<li>用途：最终的清理工作</li>
-</ul>
-</li>
-</ol>
-<p><strong>Vue3新增：</strong></p>
-<ul>
-<li><strong>setup</strong><ul>
-<li>在组件实例创建之前执行</li>
-<li>组合式API的入口</li>
-<li>可访问props和context，但不能访问this</li>
-</ul>
-</li>
-</ul>
-<h2 id="组件扩展"><a href="#组件扩展" class="headerlink" title="组件扩展"></a>组件扩展</h2><h3 id="如何扩展一个组件？"><a href="#如何扩展一个组件？" class="headerlink" title="如何扩展一个组件？"></a>如何扩展一个组件？</h3><ol>
-<li><strong>使用Composition API进行逻辑扩展</strong></li>
-<li><strong>使用slots进行内容扩展</strong><ul>
-<li>默认插槽</li>
-<li>具名插槽</li>
-<li>作用域插槽</li>
-</ul>
-</li>
-</ol>
-<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><h3 id="什么是虚拟DOM？有什么优点？"><a href="#什么是虚拟DOM？有什么优点？" class="headerlink" title="什么是虚拟DOM？有什么优点？"></a>什么是虚拟DOM？有什么优点？</h3><p>虚拟DOM是一个虚拟的DOM对象，本质是一个JS对象。</p>
-<p><strong>优点：</strong></p>
-<ol>
-<li>减少操作真实DOM的次数，提高程序性能</li>
-<li>方便实现跨平台</li>
-</ol>
-<h2 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h2><h3 id="Vue3相比Vue2有哪些重要的新特性？"><a href="#Vue3相比Vue2有哪些重要的新特性？" class="headerlink" title="Vue3相比Vue2有哪些重要的新特性？"></a>Vue3相比Vue2有哪些重要的新特性？</h3><ol>
-<li><p><strong>Composition API</strong></p>
-<ul>
-<li>用于组织和复用组件逻辑</li>
-<li>将相同功能的代码放在一起，便于管理</li>
-</ul>
-</li>
-<li><p><strong>响应式系统升级</strong></p>
-<ul>
-<li>使用Proxy替代Object.defineProperty</li>
-<li>更好的性能和更完整的响应式支持</li>
-</ul>
-</li>
-<li><p><strong>动态路由</strong></p>
-<ul>
-<li>更灵活的路由配置</li>
-<li>在params后添加反斜杠和冒号实现动态路由</li>
-</ul>
-</li>
-</ol>
+        <h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><h3 id="浏览器的进程模型"><a href="#浏览器的进程模型" class="headerlink" title="浏览器的进程模型"></a>浏览器的进程模型</h3><p>什么是进程？<br>程序运行时需要有自己专属的内存空间，可以把这块内存空间简单的理解为进程。<br>每个应用至少有一个进程，进程之间相互独立，即使要通信，也需要双方同意。</p>
+<p>什么是线程？<br>一个进程至少有一个线程，所以在进程开启后，会自动创建一个线程来运行代码，该线程称之为主线程。tips：主线程是唯一的，其他线程都是由主线程创建的。当主线程关闭后进程也就关闭了</p>
+<p>如果程序需要同时执行多个代码块，主线程就会启动更多的线程来执行代码，所以一个进程中可以包含多个线程。</p>
+<h3 id="浏览器有哪些进程和线程？"><a href="#浏览器有哪些进程和线程？" class="headerlink" title="浏览器有哪些进程和线程？"></a>浏览器有哪些进程和线程？</h3><p>浏览器是一个多进程多线程的应用程序。内部工作极其复杂。<br>为了避免相互影响，为了减少连环崩溃的几率，当启动浏览器后，它会自动启动多个进程。<br>最主要的进程有：<br>浏览器进程：主要负责界面显示，用户交互，子进程管理等。浏览器进程内部会启动多个线程处理不同的任务。<br>网络进程：负责加载网络资源。网络进程内部会启动多个线程来处理不同的网络任务。<br>渲染进程：渲染进程启动后，会开启一个渲染主线程，主线程负责执行HTML,CSS,JS代码，解析渲染页面。<br>默认情况下，浏览器会为每个标签页开启一个新的渲染进程，以保证不同的标签页之间不相互影响。</p>
+<h3 id="渲染主线程时如何工作的？"><a href="#渲染主线程时如何工作的？" class="headerlink" title="渲染主线程时如何工作的？"></a>渲染主线程时如何工作的？</h3><p>渲染主线程是浏览器中最繁忙的线程，需要它处理的任务包括但不限于：<br>解析HTML、CSS、计算样式，布局，处理图层，每秒把页面画60次即60HZ（主要是为了用户的浏览感知效果），执行全局JS代码，执行事件处理函数，执行计时器的回调函数。</p>
+<p>思考题：为什么渲染进程不适用多个线程来处理这些事情？</p>
+<p>渲染主线程想出了一个办法来处理同一时间来自多个线程的任务。即开启消息队列。<br>1.在最开始的时候，渲染主线程会进入一个无限循环<br>2.每一次循环会检查消息队列中是否有任务存在。如果有，则会取出第一个任务并执行，执行完一个后进入下一次循环；如果没有，则进入休眠状态。<br>3.其他所有线程（包括其他进程的线程）可以随时向消息队列添加任务。新任务会加到消息队列的末尾。在添加新任务使，如果主线程是休眠状态，则会将其唤醒以继续循环拿取任务。<br>整个过程被称之为事件循环。</p>
+<p>##何为异步<br>代码在执行过程中，会遇到一些无法立即处理的任务，比如：<br>计时完成后需要执行的任务–setTimeout()，setInterval()<br>网络通信完成后需要执行的任务–XHR，Fetch<br>用户操作后需要执行的任务–addEventListener()<br>如果让渲染主线程等待这些任务的时机达到，就会导致主线程长期处于【阻塞】的状态，从而导致浏览器【卡死】。例如计时器计时五秒钟，则不会等待五秒钟后才开始处理。</p>
+<p>所以计时器的原理：<br>1.渲染主线程会创建一个计时器对象，并将其添加到消息队列中。<br>2.当渲染主线程执行到计时器对象时，会通知计时器线程开始计时，并将计时器对象对应的任务结束。<br>3.渲染主线程继续执行消息队列中待处理的任务。计时线程开始计时<br>4.计时结束后，计时线程会将计时器对象对应的任务添加到消息队列中。<br>这就是异步的处理方式，渲染主线程永远不会阻塞。</p>
+<p>###面试题：如何解释js中的异步？<br>js是一门单线程的语言，这是因为它运行在浏览器的渲染主线程中，而渲染主线程只有一个，而渲染主线程承担着很多的工作，渲染页面，执行JS都在其中运行。<br>如果使用同步的方式，就极有可能导致主线程产生阻塞，从而导致消息队列中很多其他任务无法得到执行。<br>这样一来，一方面会导致繁忙的主线程白白的浪费时间，另一方面导致页面无法及时更新，给用户造成卡死现象。<br>所以，浏览器采用异步的方式避免，具体做法是当某些任务发生时，比如计时器，网络，事件监听，主线程将任务交给其他线程去处理，自身立即结束任务的执行，转而执行后续代码，当其他线程完成时，将事先传递的回调函数包装成任务（任务是一个对象！！），加入到消息队列的末尾排队，等待主线程调度执行。<br>在这种异步模式下，浏览器永不阻塞，从而最大限度的保证了单线程的流畅运行。</p>
+<p>###js是怎么阻碍渲染的？<br>因为js的渲染任务和一些计时器的任务都在渲染主线程上运行。当一个定义的计时器的函数被调用后，计时器之前的修改内容不会立即在主线程上渲染，而是会加载在消息队列中，等待主线程结束计时器的任务后，才会渲染。<br>因此会导致即使值发生了修改，但是不会立即渲染在页面。同理如果存在这种情况点击其他事件也不会立即响应，因为事件也在消息队列中，等待主线程执行。</p>
+<p>###任务有优先级吗？<br>任务没有优先级，在消息队列中先进先出。但是消息队列存在优先级。</p>
+<p>W3C的最新解释：<br>每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属于不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。<br>浏览器必须准备好一个微队列，微队列的任务优先所有其他任务执行。</p>
+<p>chrome浏览器的实现，至少包含了下面的队列：<br>延时队列：用于存放计时器到达后的回调任务，优先级【中】<br>交互队列：用于存放用户操作后产生的事件处理任务，优先级【高】<br>微队列：用户存放需要最快执行的任务，优先级【最高】</p>
+<p>添加任务到微队列的主要方式主要是使用promise，MutationObserver，requestAnimationFrame等。<br>promise：使用promise.resolve().then()方法可以将任务添加到微队列。</p>
+<p>！！！渲染主队列会将代码中所有需要执行的任务添加在消息队列中，按照消息队列的顺序执行，根据消息队列中不同类型的任务放置在不同的队列上，但是微队列优先级最高，所以微队列中的任务会优先执行。等待微队列中的任务执行完毕后，在看交互队列。其中使用promise会将任务直接防止在微队列中。</p>
+<p>面试题：阐述一下JS的事件循环机制：<br>事件循环又叫消息循环，是浏览器渲染主线程的工作方式。<br>在chrome的源码中，它开启一个不会结束的for循环，每次循环从消息队列中取出第一个任务执行，而其他线程只需要在合适的时候将任务加入到队列末尾即可。<br>过去把消息队列简单分为宏队列和微队列，这种说法目前已无法满足复杂的浏览器环境，取而代之的是一种更加灵活多变的处理方式。<br>根据W3C的最新解释，每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属于不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。但是浏览器必须准备好一个微队列，微队列的任务优先所有其他任务执行。</p>
+<p>面试题：JS中的计时器能做到精确计时吗？为什么？<br>不行，<br>1.计算机硬件没有原子钟，无法做到精确计时。<br>2.操作系统的计时函数本身就有少量偏差，因为js的计时器最终调用的是操作系统的函数，也就是有些偏差。<br>3.按照W3C的标准，浏览器实现计时器时，如果嵌套层数超过五层，则会带有4ms的等待时间。<br>4.受事件循环的影响，计时器的回调函数只能在主线程空闲时运行，因此带来了偏差。</p>
 
     </div>
 
@@ -377,7 +279,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://sheleftwithregrets.github.io/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/" title="Vue基础">https://sheleftwithregrets.github.io/blog.github.io/2025/02/24/第七篇：Vue基础/</a>
+    <a href="https://sheleftwithregrets.github.io/blog.github.io/2025/03/15/%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" title="事件循环">https://sheleftwithregrets.github.io/blog.github.io/2025/03/15/第十章：事件循环/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -407,8 +309,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog.github.io/tags/Vue/" rel="tag"># Vue</a>
-              <a href="/blog.github.io/tags/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/" rel="tag"># 前端框架</a>
+              <a href="/blog.github.io/tags/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" rel="tag"># 事件循环</a>
+              <a href="/blog.github.io/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0/" rel="tag"># 前端学习</a>
           </div>
 
         
@@ -417,13 +319,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog.github.io/2025/02/24/%E7%AC%AC%E5%85%AD%E7%AF%87%EF%BC%9ANginx%E5%9F%BA%E7%A1%80/" rel="prev" title="Nginx基础">
-      <i class="fa fa-chevron-left"></i> Nginx基础
+    <a href="/blog.github.io/2025/03/08/2025.3%20%E5%91%A8%E8%AE%B0/" rel="prev" title="周记">
+      <i class="fa fa-chevron-left"></i> 周记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/blog.github.io/2025/03/05/%E7%AC%AC%E5%85%AB%E7%AF%87%EF%BC%9Acentos7%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85MySQL/" rel="next" title="CentOS7下MySQL8.0安装指南与常见问题解决">
-      CentOS7下MySQL8.0安装指南与常见问题解决 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -483,7 +382,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">Vue基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="nav-number">1.1.</span> <span class="nav-text">组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E6%9C%89%E5%93%AA%E4%BA%9B%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">Vue组件之间有哪些通信方式？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.2.</span> <span class="nav-text">指令优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if%E5%92%8Cv-for%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%EF%BC%9F"><span class="nav-number">1.2.1.</span> <span class="nav-text">v-if和v-for的优先级是怎样的？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.3.</span> <span class="nav-text">生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%90%84%E8%87%AA%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.3.1.</span> <span class="nav-text">Vue的生命周期有哪些？各自的作用是什么？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E6%89%A9%E5%B1%95"><span class="nav-number">1.4.</span> <span class="nav-text">组件扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%89%A9%E5%B1%95%E4%B8%80%E4%B8%AA%E7%BB%84%E4%BB%B6%EF%BC%9F"><span class="nav-number">1.4.1.</span> <span class="nav-text">如何扩展一个组件？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%9A%E6%8B%9FDOM"><span class="nav-number">1.5.</span> <span class="nav-text">虚拟DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9FDOM%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%82%B9%EF%BC%9F"><span class="nav-number">1.5.1.</span> <span class="nav-text">什么是虚拟DOM？有什么优点？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue3%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">1.6.</span> <span class="nav-text">Vue3新特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue3%E7%9B%B8%E6%AF%94Vue2%E6%9C%89%E5%93%AA%E4%BA%9B%E9%87%8D%E8%A6%81%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="nav-number">1.6.1.</span> <span class="nav-text">Vue3相比Vue2有哪些重要的新特性？</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.</span> <span class="nav-text">事件循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">浏览器的进程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9C%89%E5%93%AA%E4%BA%9B%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">浏览器有哪些进程和线程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E4%B8%BB%E7%BA%BF%E7%A8%8B%E6%97%B6%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">渲染主线程时如何工作的？</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -623,7 +522,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'blog.github.io',
       owner       : 'sheleftwithregrets',
       admin       : ['sheleftwithregrets'],
-      id          : '162b7ea60954a1d65a32c1f75f41a64e',
+      id          : '0ac76d5425b1080ff8da7150086b3dce',
         language: 'zh-CN',
       distractionFreeMode: true
     });

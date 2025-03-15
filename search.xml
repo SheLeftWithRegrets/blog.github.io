@@ -1,440 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Cursor编辑器的安装与使用</title>
-    <url>/blog.github.io/2025/02/11/%E7%AC%AC%E4%B8%80%E7%AF%87%EF%BC%9ACursor%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Cursor是一款革命性的代码编辑器，它基于VSCode构建，并集成了强大的AI辅助功能。通过内置的AI模型，它能够理解开发者的意图，提供智能代码补全、实时代码分析和自动化重构等功能。本文将详细介绍Cursor的安装配置和使用技巧，帮助你提升开发效率。</p>
-<h2 id="为什么选择Cursor"><a href="#为什么选择Cursor" class="headerlink" title="为什么选择Cursor"></a>为什么选择Cursor</h2><h3 id="相比传统编辑器的优势"><a href="#相比传统编辑器的优势" class="headerlink" title="相比传统编辑器的优势"></a>相比传统编辑器的优势</h3><ol>
-<li>智能理解代码上下文</li>
-<li>实时AI代码建议</li>
-<li>自然语言交互</li>
-<li>强大的代码重构能力</li>
-<li>与VSCode完全兼容</li>
-</ol>
-<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><ul>
-<li>个人开发项目</li>
-<li>团队协作开发</li>
-<li>代码学习和教学</li>
-<li>快速原型开发</li>
-</ul>
-<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h3><ul>
-<li>Windows 10&#x2F;11 64位</li>
-<li>macOS 10.15+</li>
-<li>8GB及以上内存</li>
-<li>2GB可用存储空间</li>
-</ul>
-<h3 id="Windows系统安装"><a href="#Windows系统安装" class="headerlink" title="Windows系统安装"></a>Windows系统安装</h3><ol>
-<li>访问Cursor官网 <a href="https://cursor.sh/">https://cursor.sh</a></li>
-<li>点击”Download for Windows”下载安装包</li>
-<li>运行下载的exe文件</li>
-<li>按照安装向导完成安装</li>
-<li>首次启动时登录或创建账号</li>
-</ol>
-<h3 id="Mac系统安装"><a href="#Mac系统安装" class="headerlink" title="Mac系统安装"></a>Mac系统安装</h3><ol>
-<li>访问Cursor官网</li>
-<li>下载Mac版本的dmg文件</li>
-<li>打开dmg文件，将Cursor拖入Applications文件夹</li>
-<li>从启动台或Applications文件夹启动Cursor</li>
-<li>完成初始化设置</li>
-</ol>
-<h3 id="安装后配置"><a href="#安装后配置" class="headerlink" title="安装后配置"></a>安装后配置</h3><ol>
-<li>选择主题和配色方案</li>
-<li>配置编辑器字体和大小</li>
-<li>设置AI功能偏好</li>
-<li>导入已有的VSCode配置（可选）</li>
-</ol>
-<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="AI代码补全"><a href="#AI代码补全" class="headerlink" title="AI代码补全"></a>AI代码补全</h3><p>Cursor最强大的功能之一是智能代码补全：</p>
-<ul>
-<li><p><strong>实时补全</strong>：</p>
-<ul>
-<li>输入时自动显示建议</li>
-<li>支持多行代码块补全</li>
-<li>基于项目上下文的智能建议</li>
-</ul>
-</li>
-<li><p><strong>快捷键操作</strong>：</p>
-<ul>
-<li>Tab：接受建议</li>
-<li>Ctrl+Space：手动触发补全</li>
-<li>Esc：关闭建议窗口</li>
-</ul>
-</li>
-<li><p><strong>补全范围</strong>：</p>
-<ul>
-<li>变量和函数名</li>
-<li>代码片段</li>
-<li>完整的函数实现</li>
-<li>注释生成</li>
-</ul>
-</li>
-</ul>
-<h3 id="AI聊天"><a href="#AI聊天" class="headerlink" title="AI聊天"></a>AI聊天</h3><p>Cursor提供了强大的AI助手功能：</p>
-<ul>
-<li><p><strong>打开方式</strong>：</p>
-<ul>
-<li>使用快捷键 Cmd&#x2F;Ctrl + K</li>
-<li>右键菜单中选择”Ask AI”</li>
-<li>通过命令面板调用</li>
-</ul>
-</li>
-<li><p><strong>常用功能</strong>：</p>
-<ul>
-<li>代码解释和文档生成</li>
-<li>问题诊断和调试建议</li>
-<li>最佳实践咨询</li>
-<li>算法优化建议</li>
-</ul>
-</li>
-<li><p><strong>使用技巧</strong>：</p>
-<ul>
-<li>提供清晰的上下文</li>
-<li>使用自然语言描述</li>
-<li>结合代码片段提问</li>
-<li>保存常用对话</li>
-</ul>
-</li>
-</ul>
-<h3 id="代码重构"><a href="#代码重构" class="headerlink" title="代码重构"></a>代码重构</h3><p>Cursor的AI驱动重构功能：</p>
-<ul>
-<li><p><strong>重构操作</strong>：</p>
-<ul>
-<li>变量重命名</li>
-<li>提取函数&#x2F;方法</li>
-<li>优化代码结构</li>
-<li>转换代码风格</li>
-</ul>
-</li>
-<li><p><strong>使用方法</strong>：</p>
-<ol>
-<li>选中需要重构的代码</li>
-<li>右键选择”Refactor”</li>
-<li>选择重构类型</li>
-<li>预览并应用更改</li>
-</ol>
-</li>
-<li><p><strong>最佳实践</strong>：</p>
-<ul>
-<li>先保存当前更改</li>
-<li>重构前进行代码审查</li>
-<li>测试重构后的代码</li>
-<li>分步骤进行大型重构</li>
-</ul>
-</li>
-</ul>
-<h2 id="高级功能"><a href="#高级功能" class="headerlink" title="高级功能"></a>高级功能</h2><h3 id="自定义提示词"><a href="#自定义提示词" class="headerlink" title="自定义提示词"></a>自定义提示词</h3><p>优化AI交互体验：</p>
-<ol>
-<li>打开设置(Cmd&#x2F;Ctrl + ,)</li>
-<li>找到”AI Settings”</li>
-<li>添加自定义提示词模板</li>
-<li>设置触发条件和快捷键</li>
-</ol>
-<h3 id="项目分析"><a href="#项目分析" class="headerlink" title="项目分析"></a>项目分析</h3><p>全面的项目分析功能：</p>
-<ul>
-<li><p><strong>代码分析</strong>：</p>
-<ul>
-<li>依赖关系图</li>
-<li>代码质量检测</li>
-<li>性能瓶颈识别</li>
-<li>安全漏洞扫描</li>
-</ul>
-</li>
-<li><p><strong>项目管理</strong>：</p>
-<ul>
-<li>文件结构优化</li>
-<li>重复代码检测</li>
-<li>未使用代码识别</li>
-<li>版本控制集成</li>
-</ul>
-</li>
-</ul>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="连接问题"><a href="#连接问题" class="headerlink" title="连接问题"></a>连接问题</h3><p>如果遇到AI功能无法使用：</p>
-<ol>
-<li><p>网络诊断：</p>
-<ul>
-<li>检查网络连接</li>
-<li>确认防火墙设置</li>
-<li>测试API连接性</li>
-</ul>
-</li>
-<li><p>账号问题：</p>
-<ul>
-<li>验证登录状态</li>
-<li>检查订阅状态</li>
-<li>刷新访问令牌</li>
-</ul>
-</li>
-<li><p>其他解决方案：</p>
-<ul>
-<li>重启编辑器</li>
-<li>清除缓存</li>
-<li>重新安装</li>
-</ul>
-</li>
-</ol>
-<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>提升Cursor运行效率：</p>
-<ol>
-<li><p>基础优化：</p>
-<ul>
-<li>关闭不需要的插件</li>
-<li>定期清理缓存</li>
-<li>限制文件监视数量</li>
-</ul>
-</li>
-<li><p>高级设置：</p>
-<ul>
-<li>调整内存限制</li>
-<li>配置工作区设置</li>
-<li>优化文件索引</li>
-</ul>
-</li>
-<li><p>硬件建议：</p>
-<ul>
-<li>使用SSD存储</li>
-<li>确保足够内存</li>
-<li>处理器性能要求</li>
-</ul>
-</li>
-</ol>
-<h2 id="进阶技巧"><a href="#进阶技巧" class="headerlink" title="进阶技巧"></a>进阶技巧</h2><h3 id="快捷键优化"><a href="#快捷键优化" class="headerlink" title="快捷键优化"></a>快捷键优化</h3><p>提高开发效率的快捷键设置：</p>
-<ol>
-<li>常用操作快捷键</li>
-<li>自定义快捷键映射</li>
-<li>快捷键冲突解决</li>
-</ol>
-<h3 id="插件集成"><a href="#插件集成" class="headerlink" title="插件集成"></a>插件集成</h3><p>与其他开发工具的协同：</p>
-<ol>
-<li>Git集成</li>
-<li>调试工具配置</li>
-<li>代码格式化插件</li>
-<li>团队协作工具</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Cursor是一款革命性的智能代码编辑器，它通过AI辅助功能大大提高了开发效率。本文详细介绍了从安装配置到高级使用的完整流程，掌握这些功能将帮助你：</p>
-<ol>
-<li>更快速地编写代码</li>
-<li>提高代码质量</li>
-<li>简化重构过程</li>
-<li>加速问题解决</li>
-</ol>
-<p>建议循序渐进地学习和使用这些功能，从基础的代码补全开始，逐步探索更高级的功能，最终将Cursor整合到你的日常开发工作流程中。</p>
-<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
-<li><a href="https://cursor.sh/docs">Cursor官方文档</a></li>
-<li><a href="https://code.visualstudio.com/docs">VSCode文档</a></li>
-<li><a href="https://cursor.sh/blog">AI编程最佳实践</a></li>
-</ul>
-<h3 id="账号注册"><a href="#账号注册" class="headerlink" title="账号注册"></a>账号注册</h3><ol>
-<li><p><strong>访问官网</strong></p>
-<ul>
-<li>打开 <a href="https://cursor.sh/">Cursor官网</a></li>
-<li>点击右上角”Sign Up”按钮</li>
-</ul>
-</li>
-<li><p><strong>选择注册方式</strong></p>
-<ul>
-<li>GitHub账号登录（推荐）</li>
-<li>邮箱注册</li>
-<li>Google账号登录</li>
-</ul>
-</li>
-<li><p><strong>完成注册流程</strong></p>
-<ul>
-<li>填写必要信息</li>
-<li>验证邮箱</li>
-<li>设置密码（如选择邮箱注册）</li>
-</ul>
-</li>
-</ol>
-<h3 id="登录配置"><a href="#登录配置" class="headerlink" title="登录配置"></a>登录配置</h3><ol>
-<li><p><strong>首次登录</strong></p>
-<ul>
-<li>启动Cursor编辑器</li>
-<li>点击右下角的登录按钮</li>
-<li>选择登录方式</li>
-</ul>
-</li>
-<li><p><strong>登录后配置</strong></p>
-<ul>
-<li>选择AI模型（默认为Claude）</li>
-<li>设置API访问权限</li>
-<li>配置代码补全偏好</li>
-</ul>
-</li>
-<li><p><strong>账号管理</strong></p>
-<ul>
-<li>查看使用配额</li>
-<li>管理订阅计划</li>
-<li>设置个人偏好</li>
-</ul>
-</li>
-</ol>
-<h3 id="常见登录问题"><a href="#常见登录问题" class="headerlink" title="常见登录问题"></a>常见登录问题</h3><ol>
-<li><p><strong>无法登录</strong></p>
-<ul>
-<li>检查网络连接</li>
-<li>确认账号密码正确</li>
-<li>清除浏览器缓存</li>
-</ul>
-</li>
-<li><p><strong>API限制</strong></p>
-<ul>
-<li>免费版每日限额说明</li>
-<li>升级专业版获取更多配额</li>
-<li>配额使用优化建议</li>
-</ul>
-</li>
-</ol>
-<h3 id="针对于cursor的免费版"><a href="#针对于cursor的免费版" class="headerlink" title="针对于cursor的免费版"></a>针对于cursor的免费版</h3><ol>
-<li><p>免费版限制<br>我们知道cursor的免费版是有限制的，比如每天只能使用50次（原来是150次），而且不能使用一些高级功能，比如代码重构，代码解释等。</p>
-</li>
-<li><p>免费版使用技巧<br>  我们可以使用2925无限邮箱，当每日的免费版限制额度用完之后，重复注册邮箱，既可以实现无限制的cursor的AI功能。</p>
-</li>
-<li><p>2925无限邮箱注册</p>
-<ul>
-<li>访问官网 <a href="https://2925.cc/">https://2925.cc</a></li>
-<li>点击”立即注册”按钮</li>
-<li>填写必要信息</li>
-<li>验证邮箱</li>
-</ul>
-</li>
-<li><p>当免费版限制额度使用过多后，会锁定电脑ip，具体解决办法不过多赘述</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>开发工具</tag>
-        <tag>AI编程</tag>
-        <tag>VSCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue基础</title>
-    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="Vue基础"><a href="#Vue基础" class="headerlink" title="Vue基础"></a>Vue基础</h1><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h3 id="Vue组件之间有哪些通信方式？"><a href="#Vue组件之间有哪些通信方式？" class="headerlink" title="Vue组件之间有哪些通信方式？"></a>Vue组件之间有哪些通信方式？</h3><p>组件通信的基本原则：谁向谁传，数据写在发送方。主要通信方式包括：</p>
-<ol>
-<li><strong>父传子</strong>：props</li>
-<li><strong>子传父</strong>：$emit</li>
-<li><strong>兄弟组件</strong>：<ul>
-<li>$attrs&#x2F;$emit</li>
-<li>$parent&#x2F;$root</li>
-<li>Vuex</li>
-<li>Event Bus($emit&#x2F;$on)</li>
-</ul>
-</li>
-</ol>
-<p>注：$attrs 是一个包含父组件传递给子组件但未在子组件的 props 中定义的属性的对象。</p>
-<h2 id="指令优先级"><a href="#指令优先级" class="headerlink" title="指令优先级"></a>指令优先级</h2><h3 id="v-if和v-for的优先级是怎样的？"><a href="#v-if和v-for的优先级是怎样的？" class="headerlink" title="v-if和v-for的优先级是怎样的？"></a>v-if和v-for的优先级是怎样的？</h3><ul>
-<li>Vue2中v-for优先级更高</li>
-<li>Vue3中v-if优先级更高</li>
-<li>官方文档明确表明不要在同一个标签中同时使用这两个指令</li>
-</ul>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="Vue的生命周期有哪些？各自的作用是什么？"><a href="#Vue的生命周期有哪些？各自的作用是什么？" class="headerlink" title="Vue的生命周期有哪些？各自的作用是什么？"></a>Vue的生命周期有哪些？各自的作用是什么？</h3><p><strong>Vue2生命周期：</strong></p>
-<ol>
-<li><p><strong>beforeCreate</strong></p>
-<ul>
-<li>在实例初始化之后，数据观测和事件配置之前调用</li>
-<li>用途：初始化操作，但不能访问响应式数据</li>
-</ul>
-</li>
-<li><p><strong>created</strong></p>
-<ul>
-<li>实例创建完成后调用</li>
-<li>已完成数据观测、属性和方法的运算，watch&#x2F;event事件回调</li>
-<li>用途：数据获取、事件监听等初始化操作</li>
-</ul>
-</li>
-<li><p><strong>beforeMount</strong></p>
-<ul>
-<li>挂载开始前调用</li>
-<li>用途：渲染前的准备工作，如数据格式化</li>
-</ul>
-</li>
-<li><p><strong>mounted</strong></p>
-<ul>
-<li>DOM挂载完成后调用</li>
-<li>用途：DOM操作、第三方库初始化</li>
-</ul>
-</li>
-<li><p><strong>beforeUpdate</strong></p>
-<ul>
-<li>数据更新时调用，发生在虚拟DOM打补丁之前</li>
-<li>用途：更新前访问现有DOM，如移除事件监听器</li>
-</ul>
-</li>
-<li><p><strong>updated</strong></p>
-<ul>
-<li>虚拟DOM重新渲染和打补丁之后调用</li>
-<li>用途：更新后的DOM操作，但应避免在此阶段更改状态</li>
-</ul>
-</li>
-<li><p><strong>beforeDestroy</strong></p>
-<ul>
-<li>实例销毁前调用</li>
-<li>用途：清理操作，如移除事件监听器、定时器</li>
-</ul>
-</li>
-<li><p><strong>destroyed</strong></p>
-<ul>
-<li>实例销毁后调用</li>
-<li>用途：最终的清理工作</li>
-</ul>
-</li>
-</ol>
-<p><strong>Vue3新增：</strong></p>
-<ul>
-<li><strong>setup</strong><ul>
-<li>在组件实例创建之前执行</li>
-<li>组合式API的入口</li>
-<li>可访问props和context，但不能访问this</li>
-</ul>
-</li>
-</ul>
-<h2 id="组件扩展"><a href="#组件扩展" class="headerlink" title="组件扩展"></a>组件扩展</h2><h3 id="如何扩展一个组件？"><a href="#如何扩展一个组件？" class="headerlink" title="如何扩展一个组件？"></a>如何扩展一个组件？</h3><ol>
-<li><strong>使用Composition API进行逻辑扩展</strong></li>
-<li><strong>使用slots进行内容扩展</strong><ul>
-<li>默认插槽</li>
-<li>具名插槽</li>
-<li>作用域插槽</li>
-</ul>
-</li>
-</ol>
-<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><h3 id="什么是虚拟DOM？有什么优点？"><a href="#什么是虚拟DOM？有什么优点？" class="headerlink" title="什么是虚拟DOM？有什么优点？"></a>什么是虚拟DOM？有什么优点？</h3><p>虚拟DOM是一个虚拟的DOM对象，本质是一个JS对象。</p>
-<p><strong>优点：</strong></p>
-<ol>
-<li>减少操作真实DOM的次数，提高程序性能</li>
-<li>方便实现跨平台</li>
-</ol>
-<h2 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h2><h3 id="Vue3相比Vue2有哪些重要的新特性？"><a href="#Vue3相比Vue2有哪些重要的新特性？" class="headerlink" title="Vue3相比Vue2有哪些重要的新特性？"></a>Vue3相比Vue2有哪些重要的新特性？</h3><ol>
-<li><p><strong>Composition API</strong></p>
-<ul>
-<li>用于组织和复用组件逻辑</li>
-<li>将相同功能的代码放在一起，便于管理</li>
-</ul>
-</li>
-<li><p><strong>响应式系统升级</strong></p>
-<ul>
-<li>使用Proxy替代Object.defineProperty</li>
-<li>更好的性能和更完整的响应式支持</li>
-</ul>
-</li>
-<li><p><strong>动态路由</strong></p>
-<ul>
-<li>更灵活的路由配置</li>
-<li>在params后添加反斜杠和冒号实现动态路由</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>前端框架</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-        <tag>前端框架</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小白也能看懂的Hexo博客搭建完全教程</title>
     <url>/blog.github.io/2025/02/12/%E7%AC%AC%E4%BA%8C%E7%AF%87%EF%BC%9A%E5%B0%8F%E7%99%BD%E4%B9%9F%E8%83%BD%E7%9C%8B%E6%87%82%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%AE%8C%E5%85%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>如果你是一个完全的小白，在开始之前，让我们先了解一些基础概念：</p>
@@ -600,6 +166,56 @@
       </tags>
   </entry>
   <entry>
+    <title>事件循环</title>
+    <url>/blog.github.io/2025/03/15/%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><h3 id="浏览器的进程模型"><a href="#浏览器的进程模型" class="headerlink" title="浏览器的进程模型"></a>浏览器的进程模型</h3><p>什么是进程？<br>程序运行时需要有自己专属的内存空间，可以把这块内存空间简单的理解为进程。<br>每个应用至少有一个进程，进程之间相互独立，即使要通信，也需要双方同意。</p>
+<p>什么是线程？<br>一个进程至少有一个线程，所以在进程开启后，会自动创建一个线程来运行代码，该线程称之为主线程。tips：主线程是唯一的，其他线程都是由主线程创建的。当主线程关闭后进程也就关闭了</p>
+<p>如果程序需要同时执行多个代码块，主线程就会启动更多的线程来执行代码，所以一个进程中可以包含多个线程。</p>
+<h3 id="浏览器有哪些进程和线程？"><a href="#浏览器有哪些进程和线程？" class="headerlink" title="浏览器有哪些进程和线程？"></a>浏览器有哪些进程和线程？</h3><p>浏览器是一个多进程多线程的应用程序。内部工作极其复杂。<br>为了避免相互影响，为了减少连环崩溃的几率，当启动浏览器后，它会自动启动多个进程。<br>最主要的进程有：<br>浏览器进程：主要负责界面显示，用户交互，子进程管理等。浏览器进程内部会启动多个线程处理不同的任务。<br>网络进程：负责加载网络资源。网络进程内部会启动多个线程来处理不同的网络任务。<br>渲染进程：渲染进程启动后，会开启一个渲染主线程，主线程负责执行HTML,CSS,JS代码，解析渲染页面。<br>默认情况下，浏览器会为每个标签页开启一个新的渲染进程，以保证不同的标签页之间不相互影响。</p>
+<h3 id="渲染主线程时如何工作的？"><a href="#渲染主线程时如何工作的？" class="headerlink" title="渲染主线程时如何工作的？"></a>渲染主线程时如何工作的？</h3><p>渲染主线程是浏览器中最繁忙的线程，需要它处理的任务包括但不限于：<br>解析HTML、CSS、计算样式，布局，处理图层，每秒把页面画60次即60HZ（主要是为了用户的浏览感知效果），执行全局JS代码，执行事件处理函数，执行计时器的回调函数。</p>
+<p>思考题：为什么渲染进程不适用多个线程来处理这些事情？</p>
+<p>渲染主线程想出了一个办法来处理同一时间来自多个线程的任务。即开启消息队列。<br>1.在最开始的时候，渲染主线程会进入一个无限循环<br>2.每一次循环会检查消息队列中是否有任务存在。如果有，则会取出第一个任务并执行，执行完一个后进入下一次循环；如果没有，则进入休眠状态。<br>3.其他所有线程（包括其他进程的线程）可以随时向消息队列添加任务。新任务会加到消息队列的末尾。在添加新任务使，如果主线程是休眠状态，则会将其唤醒以继续循环拿取任务。<br>整个过程被称之为事件循环。</p>
+<p>##何为异步<br>代码在执行过程中，会遇到一些无法立即处理的任务，比如：<br>计时完成后需要执行的任务–setTimeout()，setInterval()<br>网络通信完成后需要执行的任务–XHR，Fetch<br>用户操作后需要执行的任务–addEventListener()<br>如果让渲染主线程等待这些任务的时机达到，就会导致主线程长期处于【阻塞】的状态，从而导致浏览器【卡死】。例如计时器计时五秒钟，则不会等待五秒钟后才开始处理。</p>
+<p>所以计时器的原理：<br>1.渲染主线程会创建一个计时器对象，并将其添加到消息队列中。<br>2.当渲染主线程执行到计时器对象时，会通知计时器线程开始计时，并将计时器对象对应的任务结束。<br>3.渲染主线程继续执行消息队列中待处理的任务。计时线程开始计时<br>4.计时结束后，计时线程会将计时器对象对应的任务添加到消息队列中。<br>这就是异步的处理方式，渲染主线程永远不会阻塞。</p>
+<p>###面试题：如何解释js中的异步？<br>js是一门单线程的语言，这是因为它运行在浏览器的渲染主线程中，而渲染主线程只有一个，而渲染主线程承担着很多的工作，渲染页面，执行JS都在其中运行。<br>如果使用同步的方式，就极有可能导致主线程产生阻塞，从而导致消息队列中很多其他任务无法得到执行。<br>这样一来，一方面会导致繁忙的主线程白白的浪费时间，另一方面导致页面无法及时更新，给用户造成卡死现象。<br>所以，浏览器采用异步的方式避免，具体做法是当某些任务发生时，比如计时器，网络，事件监听，主线程将任务交给其他线程去处理，自身立即结束任务的执行，转而执行后续代码，当其他线程完成时，将事先传递的回调函数包装成任务（任务是一个对象！！），加入到消息队列的末尾排队，等待主线程调度执行。<br>在这种异步模式下，浏览器永不阻塞，从而最大限度的保证了单线程的流畅运行。</p>
+<p>###js是怎么阻碍渲染的？<br>因为js的渲染任务和一些计时器的任务都在渲染主线程上运行。当一个定义的计时器的函数被调用后，计时器之前的修改内容不会立即在主线程上渲染，而是会加载在消息队列中，等待主线程结束计时器的任务后，才会渲染。<br>因此会导致即使值发生了修改，但是不会立即渲染在页面。同理如果存在这种情况点击其他事件也不会立即响应，因为事件也在消息队列中，等待主线程执行。</p>
+<p>###任务有优先级吗？<br>任务没有优先级，在消息队列中先进先出。但是消息队列存在优先级。</p>
+<p>W3C的最新解释：<br>每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属于不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。<br>浏览器必须准备好一个微队列，微队列的任务优先所有其他任务执行。</p>
+<p>chrome浏览器的实现，至少包含了下面的队列：<br>延时队列：用于存放计时器到达后的回调任务，优先级【中】<br>交互队列：用于存放用户操作后产生的事件处理任务，优先级【高】<br>微队列：用户存放需要最快执行的任务，优先级【最高】</p>
+<p>添加任务到微队列的主要方式主要是使用promise，MutationObserver，requestAnimationFrame等。<br>promise：使用promise.resolve().then()方法可以将任务添加到微队列。</p>
+<p>！！！渲染主队列会将代码中所有需要执行的任务添加在消息队列中，按照消息队列的顺序执行，根据消息队列中不同类型的任务放置在不同的队列上，但是微队列优先级最高，所以微队列中的任务会优先执行。等待微队列中的任务执行完毕后，在看交互队列。其中使用promise会将任务直接防止在微队列中。</p>
+<p>面试题：阐述一下JS的事件循环机制：<br>事件循环又叫消息循环，是浏览器渲染主线程的工作方式。<br>在chrome的源码中，它开启一个不会结束的for循环，每次循环从消息队列中取出第一个任务执行，而其他线程只需要在合适的时候将任务加入到队列末尾即可。<br>过去把消息队列简单分为宏队列和微队列，这种说法目前已无法满足复杂的浏览器环境，取而代之的是一种更加灵活多变的处理方式。<br>根据W3C的最新解释，每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属于不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。但是浏览器必须准备好一个微队列，微队列的任务优先所有其他任务执行。</p>
+<p>面试题：JS中的计时器能做到精确计时吗？为什么？<br>不行，<br>1.计算机硬件没有原子钟，无法做到精确计时。<br>2.操作系统的计时函数本身就有少量偏差，因为js的计时器最终调用的是操作系统的函数，也就是有些偏差。<br>3.按照W3C的标准，浏览器实现计时器时，如果嵌套层数超过五层，则会带有4ms的等待时间。<br>4.受事件循环的影响，计时器的回调函数只能在主线程空闲时运行，因此带来了偏差。</p>
+]]></content>
+      <categories>
+        <category>前端学习</category>
+        <category>事件循环</category>
+      </categories>
+      <tags>
+        <tag>事件循环</tag>
+        <tag>前端学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>周记</title>
+    <url>/blog.github.io/2025/03/08/2025.3%20%E5%91%A8%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="周记"><a href="#周记" class="headerlink" title="周记"></a>周记</h1><h2 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h2><h3 id="3-3-3-4"><a href="#3-3-3-4" class="headerlink" title="3.3-3.4"></a>3.3-3.4</h3><p>编写了自己的毕业设计。实现了数据分析，数据可视化等功能。并使用nginx对项目进行反向代理。<br>主要技术栈为vue3+iview+echarts+python+flask+mysql。<br>线下面试了一家公司，面试岗位为前端开发（实习生）。<br>面试流程：一套笔试题，主要问到原型链，this指向，call，apply，bind。vue23的区别等技术栈。<br>但面试结束后告知我面试的岗位不招人了。。。。。。</p>
+<h3 id="3-5-3-6"><a href="#3-5-3-6" class="headerlink" title="3.5-3.6"></a>3.5-3.6</h3><p>接了一单毕业设计，实现多种功能，按照甲方的需求实现代码。主要针对于python爬虫，数据分析，数据可视化，Hadoop集群和hive。</p>
+<h3 id="3-7-3-8"><a href="#3-7-3-8" class="headerlink" title="3.7-3.8"></a>3.7-3.8</h3><p>1.面试了一家深圳的公司，面试岗位为前端开发（实习生）。主要面试了promise，echarts和个人项目的痛点。<br>2.修改了个人博客，增加了一些next主题的各种配置，添加了评论功能，修改了主题样式，没之前那么华丽了。</p>
+<h2 id="主要收获"><a href="#主要收获" class="headerlink" title="主要收获"></a>主要收获</h2><p>1.学会了使用DrissionPage对淘宝的母婴商品进行数据爬取，并进行数据分析和数据可视化。<br>2.对于简单系统的搭建有一定的了解。稍微熟悉了使用nginx反向代理。</p>
+<h2 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h2><p>能约到面试，但是自身的基础还是不太牢固。还是需要对于js，vue，css，html等基础知识进行巩固。</p>
+<h2 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h2><p>1.做一个简单的小程序项目，熟悉一下小程序开发。<br>2.争取开发一个网站，实现web前端知识的模拟练题。而不是只靠背，最好配合代码块。</p>
+<p>##3.10<br>场景：用户对于分页板块，进行多次点击页面按钮，发送了多次请求，需要正确的响应到最后一次的点击页面。<br>昨天复习到了一个知识点。关于xhr.abort()方法，可以取消xhr请求。可以用于用户多次点击按钮，重复多次请求时，确认正确的点击页面，取消上一次的请求。<br>涉及后端的话，可以给每次请求添加一个reqest_id，在响应中返回该id，前端根据id判断是否是最后一次的请求。<br>添加londing状态，从根源上解决问题。（降低用户体验）</p>
+<p>##3.10 -3.14<br>完整整个毕业论文整体流程和内容，是否完整需要指导老师的查看后再次修改。</p>
+]]></content>
+      <categories>
+        <category>周记</category>
+      </categories>
+      <tags>
+        <tag>周记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用DrissionPage进行高效的数据爬虫</title>
     <url>/blog.github.io/2025/03/07/%E7%AC%AC%E4%B9%9D%E7%AF%87%EF%BC%9A%E4%BD%BF%E7%94%A8DrissionPage%E8%BF%9B%E8%A1%8C%E9%AB%98%E6%95%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%88%AC%E8%99%AB/</url>
     <content><![CDATA[<h1 id="使用DrissionPage进行高效的数据爬虫"><a href="#使用DrissionPage进行高效的数据爬虫" class="headerlink" title="使用DrissionPage进行高效的数据爬虫"></a>使用DrissionPage进行高效的数据爬虫</h1><h2 id="1-DrissionPage简介"><a href="#1-DrissionPage简介" class="headerlink" title="1. DrissionPage简介"></a>1. DrissionPage简介</h2><p>DrissionPage是一个功能强大的Python爬虫库，它结合了Selenium和Requests的优点，提供了更简单的API和更高效的性能。</p>
@@ -757,6 +373,516 @@
         <tag>MySQL8.0</tag>
         <tag>centos7</tag>
         <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue基础</title>
+    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="Vue基础"><a href="#Vue基础" class="headerlink" title="Vue基础"></a>Vue基础</h1><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h3 id="Vue组件之间有哪些通信方式？"><a href="#Vue组件之间有哪些通信方式？" class="headerlink" title="Vue组件之间有哪些通信方式？"></a>Vue组件之间有哪些通信方式？</h3><p>组件通信的基本原则：谁向谁传，数据写在发送方。主要通信方式包括：</p>
+<ol>
+<li><strong>父传子</strong>：props</li>
+<li><strong>子传父</strong>：$emit</li>
+<li><strong>兄弟组件</strong>：<ul>
+<li>$attrs&#x2F;$emit</li>
+<li>$parent&#x2F;$root</li>
+<li>Vuex</li>
+<li>Event Bus($emit&#x2F;$on)</li>
+</ul>
+</li>
+</ol>
+<p>注：$attrs 是一个包含父组件传递给子组件但未在子组件的 props 中定义的属性的对象。</p>
+<h2 id="指令优先级"><a href="#指令优先级" class="headerlink" title="指令优先级"></a>指令优先级</h2><h3 id="v-if和v-for的优先级是怎样的？"><a href="#v-if和v-for的优先级是怎样的？" class="headerlink" title="v-if和v-for的优先级是怎样的？"></a>v-if和v-for的优先级是怎样的？</h3><ul>
+<li>Vue2中v-for优先级更高</li>
+<li>Vue3中v-if优先级更高</li>
+<li>官方文档明确表明不要在同一个标签中同时使用这两个指令</li>
+</ul>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="Vue的生命周期有哪些？各自的作用是什么？"><a href="#Vue的生命周期有哪些？各自的作用是什么？" class="headerlink" title="Vue的生命周期有哪些？各自的作用是什么？"></a>Vue的生命周期有哪些？各自的作用是什么？</h3><p><strong>Vue2生命周期：</strong></p>
+<ol>
+<li><p><strong>beforeCreate</strong></p>
+<ul>
+<li>在实例初始化之后，数据观测和事件配置之前调用</li>
+<li>用途：初始化操作，但不能访问响应式数据</li>
+</ul>
+</li>
+<li><p><strong>created</strong></p>
+<ul>
+<li>实例创建完成后调用</li>
+<li>已完成数据观测、属性和方法的运算，watch&#x2F;event事件回调</li>
+<li>用途：数据获取、事件监听等初始化操作</li>
+</ul>
+</li>
+<li><p><strong>beforeMount</strong></p>
+<ul>
+<li>挂载开始前调用</li>
+<li>用途：渲染前的准备工作，如数据格式化</li>
+</ul>
+</li>
+<li><p><strong>mounted</strong></p>
+<ul>
+<li>DOM挂载完成后调用</li>
+<li>用途：DOM操作、第三方库初始化</li>
+</ul>
+</li>
+<li><p><strong>beforeUpdate</strong></p>
+<ul>
+<li>数据更新时调用，发生在虚拟DOM打补丁之前</li>
+<li>用途：更新前访问现有DOM，如移除事件监听器</li>
+</ul>
+</li>
+<li><p><strong>updated</strong></p>
+<ul>
+<li>虚拟DOM重新渲染和打补丁之后调用</li>
+<li>用途：更新后的DOM操作，但应避免在此阶段更改状态</li>
+</ul>
+</li>
+<li><p><strong>beforeDestroy</strong></p>
+<ul>
+<li>实例销毁前调用</li>
+<li>用途：清理操作，如移除事件监听器、定时器</li>
+</ul>
+</li>
+<li><p><strong>destroyed</strong></p>
+<ul>
+<li>实例销毁后调用</li>
+<li>用途：最终的清理工作</li>
+</ul>
+</li>
+</ol>
+<p><strong>Vue3新增：</strong></p>
+<ul>
+<li><strong>setup</strong><ul>
+<li>在组件实例创建之前执行</li>
+<li>组合式API的入口</li>
+<li>可访问props和context，但不能访问this</li>
+</ul>
+</li>
+</ul>
+<h2 id="组件扩展"><a href="#组件扩展" class="headerlink" title="组件扩展"></a>组件扩展</h2><h3 id="如何扩展一个组件？"><a href="#如何扩展一个组件？" class="headerlink" title="如何扩展一个组件？"></a>如何扩展一个组件？</h3><ol>
+<li><strong>使用Composition API进行逻辑扩展</strong></li>
+<li><strong>使用slots进行内容扩展</strong><ul>
+<li>默认插槽</li>
+<li>具名插槽</li>
+<li>作用域插槽</li>
+</ul>
+</li>
+</ol>
+<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><h3 id="什么是虚拟DOM？有什么优点？"><a href="#什么是虚拟DOM？有什么优点？" class="headerlink" title="什么是虚拟DOM？有什么优点？"></a>什么是虚拟DOM？有什么优点？</h3><p>虚拟DOM是一个虚拟的DOM对象，本质是一个JS对象。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li>减少操作真实DOM的次数，提高程序性能</li>
+<li>方便实现跨平台</li>
+</ol>
+<h2 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h2><h3 id="Vue3相比Vue2有哪些重要的新特性？"><a href="#Vue3相比Vue2有哪些重要的新特性？" class="headerlink" title="Vue3相比Vue2有哪些重要的新特性？"></a>Vue3相比Vue2有哪些重要的新特性？</h3><ol>
+<li><p><strong>Composition API</strong></p>
+<ul>
+<li>用于组织和复用组件逻辑</li>
+<li>将相同功能的代码放在一起，便于管理</li>
+</ul>
+</li>
+<li><p><strong>响应式系统升级</strong></p>
+<ul>
+<li>使用Proxy替代Object.defineProperty</li>
+<li>更好的性能和更完整的响应式支持</li>
+</ul>
+</li>
+<li><p><strong>动态路由</strong></p>
+<ul>
+<li>更灵活的路由配置</li>
+<li>在params后添加反斜杠和冒号实现动态路由</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>前端框架</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>前端框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nginx基础</title>
+    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E5%85%AD%E7%AF%87%EF%BC%9ANginx%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="Nginx基础"><a href="#Nginx基础" class="headerlink" title="Nginx基础"></a>Nginx基础</h1><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><h3 id="什么是Nginx？为什么要使用它？"><a href="#什么是Nginx？为什么要使用它？" class="headerlink" title="什么是Nginx？为什么要使用它？"></a>什么是Nginx？为什么要使用它？</h3><p>Nginx是一个高性能的HTTP和反向代理服务器，同时也是一个IMAP&#x2F;POP3&#x2F;SMTP代理服务器。</p>
+<p><strong>使用背景：</strong></p>
+<ul>
+<li>解决服务器的负载均衡问题</li>
+<li>提高并发能力</li>
+<li>提高访问速度</li>
+</ul>
+<p><strong>特点：</strong></p>
+<ul>
+<li>占用内存少</li>
+<li>并发能力强</li>
+<li>稳定性高</li>
+<li>扩展性好</li>
+</ul>
+<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><h3 id="正向代理和反向代理有什么区别？"><a href="#正向代理和反向代理有什么区别？" class="headerlink" title="正向代理和反向代理有什么区别？"></a>正向代理和反向代理有什么区别？</h3><p><strong>正向代理：</strong></p>
+<ul>
+<li>代理服务器接收客户端的请求，并转发给目标服务器</li>
+<li>代理服务器在客户端和服务器之间起到中介作用</li>
+<li>示例：个人电脑使用VPN即为正向代理</li>
+</ul>
+<p><strong>反向代理：</strong></p>
+<ul>
+<li>服务器使用反向代理服务器，使客户端连接统一的URL</li>
+<li>客户端无感知地连接到不同的服务器</li>
+<li>示例：百度使用反向代理，访问同一域名实际连接到不同服务器</li>
+</ul>
+<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><h3 id="Nginx的负载均衡策略有哪些？"><a href="#Nginx的负载均衡策略有哪些？" class="headerlink" title="Nginx的负载均衡策略有哪些？"></a>Nginx的负载均衡策略有哪些？</h3><ol>
+<li><p><strong>轮询</strong></p>
+<ul>
+<li>按时间顺序逐一分配到不同后端服务器</li>
+<li>自动剔除宕机的服务器</li>
+</ul>
+</li>
+<li><p><strong>加权轮询</strong></p>
+<ul>
+<li>根据服务器性能差异分配不同权重</li>
+<li>性能高的服务器分配更高的权重</li>
+</ul>
+</li>
+<li><p><strong>ip_hash</strong></p>
+<ul>
+<li>根据客户端IP地址分配请求</li>
+<li>保持用户请求固定分配到同一台服务器</li>
+</ul>
+</li>
+</ol>
+<h2 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h2><h3 id="Nginx的常用命令有哪些？"><a href="#Nginx的常用命令有哪些？" class="headerlink" title="Nginx的常用命令有哪些？"></a>Nginx的常用命令有哪些？</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./nginx         <span class="comment"># 启动</span></span><br><span class="line">./nginx -s stop <span class="comment"># 停止</span></span><br><span class="line">./nginx -s quit <span class="comment"># 退出</span></span><br><span class="line">./nginx -s reload <span class="comment"># 重新加载</span></span><br><span class="line">./nginx -t     <span class="comment"># 检查配置文件</span></span><br><span class="line">ps -ef | grep nginx <span class="comment"># 查看nginx进程</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Nginx的配置文件结构是怎样的？"><a href="#Nginx的配置文件结构是怎样的？" class="headerlink" title="Nginx的配置文件结构是怎样的？"></a>Nginx的配置文件结构是怎样的？</h3><ol>
+<li><p><strong>全局配置</strong></p>
+<ul>
+<li>影响nginx全局的指令</li>
+<li>包含用户组、进程数、日志路径等</li>
+</ul>
+</li>
+<li><p><strong>events配置</strong></p>
+<ul>
+<li>影响nginx服务器与用户的网络连接</li>
+<li>包含连接数、事件驱动模型等</li>
+</ul>
+</li>
+<li><p><strong>http配置</strong></p>
+<ul>
+<li>代理、缓存、日志定义等配置</li>
+<li>第三方模块的配置</li>
+</ul>
+</li>
+</ol>
+<h2 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h2><h3 id="如何配置反向代理和负载均衡？"><a href="#如何配置反向代理和负载均衡？" class="headerlink" title="如何配置反向代理和负载均衡？"></a>如何配置反向代理和负载均衡？</h3><p><strong>反向代理配置：</strong></p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">proxy_pass</span> http://backend_server;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="负载均衡配置："><a href="#负载均衡配置：" class="headerlink" title="负载均衡配置："></a><strong>负载均衡配置：</strong><br><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">upstream</span> backend_servers &#123;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.1:80</span> weight=<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.2:80</span> weight=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> localhost;</span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://backend_servers;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></h2><h2 id="新添加知识-–2025-03-02"><a href="#新添加知识-–2025-03-02" class="headerlink" title="新添加知识  –2025-03-02"></a>新添加知识  –2025-03-02</h2><h3 id="如何使用nginx部署前后端分离项目的生产环境？"><a href="#如何使用nginx部署前后端分离项目的生产环境？" class="headerlink" title="如何使用nginx部署前后端分离项目的生产环境？"></a>如何使用nginx部署前后端分离项目的生产环境？</h3><p><strong>前提条件：</strong></p>
+<ul>
+<li>前端项目已经部署完成，静态资源已经生成。</li>
+<li>后端项目已经编译打包完成，生成可执行文件<br><strong>步骤：</strong></li>
+</ul>
+<ol>
+<li>安装nginx<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install nginx</span><br></pre></td></tr></table></figure></li>
+<li>配置nginx<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> www.example.com; <span class="comment">#如果使用的是前端部署打包好的静态资源，则root指向静态资源的目录，否则指向后端项目的可执行文件目录。好处：和前端部署工具的开发环境隔离开，形成两个不同的环境。有利于开发</span></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span> /var/www/html; <span class="comment">#指向前端项目的静态资源目录</span></span><br><span class="line">        <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>启动nginx<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nginx -s reload</span><br></pre></td></tr></table></figure></li>
+<li>启动后端项目<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./backend</span><br></pre></td></tr></table></figure></li>
+<li>浏览器访问<a href="http://www.example.com/">http://www.example.com</a></li>
+</ol>
+<h2 id="vite和Nginx的结合"><a href="#vite和Nginx的结合" class="headerlink" title="vite和Nginx的结合"></a>vite和Nginx的结合</h2><p>vite特点：实现开发环境的热更新，和快速的开发服务器。利用的时ES模块的特性。利于开发环境。代理配置只适用于开发环境。<br>开发环境配置：.env,<br>nginx特点：高性能的反向代理服务器，同时用于生产环境中提供静态内容服务。同时还具备负载均衡的功能。<br>在前后端分离项目时候，vite用于构建前端应用，生成静态文件，构建完成后，静态文件可以部署到Nginx服务器上，</p>
+]]></content>
+      <categories>
+        <category>反向代理</category>
+      </categories>
+      <tags>
+        <tag>Nginx</tag>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript基础</title>
+    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%BA%94%E7%AF%87%EF%BC%9AJavaScript%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="防抖和节流的区别及应用场景？"><a href="#防抖和节流的区别及应用场景？" class="headerlink" title="防抖和节流的区别及应用场景？"></a>防抖和节流的区别及应用场景？</h3><p><strong>防抖(Debounce)：</strong></p>
+<ul>
+<li>定义：多次点击同一个按钮，只响应最后一次</li>
+<li>应用：search搜索时，用户不断输入值，用防抖来节约请求资源</li>
+</ul>
+<p><strong>节流(Throttle)：</strong></p>
+<ul>
+<li>定义：高频率触发的事件，指定单位时间内只响应第一次</li>
+<li>应用：<ul>
+<li>鼠标不断点击触发mousedown(单位时间内只触发一次)</li>
+<li>监听滚动事件</li>
+</ul>
+</li>
+</ul>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="什么是闭包？它的作用和问题是什么？"><a href="#什么是闭包？它的作用和问题是什么？" class="headerlink" title="什么是闭包？它的作用和问题是什么？"></a>什么是闭包？它的作用和问题是什么？</h3><p><strong>定义：</strong><br>一个函数内部定义的函数可以访问其外部函数的变量，即使外部函数已执行完毕。</p>
+<p><strong>作用：</strong></p>
+<ul>
+<li>创建私有变量</li>
+<li>延长变量的生命周期</li>
+<li>减少全局变量的定义</li>
+<li>避免全局变量的污染</li>
+</ul>
+<p><strong>内存泄漏问题：</strong></p>
+<ul>
+<li>原因：不再使用的内存没有及时释放</li>
+<li>解决方法：<ul>
+<li>及时清理不再需要的引用</li>
+<li>避免不必要的全局变量</li>
+<li>减少DOM引用</li>
+<li>使用弱引用</li>
+</ul>
+</li>
+</ul>
+<h2 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h2><h3 id="请详细说明原型和原型链的概念及关系"><a href="#请详细说明原型和原型链的概念及关系" class="headerlink" title="请详细说明原型和原型链的概念及关系"></a>请详细说明原型和原型链的概念及关系</h3><p><strong>构造函数与实例：</strong></p>
+<ul>
+<li>new一个构造函数会形成它的实例对象</li>
+<li>每个构造函数都有prototype原型对象</li>
+<li>prototype原型对象里的constructor指向构造函数</li>
+<li>每个实例对象都有__proto__对象指向原型对象</li>
+</ul>
+<p><strong>原型对象：</strong></p>
+<ul>
+<li>是一个公共容器</li>
+<li>特定类型所有实例对象都可以访问</li>
+</ul>
+<p><strong>原型链：</strong></p>
+<ul>
+<li>每个对象都可以有一个原型</li>
+<li>原型还可以有它自己的原型</li>
+<li>属性查找机制：当需要查找一个对象的属性时，如果对象本身没有这个属性，则会沿着原型链向上查找</li>
+</ul>
+<h2 id="作用域与变量提升"><a href="#作用域与变量提升" class="headerlink" title="作用域与变量提升"></a>作用域与变量提升</h2><h3 id="var、let、const的区别是什么？"><a href="#var、let、const的区别是什么？" class="headerlink" title="var、let、const的区别是什么？"></a>var、let、const的区别是什么？</h3><p><strong>声明方式：</strong></p>
+<ol>
+<li><p><strong>var</strong></p>
+<ul>
+<li>存在变量提升</li>
+<li>可以重复声明</li>
+<li>函数作用域</li>
+</ul>
+</li>
+<li><p><strong>let</strong></p>
+<ul>
+<li>不存在变量提升</li>
+<li>不可重复声明</li>
+<li>块级作用域</li>
+<li>暂时性死区</li>
+</ul>
+</li>
+<li><p><strong>const</strong></p>
+<ul>
+<li>声明时必须赋值</li>
+<li>不可重复声明</li>
+<li>块级作用域</li>
+<li>不可修改（对象属性可修改）</li>
+</ul>
+</li>
+</ol>
+<h2 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h2><h3 id="Promise、async-await、Generator的区别和使用场景？"><a href="#Promise、async-await、Generator的区别和使用场景？" class="headerlink" title="Promise、async&#x2F;await、Generator的区别和使用场景？"></a>Promise、async&#x2F;await、Generator的区别和使用场景？</h3><ol>
+<li><p><strong>Promise</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 异步操作</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="comment">/* 成功 */</span>) &#123;</span><br><span class="line">    <span class="title function_">resolve</span>(value)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">reject</span>(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>async&#x2F;await</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="title function_">fetchData</span>()</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Generator</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">gen</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Event-Loop（事件循环）机制是什么？"><a href="#Event-Loop（事件循环）机制是什么？" class="headerlink" title="Event Loop（事件循环）机制是什么？"></a>Event Loop（事件循环）机制是什么？</h3><p><strong>执行顺序：</strong></p>
+<ol>
+<li>同步代码</li>
+<li>微任务队列<ul>
+<li>Promise.then</li>
+<li>MutationObserver</li>
+<li>process.nextTick(Node.js)</li>
+</ul>
+</li>
+<li>宏任务队列<ul>
+<li>setTimeout&#x2F;setInterval</li>
+<li>setImmediate(Node.js)</li>
+<li>requestAnimationFrame(浏览器)</li>
+</ul>
+</li>
+</ol>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="JavaScript有哪些数据类型？如何判断？"><a href="#JavaScript有哪些数据类型？如何判断？" class="headerlink" title="JavaScript有哪些数据类型？如何判断？"></a>JavaScript有哪些数据类型？如何判断？</h3><p><strong>基本数据类型：</strong></p>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Undefined</li>
+<li>Null</li>
+<li>Symbol(ES6)</li>
+<li>BigInt(ES2020)</li>
+</ul>
+<p><strong>引用数据类型：</strong></p>
+<ul>
+<li>Object</li>
+<li>Array</li>
+<li>Function</li>
+<li>Date</li>
+<li>RegExp</li>
+</ul>
+<p><strong>类型判断方法：</strong></p>
+<ol>
+<li>typeof</li>
+<li>instanceof</li>
+<li>Object.prototype.toString.call()</li>
+<li>Array.isArray()</li>
+</ol>
+<h2 id="ES6-新特性"><a href="#ES6-新特性" class="headerlink" title="ES6+新特性"></a>ES6+新特性</h2><h3 id="ES6及以后版本有哪些重要特性？"><a href="#ES6及以后版本有哪些重要特性？" class="headerlink" title="ES6及以后版本有哪些重要特性？"></a>ES6及以后版本有哪些重要特性？</h3><ol>
+<li><p><strong>ES6(ES2015)</strong></p>
+<ul>
+<li>let&#x2F;const</li>
+<li>箭头函数</li>
+<li>解构赋值</li>
+<li>Promise</li>
+<li>Class</li>
+<li>Module</li>
+<li>Symbol</li>
+<li>Set&#x2F;Map</li>
+</ul>
+</li>
+<li><p><strong>ES7(ES2016)</strong></p>
+<ul>
+<li>Array.prototype.includes()</li>
+<li>指数运算符(**)</li>
+</ul>
+</li>
+<li><p><strong>ES8(ES2017)</strong></p>
+<ul>
+<li>async&#x2F;await</li>
+<li>Object.values&#x2F;entries</li>
+<li>String padding</li>
+</ul>
+</li>
+<li><p><strong>ES9(ES2018)</strong></p>
+<ul>
+<li>异步迭代</li>
+<li>Rest&#x2F;Spread 属性</li>
+<li>Promise.finally()</li>
+</ul>
+</li>
+<li><p><strong>ES10(ES2019)</strong></p>
+<ul>
+<li>Array.prototype.flat()</li>
+<li>Object.fromEntries()</li>
+</ul>
+</li>
+</ol>
+<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="DOM操作的常用方法有哪些？"><a href="#DOM操作的常用方法有哪些？" class="headerlink" title="DOM操作的常用方法有哪些？"></a>DOM操作的常用方法有哪些？</h3><p><strong>节点查找：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>()</span><br></pre></td></tr></table></figure>
+
+<p><strong>节点操作：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">createElement</span>()</span><br><span class="line"><span class="title function_">appendChild</span>()</span><br><span class="line"><span class="title function_">removeChild</span>()</span><br><span class="line"><span class="title function_">replaceChild</span>()</span><br><span class="line"><span class="title function_">insertBefore</span>()</span><br></pre></td></tr></table></figure>
+
+<p><strong>属性操作：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">getAttribute</span>()</span><br><span class="line"><span class="title function_">setAttribute</span>()</span><br><span class="line"><span class="title function_">hasAttribute</span>()</span><br><span class="line"><span class="title function_">removeAttribute</span>()</span><br></pre></td></tr></table></figure>
+
+<h2 id="性能优化-1"><a href="#性能优化-1" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="JavaScript性能优化的方法有哪些？"><a href="#JavaScript性能优化的方法有哪些？" class="headerlink" title="JavaScript性能优化的方法有哪些？"></a>JavaScript性能优化的方法有哪些？</h3><ol>
+<li><p><strong>代码层面</strong></p>
+<ul>
+<li>减少DOM操作</li>
+<li>使用事件委托</li>
+<li>防抖节流</li>
+<li>避免全局变量</li>
+<li>使用Web Workers处理大量计算</li>
+</ul>
+</li>
+<li><p><strong>加载优化</strong></p>
+<ul>
+<li>代码分割</li>
+<li>懒加载</li>
+<li>预加载</li>
+<li>缓存机制</li>
+<li>CDN加速</li>
+</ul>
+</li>
+<li><p><strong>执行优化</strong></p>
+<ul>
+<li>避免内存泄漏</li>
+<li>减少回流重绘</li>
+<li>使用requestAnimationFrame</li>
+<li>优化循环</li>
+</ul>
+</li>
+</ol>
+<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="JavaScript常用的设计模式有哪些？"><a href="#JavaScript常用的设计模式有哪些？" class="headerlink" title="JavaScript常用的设计模式有哪些？"></a>JavaScript常用的设计模式有哪些？</h3><ol>
+<li><p><strong>单例模式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Singleton</span> = (<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> instance</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="title function_">getInstance</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!instance) &#123;</span><br><span class="line">        instance = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> instance</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>观察者模式</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Subject</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">observers</span> = []</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">addObserver</span>(<span class="params">observer</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">observers</span>.<span class="title function_">push</span>(observer)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">notify</span>(<span class="params">data</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">observers</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">observer</span> =&gt;</span> observer.<span class="title function_">update</span>(data))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>工厂模式</strong></p>
+</li>
+<li><p><strong>代理模式</strong></p>
+</li>
+<li><p><strong>策略模式</strong></p>
+</li>
+<li><p><strong>发布订阅模式</strong></p>
+</li>
+</ol>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="模块化的规范有哪些？"><a href="#模块化的规范有哪些？" class="headerlink" title="模块化的规范有哪些？"></a>模块化的规范有哪些？</h3><ol>
+<li><p><strong>CommonJS</strong></p>
+<ul>
+<li>Node.js采用</li>
+<li>require&#x2F;module.exports</li>
+<li>同步加载</li>
+</ul>
+</li>
+<li><p><strong>AMD</strong></p>
+<ul>
+<li>RequireJS实现</li>
+<li>define&#x2F;require</li>
+<li>异步加载</li>
+</ul>
+</li>
+<li><p><strong>ES6 Module</strong></p>
+<ul>
+<li>import&#x2F;export</li>
+<li>静态分析</li>
+<li>树摇优化</li>
+</ul>
+</li>
+</ol>
+<h2 id="浏览器存储"><a href="#浏览器存储" class="headerlink" title="浏览器存储"></a>浏览器存储</h2><h3 id="浏览器存储方式有哪些？"><a href="#浏览器存储方式有哪些？" class="headerlink" title="浏览器存储方式有哪些？"></a>浏览器存储方式有哪些？</h3><ol>
+<li><p><strong>Cookie</strong></p>
+<ul>
+<li>大小限制4KB</li>
+<li>随HTTP请求发送</li>
+<li>可设置过期时间</li>
+</ul>
+</li>
+<li><p><strong>localStorage</strong></p>
+<ul>
+<li>永久存储</li>
+<li>大小一般为5MB</li>
+<li>不随请求发送</li>
+</ul>
+</li>
+<li><p><strong>sessionStorage</strong></p>
+<ul>
+<li>会话期间存储</li>
+<li>标签页隔离</li>
+<li>大小一般为5MB</li>
+</ul>
+</li>
+<li><p><strong>IndexedDB</strong></p>
+<ul>
+<li>键值对存储</li>
+<li>支持索引</li>
+<li>异步操作</li>
+<li>支持事务</li>
+</ul>
+</li>
+</ol>
+<p>原文链接：<a href="https://blog.csdn.net/weixin_43106777/article/details/96842011">https://blog.csdn.net/weixin_43106777&#x2F;article&#x2F;details&#x2F;96842011</a> </p>
+]]></content>
+      <categories>
+        <category>前端学习</category>
+      </categories>
+      <tags>
+        <tag>前端基础</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -1073,390 +1199,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JavaScript基础</title>
-    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%BA%94%E7%AF%87%EF%BC%9AJavaScript%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="防抖和节流的区别及应用场景？"><a href="#防抖和节流的区别及应用场景？" class="headerlink" title="防抖和节流的区别及应用场景？"></a>防抖和节流的区别及应用场景？</h3><p><strong>防抖(Debounce)：</strong></p>
-<ul>
-<li>定义：多次点击同一个按钮，只响应最后一次</li>
-<li>应用：search搜索时，用户不断输入值，用防抖来节约请求资源</li>
-</ul>
-<p><strong>节流(Throttle)：</strong></p>
-<ul>
-<li>定义：高频率触发的事件，指定单位时间内只响应第一次</li>
-<li>应用：<ul>
-<li>鼠标不断点击触发mousedown(单位时间内只触发一次)</li>
-<li>监听滚动事件</li>
-</ul>
-</li>
-</ul>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h3 id="什么是闭包？它的作用和问题是什么？"><a href="#什么是闭包？它的作用和问题是什么？" class="headerlink" title="什么是闭包？它的作用和问题是什么？"></a>什么是闭包？它的作用和问题是什么？</h3><p><strong>定义：</strong><br>一个函数内部定义的函数可以访问其外部函数的变量，即使外部函数已执行完毕。</p>
-<p><strong>作用：</strong></p>
-<ul>
-<li>创建私有变量</li>
-<li>延长变量的生命周期</li>
-<li>减少全局变量的定义</li>
-<li>避免全局变量的污染</li>
-</ul>
-<p><strong>内存泄漏问题：</strong></p>
-<ul>
-<li>原因：不再使用的内存没有及时释放</li>
-<li>解决方法：<ul>
-<li>及时清理不再需要的引用</li>
-<li>避免不必要的全局变量</li>
-<li>减少DOM引用</li>
-<li>使用弱引用</li>
-</ul>
-</li>
-</ul>
-<h2 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h2><h3 id="请详细说明原型和原型链的概念及关系"><a href="#请详细说明原型和原型链的概念及关系" class="headerlink" title="请详细说明原型和原型链的概念及关系"></a>请详细说明原型和原型链的概念及关系</h3><p><strong>构造函数与实例：</strong></p>
-<ul>
-<li>new一个构造函数会形成它的实例对象</li>
-<li>每个构造函数都有prototype原型对象</li>
-<li>prototype原型对象里的constructor指向构造函数</li>
-<li>每个实例对象都有__proto__对象指向原型对象</li>
-</ul>
-<p><strong>原型对象：</strong></p>
-<ul>
-<li>是一个公共容器</li>
-<li>特定类型所有实例对象都可以访问</li>
-</ul>
-<p><strong>原型链：</strong></p>
-<ul>
-<li>每个对象都可以有一个原型</li>
-<li>原型还可以有它自己的原型</li>
-<li>属性查找机制：当需要查找一个对象的属性时，如果对象本身没有这个属性，则会沿着原型链向上查找</li>
-</ul>
-<h2 id="作用域与变量提升"><a href="#作用域与变量提升" class="headerlink" title="作用域与变量提升"></a>作用域与变量提升</h2><h3 id="var、let、const的区别是什么？"><a href="#var、let、const的区别是什么？" class="headerlink" title="var、let、const的区别是什么？"></a>var、let、const的区别是什么？</h3><p><strong>声明方式：</strong></p>
-<ol>
-<li><p><strong>var</strong></p>
-<ul>
-<li>存在变量提升</li>
-<li>可以重复声明</li>
-<li>函数作用域</li>
-</ul>
-</li>
-<li><p><strong>let</strong></p>
-<ul>
-<li>不存在变量提升</li>
-<li>不可重复声明</li>
-<li>块级作用域</li>
-<li>暂时性死区</li>
-</ul>
-</li>
-<li><p><strong>const</strong></p>
-<ul>
-<li>声明时必须赋值</li>
-<li>不可重复声明</li>
-<li>块级作用域</li>
-<li>不可修改（对象属性可修改）</li>
-</ul>
-</li>
-</ol>
-<h2 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h2><h3 id="Promise、async-await、Generator的区别和使用场景？"><a href="#Promise、async-await、Generator的区别和使用场景？" class="headerlink" title="Promise、async&#x2F;await、Generator的区别和使用场景？"></a>Promise、async&#x2F;await、Generator的区别和使用场景？</h3><ol>
-<li><p><strong>Promise</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 异步操作</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="comment">/* 成功 */</span>) &#123;</span><br><span class="line">    <span class="title function_">resolve</span>(value)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">reject</span>(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>async&#x2F;await</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">getData</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">await</span> <span class="title function_">fetchData</span>()</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">error</span>(error)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>Generator</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">gen</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">yield</span> <span class="number">2</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="Event-Loop（事件循环）机制是什么？"><a href="#Event-Loop（事件循环）机制是什么？" class="headerlink" title="Event Loop（事件循环）机制是什么？"></a>Event Loop（事件循环）机制是什么？</h3><p><strong>执行顺序：</strong></p>
-<ol>
-<li>同步代码</li>
-<li>微任务队列<ul>
-<li>Promise.then</li>
-<li>MutationObserver</li>
-<li>process.nextTick(Node.js)</li>
-</ul>
-</li>
-<li>宏任务队列<ul>
-<li>setTimeout&#x2F;setInterval</li>
-<li>setImmediate(Node.js)</li>
-<li>requestAnimationFrame(浏览器)</li>
-</ul>
-</li>
-</ol>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="JavaScript有哪些数据类型？如何判断？"><a href="#JavaScript有哪些数据类型？如何判断？" class="headerlink" title="JavaScript有哪些数据类型？如何判断？"></a>JavaScript有哪些数据类型？如何判断？</h3><p><strong>基本数据类型：</strong></p>
-<ul>
-<li>Number</li>
-<li>String</li>
-<li>Boolean</li>
-<li>Undefined</li>
-<li>Null</li>
-<li>Symbol(ES6)</li>
-<li>BigInt(ES2020)</li>
-</ul>
-<p><strong>引用数据类型：</strong></p>
-<ul>
-<li>Object</li>
-<li>Array</li>
-<li>Function</li>
-<li>Date</li>
-<li>RegExp</li>
-</ul>
-<p><strong>类型判断方法：</strong></p>
-<ol>
-<li>typeof</li>
-<li>instanceof</li>
-<li>Object.prototype.toString.call()</li>
-<li>Array.isArray()</li>
-</ol>
-<h2 id="ES6-新特性"><a href="#ES6-新特性" class="headerlink" title="ES6+新特性"></a>ES6+新特性</h2><h3 id="ES6及以后版本有哪些重要特性？"><a href="#ES6及以后版本有哪些重要特性？" class="headerlink" title="ES6及以后版本有哪些重要特性？"></a>ES6及以后版本有哪些重要特性？</h3><ol>
-<li><p><strong>ES6(ES2015)</strong></p>
-<ul>
-<li>let&#x2F;const</li>
-<li>箭头函数</li>
-<li>解构赋值</li>
-<li>Promise</li>
-<li>Class</li>
-<li>Module</li>
-<li>Symbol</li>
-<li>Set&#x2F;Map</li>
-</ul>
-</li>
-<li><p><strong>ES7(ES2016)</strong></p>
-<ul>
-<li>Array.prototype.includes()</li>
-<li>指数运算符(**)</li>
-</ul>
-</li>
-<li><p><strong>ES8(ES2017)</strong></p>
-<ul>
-<li>async&#x2F;await</li>
-<li>Object.values&#x2F;entries</li>
-<li>String padding</li>
-</ul>
-</li>
-<li><p><strong>ES9(ES2018)</strong></p>
-<ul>
-<li>异步迭代</li>
-<li>Rest&#x2F;Spread 属性</li>
-<li>Promise.finally()</li>
-</ul>
-</li>
-<li><p><strong>ES10(ES2019)</strong></p>
-<ul>
-<li>Array.prototype.flat()</li>
-<li>Object.fromEntries()</li>
-</ul>
-</li>
-</ol>
-<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="DOM操作的常用方法有哪些？"><a href="#DOM操作的常用方法有哪些？" class="headerlink" title="DOM操作的常用方法有哪些？"></a>DOM操作的常用方法有哪些？</h3><p><strong>节点查找：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelector</span>()</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>()</span><br></pre></td></tr></table></figure>
-
-<p><strong>节点操作：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">createElement</span>()</span><br><span class="line"><span class="title function_">appendChild</span>()</span><br><span class="line"><span class="title function_">removeChild</span>()</span><br><span class="line"><span class="title function_">replaceChild</span>()</span><br><span class="line"><span class="title function_">insertBefore</span>()</span><br></pre></td></tr></table></figure>
-
-<p><strong>属性操作：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">getAttribute</span>()</span><br><span class="line"><span class="title function_">setAttribute</span>()</span><br><span class="line"><span class="title function_">hasAttribute</span>()</span><br><span class="line"><span class="title function_">removeAttribute</span>()</span><br></pre></td></tr></table></figure>
-
-<h2 id="性能优化-1"><a href="#性能优化-1" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="JavaScript性能优化的方法有哪些？"><a href="#JavaScript性能优化的方法有哪些？" class="headerlink" title="JavaScript性能优化的方法有哪些？"></a>JavaScript性能优化的方法有哪些？</h3><ol>
-<li><p><strong>代码层面</strong></p>
-<ul>
-<li>减少DOM操作</li>
-<li>使用事件委托</li>
-<li>防抖节流</li>
-<li>避免全局变量</li>
-<li>使用Web Workers处理大量计算</li>
-</ul>
-</li>
-<li><p><strong>加载优化</strong></p>
-<ul>
-<li>代码分割</li>
-<li>懒加载</li>
-<li>预加载</li>
-<li>缓存机制</li>
-<li>CDN加速</li>
-</ul>
-</li>
-<li><p><strong>执行优化</strong></p>
-<ul>
-<li>避免内存泄漏</li>
-<li>减少回流重绘</li>
-<li>使用requestAnimationFrame</li>
-<li>优化循环</li>
-</ul>
-</li>
-</ol>
-<h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="JavaScript常用的设计模式有哪些？"><a href="#JavaScript常用的设计模式有哪些？" class="headerlink" title="JavaScript常用的设计模式有哪些？"></a>JavaScript常用的设计模式有哪些？</h3><ol>
-<li><p><strong>单例模式</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Singleton</span> = (<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> instance</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="title function_">getInstance</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!instance) &#123;</span><br><span class="line">        instance = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> instance</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>观察者模式</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Subject</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">observers</span> = []</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">addObserver</span>(<span class="params">observer</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">observers</span>.<span class="title function_">push</span>(observer)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="title function_">notify</span>(<span class="params">data</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">observers</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">observer</span> =&gt;</span> observer.<span class="title function_">update</span>(data))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>工厂模式</strong></p>
-</li>
-<li><p><strong>代理模式</strong></p>
-</li>
-<li><p><strong>策略模式</strong></p>
-</li>
-<li><p><strong>发布订阅模式</strong></p>
-</li>
-</ol>
-<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="模块化的规范有哪些？"><a href="#模块化的规范有哪些？" class="headerlink" title="模块化的规范有哪些？"></a>模块化的规范有哪些？</h3><ol>
-<li><p><strong>CommonJS</strong></p>
-<ul>
-<li>Node.js采用</li>
-<li>require&#x2F;module.exports</li>
-<li>同步加载</li>
-</ul>
-</li>
-<li><p><strong>AMD</strong></p>
-<ul>
-<li>RequireJS实现</li>
-<li>define&#x2F;require</li>
-<li>异步加载</li>
-</ul>
-</li>
-<li><p><strong>ES6 Module</strong></p>
-<ul>
-<li>import&#x2F;export</li>
-<li>静态分析</li>
-<li>树摇优化</li>
-</ul>
-</li>
-</ol>
-<h2 id="浏览器存储"><a href="#浏览器存储" class="headerlink" title="浏览器存储"></a>浏览器存储</h2><h3 id="浏览器存储方式有哪些？"><a href="#浏览器存储方式有哪些？" class="headerlink" title="浏览器存储方式有哪些？"></a>浏览器存储方式有哪些？</h3><ol>
-<li><p><strong>Cookie</strong></p>
-<ul>
-<li>大小限制4KB</li>
-<li>随HTTP请求发送</li>
-<li>可设置过期时间</li>
-</ul>
-</li>
-<li><p><strong>localStorage</strong></p>
-<ul>
-<li>永久存储</li>
-<li>大小一般为5MB</li>
-<li>不随请求发送</li>
-</ul>
-</li>
-<li><p><strong>sessionStorage</strong></p>
-<ul>
-<li>会话期间存储</li>
-<li>标签页隔离</li>
-<li>大小一般为5MB</li>
-</ul>
-</li>
-<li><p><strong>IndexedDB</strong></p>
-<ul>
-<li>键值对存储</li>
-<li>支持索引</li>
-<li>异步操作</li>
-<li>支持事务</li>
-</ul>
-</li>
-</ol>
-<p>原文链接：<a href="https://blog.csdn.net/weixin_43106777/article/details/96842011">https://blog.csdn.net/weixin_43106777&#x2F;article&#x2F;details&#x2F;96842011</a> </p>
-]]></content>
-      <categories>
-        <category>前端学习</category>
-      </categories>
-      <tags>
-        <tag>前端基础</tag>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Nginx基础</title>
-    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E5%85%AD%E7%AF%87%EF%BC%9ANginx%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="Nginx基础"><a href="#Nginx基础" class="headerlink" title="Nginx基础"></a>Nginx基础</h1><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><h3 id="什么是Nginx？为什么要使用它？"><a href="#什么是Nginx？为什么要使用它？" class="headerlink" title="什么是Nginx？为什么要使用它？"></a>什么是Nginx？为什么要使用它？</h3><p>Nginx是一个高性能的HTTP和反向代理服务器，同时也是一个IMAP&#x2F;POP3&#x2F;SMTP代理服务器。</p>
-<p><strong>使用背景：</strong></p>
-<ul>
-<li>解决服务器的负载均衡问题</li>
-<li>提高并发能力</li>
-<li>提高访问速度</li>
-</ul>
-<p><strong>特点：</strong></p>
-<ul>
-<li>占用内存少</li>
-<li>并发能力强</li>
-<li>稳定性高</li>
-<li>扩展性好</li>
-</ul>
-<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><h3 id="正向代理和反向代理有什么区别？"><a href="#正向代理和反向代理有什么区别？" class="headerlink" title="正向代理和反向代理有什么区别？"></a>正向代理和反向代理有什么区别？</h3><p><strong>正向代理：</strong></p>
-<ul>
-<li>代理服务器接收客户端的请求，并转发给目标服务器</li>
-<li>代理服务器在客户端和服务器之间起到中介作用</li>
-<li>示例：个人电脑使用VPN即为正向代理</li>
-</ul>
-<p><strong>反向代理：</strong></p>
-<ul>
-<li>服务器使用反向代理服务器，使客户端连接统一的URL</li>
-<li>客户端无感知地连接到不同的服务器</li>
-<li>示例：百度使用反向代理，访问同一域名实际连接到不同服务器</li>
-</ul>
-<h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><h3 id="Nginx的负载均衡策略有哪些？"><a href="#Nginx的负载均衡策略有哪些？" class="headerlink" title="Nginx的负载均衡策略有哪些？"></a>Nginx的负载均衡策略有哪些？</h3><ol>
-<li><p><strong>轮询</strong></p>
-<ul>
-<li>按时间顺序逐一分配到不同后端服务器</li>
-<li>自动剔除宕机的服务器</li>
-</ul>
-</li>
-<li><p><strong>加权轮询</strong></p>
-<ul>
-<li>根据服务器性能差异分配不同权重</li>
-<li>性能高的服务器分配更高的权重</li>
-</ul>
-</li>
-<li><p><strong>ip_hash</strong></p>
-<ul>
-<li>根据客户端IP地址分配请求</li>
-<li>保持用户请求固定分配到同一台服务器</li>
-</ul>
-</li>
-</ol>
-<h2 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h2><h3 id="Nginx的常用命令有哪些？"><a href="#Nginx的常用命令有哪些？" class="headerlink" title="Nginx的常用命令有哪些？"></a>Nginx的常用命令有哪些？</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./nginx         <span class="comment"># 启动</span></span><br><span class="line">./nginx -s stop <span class="comment"># 停止</span></span><br><span class="line">./nginx -s quit <span class="comment"># 退出</span></span><br><span class="line">./nginx -s reload <span class="comment"># 重新加载</span></span><br><span class="line">./nginx -t     <span class="comment"># 检查配置文件</span></span><br><span class="line">ps -ef | grep nginx <span class="comment"># 查看nginx进程</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Nginx的配置文件结构是怎样的？"><a href="#Nginx的配置文件结构是怎样的？" class="headerlink" title="Nginx的配置文件结构是怎样的？"></a>Nginx的配置文件结构是怎样的？</h3><ol>
-<li><p><strong>全局配置</strong></p>
-<ul>
-<li>影响nginx全局的指令</li>
-<li>包含用户组、进程数、日志路径等</li>
-</ul>
-</li>
-<li><p><strong>events配置</strong></p>
-<ul>
-<li>影响nginx服务器与用户的网络连接</li>
-<li>包含连接数、事件驱动模型等</li>
-</ul>
-</li>
-<li><p><strong>http配置</strong></p>
-<ul>
-<li>代理、缓存、日志定义等配置</li>
-<li>第三方模块的配置</li>
-</ul>
-</li>
-</ol>
-<h2 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h2><h3 id="如何配置反向代理和负载均衡？"><a href="#如何配置反向代理和负载均衡？" class="headerlink" title="如何配置反向代理和负载均衡？"></a>如何配置反向代理和负载均衡？</h3><p><strong>反向代理配置：</strong></p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">proxy_pass</span> http://backend_server;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="负载均衡配置："><a href="#负载均衡配置：" class="headerlink" title="负载均衡配置："></a><strong>负载均衡配置：</strong><br><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">upstream</span> backend_servers &#123;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.1:80</span> weight=<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">server</span> <span class="number">192.168.1.2:80</span> weight=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> localhost;</span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://backend_servers;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></h2><h2 id="新添加知识-–2025-03-02"><a href="#新添加知识-–2025-03-02" class="headerlink" title="新添加知识  –2025-03-02"></a>新添加知识  –2025-03-02</h2><h3 id="如何使用nginx部署前后端分离项目的生产环境？"><a href="#如何使用nginx部署前后端分离项目的生产环境？" class="headerlink" title="如何使用nginx部署前后端分离项目的生产环境？"></a>如何使用nginx部署前后端分离项目的生产环境？</h3><p><strong>前提条件：</strong></p>
-<ul>
-<li>前端项目已经部署完成，静态资源已经生成。</li>
-<li>后端项目已经编译打包完成，生成可执行文件<br><strong>步骤：</strong></li>
-</ul>
-<ol>
-<li>安装nginx<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-get install nginx</span><br></pre></td></tr></table></figure></li>
-<li>配置nginx<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> www.example.com; <span class="comment">#如果使用的是前端部署打包好的静态资源，则root指向静态资源的目录，否则指向后端项目的可执行文件目录。好处：和前端部署工具的开发环境隔离开，形成两个不同的环境。有利于开发</span></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">root</span> /var/www/html; <span class="comment">#指向前端项目的静态资源目录</span></span><br><span class="line">        <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li>启动nginx<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nginx -s reload</span><br></pre></td></tr></table></figure></li>
-<li>启动后端项目<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./backend</span><br></pre></td></tr></table></figure></li>
-<li>浏览器访问<a href="http://www.example.com/">http://www.example.com</a></li>
-</ol>
-<h2 id="vite和Nginx的结合"><a href="#vite和Nginx的结合" class="headerlink" title="vite和Nginx的结合"></a>vite和Nginx的结合</h2><p>vite特点：实现开发环境的热更新，和快速的开发服务器。利用的时ES模块的特性。利于开发环境。代理配置只适用于开发环境。<br>开发环境配置：.env,<br>nginx特点：高性能的反向代理服务器，同时用于生产环境中提供静态内容服务。同时还具备负载均衡的功能。<br>在前后端分离项目时候，vite用于构建前端应用，生成静态文件，构建完成后，静态文件可以部署到Nginx服务器上，</p>
-]]></content>
-      <categories>
-        <category>反向代理</category>
-      </categories>
-      <tags>
-        <tag>Nginx</tag>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS基础</title>
     <url>/blog.github.io/2025/02/24/%E7%AC%AC%E5%9B%9B%E7%AF%87%EF%BC%9ACSS%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="CSS大全"><a href="#CSS大全" class="headerlink" title="CSS大全"></a>CSS大全</h1><h2 id="CSS基础"><a href="#CSS基础" class="headerlink" title="CSS基础"></a>CSS基础</h2><h3 id="选择器的优先级是什么？"><a href="#选择器的优先级是什么？" class="headerlink" title="选择器的优先级是什么？"></a>选择器的优先级是什么？</h3><p>选择器优先级从高到低排序:</p>
@@ -1621,22 +1363,311 @@
       </tags>
   </entry>
   <entry>
-    <title>3.8周记</title>
-    <url>/blog.github.io/2025/03/08/2025.3%20%E5%91%A8%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="3-8周记"><a href="#3-8周记" class="headerlink" title="3.8周记"></a>3.8周记</h1><h2 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h2><h3 id="3-3-3-4"><a href="#3-3-3-4" class="headerlink" title="3.3-3.4"></a>3.3-3.4</h3><p>编写了自己的毕业设计。实现了数据分析，数据可视化等功能。并使用nginx对项目进行反向代理。<br>主要技术栈为vue3+iview+echarts+python+flask+mysql。<br>线下面试了一家公司，面试岗位为前端开发（实习生）。<br>面试流程：一套笔试题，主要问到原型链，this指向，call，apply，bind。vue23的区别等技术栈。<br>但面试结束后告知我面试的岗位不招人了。。。。。。</p>
-<h3 id="3-5-3-6"><a href="#3-5-3-6" class="headerlink" title="3.5-3.6"></a>3.5-3.6</h3><p>接了一单毕业设计，实现多种功能，按照甲方的需求实现代码。主要针对于python爬虫，数据分析，数据可视化，Hadoop集群和hive。</p>
-<h3 id="3-7-3-8"><a href="#3-7-3-8" class="headerlink" title="3.7-3.8"></a>3.7-3.8</h3><p>1.面试了一家深圳的公司，面试岗位为前端开发（实习生）。主要面试了promise，echarts和个人项目的痛点。<br>2.修改了个人博客，增加了一些next主题的各种配置，添加了评论功能，修改了主题样式，没之前那么华丽了。</p>
-<h2 id="主要收获"><a href="#主要收获" class="headerlink" title="主要收获"></a>主要收获</h2><p>1.学会了使用DrissionPage对淘宝的母婴商品进行数据爬取，并进行数据分析和数据可视化。<br>2.对于简单系统的搭建有一定的了解。稍微熟悉了使用nginx反向代理。</p>
-<h2 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h2><p>能约到面试，但是自身的基础还是不太牢固。还是需要对于js，vue，css，html等基础知识进行巩固。</p>
-<h2 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h2><p>1.做一个简单的小程序项目，熟悉一下小程序开发。<br>2.争取开发一个网站，实现web前端知识的模拟练题。而不是只靠背，最好配合代码块。</p>
-<p>##3.10<br>场景：用户对于分页板块，进行多次点击页面按钮，发送了多次请求，需要正确的响应到最后一次的点击页面。<br>昨天复习到了一个知识点。关于xhr.abort()方法，可以取消xhr请求。可以用于用户多次点击按钮，重复多次请求时，确认正确的点击页面，取消上一次的请求。<br>涉及后端的话，可以给每次请求添加一个reqest_id，在响应中返回该id，前端根据id判断是否是最后一次的请求。<br>添加londing状态，从根源上解决问题。（降低用户体验）</p>
-<p>##3.10 -3.14<br>完整整个毕业论文整体流程和内容，是否完整需要指导老师的查看后再次修改。</p>
+    <title>Cursor编辑器的安装与使用</title>
+    <url>/blog.github.io/2025/02/11/%E7%AC%AC%E4%B8%80%E7%AF%87%EF%BC%9ACursor%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Cursor是一款革命性的代码编辑器，它基于VSCode构建，并集成了强大的AI辅助功能。通过内置的AI模型，它能够理解开发者的意图，提供智能代码补全、实时代码分析和自动化重构等功能。本文将详细介绍Cursor的安装配置和使用技巧，帮助你提升开发效率。</p>
+<h2 id="为什么选择Cursor"><a href="#为什么选择Cursor" class="headerlink" title="为什么选择Cursor"></a>为什么选择Cursor</h2><h3 id="相比传统编辑器的优势"><a href="#相比传统编辑器的优势" class="headerlink" title="相比传统编辑器的优势"></a>相比传统编辑器的优势</h3><ol>
+<li>智能理解代码上下文</li>
+<li>实时AI代码建议</li>
+<li>自然语言交互</li>
+<li>强大的代码重构能力</li>
+<li>与VSCode完全兼容</li>
+</ol>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><ul>
+<li>个人开发项目</li>
+<li>团队协作开发</li>
+<li>代码学习和教学</li>
+<li>快速原型开发</li>
+</ul>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h3><ul>
+<li>Windows 10&#x2F;11 64位</li>
+<li>macOS 10.15+</li>
+<li>8GB及以上内存</li>
+<li>2GB可用存储空间</li>
+</ul>
+<h3 id="Windows系统安装"><a href="#Windows系统安装" class="headerlink" title="Windows系统安装"></a>Windows系统安装</h3><ol>
+<li>访问Cursor官网 <a href="https://cursor.sh/">https://cursor.sh</a></li>
+<li>点击”Download for Windows”下载安装包</li>
+<li>运行下载的exe文件</li>
+<li>按照安装向导完成安装</li>
+<li>首次启动时登录或创建账号</li>
+</ol>
+<h3 id="Mac系统安装"><a href="#Mac系统安装" class="headerlink" title="Mac系统安装"></a>Mac系统安装</h3><ol>
+<li>访问Cursor官网</li>
+<li>下载Mac版本的dmg文件</li>
+<li>打开dmg文件，将Cursor拖入Applications文件夹</li>
+<li>从启动台或Applications文件夹启动Cursor</li>
+<li>完成初始化设置</li>
+</ol>
+<h3 id="安装后配置"><a href="#安装后配置" class="headerlink" title="安装后配置"></a>安装后配置</h3><ol>
+<li>选择主题和配色方案</li>
+<li>配置编辑器字体和大小</li>
+<li>设置AI功能偏好</li>
+<li>导入已有的VSCode配置（可选）</li>
+</ol>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="AI代码补全"><a href="#AI代码补全" class="headerlink" title="AI代码补全"></a>AI代码补全</h3><p>Cursor最强大的功能之一是智能代码补全：</p>
+<ul>
+<li><p><strong>实时补全</strong>：</p>
+<ul>
+<li>输入时自动显示建议</li>
+<li>支持多行代码块补全</li>
+<li>基于项目上下文的智能建议</li>
+</ul>
+</li>
+<li><p><strong>快捷键操作</strong>：</p>
+<ul>
+<li>Tab：接受建议</li>
+<li>Ctrl+Space：手动触发补全</li>
+<li>Esc：关闭建议窗口</li>
+</ul>
+</li>
+<li><p><strong>补全范围</strong>：</p>
+<ul>
+<li>变量和函数名</li>
+<li>代码片段</li>
+<li>完整的函数实现</li>
+<li>注释生成</li>
+</ul>
+</li>
+</ul>
+<h3 id="AI聊天"><a href="#AI聊天" class="headerlink" title="AI聊天"></a>AI聊天</h3><p>Cursor提供了强大的AI助手功能：</p>
+<ul>
+<li><p><strong>打开方式</strong>：</p>
+<ul>
+<li>使用快捷键 Cmd&#x2F;Ctrl + K</li>
+<li>右键菜单中选择”Ask AI”</li>
+<li>通过命令面板调用</li>
+</ul>
+</li>
+<li><p><strong>常用功能</strong>：</p>
+<ul>
+<li>代码解释和文档生成</li>
+<li>问题诊断和调试建议</li>
+<li>最佳实践咨询</li>
+<li>算法优化建议</li>
+</ul>
+</li>
+<li><p><strong>使用技巧</strong>：</p>
+<ul>
+<li>提供清晰的上下文</li>
+<li>使用自然语言描述</li>
+<li>结合代码片段提问</li>
+<li>保存常用对话</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码重构"><a href="#代码重构" class="headerlink" title="代码重构"></a>代码重构</h3><p>Cursor的AI驱动重构功能：</p>
+<ul>
+<li><p><strong>重构操作</strong>：</p>
+<ul>
+<li>变量重命名</li>
+<li>提取函数&#x2F;方法</li>
+<li>优化代码结构</li>
+<li>转换代码风格</li>
+</ul>
+</li>
+<li><p><strong>使用方法</strong>：</p>
+<ol>
+<li>选中需要重构的代码</li>
+<li>右键选择”Refactor”</li>
+<li>选择重构类型</li>
+<li>预览并应用更改</li>
+</ol>
+</li>
+<li><p><strong>最佳实践</strong>：</p>
+<ul>
+<li>先保存当前更改</li>
+<li>重构前进行代码审查</li>
+<li>测试重构后的代码</li>
+<li>分步骤进行大型重构</li>
+</ul>
+</li>
+</ul>
+<h2 id="高级功能"><a href="#高级功能" class="headerlink" title="高级功能"></a>高级功能</h2><h3 id="自定义提示词"><a href="#自定义提示词" class="headerlink" title="自定义提示词"></a>自定义提示词</h3><p>优化AI交互体验：</p>
+<ol>
+<li>打开设置(Cmd&#x2F;Ctrl + ,)</li>
+<li>找到”AI Settings”</li>
+<li>添加自定义提示词模板</li>
+<li>设置触发条件和快捷键</li>
+</ol>
+<h3 id="项目分析"><a href="#项目分析" class="headerlink" title="项目分析"></a>项目分析</h3><p>全面的项目分析功能：</p>
+<ul>
+<li><p><strong>代码分析</strong>：</p>
+<ul>
+<li>依赖关系图</li>
+<li>代码质量检测</li>
+<li>性能瓶颈识别</li>
+<li>安全漏洞扫描</li>
+</ul>
+</li>
+<li><p><strong>项目管理</strong>：</p>
+<ul>
+<li>文件结构优化</li>
+<li>重复代码检测</li>
+<li>未使用代码识别</li>
+<li>版本控制集成</li>
+</ul>
+</li>
+</ul>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="连接问题"><a href="#连接问题" class="headerlink" title="连接问题"></a>连接问题</h3><p>如果遇到AI功能无法使用：</p>
+<ol>
+<li><p>网络诊断：</p>
+<ul>
+<li>检查网络连接</li>
+<li>确认防火墙设置</li>
+<li>测试API连接性</li>
+</ul>
+</li>
+<li><p>账号问题：</p>
+<ul>
+<li>验证登录状态</li>
+<li>检查订阅状态</li>
+<li>刷新访问令牌</li>
+</ul>
+</li>
+<li><p>其他解决方案：</p>
+<ul>
+<li>重启编辑器</li>
+<li>清除缓存</li>
+<li>重新安装</li>
+</ul>
+</li>
+</ol>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>提升Cursor运行效率：</p>
+<ol>
+<li><p>基础优化：</p>
+<ul>
+<li>关闭不需要的插件</li>
+<li>定期清理缓存</li>
+<li>限制文件监视数量</li>
+</ul>
+</li>
+<li><p>高级设置：</p>
+<ul>
+<li>调整内存限制</li>
+<li>配置工作区设置</li>
+<li>优化文件索引</li>
+</ul>
+</li>
+<li><p>硬件建议：</p>
+<ul>
+<li>使用SSD存储</li>
+<li>确保足够内存</li>
+<li>处理器性能要求</li>
+</ul>
+</li>
+</ol>
+<h2 id="进阶技巧"><a href="#进阶技巧" class="headerlink" title="进阶技巧"></a>进阶技巧</h2><h3 id="快捷键优化"><a href="#快捷键优化" class="headerlink" title="快捷键优化"></a>快捷键优化</h3><p>提高开发效率的快捷键设置：</p>
+<ol>
+<li>常用操作快捷键</li>
+<li>自定义快捷键映射</li>
+<li>快捷键冲突解决</li>
+</ol>
+<h3 id="插件集成"><a href="#插件集成" class="headerlink" title="插件集成"></a>插件集成</h3><p>与其他开发工具的协同：</p>
+<ol>
+<li>Git集成</li>
+<li>调试工具配置</li>
+<li>代码格式化插件</li>
+<li>团队协作工具</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Cursor是一款革命性的智能代码编辑器，它通过AI辅助功能大大提高了开发效率。本文详细介绍了从安装配置到高级使用的完整流程，掌握这些功能将帮助你：</p>
+<ol>
+<li>更快速地编写代码</li>
+<li>提高代码质量</li>
+<li>简化重构过程</li>
+<li>加速问题解决</li>
+</ol>
+<p>建议循序渐进地学习和使用这些功能，从基础的代码补全开始，逐步探索更高级的功能，最终将Cursor整合到你的日常开发工作流程中。</p>
+<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
+<li><a href="https://cursor.sh/docs">Cursor官方文档</a></li>
+<li><a href="https://code.visualstudio.com/docs">VSCode文档</a></li>
+<li><a href="https://cursor.sh/blog">AI编程最佳实践</a></li>
+</ul>
+<h3 id="账号注册"><a href="#账号注册" class="headerlink" title="账号注册"></a>账号注册</h3><ol>
+<li><p><strong>访问官网</strong></p>
+<ul>
+<li>打开 <a href="https://cursor.sh/">Cursor官网</a></li>
+<li>点击右上角”Sign Up”按钮</li>
+</ul>
+</li>
+<li><p><strong>选择注册方式</strong></p>
+<ul>
+<li>GitHub账号登录（推荐）</li>
+<li>邮箱注册</li>
+<li>Google账号登录</li>
+</ul>
+</li>
+<li><p><strong>完成注册流程</strong></p>
+<ul>
+<li>填写必要信息</li>
+<li>验证邮箱</li>
+<li>设置密码（如选择邮箱注册）</li>
+</ul>
+</li>
+</ol>
+<h3 id="登录配置"><a href="#登录配置" class="headerlink" title="登录配置"></a>登录配置</h3><ol>
+<li><p><strong>首次登录</strong></p>
+<ul>
+<li>启动Cursor编辑器</li>
+<li>点击右下角的登录按钮</li>
+<li>选择登录方式</li>
+</ul>
+</li>
+<li><p><strong>登录后配置</strong></p>
+<ul>
+<li>选择AI模型（默认为Claude）</li>
+<li>设置API访问权限</li>
+<li>配置代码补全偏好</li>
+</ul>
+</li>
+<li><p><strong>账号管理</strong></p>
+<ul>
+<li>查看使用配额</li>
+<li>管理订阅计划</li>
+<li>设置个人偏好</li>
+</ul>
+</li>
+</ol>
+<h3 id="常见登录问题"><a href="#常见登录问题" class="headerlink" title="常见登录问题"></a>常见登录问题</h3><ol>
+<li><p><strong>无法登录</strong></p>
+<ul>
+<li>检查网络连接</li>
+<li>确认账号密码正确</li>
+<li>清除浏览器缓存</li>
+</ul>
+</li>
+<li><p><strong>API限制</strong></p>
+<ul>
+<li>免费版每日限额说明</li>
+<li>升级专业版获取更多配额</li>
+<li>配额使用优化建议</li>
+</ul>
+</li>
+</ol>
+<h3 id="针对于cursor的免费版"><a href="#针对于cursor的免费版" class="headerlink" title="针对于cursor的免费版"></a>针对于cursor的免费版</h3><ol>
+<li><p>免费版限制<br>我们知道cursor的免费版是有限制的，比如每天只能使用50次（原来是150次），而且不能使用一些高级功能，比如代码重构，代码解释等。</p>
+</li>
+<li><p>免费版使用技巧<br>  我们可以使用2925无限邮箱，当每日的免费版限制额度用完之后，重复注册邮箱，既可以实现无限制的cursor的AI功能。</p>
+</li>
+<li><p>2925无限邮箱注册</p>
+<ul>
+<li>访问官网 <a href="https://2925.cc/">https://2925.cc</a></li>
+<li>点击”立即注册”按钮</li>
+<li>填写必要信息</li>
+<li>验证邮箱</li>
+</ul>
+</li>
+<li><p>当免费版限制额度使用过多后，会锁定电脑ip，具体解决办法不过多赘述</p>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>周记</category>
+        <category>技术教程</category>
       </categories>
       <tags>
-        <tag>周记</tag>
+        <tag>开发工具</tag>
+        <tag>AI编程</tag>
+        <tag>VSCode</tag>
       </tags>
   </entry>
 </search>
