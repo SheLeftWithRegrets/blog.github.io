@@ -9,13 +9,13 @@
     <atom:link href="https://sheleftwithregrets.github.io/blog.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>选择有时候比努力更重要</description>
-    <pubDate>Sat, 08 Mar 2025 09:41:11 GMT</pubDate>
+    <pubDate>Sat, 15 Mar 2025 00:45:17 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>3.8周记</title>
-      <link>https://sheleftwithregrets.github.io/blog.github.io/2025/03/08/3.8%E5%91%A8%E8%AE%B0/</link>
-      <guid>https://sheleftwithregrets.github.io/blog.github.io/2025/03/08/3.8%E5%91%A8%E8%AE%B0/</guid>
+      <link>https://sheleftwithregrets.github.io/blog.github.io/2025/03/08/2025.3%20%E5%91%A8%E8%AE%B0/</link>
+      <guid>https://sheleftwithregrets.github.io/blog.github.io/2025/03/08/2025.3%20%E5%91%A8%E8%AE%B0/</guid>
       <pubDate>Sat, 08 Mar 2025 03:30:00 GMT</pubDate>
       
         
@@ -25,7 +25,7 @@
       
       
       
-      <content:encoded><![CDATA[<h1 id="3-8周记"><a href="#3-8周记" class="headerlink" title="3.8周记"></a>3.8周记</h1><h2 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h2><h3 id="3-3-3-4"><a href="#3-3-3-4" class="headerlink" title="3.3-3.4"></a>3.3-3.4</h3><p>编写了自己的毕业设计。实现了数据分析，数据可视化等功能。并使用nginx对项目进行反向代理。<br>主要技术栈为vue3+iview+echarts+python+flask+mysql。<br>线下面试了一家公司，面试岗位为前端开发（实习生）。<br>面试流程：一套笔试题，主要问到原型链，this指向，call，apply，bind。vue23的区别等技术栈。<br>但面试结束后告知我面试的岗位不招人了。。。。。。</p><h3 id="3-5-3-6"><a href="#3-5-3-6" class="headerlink" title="3.5-3.6"></a>3.5-3.6</h3><p>接了一单毕业设计，实现多种功能，按照甲方的需求实现代码。主要针对于python爬虫，数据分析，数据可视化，Hadoop集群和hive。</p><h3 id="3-7-3-8"><a href="#3-7-3-8" class="headerlink" title="3.7-3.8"></a>3.7-3.8</h3><p>1.面试了一家深圳的公司，面试岗位为前端开发（实习生）。主要面试了promise，echarts和个人项目的痛点。<br>2.修改了个人博客，增加了一些next主题的各种配置，添加了评论功能，修改了主题样式，没之前那么华丽了。</p><h2 id="主要收获"><a href="#主要收获" class="headerlink" title="主要收获"></a>主要收获</h2><p>1.学会了使用DrissionPage对淘宝的母婴商品进行数据爬取，并进行数据分析和数据可视化。<br>2.对于简单系统的搭建有一定的了解。稍微熟悉了使用nginx反向代理。</p><h2 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h2><p>能约到面试，但是自身的基础还是不太牢固。还是需要对于js，vue，css，html等基础知识进行巩固。</p><h2 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h2><p>1.做一个简单的小程序项目，熟悉一下小程序开发。<br>2.争取开发一个网站，实现web前端知识的模拟练题。而不是只靠背，最好配合代码块。</p>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="3-8周记"><a href="#3-8周记" class="headerlink" title="3.8周记"></a>3.8周记</h1><h2 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h2><h3 id="3-3-3-4"><a href="#3-3-3-4" class="headerlink" title="3.3-3.4"></a>3.3-3.4</h3><p>编写了自己的毕业设计。实现了数据分析，数据可视化等功能。并使用nginx对项目进行反向代理。<br>主要技术栈为vue3+iview+echarts+python+flask+mysql。<br>线下面试了一家公司，面试岗位为前端开发（实习生）。<br>面试流程：一套笔试题，主要问到原型链，this指向，call，apply，bind。vue23的区别等技术栈。<br>但面试结束后告知我面试的岗位不招人了。。。。。。</p><h3 id="3-5-3-6"><a href="#3-5-3-6" class="headerlink" title="3.5-3.6"></a>3.5-3.6</h3><p>接了一单毕业设计，实现多种功能，按照甲方的需求实现代码。主要针对于python爬虫，数据分析，数据可视化，Hadoop集群和hive。</p><h3 id="3-7-3-8"><a href="#3-7-3-8" class="headerlink" title="3.7-3.8"></a>3.7-3.8</h3><p>1.面试了一家深圳的公司，面试岗位为前端开发（实习生）。主要面试了promise，echarts和个人项目的痛点。<br>2.修改了个人博客，增加了一些next主题的各种配置，添加了评论功能，修改了主题样式，没之前那么华丽了。</p><h2 id="主要收获"><a href="#主要收获" class="headerlink" title="主要收获"></a>主要收获</h2><p>1.学会了使用DrissionPage对淘宝的母婴商品进行数据爬取，并进行数据分析和数据可视化。<br>2.对于简单系统的搭建有一定的了解。稍微熟悉了使用nginx反向代理。</p><h2 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h2><p>能约到面试，但是自身的基础还是不太牢固。还是需要对于js，vue，css，html等基础知识进行巩固。</p><h2 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h2><p>1.做一个简单的小程序项目，熟悉一下小程序开发。<br>2.争取开发一个网站，实现web前端知识的模拟练题。而不是只靠背，最好配合代码块。</p><p>##3.10<br>场景：用户对于分页板块，进行多次点击页面按钮，发送了多次请求，需要正确的响应到最后一次的点击页面。<br>昨天复习到了一个知识点。关于xhr.abort()方法，可以取消xhr请求。可以用于用户多次点击按钮，重复多次请求时，确认正确的点击页面，取消上一次的请求。<br>涉及后端的话，可以给每次请求添加一个reqest_id，在响应中返回该id，前端根据id判断是否是最后一次的请求。<br>添加londing状态，从根源上解决问题。（降低用户体验）</p><p>##3.10 -3.14<br>完整整个毕业论文整体流程和内容，是否完整需要指导老师的查看后再次修改。</p>]]></content:encoded>
       
       
       <category domain="https://sheleftwithregrets.github.io/blog.github.io/categories/%E5%91%A8%E8%AE%B0/">周记</category>
@@ -34,7 +34,7 @@
       <category domain="https://sheleftwithregrets.github.io/blog.github.io/tags/%E5%91%A8%E8%AE%B0/">周记</category>
       
       
-      <comments>https://sheleftwithregrets.github.io/blog.github.io/2025/03/08/3.8%E5%91%A8%E8%AE%B0/#disqus_thread</comments>
+      <comments>https://sheleftwithregrets.github.io/blog.github.io/2025/03/08/2025.3%20%E5%91%A8%E8%AE%B0/#disqus_thread</comments>
       
     </item>
     
