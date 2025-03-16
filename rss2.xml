@@ -9,7 +9,7 @@
     <atom:link href="https://sheleftwithregrets.github.io/blog.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>选择有时候比努力更重要</description>
-    <pubDate>Sun, 16 Mar 2025 04:40:44 GMT</pubDate>
+    <pubDate>Sun, 16 Mar 2025 06:21:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -25,7 +25,7 @@
       
       
       
-      <content:encoded><![CDATA[<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。</p><p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。<br>每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p><p>在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。<br>如果主线程解析到link位置，此时外部的CSS文件还没有下载好，主线程不会等待，而是继续解析HTML，外部的预解析线程会去下载外部的CSS文件并解析成CSSOM树返回给主线程，主线程合并目前生成好的DOM和CSSOM。这就是CSS不会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="CSS预解析"><br>如果主线程解析到script位置，会停止解析HTML，转而等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML，这是因为JS代码的执行过程中可能会修改当前的DOM树，所以DOM树的生成必须暂停。这就是JS会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="JS预解析"><br>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式，内联样式，外部样式，行内样式均会包含在CSSOM树中。</p><p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。<br>每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。</p><h3 id="HTML解析-Parse-HTML"><a href="#HTML解析-Parse-HTML" class="headerlink" title="HTML解析 -Parse HTML"></a>HTML解析 -Parse HTML</h3>]]></content:encoded>
       
       
       <category domain="https://sheleftwithregrets.github.io/blog.github.io/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">前端基础</category>
