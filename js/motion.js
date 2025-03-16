@@ -1,6 +1,14 @@
-/* global NexT, CONFIG, Velocity */
+/* global NexT, CONFIG */
 
-if (window.$ && window.$.Velocity) window.Velocity = window.$.Velocity;
+if (typeof window.Velocity === 'undefined' && window.$ && window.$.Velocity) {
+  window.Velocity = window.$.Velocity;
+}
+
+if (typeof window.Velocity === 'undefined') {
+  // 如果Velocity未定义，禁用动画
+  CONFIG.motion.enable = false;
+  console.warn('Velocity is not loaded. Motion will be disabled.');
+}
 
 NexT.motion = {};
 
