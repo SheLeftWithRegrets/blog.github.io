@@ -166,18 +166,395 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS属性计算过程</title>
+    <url>/blog.github.io/2025/03/17/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20CSS%20%E4%B9%8B%E5%8C%85%E5%90%AB%E5%9D%97/</url>
+    <content><![CDATA[<h1 id="你不知道的-CSS-之包含块"><a href="#你不知道的-CSS-之包含块" class="headerlink" title="你不知道的 CSS 之包含块"></a>你不知道的 CSS 之包含块</h1><p>一说到 CSS 盒模型，这是很多小伙伴耳熟能详的知识，甚至有的小伙伴还能说出 border-box 和 content-box 这两种盒模型的区别。</p>
+<p>但是一说到 CSS 包含块，有的小伙伴就懵圈了，什么是包含块？好像从来没有听说过这玩意儿。</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-142005.png" alt="image-20220814222004395" style="zoom: 20%;" />
+
+<p>好吧，如果你对包含块的知识一无所知，那么系好安全带，咱们准备出发了。</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-060434.png" alt="image-20220813140434032" style="zoom:50%;" />
+
+<p>包含块英语全称为<strong>containing block</strong>，实际上平时你在书写 CSS 时，大多数情况下你是感受不到它的存在，因此你不知道这个知识点也是一件很正常的事情。但是这玩意儿是确确实实存在的，在 CSS 规范中也是明确书写了的：</p>
+<p><em><a href="https://drafts.csswg.org/css2/#containing-block-details">https://drafts.csswg.org/css2/#containing-block-details</a></em></p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-142459.png" alt="image-20220814222458695" style="zoom:50%;" />
+
+<p>并且，如果你不了解它的运作机制，有时就会出现一些你认为的莫名其妙的现象。</p>
+<p>那么，这个包含块究竟说了什么内容呢？</p>
+<p>说起来也简单，<strong>就是元素的尺寸和位置，会受它的包含块所影响。对于一些属性，例如 width, height, padding, margin，绝对定位元素的偏移值（比如 position 被设置为 absolute 或 fixed），当我们对其赋予百分比值时，这些值的计算值，就是通过元素的包含块计算得来。</strong></p>
+<p>来吧，少年，让我们从最简单的 case 开始看。</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-143153.png" alt="image-20220814223152726" style="zoom: 50%;" />
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>请仔细阅读上面的代码，然后你认为 div.item 这个盒子的宽高是多少？</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-143451.png" alt="image-20220814223451349" style="zoom: 33%;" />
+
+<p>相信你能够很自信的回答这个简单的问题，div.item 盒子的 width 为 250px，height 为 150px。</p>
+<p>这个答案确实是没有问题的，但是如果我追问你是怎么得到这个答案的，我猜不了解包含块的你大概率会说，因为它的父元素 div.container 的 width 为 500px，50% 就是 250px，height 为 300px，因此 50% 就是 150px。</p>
+<p>这个答案实际上是不准确的。正确的答案应该是，<strong>div.item 的宽高是根据它的包含块来计算的</strong>，而这里包含块的大小，正是这个元素最近的祖先块元素的内容区。</p>
+<p>因此正如我前面所说，<strong>很多时候你都感受不到包含块的存在。</strong></p>
+<p>包含块分为两种，一种是根元素（HTML 元素）所在的包含块，被称之为初始包含块（<strong>initial containing block</strong>）。对于浏览器而言，初始包含块的的大小等于视口 viewport 的大小，基点在画布的原点（视口左上角）。它是作为元素绝对定位和固定定位的参照物。</p>
+<p>另外一种是对于非根元素，对于非根元素的包含块判定就有几种不同的情况了。大致可以分为如下几种：</p>
+<ul>
+<li>如果元素的 positiion 是 relative 或 static ，那么包含块由离它最近的块容器（block container）的内容区域（content area）的边缘建立。</li>
+<li>如果 position 属性是 fixed，那么包含块由视口建立。</li>
+<li>如果元素使用了 absolute 定位，则包含块由它的最近的 position 的值不是 static （也就是值为fixed、absolute、relative 或 sticky）的祖先元素的内边距区的边缘组成。</li>
+</ul>
+<p>前面两条实际上都还比较好理解，第三条往往是初学者容易比较忽视的，我们来看一个示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">5px</span> solid;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先阅读上面的代码，然后你能在脑海里面想出其大致的样子么？或者用笔和纸画一下也行。</p>
+<p>公布正确答案：</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-153548.png" alt="image-20220814233548188" style="zoom: 33%;" />
+
+<p>怎么样？有没有和你所想象的对上？</p>
+<p>其实原因也非常简单，根据上面的第三条规则，对于 div.item2 来讲，它的包含块应该是 div.container，而非 div.item。</p>
+<p>如果你能把上面非根元素的包含块判定规则掌握，那么关于包含块的知识你就已经掌握 80% 了。</p>
+<p>实际上对于非根元素来讲，包含块还有一种可能，那就是如果 position 属性是 absolute 或 fixed，包含块也可能是由满足以下条件的最近父级元素的内边距区的边缘组成的：</p>
+<ul>
+<li>transform 或 perspective 的值不是 none</li>
+<li>will-change 的值是 transform 或 perspective </li>
+<li>filter 的值不是 none 或 will-change 的值是 filter(只在 Firefox 下生效). </li>
+<li>contain 的值是 paint (例如: contain: paint;)</li>
+</ul>
+<p>我们还是来看一个示例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: skyblue;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">5px</span> solid;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>); <span class="comment">/* 新增代码 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item2</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们对于上面的代码只新增了一条声明，那就是 transform: rotate(0deg)，此时的渲染效果却发生了改变，如下图所示：</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-154347.png" alt="image-20220814234347149" style="zoom:33%;" />
+
+<p>可以看到，此时对于 div.item2 来讲，包含块就变成了 div.item。</p>
+<p>好了，到这里，关于包含块的知识就基本讲完了。</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-154655.png" alt="image-20220814234654914" style="zoom:33%;" />
+
+<p>我们再把 CSS 规范中所举的例子来看一下。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Illustration of containing blocks<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span> <span class="attr">id</span>=<span class="string">&quot;body&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;div1&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;p1&quot;</span>&gt;</span>This is text in the first paragraph...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;p2&quot;</span>&gt;</span></span><br><span class="line">        This is text</span><br><span class="line">        <span class="tag">&lt;<span class="name">em</span> <span class="attr">id</span>=<span class="string">&quot;em1&quot;</span>&gt;</span></span><br><span class="line">          in the</span><br><span class="line">          <span class="tag">&lt;<span class="name">strong</span> <span class="attr">id</span>=<span class="string">&quot;strong1&quot;</span>&gt;</span>second<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">          paragraph.</span><br><span class="line">        <span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面是一段简单的 HTML 代码，在没有添加任何 CSS 代码的情况下，你能说出各自的包含块么？</p>
+<p>对应的结果如下：</p>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>包含块</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>html</td>
+<td>initial C.B. (UA-dependent)</td>
+</tr>
+<tr>
+<td>body</td>
+<td>html</td>
+</tr>
+<tr>
+<td>div1</td>
+<td>body</td>
+</tr>
+<tr>
+<td>p1</td>
+<td>div1</td>
+</tr>
+<tr>
+<td>p2</td>
+<td>div1</td>
+</tr>
+<tr>
+<td>em1</td>
+<td>p2</td>
+</tr>
+<tr>
+<td>strong1</td>
+<td>p2</td>
+</tr>
+</tbody></table>
+<p>首先 HTML 作为根元素，对应的包含块就是前面我们所说的初始包含块，而对于 body 而言，这是一个 static 定位的元素，因此该元素的包含块参照第一条为 html，以此类推 div1、p1、p2 以及 em1 的包含块也都是它们的父元素。</p>
+<p>不过 strong1 比较例外，它的包含块确实 p2，而非 em1。为什么会这样？建议你再把非根元素的第一条规则读一下：</p>
+<ul>
+<li>如果元素的 positiion 是 relative 或 static ，那么包含块由离它最近的<strong>块容器（block container）</strong>的内容区域（content area）的边缘建立。</li>
+</ul>
+<p>没错，因为 em1 不是块容器，而包含块是<strong>离它最近的块容器</strong>的内容区域，所以是 p2。</p>
+<p>接下来添加如下的 CSS：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#div1</span> &#123; </span><br><span class="line">  <span class="attribute">position</span>: absolute; </span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50px</span>; <span class="attribute">top</span>: <span class="number">50px</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码我们对 div1 进行了定位，那么此时的包含块会发生变化么？你可以先在自己思考一下。</p>
+<p>答案如下：</p>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>包含块</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>html</td>
+<td>initial C.B. (UA-dependent)</td>
+</tr>
+<tr>
+<td>body</td>
+<td>html</td>
+</tr>
+<tr>
+<td>div1</td>
+<td>initial C.B. (UA-dependent)</td>
+</tr>
+<tr>
+<td>p1</td>
+<td>div1</td>
+</tr>
+<tr>
+<td>p2</td>
+<td>div1</td>
+</tr>
+<tr>
+<td>em1</td>
+<td>p2</td>
+</tr>
+<tr>
+<td>strong1</td>
+<td>p2</td>
+</tr>
+</tbody></table>
+<p>可以看到，这里 div1 的包含块就发生了变化，变为了初始包含块。这里你可以参考前文中的这两句话：</p>
+<ul>
+<li>初始包含块（<strong>initial containing block</strong>）。对于浏览器而言，初始包含块的的大小等于视口 viewport 的大小，基点在画布的原点（视口左上角）。它是作为元素绝对定位和固定定位的参照物。</li>
+<li>如果元素使用了 absolute 定位，则包含块由它的最近的 position 的值不是 static （也就是值为fixed、absolute、relative 或 sticky）的祖先元素的内边距区的边缘组成。</li>
+</ul>
+<p>是不是一下子就理解了。没错，因为我们对 div1 进行了定位，因此它会应用非根元素包含块计算规则的第三条规则，寻找离它最近的  position 的值不是 static 的祖先元素，不过显然 body 的定位方式为 static，因此 div1 的包含块最终就变成了初始包含块。</p>
+<p>接下来我们继续修改我们的 CSS：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-id">#div1</span> &#123; </span><br><span class="line">  <span class="attribute">position</span>: absolute; </span><br><span class="line">  <span class="attribute">left</span>: <span class="number">50px</span>; </span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50px</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#em1</span>  &#123; </span><br><span class="line">  <span class="attribute">position</span>: absolute; </span><br><span class="line">  <span class="attribute">left</span>: <span class="number">100px</span>; </span><br><span class="line">  <span class="attribute">top</span>: <span class="number">100px</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里我们对 em1 同样进行了 absolute 绝对定位，你想一想会有什么样的变化？</p>
+<p>没错，聪明的你大概应该知道，em1 的包含块不再是 p2，而变成了 div1，而 strong1 的包含块也不再是 p2 了，而是变成了 em1。</p>
+<p>如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>包含块</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>html</td>
+<td>initial C.B. (UA-dependent)</td>
+</tr>
+<tr>
+<td>body</td>
+<td>html</td>
+</tr>
+<tr>
+<td>div1</td>
+<td>initial C.B. (UA-dependent)</td>
+</tr>
+<tr>
+<td>p1</td>
+<td>div1</td>
+</tr>
+<tr>
+<td>p2</td>
+<td>div1</td>
+</tr>
+<tr>
+<td>em1</td>
+<td>div1（因为定位了，参阅非根元素包含块确定规则的第三条）</td>
+</tr>
+<tr>
+<td>strong1</td>
+<td>em1（因为 em1 定位了，其包含块将成为最近定位的元素）</td>
+</tr>
+</tbody></table>
+<p>好了，这就是 CSS 规范中所举的例子。如果你全都能看明白，以后你还能跟别人说你是看过这一块知识对应的 CSS 规范的人。</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-15-013519.png" alt="image-20220815093518833" style="zoom:33%;" />
+
+<p>另外，关于包含块的知识，在 MDN 上除了解说了什么是包含块以外，也举出了很多简单易懂的示例。</p>
+<p>具体你可以移步到：<em><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Containing_block">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Containing_block</a></em></p>
+<p>好了，这就是有关包含块的所有内容了，你学会了么？-）</p>
+<hr>
+<p>-<em>EOF</em>-</p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>前端基础</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS属性计算过程</title>
+    <url>/blog.github.io/2025/03/17/CSS%20%E5%B1%9E%E6%80%A7%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h1 id="CSS-属性计算过程"><a href="#CSS-属性计算过程" class="headerlink" title="CSS 属性计算过程"></a>CSS 属性计算过程</h1><p>你是否了解 CSS 的属性计算过程呢？</p>
+<p>有的同学可能会讲，CSS属性我倒是知道，例如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">color</span> : red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的 CSS 代码中，p 是元素选择器，color 就是其中的一个 CSS 属性。</p>
+<p>但是要说 CSS 属性的计算过程，还真的不是很清楚。</p>
+<p>没关系，通过此篇文章，能够让你彻底明白什么是 CSS 属性的计算流程。</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-060434.png" alt="image-20220813140434032" style="zoom:50%;" />
+
+<p>首先，不知道你有没有考虑过这样的一个问题，假设在 HTML 中有这么一段代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是一个h1标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的代码也非常简单，就是在 body 中有一个 h1 标题而已，该 h1 标题呈现出来的外观是如下：</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-060724.png" alt="image-20220813140724136" style="zoom:50%;" />
+
+<p>目前我们没有设置该 h1 的任何样式，但是却能看到该 h1 有一定的默认样式，例如有默认的字体大小、默认的颜色。</p>
+<p>那么问题来了，我们这个 h1 元素上面除了有默认字体大小、默认颜色等属性以外，究竟还有哪些属性呢？</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-15-014216.png" alt="image-20220815094215982" style="zoom:30%;" />
+
+<p>答案是<strong>该元素上面会有 CSS 所有的属性。</strong>你可以打开浏览器的开发者面板，选择【元素】，切换到【计算样式】，之后勾选【全部显示】，此时你就能看到在此 h1 上面所有 CSS 属性对应的值。</p>
+<p><img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-061516.png" alt="image-20220813141516153"></p>
+<p>换句话说，<strong>我们所书写的任何一个 HTML 元素，实际上都有完整的一整套 CSS 样式</strong>。这一点往往是让初学者比较意外的，因为我们平时在书写 CSS 样式时，往往只会书写必要的部分，例如前面的：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">color</span> : red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这往往会给我们造成一种错觉，认为该 p 元素上面就只有 color 属性。而真实的情况确是，任何一个 HTML 元素，都有一套完整的 CSS 样式，只不过你没有书写的样式，<strong>大概率可能</strong>会使用其默认值。例如上图中 h1 一个样式都没有设置，全部都用的默认值。</p>
+<p>但是注意，我这里强调的是“大概率可能”，难道还有我们“没有设置值，但是不使用默认值”的情况么？</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-15-014459.png" alt="image-20220815094458940" style="zoom:25%;" />
+
+<p>嗯，确实有的，所以我才强调你要了解“CSS 属性的计算过程”。</p>
+<p>总的来讲，属性值的计算过程，分为如下这么 <em>4</em> 个步骤：</p>
+<ul>
+<li>确定声明值</li>
+<li>层叠冲突</li>
+<li>使用继承</li>
+<li>使用默认值</li>
+</ul>
+<h2 id="确定声明值"><a href="#确定声明值" class="headerlink" title="确定声明值"></a>确定声明值</h2><p>首先第一步，是确定声明值。所谓声明值就是作者自己所书写的 CSS 样式，例如前面的：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">color</span> : red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里我们声明了 p 元素为红色，那么就会应用此属性设置。</p>
+<p>当然，除了作者样式表，一般浏览器还会存在“用户代理样式表”，简单来讲就是浏览器内置了一套样式表。</p>
+<p><img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-063500.png" alt="image-20220813143500066"></p>
+<p>在上面的示例中，作者样式表中设置了 color 属性，而用户代理样式表（浏览器提供的样式表）中设置了诸如 display、margin-block-start、margin-block-end、margin-inline-start、margin-inline-end 等属性对应的值。</p>
+<p>这些值目前来讲也没有什么冲突，因此最终就会应用这些属性值。</p>
+<h2 id="层叠冲突"><a href="#层叠冲突" class="headerlink" title="层叠冲突"></a>层叠冲突</h2><p>在确定声明值时，可能出现一种情况，那就是声明的样式规则发生了冲突。</p>
+<p>此时会进入解决层叠冲突的流程。而这一步又可以细分为下面这三个步骤：</p>
+<ul>
+<li>比较源的重要性</li>
+<li>比较优先级</li>
+<li>比较次序</li>
+</ul>
+<p>来来来，我们一步一步来看。</p>
+<h3 id="比较源的重要性"><a href="#比较源的重要性" class="headerlink" title="比较源的重要性"></a>比较源的重要性</h3><p>当不同的 CSS 样式来源拥有相同的声明时，此时就会根据样式表来源的重要性来确定应用哪一条样式规则。</p>
+<p>那么问题来了，咱们的样式表的源究竟有几种呢？</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-23-100047.png" alt="image-20220823180047075" style="zoom:40%;" />
+
+<p>整体来讲有三种来源：</p>
+<ul>
+<li>浏览器会有一个基本的样式表来给任何网页设置默认样式。这些样式统称<strong>用户代理样式</strong>。</li>
+<li>网页的作者可以定义文档的样式，这是最常见的样式表，称之为<strong>页面作者样式</strong>。</li>
+<li>浏览器的用户，可以使用自定义样式表定制使用体验，称之为<strong>用户样式</strong>。</li>
+</ul>
+<p>对应的重要性顺序依次为：页面作者样式 &gt; 用户样式 &gt; 用户代理样式</p>
+<p>更详细的来源重要性比较，可以参阅 <em>MDN</em>：<em><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Cascade">https://developer.mozilla.org/zh-CN/docs/Web/CSS/Cascade</a></em></p>
+<p>我们来看一个示例。</p>
+<p>例如现在有<strong>页面作者样式表</strong>和<strong>用户代理样式表</strong>中存在属性的冲突，那么会以作者样式表优先。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">color</span> : red;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-064222.png" alt="image-20220813144222152"></p>
+<p>可以明显的看到，作者样式表和用户代理样式表中同时存在的 display 属性的设置，最终作者样式表干掉了用户代理样式表中冲突的属性。这就是第一步，根据不同源的重要性来决定应用哪一个源的样式。</p>
+<h3 id="比较优先级"><a href="#比较优先级" class="headerlink" title="比较优先级"></a>比较优先级</h3><p>那么接下来，如果是在在同一个源中有样式声明冲突怎么办呢？此时就会进行样式声明的优先级比较。</p>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;test&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>test<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.test</span> <span class="selector-tag">h1</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中，同属于<strong>页面作者样式</strong>，源的重要性是相同的，此时会以选择器的权重来比较重要性。</p>
+<p>很明显，上面的选择器的权重要大于下面的选择器，因此最终标题呈现为 <em>50px</em>。</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2021-09-16-071546.png" alt="image-20210916151546500" style="zoom: 40%;" />
+
+<p>可以看到，落败的作者样式在 <em>Elements&gt;Styles</em> 中会被划掉。</p>
+<p>有关选择器权重的计算方式，不清楚的同学，可以进入此传送门：<em><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity</a></em></p>
+<h3 id="比较次序"><a href="#比较次序" class="headerlink" title="比较次序"></a>比较次序</h3><p>经历了上面两个步骤，大多数的样式声明能够被确定下来。但是还剩下最后一种情况，那就是样式声明既是同源，权重也相同。</p>
+<p>此时就会进入第三个步骤，比较样式声明的次序。</p>
+<p>举个例子：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中，同样都是<strong>页面作者样式</strong>，<strong>选择器的权重也相同</strong>，此时位于下面的样式声明会层叠掉上面的那一条样式声明，最终会应用 <em>20px</em> 这一条属性值。</p>
+<p><img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-23-103928.png" alt="image-20220823183928330"></p>
+<p>至此，样式声明中存在冲突的所有情况，就全部被解决了。</p>
+<h2 id="使用继承"><a href="#使用继承" class="headerlink" title="使用继承"></a>使用继承</h2><p>层叠冲突这一步完成后，解决了相同元素被声明了多条样式规则究竟应用哪一条样式规则的问题。</p>
+<p>那么如果没有声明的属性呢？此时就使用默认值么？</p>
+<p><em>No、No、No</em>，别急，此时还有第三个步骤，那就是使用继承而来的值。</p>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在上面的代码中，我们针对 div 设置了 color 属性值为红色，而针对 p 元素我们没有声明任何的属性，但是由于 color 是可以继承的，因此 p 元素从最近的 div 身上继承到了 color 属性的值。</p>
+<p><img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-065102.png" alt="image-20220813145102293"></p>
+<p>这里有两个点需要同学们注意一下。</p>
+<p>首先第一个是我强调了是<strong>最近的</strong> div 元素，看下面的例子：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;test&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Lorem ipsum dolor sit amet.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.test</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-065653.png" alt="image-20220813145652726"></p>
+<p>因为这里并不涉及到选中 p 元素声明 color 值，而是从父元素上面继承到 color 对应的值，因此这里是<strong>谁近就听谁</strong>的，初学者往往会产生混淆，又去比较权重，但是这里根本不会涉及到权重比较，因为压根儿就没有选中到 p 元素。</p>
+<p>第二个就是哪些属性能够继承？</p>
+<p>关于这一点的话，大家可以在 MDN 上面很轻松的查阅到。例如我们以 text-align 为例，如下图所示：</p>
+<p><img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-070148.png" alt="image-20220813150147885"></p>
+<h2 id="使用默认值"><a href="#使用默认值" class="headerlink" title="使用默认值"></a>使用默认值</h2><p>好了，目前走到这一步，如果属性值都还不能确定下来，那么就只能是使用默认值了。</p>
+<p>如下图所示：</p>
+<p><img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-070825.png" alt="image-20220813150824752"></p>
+<p>前面我们也说过，一个 HTML 元素要在浏览器中渲染出来，必须具备所有的 CSS 属性值，但是绝大部分我们是不会去设置的，用户代理样式表里面也不会去设置，也无法从继承拿到，因此最终都是用默认值。</p>
+<p>好了，这就是关于 CSS 属性计算过程的所有知识了。</p>
+<img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-14-154655.png" alt="image-20220814234654914" style="zoom:33%;" />
+
+
+
+<h2 id="一道面试题"><a href="#一道面试题" class="headerlink" title="一道面试题"></a>一道面试题</h2><p>好了，学习了今天的内容，让我来用一道面试题测试测试大家的理解程度。</p>
+<p>下面的代码，最终渲染出来的效果，a 元素是什么颜色？p 元素又是什么颜色？</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span>test<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>test<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>大家能说出为什么会呈现这样的结果么？</p>
+<p>解答如下：</p>
+<p><img data-src="https://xiejie-typora.oss-cn-chengdu.aliyuncs.com/2022-08-13-071941.png" alt="image-20220813151941113"></p>
+<p>实际上原因很简单，因为 a 元素在用户代理样式表中已经设置了 color 属性对应的值，因此会应用此声明值。而在 p 元素中无论是作者样式表还是用户代理样式表，都没有对此属性进行声明，然而由于 color 属性是可以继承的，因此最终 p 元素的 color 属性值通过继承来自于父元素。</p>
+<p>你答对了么？-）</p>
+<hr>
+<p>-<em>EOF</em>-</p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>前端基础</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浏览器渲染原理</title>
     <url>/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p>
 <p>在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。<br>如果主线程解析到link位置，此时外部的CSS文件还没有下载好，主线程不会等待，而是继续解析HTML，外部的预解析线程会去下载外部的CSS文件并解析成CSSOM树返回给主线程，主线程合并目前生成好的DOM和CSSOM。这就是CSS不会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="CSS预解析"><br>如果主线程解析到script位置，会停止解析HTML，转而等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML，这是因为JS代码的执行过程中可能会修改当前的DOM树，所以DOM树的生成必须暂停。这就是JS会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="JS预解析"><br>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式，内联样式，外部样式，行内样式均会包含在CSSOM树中。</p>
-<p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。<br>每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。</p>
-<h3 id="HTML解析-Parse-HTML"><a href="#HTML解析-Parse-HTML" class="headerlink" title="HTML解析 -Parse HTML"></a>HTML解析 -Parse HTML</h3>]]></content>
+<p>渲染的下一步是样式计算：<br>主线程会遍历得到的DOM树，依次为树中的每个节点计算出它最终的样式，称之为Computed Style。<br>在这一过程中，很多预设值会变成绝对值，比如red会变成rgb（255，0，0）;相对单位会变成绝对单位，比如em会变成px。<br>这一步完成后，会得到一颗带有样式的DOM树。</p>
+<p>接下来是布局，布局完成后会得到布局树。<br>布局阶段会依次遍历DOM树的每一个节点，计算每个节点的几何信息。例如节点的宽高，相对包含块的位置。<br>大部分时候，DOM树和布局树并非一一对应。<br>比如display:none的节点没有几何信息，因此不会生成到布局树；又比如使用了伪元素选择器，虽然DOM树中不存在这些伪元素节点，但它们拥有几何信息，使用会生成到布局树匿名行盒，匿名块盒等等都会导致DOM树和布局树无法一一对应。</p>
+<p>下一步是分层<br>主线程会使用一套复杂的策略对整个布局树中进行分层。<br>分层的好处在于，将来其某一个层改变后，仅会对该层进行后续处理，从而提升效率。<br>滚动条，堆叠上下文，transform，opacity等样式都会或多或少的影响分层结果，也可以通过will-change属性更大程度的影响分层结果。</p>
+<p>再下一步，绘制 paint<br>canvas的绘制是由浏览器开放出来的绘制功能。<br>主线程会为每个层单独产生绘制指令集，用于描述这一层的内容该如何画出来。</p>
+<p>分块：Tiles<br>完成绘制之后，主线程会将每个图层的绘制信息提交给合成线程，剩余工作将由合成线程完成。合成线程首先对每个图层进行分块，将其划分为更多的小区域。<br>它会从线程池中拿取多个线程来完成分块工作。</p>
+<p>光栅化Raster :将每个块变成位图，优先处理靠近视图的块。<br>分块完成后，进入光栅化阶段<br>合成线程会将块信息交给GPU进程，以极高的速度完成光栅化。<br>GPU进程会开启多个线程来完成光栅化，并优先处理靠近视口区域的块。<br>光栅化的结果就是一块一块的位图。</p>
+<p>画 draw<br>合成线程拿到每个层，每个块的位图后，生成一个个指引【quad】信息。<br>指引会标识出每个位图应该画到屏幕的哪个位置，以及会考虑到旋转，缩放等变形。变形发生在合成线程，与渲染主线程无关，这就是transform效率高的本质原因。<br>合成线程会把quad提交给GPU进程，由GPU进程产生系统调用，提交给GPU硬件，完成最终的屏幕成像。</p>
+<p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。<br>渲染主线程的主要工作内容为：parse HTML，computed style，生成layout布局树，对dom树进行分层，绘制dom树。后续步骤由其他线程完成。<br>完整流程：<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染的完整流程"></p>
+<h3 id="面试题：什么是reflow？"><a href="#面试题：什么是reflow？" class="headerlink" title="面试题：什么是reflow？"></a>面试题：什么是reflow？</h3><p>reflow的本质是重新计算layout树。<br>当进行了会影响布局树的操作后，需要重新计算布局树，会引发layout。<br>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后再进行计算。所以，改动属性造成的reflow是异步完成的。<br>也同样因为如此，当JS获取布局属性时，就可能造成无法获取到最新的布局信息。<br>浏览器在反复权衡下，最终决定获取属性立即reflow。</p>
+<h3 id="面试题：什么是repaint？"><a href="#面试题：什么是repaint？" class="headerlink" title="面试题：什么是repaint？"></a>面试题：什么是repaint？</h3><p>repaint的本质就是重新根据分层信息计算了绘制指令，<br>当改动了可见样式后，就需要重新计算，会引发repaint。<br>由于元素的布局信息也属于可见样式，所以reflow一定会引发repaint。</p>
+<h3 id="面试题：为什么transform的效率高？"><a href="#面试题：为什么transform的效率高？" class="headerlink" title="面试题：为什么transform的效率高？"></a>面试题：为什么transform的效率高？</h3><p>因为transform既不会影响布局也不会影响绘制指令，影响的只是渲染流程的最后一个【draw】阶段。由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。</p>
+]]></content>
       <categories>
         <category>前端基础</category>
-        <category>浏览器</category>
       </categories>
       <tags>
         <tag>前端基础</tag>
+        <tag>浏览器</tag>
       </tags>
   </entry>
   <entry>
@@ -205,11 +582,11 @@
 ]]></content>
       <categories>
         <category>前端基础</category>
-        <category>事件循环</category>
-        <category>浏览器</category>
       </categories>
       <tags>
         <tag>前端基础</tag>
+        <tag>浏览器</tag>
+        <tag>事件循环</tag>
       </tags>
   </entry>
   <entry>
