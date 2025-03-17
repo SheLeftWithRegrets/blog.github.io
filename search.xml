@@ -165,314 +165,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Cursor编辑器的安装与使用</title>
-    <url>/blog.github.io/2025/02/11/%E7%AC%AC%E4%B8%80%E7%AF%87%EF%BC%9ACursor%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Cursor是一款革命性的代码编辑器，它基于VSCode构建，并集成了强大的AI辅助功能。通过内置的AI模型，它能够理解开发者的意图，提供智能代码补全、实时代码分析和自动化重构等功能。本文将详细介绍Cursor的安装配置和使用技巧，帮助你提升开发效率。</p>
-<h2 id="为什么选择Cursor"><a href="#为什么选择Cursor" class="headerlink" title="为什么选择Cursor"></a>为什么选择Cursor</h2><h3 id="相比传统编辑器的优势"><a href="#相比传统编辑器的优势" class="headerlink" title="相比传统编辑器的优势"></a>相比传统编辑器的优势</h3><ol>
-<li>智能理解代码上下文</li>
-<li>实时AI代码建议</li>
-<li>自然语言交互</li>
-<li>强大的代码重构能力</li>
-<li>与VSCode完全兼容</li>
-</ol>
-<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><ul>
-<li>个人开发项目</li>
-<li>团队协作开发</li>
-<li>代码学习和教学</li>
-<li>快速原型开发</li>
-</ul>
-<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h3><ul>
-<li>Windows 10&#x2F;11 64位</li>
-<li>macOS 10.15+</li>
-<li>8GB及以上内存</li>
-<li>2GB可用存储空间</li>
-</ul>
-<h3 id="Windows系统安装"><a href="#Windows系统安装" class="headerlink" title="Windows系统安装"></a>Windows系统安装</h3><ol>
-<li>访问Cursor官网 <a href="https://cursor.sh/">https://cursor.sh</a></li>
-<li>点击”Download for Windows”下载安装包</li>
-<li>运行下载的exe文件</li>
-<li>按照安装向导完成安装</li>
-<li>首次启动时登录或创建账号</li>
-</ol>
-<h3 id="Mac系统安装"><a href="#Mac系统安装" class="headerlink" title="Mac系统安装"></a>Mac系统安装</h3><ol>
-<li>访问Cursor官网</li>
-<li>下载Mac版本的dmg文件</li>
-<li>打开dmg文件，将Cursor拖入Applications文件夹</li>
-<li>从启动台或Applications文件夹启动Cursor</li>
-<li>完成初始化设置</li>
-</ol>
-<h3 id="安装后配置"><a href="#安装后配置" class="headerlink" title="安装后配置"></a>安装后配置</h3><ol>
-<li>选择主题和配色方案</li>
-<li>配置编辑器字体和大小</li>
-<li>设置AI功能偏好</li>
-<li>导入已有的VSCode配置（可选）</li>
-</ol>
-<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="AI代码补全"><a href="#AI代码补全" class="headerlink" title="AI代码补全"></a>AI代码补全</h3><p>Cursor最强大的功能之一是智能代码补全：</p>
-<ul>
-<li><p><strong>实时补全</strong>：</p>
-<ul>
-<li>输入时自动显示建议</li>
-<li>支持多行代码块补全</li>
-<li>基于项目上下文的智能建议</li>
-</ul>
-</li>
-<li><p><strong>快捷键操作</strong>：</p>
-<ul>
-<li>Tab：接受建议</li>
-<li>Ctrl+Space：手动触发补全</li>
-<li>Esc：关闭建议窗口</li>
-</ul>
-</li>
-<li><p><strong>补全范围</strong>：</p>
-<ul>
-<li>变量和函数名</li>
-<li>代码片段</li>
-<li>完整的函数实现</li>
-<li>注释生成</li>
-</ul>
-</li>
-</ul>
-<h3 id="AI聊天"><a href="#AI聊天" class="headerlink" title="AI聊天"></a>AI聊天</h3><p>Cursor提供了强大的AI助手功能：</p>
-<ul>
-<li><p><strong>打开方式</strong>：</p>
-<ul>
-<li>使用快捷键 Cmd&#x2F;Ctrl + K</li>
-<li>右键菜单中选择”Ask AI”</li>
-<li>通过命令面板调用</li>
-</ul>
-</li>
-<li><p><strong>常用功能</strong>：</p>
-<ul>
-<li>代码解释和文档生成</li>
-<li>问题诊断和调试建议</li>
-<li>最佳实践咨询</li>
-<li>算法优化建议</li>
-</ul>
-</li>
-<li><p><strong>使用技巧</strong>：</p>
-<ul>
-<li>提供清晰的上下文</li>
-<li>使用自然语言描述</li>
-<li>结合代码片段提问</li>
-<li>保存常用对话</li>
-</ul>
-</li>
-</ul>
-<h3 id="代码重构"><a href="#代码重构" class="headerlink" title="代码重构"></a>代码重构</h3><p>Cursor的AI驱动重构功能：</p>
-<ul>
-<li><p><strong>重构操作</strong>：</p>
-<ul>
-<li>变量重命名</li>
-<li>提取函数&#x2F;方法</li>
-<li>优化代码结构</li>
-<li>转换代码风格</li>
-</ul>
-</li>
-<li><p><strong>使用方法</strong>：</p>
-<ol>
-<li>选中需要重构的代码</li>
-<li>右键选择”Refactor”</li>
-<li>选择重构类型</li>
-<li>预览并应用更改</li>
-</ol>
-</li>
-<li><p><strong>最佳实践</strong>：</p>
-<ul>
-<li>先保存当前更改</li>
-<li>重构前进行代码审查</li>
-<li>测试重构后的代码</li>
-<li>分步骤进行大型重构</li>
-</ul>
-</li>
-</ul>
-<h2 id="高级功能"><a href="#高级功能" class="headerlink" title="高级功能"></a>高级功能</h2><h3 id="自定义提示词"><a href="#自定义提示词" class="headerlink" title="自定义提示词"></a>自定义提示词</h3><p>优化AI交互体验：</p>
-<ol>
-<li>打开设置(Cmd&#x2F;Ctrl + ,)</li>
-<li>找到”AI Settings”</li>
-<li>添加自定义提示词模板</li>
-<li>设置触发条件和快捷键</li>
-</ol>
-<h3 id="项目分析"><a href="#项目分析" class="headerlink" title="项目分析"></a>项目分析</h3><p>全面的项目分析功能：</p>
-<ul>
-<li><p><strong>代码分析</strong>：</p>
-<ul>
-<li>依赖关系图</li>
-<li>代码质量检测</li>
-<li>性能瓶颈识别</li>
-<li>安全漏洞扫描</li>
-</ul>
-</li>
-<li><p><strong>项目管理</strong>：</p>
-<ul>
-<li>文件结构优化</li>
-<li>重复代码检测</li>
-<li>未使用代码识别</li>
-<li>版本控制集成</li>
-</ul>
-</li>
-</ul>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="连接问题"><a href="#连接问题" class="headerlink" title="连接问题"></a>连接问题</h3><p>如果遇到AI功能无法使用：</p>
-<ol>
-<li><p>网络诊断：</p>
-<ul>
-<li>检查网络连接</li>
-<li>确认防火墙设置</li>
-<li>测试API连接性</li>
-</ul>
-</li>
-<li><p>账号问题：</p>
-<ul>
-<li>验证登录状态</li>
-<li>检查订阅状态</li>
-<li>刷新访问令牌</li>
-</ul>
-</li>
-<li><p>其他解决方案：</p>
-<ul>
-<li>重启编辑器</li>
-<li>清除缓存</li>
-<li>重新安装</li>
-</ul>
-</li>
-</ol>
-<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>提升Cursor运行效率：</p>
-<ol>
-<li><p>基础优化：</p>
-<ul>
-<li>关闭不需要的插件</li>
-<li>定期清理缓存</li>
-<li>限制文件监视数量</li>
-</ul>
-</li>
-<li><p>高级设置：</p>
-<ul>
-<li>调整内存限制</li>
-<li>配置工作区设置</li>
-<li>优化文件索引</li>
-</ul>
-</li>
-<li><p>硬件建议：</p>
-<ul>
-<li>使用SSD存储</li>
-<li>确保足够内存</li>
-<li>处理器性能要求</li>
-</ul>
-</li>
-</ol>
-<h2 id="进阶技巧"><a href="#进阶技巧" class="headerlink" title="进阶技巧"></a>进阶技巧</h2><h3 id="快捷键优化"><a href="#快捷键优化" class="headerlink" title="快捷键优化"></a>快捷键优化</h3><p>提高开发效率的快捷键设置：</p>
-<ol>
-<li>常用操作快捷键</li>
-<li>自定义快捷键映射</li>
-<li>快捷键冲突解决</li>
-</ol>
-<h3 id="插件集成"><a href="#插件集成" class="headerlink" title="插件集成"></a>插件集成</h3><p>与其他开发工具的协同：</p>
-<ol>
-<li>Git集成</li>
-<li>调试工具配置</li>
-<li>代码格式化插件</li>
-<li>团队协作工具</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Cursor是一款革命性的智能代码编辑器，它通过AI辅助功能大大提高了开发效率。本文详细介绍了从安装配置到高级使用的完整流程，掌握这些功能将帮助你：</p>
-<ol>
-<li>更快速地编写代码</li>
-<li>提高代码质量</li>
-<li>简化重构过程</li>
-<li>加速问题解决</li>
-</ol>
-<p>建议循序渐进地学习和使用这些功能，从基础的代码补全开始，逐步探索更高级的功能，最终将Cursor整合到你的日常开发工作流程中。</p>
-<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
-<li><a href="https://cursor.sh/docs">Cursor官方文档</a></li>
-<li><a href="https://code.visualstudio.com/docs">VSCode文档</a></li>
-<li><a href="https://cursor.sh/blog">AI编程最佳实践</a></li>
-</ul>
-<h3 id="账号注册"><a href="#账号注册" class="headerlink" title="账号注册"></a>账号注册</h3><ol>
-<li><p><strong>访问官网</strong></p>
-<ul>
-<li>打开 <a href="https://cursor.sh/">Cursor官网</a></li>
-<li>点击右上角”Sign Up”按钮</li>
-</ul>
-</li>
-<li><p><strong>选择注册方式</strong></p>
-<ul>
-<li>GitHub账号登录（推荐）</li>
-<li>邮箱注册</li>
-<li>Google账号登录</li>
-</ul>
-</li>
-<li><p><strong>完成注册流程</strong></p>
-<ul>
-<li>填写必要信息</li>
-<li>验证邮箱</li>
-<li>设置密码（如选择邮箱注册）</li>
-</ul>
-</li>
-</ol>
-<h3 id="登录配置"><a href="#登录配置" class="headerlink" title="登录配置"></a>登录配置</h3><ol>
-<li><p><strong>首次登录</strong></p>
-<ul>
-<li>启动Cursor编辑器</li>
-<li>点击右下角的登录按钮</li>
-<li>选择登录方式</li>
-</ul>
-</li>
-<li><p><strong>登录后配置</strong></p>
-<ul>
-<li>选择AI模型（默认为Claude）</li>
-<li>设置API访问权限</li>
-<li>配置代码补全偏好</li>
-</ul>
-</li>
-<li><p><strong>账号管理</strong></p>
-<ul>
-<li>查看使用配额</li>
-<li>管理订阅计划</li>
-<li>设置个人偏好</li>
-</ul>
-</li>
-</ol>
-<h3 id="常见登录问题"><a href="#常见登录问题" class="headerlink" title="常见登录问题"></a>常见登录问题</h3><ol>
-<li><p><strong>无法登录</strong></p>
-<ul>
-<li>检查网络连接</li>
-<li>确认账号密码正确</li>
-<li>清除浏览器缓存</li>
-</ul>
-</li>
-<li><p><strong>API限制</strong></p>
-<ul>
-<li>免费版每日限额说明</li>
-<li>升级专业版获取更多配额</li>
-<li>配额使用优化建议</li>
-</ul>
-</li>
-</ol>
-<h3 id="针对于cursor的免费版"><a href="#针对于cursor的免费版" class="headerlink" title="针对于cursor的免费版"></a>针对于cursor的免费版</h3><ol>
-<li><p>免费版限制<br>我们知道cursor的免费版是有限制的，比如每天只能使用50次（原来是150次），而且不能使用一些高级功能，比如代码重构，代码解释等。</p>
-</li>
-<li><p>免费版使用技巧<br>  我们可以使用2925无限邮箱，当每日的免费版限制额度用完之后，重复注册邮箱，既可以实现无限制的cursor的AI功能。</p>
-</li>
-<li><p>2925无限邮箱注册</p>
-<ul>
-<li>访问官网 <a href="https://2925.cc/">https://2925.cc</a></li>
-<li>点击”立即注册”按钮</li>
-<li>填写必要信息</li>
-<li>验证邮箱</li>
-</ul>
-</li>
-<li><p>当免费版限制额度使用过多后，会锁定电脑ip，具体解决办法不过多赘述</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>技术教程</category>
-      </categories>
-      <tags>
-        <tag>开发工具</tag>
-        <tag>AI编程</tag>
-        <tag>VSCode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS包含块</title>
     <url>/blog.github.io/2025/03/17/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20CSS%20%E4%B9%8B%E5%8C%85%E5%90%AB%E5%9D%97/</url>
     <content><![CDATA[<h1 id="你不知道的-CSS-之包含块"><a href="#你不知道的-CSS-之包含块" class="headerlink" title="你不知道的 CSS 之包含块"></a>你不知道的 CSS 之包含块</h1><p>包含块英语全称为<strong>containing block</strong>，实际上平时你在书写 CSS 时，大多数情况下你是感受不到它的存在，因此你不知道这个知识点也是一件很正常的事情。但是这玩意儿是确确实实存在的，在 CSS 规范中也是明确书写了的：</p>
@@ -819,6 +511,626 @@
       </tags>
   </entry>
   <entry>
+    <title>HTML5 基础</title>
+    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%89%E7%AF%87%EF%BC%9AHTML5%20%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="HTML5-基础"><a href="#HTML5-基础" class="headerlink" title="HTML5 基础"></a>HTML5 基础</h1><h2 id="网页请求过程"><a href="#网页请求过程" class="headerlink" title="网页请求过程"></a>网页请求过程</h2><h3 id="请描述一个网页从开始请求到最终显示的完整过程？"><a href="#请描述一个网页从开始请求到最终显示的完整过程？" class="headerlink" title="请描述一个网页从开始请求到最终显示的完整过程？"></a>请描述一个网页从开始请求到最终显示的完整过程？</h3><p>一个网页从请求到最终显示的完整过程一般可分为如下7个步骤：</p>
+<ol>
+<li>在浏览器中输入网址</li>
+<li>发送至DNS服务器并获得域名对应的web服务器的IP地址</li>
+<li>与web服务器建立TCP连接</li>
+<li>浏览器向web服务器的IP地址发送相应的HTTP请求</li>
+<li>web服务器响应请求并返回指定URL的数据，或错误信息，如果设定重定向，则重定向到新的URL地址</li>
+<li>浏览器下载数据后解析HTML源文件，解析过程中实现对页面的排版，解析完成后再浏览器中显示基础页面</li>
+<li>分析页面中的超链接并显示在当前页面，重复以上过程直至无超链接需要发送，完成全部显示</li>
+</ol>
+<h2 id="HTML5-基础-1"><a href="#HTML5-基础-1" class="headerlink" title="HTML5 基础"></a>HTML5 基础</h2><h3 id="什么是-HTML5"><a href="#什么是-HTML5" class="headerlink" title="什么是 HTML5?"></a>什么是 HTML5?</h3><p>HTML5是HTML（超文本标记语言）的最新版本。它是一种为万维网构建和显示内容的语言，万维网是互联网的核心技术。</p>
+<p>WHATWG（Web超文本应用技术工作组）另一次W3C个人聚会认为，W3C没有认真考虑当前方言的现实改进需求，它已经开始处理HTML-HTML5的新确定。因此，HTML5是HTML 4.01和XHTML 1.0的另一种改编，它集中于Web应用程序设计者的必要性上，并且还倾向于在当前细节中发现的问题。</p>
+<p>具体而言，HTML5包含许多新的句法特征。</p>
+<h3 id="什么是-？是否需要在HTML5中使用？"><a href="#什么是-？是否需要在HTML5中使用？" class="headerlink" title="什么是 &lt;!DOCTYPE&gt;？是否需要在HTML5中使用？"></a>什么是 <code>&lt;!DOCTYPE&gt;</code>？是否需要在HTML5中使用？</h3><p><code>&lt;!DOCTYPE&gt;</code>声明该文档类型是由什么版本的html编写的。例如<code>&lt;!DOCTYPE html&gt;</code>是html5独特的文件开头，<code>&lt;!DOCTYPE&gt;</code>标记没有结束标记，它不区分大小写。</p>
+<p><code>&lt;!DOCTYPE&gt;</code>声明必须是HTML5文档中的第一行，在标记之前。如HTML 4.01，<code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code>，全部<code>&lt;!DOCTYPE&gt;</code>声明需要引用文档类型定义（DTD），因为HTML 4.01是基于标准通用标记语言（SGML）的。而HTML5并不基于SGML，因此不需要对文档类型定义（DTD）的引用。</p>
+<h3 id="DOCTYPE作用-严格模式与混杂模式如何区分？它们有何意义"><a href="#DOCTYPE作用-严格模式与混杂模式如何区分？它们有何意义" class="headerlink" title="DOCTYPE作用? 严格模式与混杂模式如何区分？它们有何意义?"></a>DOCTYPE作用? 严格模式与混杂模式如何区分？它们有何意义?</h3><p>DOCTYPE作用?：</p>
+<ul>
+<li><p><code>&lt;!DOCTYPE&gt;</code>声明叫做文件类型定义（DTD），声明的作用为了告诉浏览器该文件的类型。让浏览器解析器知道应该用哪个规范来解析文档。</p>
+</li>
+<li><p><code>&lt;!DOCTYPE&gt;</code>声明必须在 HTML 文档的第一行，这并不是一个 HTML 标签。<br>严格模式与混杂模式如何区分？</p>
+</li>
+<li><p>严格模式：标准模式，浏览器按照W3C标准解析代码</p>
+</li>
+<li><p>混杂模式：怪异模式&#x2F;兼容模式，浏览器按照自己的方式解析代码</p>
+</li>
+<li><p>如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式）</p>
+</li>
+<li><p>包含过渡 DTD 和 URI 的 DOCTYPE ，以严格模式呈现；但有过渡 DTD 而没有 URI （统一资源标识符）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式）</p>
+</li>
+<li><p>DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）</p>
+</li>
+<li><p>HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）</p>
+</li>
+</ul>
+<p>严格模式和混杂模式的区别示例：</p>
+<ul>
+<li>在严格模式下，盒模型为W3C标准盒模型，盒的大小为内容的宽度+内边距+边框+外边距。在混杂模式下，盒模型为IE盒模型，盒的大小为内容的宽度+内边距+边框+外边距。</li>
+<li>在严格模式下，给span等行内元素设置width和height都不会生效，而在混杂模式下，则会生效。</li>
+<li>在严格模式下，一个元素的高度是由包含的内容来决定的，如果父元素没有设置高度，子元素设置一个百分比的高度是无效的。</li>
+</ul>
+<h3 id="HTML5有哪些的新特性？"><a href="#HTML5有哪些的新特性？" class="headerlink" title="HTML5有哪些的新特性？"></a>HTML5有哪些的新特性？</h3><ul>
+<li>绘图canvas</li>
+<li>拖放（Drag和drop）</li>
+<li>用于媒介回放的video和audio</li>
+<li>本地存储localStorage和sessionStorage</li>
+<li>语义化元素（header、footer、nav、section、article）</li>
+<li>表单控件（date、time、url、search、email、calendar）</li>
+<li>控件元素（webworker、websockt、Geolocation）</li>
+</ul>
+<h3 id="HTML5兼容IE低版本"><a href="#HTML5兼容IE低版本" class="headerlink" title="HTML5兼容IE低版本"></a>HTML5兼容IE低版本</h3><p>HTML5提出的新的元素不被IE6-8识别，这些新元素不能作为父节点包裹子元素，并且不能应用CSS样式。针对IE浏览器html5shiv 是比较好的解决方案。</p>
+<p>注：html5shiv.js 引用代码必须放在 <head> 元素中，因为 IE 浏览器在解析 HTML5 新元素时需要先加载该文件。</p>
+<h2 id="HTML语义化"><a href="#HTML语义化" class="headerlink" title="HTML语义化"></a>HTML语义化</h2><h3 id="简述一下你对HTML语义化的理解？"><a href="#简述一下你对HTML语义化的理解？" class="headerlink" title="简述一下你对HTML语义化的理解？"></a>简述一下你对HTML语义化的理解？</h3><ul>
+<li>用正确的标签做正确的事情</li>
+<li>html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析</li>
+<li>即使在没有样式css情况下也以一种文档格式显示，并且是容易阅读的</li>
+<li>搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO</li>
+<li>使于都源代码的人对网站更容易将网站分块，便于阅读维护理解。</li>
+</ul>
+<h2 id="HTML-和-XHTML-的区别"><a href="#HTML-和-XHTML-的区别" class="headerlink" title="HTML 和 XHTML 的区别"></a>HTML 和 XHTML 的区别</h2><ul>
+<li>XHTML中的标签都必须被正确地嵌套,HTML中的某些标签可以彼此不正确的嵌套。</li>
+<li>XHTML中的所有标签必须要关闭。</li>
+<li>XHTML中规范定义：标签名和属性对大小写敏感,所有XHTML标签名必须用小写字母。</li>
+<li>XHTML文档必须拥有根元素。</li>
+<li>XHTML中标签的属性值要使用双引号”。</li>
+</ul>
+<h2 id="页面导入样式"><a href="#页面导入样式" class="headerlink" title="页面导入样式"></a>页面导入样式</h2><h3 id="使用link和-import有什么区别？"><a href="#使用link和-import有什么区别？" class="headerlink" title="使用link和@import有什么区别？"></a>使用link和@import有什么区别？</h3><ul>
+<li>link属于XHTML标签，而@import是css提供的</li>
+<li>页面被加载时，link会同时被加载，而@import引用的css会等到页面被加载完再加载</li>
+<li>@import只在IE5以上才能识别，而link是XHTML标签，无兼容问题</li>
+<li>link方式的样式的权重高于@import的权重。</li>
+</ul>
+<h2 id="HTML5地理定位"><a href="#HTML5地理定位" class="headerlink" title="HTML5地理定位"></a>HTML5地理定位</h2><h3 id="HTML5地理定位是什么？如何使用？"><a href="#HTML5地理定位是什么？如何使用？" class="headerlink" title="HTML5地理定位是什么？如何使用？"></a>HTML5地理定位是什么？如何使用？</h3><p>HTML5 地理定位用于定位用户的位置<br>HTML5 地理定位API用于获取用户的地理位置。<br>由于这会侵犯用户隐私，除非用户批准，否则该位置不可用。<br>使用 getCurrentPosition() 方法获取用户的位置。</p>
+<h2 id="HTML全局属性"><a href="#HTML全局属性" class="headerlink" title="HTML全局属性"></a>HTML全局属性</h2><h3 id="HTML全局属性-global-attribute-有哪些（包含H5）？"><a href="#HTML全局属性-global-attribute-有哪些（包含H5）？" class="headerlink" title="HTML全局属性(global attribute)有哪些（包含H5）？"></a>HTML全局属性(global attribute)有哪些（包含H5）？</h3><ul>
+<li><code>accesskey</code>: 设置快捷键</li>
+<li><code>class</code>: 为元素设置类标识</li>
+<li><code>contenteditable</code>: 指定元素内容是否可编辑</li>
+<li><code>contextmenu</code>: 自定义鼠标右键弹出上下文菜单内容（仅firefox支持）</li>
+<li><code>data-*</code>: 为元素增加自定义属性</li>
+<li><code>dir</code>: 设置元素文本方向（默认ltr；rtl）</li>
+<li><code>draggable</code>: 设置元素是否可拖拽</li>
+<li><code>dropzone</code>: 设置元素拖放类型（copy|move|link,H5新属性，主流均不支持）</li>
+<li><code>hidden</code>: 规定元素仍未或不在相关</li>
+<li><code>id</code>: 元素id，文档内唯一</li>
+<li><code>lang</code>: 元素内容的语言</li>
+<li><code>spellcheck</code>: 是否启动拼写和语法检查</li>
+<li><code>style</code>: 行内css样式</li>
+<li><code>tabindex</code>: 设置元素可以获得焦点，通过tab导航</li>
+<li><code>title</code>: 规定元素有关的额外信息</li>
+<li><code>translate</code>: 元素和子孙节点内容是否需要本地化（均不支持）</li>
+</ul>
+<h2 id="a标签超链接target属性"><a href="#a标签超链接target属性" class="headerlink" title="a标签超链接target属性"></a>a标签超链接target属性</h2><h3 id="简述a标签超链接target属性的取值和作用？"><a href="#简述a标签超链接target属性的取值和作用？" class="headerlink" title="简述a标签超链接target属性的取值和作用？"></a>简述a标签超链接target属性的取值和作用？</h3><p>a 标签的 target 属性一共有四个值：</p>
+<ul>
+<li><code>_self</code> ：默认属性。在当前窗口或者框架中加载目标文档。</li>
+<li><code>_blank</code> ：打开新的窗口或者新的标签页。在使用这个属性时，最好添加 <code>rel=&quot;noopener norefferrer&quot;</code> 属性，防止打开的新窗口对原窗口进行篡改。防止 <code>window.opener</code> API 的恶意行为。</li>
+<li><code>_parent</code> ：在 frame 或者 iframe 中使用较多。在父级框架中载入目标文档，当 a 标签本身在顶层时，与 <code>_self</code> 相同。</li>
+<li><code>_top</code> ：在 frame 或者 iframe 中使用较多。直接在顶层的框架中载入目标文档，加载整个窗口</li>
+</ul>
+<h2 id="浏览器内多个标签页之间的通信方式"><a href="#浏览器内多个标签页之间的通信方式" class="headerlink" title="浏览器内多个标签页之间的通信方式"></a>浏览器内多个标签页之间的通信方式</h2><h3 id="浏览器内多个标签页之间的通信方式有哪些？"><a href="#浏览器内多个标签页之间的通信方式有哪些？" class="headerlink" title="浏览器内多个标签页之间的通信方式有哪些？"></a>浏览器内多个标签页之间的通信方式有哪些？</h3><p>即在浏览器中，两个不同页面（A页面的window ！&#x3D; B页面的window）网页之间的消息传递。</p>
+<ul>
+<li>WebSocket （可跨域）</li>
+<li>postMessage（可跨域）</li>
+<li>Worker之SharedWorker</li>
+<li>Server-Sent Events</li>
+<li>localStorage</li>
+<li>BroadcastChannel</li>
+<li>Cookies</li>
+</ul>
+<h2 id="viewport常见设置"><a href="#viewport常见设置" class="headerlink" title="viewport常见设置"></a>viewport常见设置</h2><h3 id="viewport常见设置都有哪些？"><a href="#viewport常见设置都有哪些？" class="headerlink" title="viewport常见设置都有哪些？"></a>viewport常见设置都有哪些？</h3><p>在移动端做开发时，必须要搞清楚 viewport 这一设置。</p>
+<ul>
+<li><code>width</code> ：设置 layout viewport 的宽度，为一个正整数，或字符串”width-device”</li>
+<li><code>initial-scale</code> ：设置页面的初始缩放值，为一个数字，可以带小数</li>
+<li><code>minimum-scale</code> ：允许用户的最小缩放值，为一个数字，可以带小数</li>
+<li><code>maximum-scale</code> ：允许用户的最大缩放值，为一个数字，可以带小数</li>
+<li><code>height</code> ：设置 layout viewport 的高度，这个属性对我们并不重要，很少使用</li>
+<li><code>user-scalable</code> ：是否允许用户进行缩放，值为”no”或”yes”， no 代表不允许，yes 代表允许</li>
+</ul>
+<h2 id="常见的浏览器内核"><a href="#常见的浏览器内核" class="headerlink" title="常见的浏览器内核"></a>常见的浏览器内核</h2><h3 id="常见的浏览器内核都有哪些？并介绍下你对内核的理解"><a href="#常见的浏览器内核都有哪些？并介绍下你对内核的理解" class="headerlink" title="常见的浏览器内核都有哪些？并介绍下你对内核的理解"></a>常见的浏览器内核都有哪些？并介绍下你对内核的理解</h3><p>常见浏览器所用内核：</p>
+<ul>
+<li>IE 浏览器内核：Trident 内核，也是俗称的 IE 内核；</li>
+<li>Chrome 浏览器内核：统称为 Chromium 内核或 Chrome 内核，以前是 Webkit 内核，现在是 Blink内核；</li>
+<li>Firefox 浏览器内核：Gecko 内核，俗称 Firefox 内核；</li>
+<li>Safari 浏览器内核：Webkit 内核；</li>
+<li>Opera 浏览器内核：最初是自己的 Presto 内核，后来加入谷歌大军，从 Webkit 又到了 Blink 内核；</li>
+<li>360浏览器、猎豹浏览器内核：IE + Chrome 双内核；</li>
+<li>搜狗、遨游、QQ 浏览器内核：Trident（兼容模式）+ Webkit（高速模式）；</li>
+<li>百度浏览器、世界之窗内核：IE 内核；</li>
+<li>2345浏览器内核：好像以前是 IE 内核，现在也是 IE + Chrome 双内核了；</li>
+<li>UC 浏览器内核：这个众口不一，UC 说是他们自己研发的 U3 内核，但好像还是基于 Webkit 和 Trident ，还有说是基于火狐内核。</li>
+</ul>
+<h3 id="内核理解"><a href="#内核理解" class="headerlink" title="内核理解"></a>内核理解</h3><p>主要分成两部分：渲染引擎和 JS 引擎。</p>
+<ul>
+<li>渲染引擎的职责就是渲染，即在浏览器窗口中显示所请求的内容。默认情况下，渲染引擎可以显示 html、xml 文档及图片，它也可以借助插件（一种浏览器扩展）显示其他类型数据，例如使用 PDF 阅读器插件，可以显示 PDF 格式。</li>
+<li>JS 引擎：解析和执行 javascript 来实现网页的动态效果。</li>
+</ul>
+<h2 id="置换元素和非置换元素"><a href="#置换元素和非置换元素" class="headerlink" title="置换元素和非置换元素"></a>置换元素和非置换元素</h2><h3 id="说说你对html中的置换元素和非置换元素的理解？"><a href="#说说你对html中的置换元素和非置换元素的理解？" class="headerlink" title="说说你对html中的置换元素和非置换元素的理解？"></a>说说你对html中的置换元素和非置换元素的理解？</h3><p><strong>置换元素（Replaced Element）</strong></p>
+<p>一个内容不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。<br>例如：img会在没有css属性前，会根据图片的实际宽高来显示。</p>
+<p><strong>非置换元素（non-Replaced Element）</strong></p>
+<p>就是除了 img、input、textarea、select、object 等置换元素以外的元素。内容直接展示给浏览器。例如标签，标签里的内容会被浏览器直接显示给用户。</p>
+<h2 id="js放在html的-body-和-head-有什么区别？"><a href="#js放在html的-body-和-head-有什么区别？" class="headerlink" title="js放在html的&lt; body &gt;和&lt; head &gt;有什么区别？"></a>js放在html的&lt; body &gt;和&lt; head &gt;有什么区别？</h2><p>将 JavaScript 代码放在 HTML 文档的 head 和 body 部分的主要区别在于页面加载和渲染的行为。</p>
+<p>放在 head&gt;中<br>当 JavaScript 文件放在 head 部分时，浏览器在解析 HTML 文档之前会先加载和执行这些 JavaScript 文件。如果不使用 async 或 defer 属性，浏览器会阻塞 DOM 树的构建，直到脚本加载和执行完毕。这意味着，如果 head 中包含多个 JavaScript 文件或者这些文件较大，页面的首次渲染和用户看到内容的时间会显著延迟，可能导致长时间的白屏现象。</p>
+<p>放在 body 中<br>将 JavaScript 文件放在文档的 body部分，通常是在 &#x2F;body 标签之前，可以避免阻塞 DOM 的解析。浏览器会先解析整个 HTML 文档，然后再加载和执行 JavaScript 文件。这种做法可以加快页面的渲染速度，使用户更快看到页面内容。对于那些需要在 DOM 加载之后执行的功能，放在 body 中更为合适。</p>
+<p>使用 async 或 defer<br>async: JavaScript 文件会异步加载，一旦加载完成，就会立即执行，这可能会影响 DOM 的解析顺序。<br>defer: JavaScript 文件会异步加载，但会在 DOM 解析完成后按照它们在文档中出现的顺序执行，这样可以避免阻塞 DOM 的解析过程。<br>因此，根据需要执行的 JavaScript 功能，可以选择将脚本放在不同的位置或使用相应的属性来优化页面加载性能。</p>
+<h2 id="img-的-title-和-alt-有什么区别"><a href="#img-的-title-和-alt-有什么区别" class="headerlink" title="&lt; img &gt;的 title 和 alt 有什么区别?"></a>&lt; img &gt;的 title 和 alt 有什么区别?</h2><ul>
+<li><code>alt</code> ： 图片加载失败时，显示在网页上的替代文字</li>
+<li><code>title</code> ：鼠标悬浮在图片上显示的文字</li>
+</ul>
+<p>注 : alt是必要属性，title非必要</p>
+<h2 id="SVG-与-Canvas的区别"><a href="#SVG-与-Canvas的区别" class="headerlink" title="SVG 与 Canvas的区别"></a>SVG 与 Canvas的区别</h2><p>SVG 可缩放矢量图形（Scalable Vector Graphics）是基于可扩展标记语言（XML）， 用于描述二维矢量图形的一种图形格式。</p>
+<table>
+<thead>
+<tr>
+<th>Canvas</th>
+<th>SVG</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>依赖分辨率</td>
+<td>不依赖分辨率</td>
+</tr>
+<tr>
+<td>不支持事件处理器</td>
+<td>支持事件处理器</td>
+</tr>
+<tr>
+<td>弱的文本渲染能力</td>
+<td>最适合带有大型渲染区域的应用程序（比如谷歌地图）</td>
+</tr>
+<tr>
+<td>能够以 .png 或 .jpg 格式保存结果图像</td>
+<td>复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）</td>
+</tr>
+<tr>
+<td>最适合图像密集型的游戏，其中的许多对象会被频繁重绘</td>
+<td>不适合游戏应用</td>
+</tr>
+</tbody></table>
+<h2 id="行内元素与块级元素"><a href="#行内元素与块级元素" class="headerlink" title="行内元素与块级元素"></a>行内元素与块级元素</h2><h3 id="行内元素有哪些？块级元素有哪些？-空-void-元素有那些？行内元素和块级元素有什么区别？"><a href="#行内元素有哪些？块级元素有哪些？-空-void-元素有那些？行内元素和块级元素有什么区别？" class="headerlink" title="行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？行内元素和块级元素有什么区别？"></a>行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？行内元素和块级元素有什么区别？</h3><p><strong>行内元素</strong>有：a b span img input select strong</p>
+<p><strong>块级元素</strong>有：div ul ol li dl dt dd h1~h6 p</p>
+<p><strong>空元素</strong>：br hr img input link meta</p>
+<ul>
+<li>行内元素不可以设置宽高,margin仅设置左右方向有效，不独占一行</li>
+<li>块级元素可以设置宽高，独占一行</li>
+</ul>
+<h2 id="async-和-defer-的作用是什么？有什么区别？"><a href="#async-和-defer-的作用是什么？有什么区别？" class="headerlink" title="async 和 defer 的作用是什么？有什么区别？"></a>async 和 defer 的作用是什么？有什么区别？</h2><ul>
+<li>脚本没有 defer 或 async，浏览器会立即加载并执行指定的脚本，也就是说不等待后续载入的文档元素，读到就加载并执行。</li>
+<li><code>defer</code> 属性表示延迟执行引入的 JavaScript，即这段 JavaScript 加载时， HTML 并未停止解析，这两个过程是并行的。当整个 document 解析完毕后再执行脚本文件，在 DOMContentLoaded 事件触发之前完成。多个脚本按顺序执行。</li>
+<li><code>async</code> 属性表示异步执行引入的 JavaScript，与 defer 的区别在于，如果已经加载好，就会开始执行，也就是说它的执行仍然会阻塞文档的解析，只是它的加载过程不会阻塞。多个脚本的执行顺序无法保证。</li>
+</ul>
+<h2 id="常⽤的meta标签"><a href="#常⽤的meta标签" class="headerlink" title="常⽤的meta标签"></a>常⽤的meta标签</h2><p>meta标签由name和content属性定义，用来描述一个网页文档的属性，比如网页的作者，网页描述，关键词等，除了HTTP标准固定了一些name作为大家使用的共识，开发者还可以自定义name。</p>
+<ul>
+<li><p><code>charset</code>: 文档的编码类型</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>keywords</code>: 页面关键词</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;关键词&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>description</code>: 页面描述</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;描述内容&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>refresh</code>: 页面重定向和刷新</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;refresh&quot;</span> <span class="attr">content</span>=<span class="string">&quot;0;url=&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>viewport</code>: 适配移动端，视口</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width-device-width, initial-scale=1, maximum-scale=1&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>content 参数有以下几种：</p>
+<ul>
+<li>width viewport ：宽度(数值&#x2F;device-width)</li>
+<li>height viewport ：高度(数值&#x2F;device-height)</li>
+<li>initial-scale ：初始缩放比例</li>
+<li>maximum-scale ：最大缩放比例</li>
+<li>minimum-scale ：最小缩放比例</li>
+<li>user-scalable ：是否允许用户缩放(yes&#x2F;no）</li>
+</ul>
+</li>
+<li><p>搜索引擎索引方式</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;robots&quot;</span> <span class="attr">content</span>=<span class="string">&quot;index,follow&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>content 参数有以下几种：</p>
+<ul>
+<li>all：文件将被检索，且页面上的链接可以被查询</li>
+<li>none：文件将不被检索，且页面上的链接不可以被查询</li>
+<li>index：文件将被检索</li>
+<li>follow：页面上的链接可以被查询</li>
+<li>noindex：文件将不被检索</li>
+<li>nofollow：页面上的链接不可以被查询</li>
+</ul>
+</li>
+</ul>
+<h2 id="浏览器页面的三层构成"><a href="#浏览器页面的三层构成" class="headerlink" title="浏览器页面的三层构成"></a>浏览器页面的三层构成</h2><h3 id="浏览器页面有哪三层构成，分别是什么，作用是什么"><a href="#浏览器页面有哪三层构成，分别是什么，作用是什么" class="headerlink" title="浏览器页面有哪三层构成，分别是什么，作用是什么?"></a>浏览器页面有哪三层构成，分别是什么，作用是什么?</h3><p>构成： 结构层（HTML）、表示层（CSS）、行为层（JavaScript）</p>
+<p>作用：HTML实现页面结构、CSS实现页面样式、JS实现业务逻辑功能</p>
+<h2 id="HTML5的优缺点"><a href="#HTML5的优缺点" class="headerlink" title="HTML5的优缺点"></a>HTML5的优缺点</h2><h3 id="HTML5的优缺点？"><a href="#HTML5的优缺点？" class="headerlink" title="HTML5的优缺点？"></a>HTML5的优缺点？</h3><p><strong>优点：</strong></p>
+<ul>
+<li>网络标准统一</li>
+<li>多设备、跨平台</li>
+<li>即时更新</li>
+<li>提高可用性和改进用户体验</li>
+<li>被大量应用于移动应用程序和游戏</li>
+<li>还有html5的一些新特性等等</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>安全性： 像之前 Firefox4 的 web socket 和透明代理的实现存在严重的安全问题，同时 web storage、web socket 这样的功能很容易被黑客利用，来盗取用户的信息和资料</li>
+<li>完善性： 许多特性各浏览器的支持程度也不一样</li>
+<li>技术门槛： HTML5 简化开发者工作的同时代表了有许多新的属性和 API 需要开发者学习，像 web worker、web socket、web storage 等新特性，后台甚至浏览器原理的知识</li>
+<li>性能： 某些平台上的引擎问题导致HTML5性能低下</li>
+<li>浏览器兼容性： IE9一下浏览器几乎全军覆没</li>
+</ul>
+<h2 id="对-WEB-标准以及-W3C-的理解与认识"><a href="#对-WEB-标准以及-W3C-的理解与认识" class="headerlink" title="对 WEB 标准以及 W3C 的理解与认识"></a>对 WEB 标准以及 W3C 的理解与认识</h2><ul>
+<li>标签闭合、标签小写、不乱嵌套、提高搜索几率利于SEO、使用外链CSS和JS脚本、结构行为表现得分离、文件下载与页面速度更快、内容能被更多的用户访问、内容能被更广泛的设备所访问、更少的代码和组件，容易维护、版本迭代方便，不需要变动页面内容、提供打印版本而不需要复制内容、提高网站易用性。</li>
+</ul>
+<h2 id="WebGL"><a href="#WebGL" class="headerlink" title="WebGL"></a>WebGL</h2><h3 id="什么是-WebGL-它有什么优点"><a href="#什么是-WebGL-它有什么优点" class="headerlink" title="什么是 WebGL,它有什么优点?"></a>什么是 WebGL,它有什么优点?</h3><p>WebGL（全写 Web Graphics Library ）是一种 3D 绘图标准，这种绘图技术标准允许把 JavaScript 和 OpenGL ES 2.0 结合在一起，通过增加 OpenGL ES 2.0 的一个 JavaScript 绑定，WebGL 可以为 HTML5 Canvas 提供硬件 3D 加速渲染，这样 Web 开发人员就可以借助系统显卡来在浏览器里更流畅地展示 3D 场景和模型了，还能创建复杂的导航和数据视觉化。显然，WebGL 技术标准免去了开发网页专用渲染插件的麻烦，可被用于创建具有复杂 3D 结构的网站页面，甚至可以用来设计 3D 网页游戏等等。</p>
+<p>WebGL 完美地解决了现有的 Web 交互式三维动画的两个问题：</p>
+<ul>
+<li>第一，它通过 HTML 脚本本身实现 Web 交互式三维动画的制作，无需任何浏览器插件支持 ;</li>
+<li>第二，它利用底层的图形硬件加速功能进行的图形渲染，是通过统一的、标准的、跨平台的 OpenGL 接口实现的。 通俗说 WebGL 中 canvas 绘图中的 3D 版本。因为原生的 WebGL 很复杂，我们经常会使用一些三方的库，如 three.js 等，这些库多数用于 HTML5 游戏开发。</li>
+</ul>
+<h2 id="cookies，sessionStorage-和-localStorage-的区别"><a href="#cookies，sessionStorage-和-localStorage-的区别" class="headerlink" title="cookies，sessionStorage 和 localStorage 的区别"></a>cookies，sessionStorage 和 localStorage 的区别</h2><h3 id="简述-cookies，sessionStorage-和-localStorage-的区别"><a href="#简述-cookies，sessionStorage-和-localStorage-的区别" class="headerlink" title="简述 cookies，sessionStorage 和 localStorage 的区别?"></a>简述 cookies，sessionStorage 和 localStorage 的区别?</h3><p>sessionStorage 和 localStorage 是 HTML5 Web Storage API 提供的，可以方便的在 web 请求之间保存数据。有了本地数据，就可以避免数据在浏览器和服务器间不必要地来回传递。sessionStorage、 localStorage 、 cookie 都是在浏览器端存储的数据，其中 sessionStorage 的概念很特别，引入了一个”浏览器窗口”的概念。sessionStorage 是在同源的同窗口（或 tab ）中，始终存在的数据。也就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后， sessionStorage 即被销毁。同时”独立”打开的不同窗口，即使是同一页面， sessionStorage 对象也是不同的 cookies 会发送到服务器端。其余两个不会。</p>
+<ul>
+<li>Cookie 每个域名存储量比较小（各浏览器不同，大致 4K ） 所有域名的存储量有限制（各浏览器不同，大致 4K ） 有个数限制（各浏览器不同） 会随请求发送到服务器 (浪费带宽)</li>
+<li>Cookie只在设置了有限时间内有效</li>
+<li>LocalStorage 永久存储 单个域名存储量比较大（推荐 5MB ，各浏览器不同） 总体数量无限制</li>
+<li>LocalStorage 用于持久化的本地存储，数据永远不会过期，关闭浏览器也不会丢失。</li>
+<li>SessionStorage 只在 Session 内有效 存储量更大（推荐没有限制，但是实际上各浏览器也不同）</li>
+<li>SessionStorage 同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此 sessionStorage 不是一种持久化的本地存储，仅仅是会话级别的存储</li>
+</ul>
+<h2 id="data-属性"><a href="#data-属性" class="headerlink" title="data- 属性"></a>data- 属性</h2><h3 id="data-属性的作用是什么？"><a href="#data-属性的作用是什么？" class="headerlink" title="data- 属性的作用是什么？"></a>data- 属性的作用是什么？</h3><p>data-为 H5 新增的为前端开发者提供自定义的属性，这些属性集可以通过对象的dataset属性获取，不支持该属性的浏览器可以通过getAttribute方法获取，需要注意的是：data-之后的以连字符分割的多个单词组成的属性，获取的时候使用驼峰风格。所有主流浏览器都支持 data-* 属性。 即：当没有合适的属性和元素时，自定义的 data 属性是能够存储页面或 App 的私有的自定义数据。</p>
+<h2 id="iframe-的缺点"><a href="#iframe-的缺点" class="headerlink" title="iframe 的缺点"></a>iframe 的缺点</h2><h3 id="iframe-有那些缺点？"><a href="#iframe-有那些缺点？" class="headerlink" title="iframe 有那些缺点？"></a>iframe 有那些缺点？</h3><ul>
+<li>iframe会阻塞主页面的onload事件</li>
+<li>搜索引擎的检索程序无法解读这种页面，不易于SEO</li>
+<li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。</li>
+</ul>
+<p>注：若使用iframe，最好通过JS动态给iframe添加src属性值</p>
+<h2 id="src-与-href-的区别"><a href="#src-与-href-的区别" class="headerlink" title="src 与 href 的区别"></a>src 与 href 的区别</h2><h3 id="简述一下-src-与-href-的区别？"><a href="#简述一下-src-与-href-的区别？" class="headerlink" title="简述一下 src 与 href 的区别？"></a>简述一下 src 与 href 的区别？</h3><p>src:当浏览器遇到 src 属性时，会暂停解析 HTML 并开始下载资源。资源下载完成后，浏览器会立即执行或显示该资源。<br>href：用于指定链接的目标位置，通常用于引用外部资源，但不会替换当前元素的内容。浏览器会异步解析 href 属性，即在解析 HTML 的同时下载资源，不会阻塞 HTML 的解析过程。</p>
+<h2 id="WebSocket-与消息推送"><a href="#WebSocket-与消息推送" class="headerlink" title="WebSocket 与消息推送"></a>WebSocket 与消息推送</h2><h3 id="WebSocket-与消息推送？"><a href="#WebSocket-与消息推送？" class="headerlink" title="WebSocket 与消息推送？"></a>WebSocket 与消息推送？</h3><p>B&#x2F;S 架构的系统多使用 HTTP 协议</p>
+<p><strong>HTTP协议：</strong></p>
+<ul>
+<li>连接无状态</li>
+<li>数据明文传输</li>
+<li>端口默认为80,底层通信还是使用 Socket 完成</li>
+</ul>
+<p>HTTP 协议决定了服务器与客户端之间的连接方式，无法直接实现消息推送,一些变相的解决办法：</p>
+<p><strong>双向通信与消息推送</strong></p>
+<ul>
+<li><p>轮询： 客户端定时向服务器发送 Ajax 请求，服务器接到请求后马上返回响应信息并关闭连接。</p>
+<p>优点：后端程序编写比较容易<br>缺点：请求中有大半无用，浪费带宽和服务器资源<br>实例：适用于小型应用</p>
+</li>
+<li><p>长轮询： 客户端向服务器发送 Ajax 请求，服务器接到请求后 hold 住连接，直到有新消息才返回响应信息并关闭连接，客户端处理完响应信息后再向服务器发送新的请求。</p>
+<p>优点：在无消息的情况下不会频繁的请求，耗费资源小<br>缺点：服务器 hold 连接会消耗资源，返回数据顺序无保证，难于管理维护。Comet 异步的 ashx<br>实例：WebQQ、Hi 网页版、Facebook IM。</p>
+</li>
+<li><p>长连接： 在页面里嵌入一个隐蔵 iframe，将这个隐蔵 iframe 的 src 属性设为对一个长连接的请求或是采用 xhr 请求，服务器端就能源源不断地往客户端输入数据。</p>
+<p>优点：消息即时到达，不发无用请求；管理起来也相对便。<br>缺点：服务器维护一个长连接会增加开销。<br>实例：Gmail 聊天</p>
+</li>
+<li><p>Flash Socket： 在页面中内嵌入一个使用了 Socket 类的 Flash 程序 JavaScript 通过调用此 Flash 程序提供的 Socket 接口与服务器端的 Socket 接口进行通信， JavaScript 在收到服务器端传送的信息后控制页面的显示。</p>
+<p>优点：实现真正的即时通信，而不是伪即时<br>缺点：客户端必须安装 Flash 插件；非 HTTP 协议，无法自动穿越防火墙<br>实例：网络互动游戏</p>
+</li>
+<li><p>Websocket： WebSocket 是 HTML5 开始提供的一种浏览器与服务器间进行全双工通讯的网络技术。依靠这种技术可以实现客户端和服务器端的长连接，双向实时通信。</p>
+<p>优点：事件驱动、异步、使用ws或者wss协议的客户端socket、能实现真正意义上的推送功能<br>缺点：少部分浏览器不支持，浏览器支持的程度与方式有区别。</p>
+</li>
+</ul>
+<p>原文链接：<a href="https://blog.csdn.net/weixin_43106777/article/details/96842011">https://blog.csdn.net/weixin_43106777&#x2F;article&#x2F;details&#x2F;96842011</a></p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cursor编辑器的安装与使用</title>
+    <url>/blog.github.io/2025/02/11/%E7%AC%AC%E4%B8%80%E7%AF%87%EF%BC%9ACursor%E7%BC%96%E8%BE%91%E5%99%A8%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Cursor是一款革命性的代码编辑器，它基于VSCode构建，并集成了强大的AI辅助功能。通过内置的AI模型，它能够理解开发者的意图，提供智能代码补全、实时代码分析和自动化重构等功能。本文将详细介绍Cursor的安装配置和使用技巧，帮助你提升开发效率。</p>
+<h2 id="为什么选择Cursor"><a href="#为什么选择Cursor" class="headerlink" title="为什么选择Cursor"></a>为什么选择Cursor</h2><h3 id="相比传统编辑器的优势"><a href="#相比传统编辑器的优势" class="headerlink" title="相比传统编辑器的优势"></a>相比传统编辑器的优势</h3><ol>
+<li>智能理解代码上下文</li>
+<li>实时AI代码建议</li>
+<li>自然语言交互</li>
+<li>强大的代码重构能力</li>
+<li>与VSCode完全兼容</li>
+</ol>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><ul>
+<li>个人开发项目</li>
+<li>团队协作开发</li>
+<li>代码学习和教学</li>
+<li>快速原型开发</li>
+</ul>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h3><ul>
+<li>Windows 10&#x2F;11 64位</li>
+<li>macOS 10.15+</li>
+<li>8GB及以上内存</li>
+<li>2GB可用存储空间</li>
+</ul>
+<h3 id="Windows系统安装"><a href="#Windows系统安装" class="headerlink" title="Windows系统安装"></a>Windows系统安装</h3><ol>
+<li>访问Cursor官网 <a href="https://cursor.sh/">https://cursor.sh</a></li>
+<li>点击”Download for Windows”下载安装包</li>
+<li>运行下载的exe文件</li>
+<li>按照安装向导完成安装</li>
+<li>首次启动时登录或创建账号</li>
+</ol>
+<h3 id="Mac系统安装"><a href="#Mac系统安装" class="headerlink" title="Mac系统安装"></a>Mac系统安装</h3><ol>
+<li>访问Cursor官网</li>
+<li>下载Mac版本的dmg文件</li>
+<li>打开dmg文件，将Cursor拖入Applications文件夹</li>
+<li>从启动台或Applications文件夹启动Cursor</li>
+<li>完成初始化设置</li>
+</ol>
+<h3 id="安装后配置"><a href="#安装后配置" class="headerlink" title="安装后配置"></a>安装后配置</h3><ol>
+<li>选择主题和配色方案</li>
+<li>配置编辑器字体和大小</li>
+<li>设置AI功能偏好</li>
+<li>导入已有的VSCode配置（可选）</li>
+</ol>
+<h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="AI代码补全"><a href="#AI代码补全" class="headerlink" title="AI代码补全"></a>AI代码补全</h3><p>Cursor最强大的功能之一是智能代码补全：</p>
+<ul>
+<li><p><strong>实时补全</strong>：</p>
+<ul>
+<li>输入时自动显示建议</li>
+<li>支持多行代码块补全</li>
+<li>基于项目上下文的智能建议</li>
+</ul>
+</li>
+<li><p><strong>快捷键操作</strong>：</p>
+<ul>
+<li>Tab：接受建议</li>
+<li>Ctrl+Space：手动触发补全</li>
+<li>Esc：关闭建议窗口</li>
+</ul>
+</li>
+<li><p><strong>补全范围</strong>：</p>
+<ul>
+<li>变量和函数名</li>
+<li>代码片段</li>
+<li>完整的函数实现</li>
+<li>注释生成</li>
+</ul>
+</li>
+</ul>
+<h3 id="AI聊天"><a href="#AI聊天" class="headerlink" title="AI聊天"></a>AI聊天</h3><p>Cursor提供了强大的AI助手功能：</p>
+<ul>
+<li><p><strong>打开方式</strong>：</p>
+<ul>
+<li>使用快捷键 Cmd&#x2F;Ctrl + K</li>
+<li>右键菜单中选择”Ask AI”</li>
+<li>通过命令面板调用</li>
+</ul>
+</li>
+<li><p><strong>常用功能</strong>：</p>
+<ul>
+<li>代码解释和文档生成</li>
+<li>问题诊断和调试建议</li>
+<li>最佳实践咨询</li>
+<li>算法优化建议</li>
+</ul>
+</li>
+<li><p><strong>使用技巧</strong>：</p>
+<ul>
+<li>提供清晰的上下文</li>
+<li>使用自然语言描述</li>
+<li>结合代码片段提问</li>
+<li>保存常用对话</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码重构"><a href="#代码重构" class="headerlink" title="代码重构"></a>代码重构</h3><p>Cursor的AI驱动重构功能：</p>
+<ul>
+<li><p><strong>重构操作</strong>：</p>
+<ul>
+<li>变量重命名</li>
+<li>提取函数&#x2F;方法</li>
+<li>优化代码结构</li>
+<li>转换代码风格</li>
+</ul>
+</li>
+<li><p><strong>使用方法</strong>：</p>
+<ol>
+<li>选中需要重构的代码</li>
+<li>右键选择”Refactor”</li>
+<li>选择重构类型</li>
+<li>预览并应用更改</li>
+</ol>
+</li>
+<li><p><strong>最佳实践</strong>：</p>
+<ul>
+<li>先保存当前更改</li>
+<li>重构前进行代码审查</li>
+<li>测试重构后的代码</li>
+<li>分步骤进行大型重构</li>
+</ul>
+</li>
+</ul>
+<h2 id="高级功能"><a href="#高级功能" class="headerlink" title="高级功能"></a>高级功能</h2><h3 id="自定义提示词"><a href="#自定义提示词" class="headerlink" title="自定义提示词"></a>自定义提示词</h3><p>优化AI交互体验：</p>
+<ol>
+<li>打开设置(Cmd&#x2F;Ctrl + ,)</li>
+<li>找到”AI Settings”</li>
+<li>添加自定义提示词模板</li>
+<li>设置触发条件和快捷键</li>
+</ol>
+<h3 id="项目分析"><a href="#项目分析" class="headerlink" title="项目分析"></a>项目分析</h3><p>全面的项目分析功能：</p>
+<ul>
+<li><p><strong>代码分析</strong>：</p>
+<ul>
+<li>依赖关系图</li>
+<li>代码质量检测</li>
+<li>性能瓶颈识别</li>
+<li>安全漏洞扫描</li>
+</ul>
+</li>
+<li><p><strong>项目管理</strong>：</p>
+<ul>
+<li>文件结构优化</li>
+<li>重复代码检测</li>
+<li>未使用代码识别</li>
+<li>版本控制集成</li>
+</ul>
+</li>
+</ul>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="连接问题"><a href="#连接问题" class="headerlink" title="连接问题"></a>连接问题</h3><p>如果遇到AI功能无法使用：</p>
+<ol>
+<li><p>网络诊断：</p>
+<ul>
+<li>检查网络连接</li>
+<li>确认防火墙设置</li>
+<li>测试API连接性</li>
+</ul>
+</li>
+<li><p>账号问题：</p>
+<ul>
+<li>验证登录状态</li>
+<li>检查订阅状态</li>
+<li>刷新访问令牌</li>
+</ul>
+</li>
+<li><p>其他解决方案：</p>
+<ul>
+<li>重启编辑器</li>
+<li>清除缓存</li>
+<li>重新安装</li>
+</ul>
+</li>
+</ol>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>提升Cursor运行效率：</p>
+<ol>
+<li><p>基础优化：</p>
+<ul>
+<li>关闭不需要的插件</li>
+<li>定期清理缓存</li>
+<li>限制文件监视数量</li>
+</ul>
+</li>
+<li><p>高级设置：</p>
+<ul>
+<li>调整内存限制</li>
+<li>配置工作区设置</li>
+<li>优化文件索引</li>
+</ul>
+</li>
+<li><p>硬件建议：</p>
+<ul>
+<li>使用SSD存储</li>
+<li>确保足够内存</li>
+<li>处理器性能要求</li>
+</ul>
+</li>
+</ol>
+<h2 id="进阶技巧"><a href="#进阶技巧" class="headerlink" title="进阶技巧"></a>进阶技巧</h2><h3 id="快捷键优化"><a href="#快捷键优化" class="headerlink" title="快捷键优化"></a>快捷键优化</h3><p>提高开发效率的快捷键设置：</p>
+<ol>
+<li>常用操作快捷键</li>
+<li>自定义快捷键映射</li>
+<li>快捷键冲突解决</li>
+</ol>
+<h3 id="插件集成"><a href="#插件集成" class="headerlink" title="插件集成"></a>插件集成</h3><p>与其他开发工具的协同：</p>
+<ol>
+<li>Git集成</li>
+<li>调试工具配置</li>
+<li>代码格式化插件</li>
+<li>团队协作工具</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Cursor是一款革命性的智能代码编辑器，它通过AI辅助功能大大提高了开发效率。本文详细介绍了从安装配置到高级使用的完整流程，掌握这些功能将帮助你：</p>
+<ol>
+<li>更快速地编写代码</li>
+<li>提高代码质量</li>
+<li>简化重构过程</li>
+<li>加速问题解决</li>
+</ol>
+<p>建议循序渐进地学习和使用这些功能，从基础的代码补全开始，逐步探索更高级的功能，最终将Cursor整合到你的日常开发工作流程中。</p>
+<h2 id="参考资源"><a href="#参考资源" class="headerlink" title="参考资源"></a>参考资源</h2><ul>
+<li><a href="https://cursor.sh/docs">Cursor官方文档</a></li>
+<li><a href="https://code.visualstudio.com/docs">VSCode文档</a></li>
+<li><a href="https://cursor.sh/blog">AI编程最佳实践</a></li>
+</ul>
+<h3 id="账号注册"><a href="#账号注册" class="headerlink" title="账号注册"></a>账号注册</h3><ol>
+<li><p><strong>访问官网</strong></p>
+<ul>
+<li>打开 <a href="https://cursor.sh/">Cursor官网</a></li>
+<li>点击右上角”Sign Up”按钮</li>
+</ul>
+</li>
+<li><p><strong>选择注册方式</strong></p>
+<ul>
+<li>GitHub账号登录（推荐）</li>
+<li>邮箱注册</li>
+<li>Google账号登录</li>
+</ul>
+</li>
+<li><p><strong>完成注册流程</strong></p>
+<ul>
+<li>填写必要信息</li>
+<li>验证邮箱</li>
+<li>设置密码（如选择邮箱注册）</li>
+</ul>
+</li>
+</ol>
+<h3 id="登录配置"><a href="#登录配置" class="headerlink" title="登录配置"></a>登录配置</h3><ol>
+<li><p><strong>首次登录</strong></p>
+<ul>
+<li>启动Cursor编辑器</li>
+<li>点击右下角的登录按钮</li>
+<li>选择登录方式</li>
+</ul>
+</li>
+<li><p><strong>登录后配置</strong></p>
+<ul>
+<li>选择AI模型（默认为Claude）</li>
+<li>设置API访问权限</li>
+<li>配置代码补全偏好</li>
+</ul>
+</li>
+<li><p><strong>账号管理</strong></p>
+<ul>
+<li>查看使用配额</li>
+<li>管理订阅计划</li>
+<li>设置个人偏好</li>
+</ul>
+</li>
+</ol>
+<h3 id="常见登录问题"><a href="#常见登录问题" class="headerlink" title="常见登录问题"></a>常见登录问题</h3><ol>
+<li><p><strong>无法登录</strong></p>
+<ul>
+<li>检查网络连接</li>
+<li>确认账号密码正确</li>
+<li>清除浏览器缓存</li>
+</ul>
+</li>
+<li><p><strong>API限制</strong></p>
+<ul>
+<li>免费版每日限额说明</li>
+<li>升级专业版获取更多配额</li>
+<li>配额使用优化建议</li>
+</ul>
+</li>
+</ol>
+<h3 id="针对于cursor的免费版"><a href="#针对于cursor的免费版" class="headerlink" title="针对于cursor的免费版"></a>针对于cursor的免费版</h3><ol>
+<li><p>免费版限制<br>我们知道cursor的免费版是有限制的，比如每天只能使用50次（原来是150次），而且不能使用一些高级功能，比如代码重构，代码解释等。</p>
+</li>
+<li><p>免费版使用技巧<br>  我们可以使用2925无限邮箱，当每日的免费版限制额度用完之后，重复注册邮箱，既可以实现无限制的cursor的AI功能。</p>
+</li>
+<li><p>2925无限邮箱注册</p>
+<ul>
+<li>访问官网 <a href="https://2925.cc/">https://2925.cc</a></li>
+<li>点击”立即注册”按钮</li>
+<li>填写必要信息</li>
+<li>验证邮箱</li>
+</ul>
+</li>
+<li><p>当免费版限制额度使用过多后，会锁定电脑ip，具体解决办法不过多赘述</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>技术教程</category>
+      </categories>
+      <tags>
+        <tag>开发工具</tag>
+        <tag>AI编程</tag>
+        <tag>VSCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用DrissionPage进行高效的数据爬虫</title>
     <url>/blog.github.io/2025/03/07/%E7%AC%AC%E4%B9%9D%E7%AF%87%EF%BC%9A%E4%BD%BF%E7%94%A8DrissionPage%E8%BF%9B%E8%A1%8C%E9%AB%98%E6%95%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%88%AC%E8%99%AB/</url>
     <content><![CDATA[<h1 id="使用DrissionPage进行高效的数据爬虫"><a href="#使用DrissionPage进行高效的数据爬虫" class="headerlink" title="使用DrissionPage进行高效的数据爬虫"></a>使用DrissionPage进行高效的数据爬虫</h1><h2 id="1-DrissionPage简介"><a href="#1-DrissionPage简介" class="headerlink" title="1. DrissionPage简介"></a>1. DrissionPage简介</h2><p>DrissionPage是一个功能强大的Python爬虫库，它结合了Selenium和Requests的优点，提供了更简单的API和更高效的性能。</p>
@@ -1053,318 +1365,6 @@
         <tag>博客搭建</tag>
         <tag>零基础教程</tag>
         <tag>GitHub Pages</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML5 基础</title>
-    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%89%E7%AF%87%EF%BC%9AHTML5%20%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="HTML5-基础"><a href="#HTML5-基础" class="headerlink" title="HTML5 基础"></a>HTML5 基础</h1><h2 id="网页请求过程"><a href="#网页请求过程" class="headerlink" title="网页请求过程"></a>网页请求过程</h2><h3 id="请描述一个网页从开始请求到最终显示的完整过程？"><a href="#请描述一个网页从开始请求到最终显示的完整过程？" class="headerlink" title="请描述一个网页从开始请求到最终显示的完整过程？"></a>请描述一个网页从开始请求到最终显示的完整过程？</h3><p>一个网页从请求到最终显示的完整过程一般可分为如下7个步骤：</p>
-<ol>
-<li>在浏览器中输入网址</li>
-<li>发送至DNS服务器并获得域名对应的web服务器的IP地址</li>
-<li>与web服务器建立TCP连接</li>
-<li>浏览器向web服务器的IP地址发送相应的HTTP请求</li>
-<li>web服务器响应请求并返回指定URL的数据，或错误信息，如果设定重定向，则重定向到新的URL地址</li>
-<li>浏览器下载数据后解析HTML源文件，解析过程中实现对页面的排版，解析完成后再浏览器中显示基础页面</li>
-<li>分析页面中的超链接并显示在当前页面，重复以上过程直至无超链接需要发送，完成全部显示</li>
-</ol>
-<h2 id="HTML5-基础-1"><a href="#HTML5-基础-1" class="headerlink" title="HTML5 基础"></a>HTML5 基础</h2><h3 id="什么是-HTML5"><a href="#什么是-HTML5" class="headerlink" title="什么是 HTML5?"></a>什么是 HTML5?</h3><p>HTML5是HTML（超文本标记语言）的最新版本。它是一种为万维网构建和显示内容的语言，万维网是互联网的核心技术。</p>
-<p>WHATWG（Web超文本应用技术工作组）另一次W3C个人聚会认为，W3C没有认真考虑当前方言的现实改进需求，它已经开始处理HTML-HTML5的新确定。因此，HTML5是HTML 4.01和XHTML 1.0的另一种改编，它集中于Web应用程序设计者的必要性上，并且还倾向于在当前细节中发现的问题。</p>
-<p>具体而言，HTML5包含许多新的句法特征。</p>
-<h3 id="什么是-？是否需要在HTML5中使用？"><a href="#什么是-？是否需要在HTML5中使用？" class="headerlink" title="什么是 &lt;!DOCTYPE&gt;？是否需要在HTML5中使用？"></a>什么是 <code>&lt;!DOCTYPE&gt;</code>？是否需要在HTML5中使用？</h3><p><code>&lt;!DOCTYPE&gt;</code>声明该文档类型是由什么版本的html编写的。例如<code>&lt;!DOCTYPE html&gt;</code>是html5独特的文件开头，<code>&lt;!DOCTYPE&gt;</code>标记没有结束标记，它不区分大小写。</p>
-<p><code>&lt;!DOCTYPE&gt;</code>声明必须是HTML5文档中的第一行，在标记之前。如HTML 4.01，<code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code>，全部<code>&lt;!DOCTYPE&gt;</code>声明需要引用文档类型定义（DTD），因为HTML 4.01是基于标准通用标记语言（SGML）的。而HTML5并不基于SGML，因此不需要对文档类型定义（DTD）的引用。</p>
-<h3 id="DOCTYPE作用-严格模式与混杂模式如何区分？它们有何意义"><a href="#DOCTYPE作用-严格模式与混杂模式如何区分？它们有何意义" class="headerlink" title="DOCTYPE作用? 严格模式与混杂模式如何区分？它们有何意义?"></a>DOCTYPE作用? 严格模式与混杂模式如何区分？它们有何意义?</h3><p>DOCTYPE作用?：</p>
-<ul>
-<li><p><code>&lt;!DOCTYPE&gt;</code>声明叫做文件类型定义（DTD），声明的作用为了告诉浏览器该文件的类型。让浏览器解析器知道应该用哪个规范来解析文档。</p>
-</li>
-<li><p><code>&lt;!DOCTYPE&gt;</code>声明必须在 HTML 文档的第一行，这并不是一个 HTML 标签。<br>严格模式与混杂模式如何区分？</p>
-</li>
-<li><p>严格模式：标准模式，浏览器按照W3C标准解析代码</p>
-</li>
-<li><p>混杂模式：怪异模式&#x2F;兼容模式，浏览器按照自己的方式解析代码</p>
-</li>
-<li><p>如果文档包含严格的 DOCTYPE ，那么它一般以严格模式呈现。（严格 DTD ——严格模式）</p>
-</li>
-<li><p>包含过渡 DTD 和 URI 的 DOCTYPE ，以严格模式呈现；但有过渡 DTD 而没有 URI （统一资源标识符）会导致页面以混杂模式呈现。（有 URI 的过渡 DTD ——严格模式；没有 URI 的过渡 DTD ——混杂模式）</p>
-</li>
-<li><p>DOCTYPE 不存在或形式不正确会导致文档以混杂模式呈现。（DTD不存在或者格式不正确——混杂模式）</p>
-</li>
-<li><p>HTML5 没有 DTD ，因此也就没有严格模式与混杂模式的区别，HTML5 有相对宽松的语法，实现时，已经尽可能大的实现了向后兼容。（ HTML5 没有严格和混杂之分）</p>
-</li>
-</ul>
-<p>严格模式和混杂模式的区别示例：</p>
-<ul>
-<li>在严格模式下，盒模型为W3C标准盒模型，盒的大小为内容的宽度+内边距+边框+外边距。在混杂模式下，盒模型为IE盒模型，盒的大小为内容的宽度+内边距+边框+外边距。</li>
-<li>在严格模式下，给span等行内元素设置width和height都不会生效，而在混杂模式下，则会生效。</li>
-<li>在严格模式下，一个元素的高度是由包含的内容来决定的，如果父元素没有设置高度，子元素设置一个百分比的高度是无效的。</li>
-</ul>
-<h3 id="HTML5有哪些的新特性？"><a href="#HTML5有哪些的新特性？" class="headerlink" title="HTML5有哪些的新特性？"></a>HTML5有哪些的新特性？</h3><ul>
-<li>绘图canvas</li>
-<li>拖放（Drag和drop）</li>
-<li>用于媒介回放的video和audio</li>
-<li>本地存储localStorage和sessionStorage</li>
-<li>语义化元素（header、footer、nav、section、article）</li>
-<li>表单控件（date、time、url、search、email、calendar）</li>
-<li>控件元素（webworker、websockt、Geolocation）</li>
-</ul>
-<h3 id="HTML5兼容IE低版本"><a href="#HTML5兼容IE低版本" class="headerlink" title="HTML5兼容IE低版本"></a>HTML5兼容IE低版本</h3><p>HTML5提出的新的元素不被IE6-8识别，这些新元素不能作为父节点包裹子元素，并且不能应用CSS样式。针对IE浏览器html5shiv 是比较好的解决方案。</p>
-<p>注：html5shiv.js 引用代码必须放在 <head> 元素中，因为 IE 浏览器在解析 HTML5 新元素时需要先加载该文件。</p>
-<h2 id="HTML语义化"><a href="#HTML语义化" class="headerlink" title="HTML语义化"></a>HTML语义化</h2><h3 id="简述一下你对HTML语义化的理解？"><a href="#简述一下你对HTML语义化的理解？" class="headerlink" title="简述一下你对HTML语义化的理解？"></a>简述一下你对HTML语义化的理解？</h3><ul>
-<li>用正确的标签做正确的事情</li>
-<li>html语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析</li>
-<li>即使在没有样式css情况下也以一种文档格式显示，并且是容易阅读的</li>
-<li>搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO</li>
-<li>使于都源代码的人对网站更容易将网站分块，便于阅读维护理解。</li>
-</ul>
-<h2 id="HTML-和-XHTML-的区别"><a href="#HTML-和-XHTML-的区别" class="headerlink" title="HTML 和 XHTML 的区别"></a>HTML 和 XHTML 的区别</h2><ul>
-<li>XHTML中的标签都必须被正确地嵌套,HTML中的某些标签可以彼此不正确的嵌套。</li>
-<li>XHTML中的所有标签必须要关闭。</li>
-<li>XHTML中规范定义：标签名和属性对大小写敏感,所有XHTML标签名必须用小写字母。</li>
-<li>XHTML文档必须拥有根元素。</li>
-<li>XHTML中标签的属性值要使用双引号”。</li>
-</ul>
-<h2 id="页面导入样式"><a href="#页面导入样式" class="headerlink" title="页面导入样式"></a>页面导入样式</h2><h3 id="使用link和-import有什么区别？"><a href="#使用link和-import有什么区别？" class="headerlink" title="使用link和@import有什么区别？"></a>使用link和@import有什么区别？</h3><ul>
-<li>link属于XHTML标签，而@import是css提供的</li>
-<li>页面被加载时，link会同时被加载，而@import引用的css会等到页面被加载完再加载</li>
-<li>@import只在IE5以上才能识别，而link是XHTML标签，无兼容问题</li>
-<li>link方式的样式的权重高于@import的权重。</li>
-</ul>
-<h2 id="HTML5地理定位"><a href="#HTML5地理定位" class="headerlink" title="HTML5地理定位"></a>HTML5地理定位</h2><h3 id="HTML5地理定位是什么？如何使用？"><a href="#HTML5地理定位是什么？如何使用？" class="headerlink" title="HTML5地理定位是什么？如何使用？"></a>HTML5地理定位是什么？如何使用？</h3><p>HTML5 地理定位用于定位用户的位置<br>HTML5 地理定位API用于获取用户的地理位置。<br>由于这会侵犯用户隐私，除非用户批准，否则该位置不可用。<br>使用 getCurrentPosition() 方法获取用户的位置。</p>
-<h2 id="HTML全局属性"><a href="#HTML全局属性" class="headerlink" title="HTML全局属性"></a>HTML全局属性</h2><h3 id="HTML全局属性-global-attribute-有哪些（包含H5）？"><a href="#HTML全局属性-global-attribute-有哪些（包含H5）？" class="headerlink" title="HTML全局属性(global attribute)有哪些（包含H5）？"></a>HTML全局属性(global attribute)有哪些（包含H5）？</h3><ul>
-<li><code>accesskey</code>: 设置快捷键</li>
-<li><code>class</code>: 为元素设置类标识</li>
-<li><code>contenteditable</code>: 指定元素内容是否可编辑</li>
-<li><code>contextmenu</code>: 自定义鼠标右键弹出上下文菜单内容（仅firefox支持）</li>
-<li><code>data-*</code>: 为元素增加自定义属性</li>
-<li><code>dir</code>: 设置元素文本方向（默认ltr；rtl）</li>
-<li><code>draggable</code>: 设置元素是否可拖拽</li>
-<li><code>dropzone</code>: 设置元素拖放类型（copy|move|link,H5新属性，主流均不支持）</li>
-<li><code>hidden</code>: 规定元素仍未或不在相关</li>
-<li><code>id</code>: 元素id，文档内唯一</li>
-<li><code>lang</code>: 元素内容的语言</li>
-<li><code>spellcheck</code>: 是否启动拼写和语法检查</li>
-<li><code>style</code>: 行内css样式</li>
-<li><code>tabindex</code>: 设置元素可以获得焦点，通过tab导航</li>
-<li><code>title</code>: 规定元素有关的额外信息</li>
-<li><code>translate</code>: 元素和子孙节点内容是否需要本地化（均不支持）</li>
-</ul>
-<h2 id="a标签超链接target属性"><a href="#a标签超链接target属性" class="headerlink" title="a标签超链接target属性"></a>a标签超链接target属性</h2><h3 id="简述a标签超链接target属性的取值和作用？"><a href="#简述a标签超链接target属性的取值和作用？" class="headerlink" title="简述a标签超链接target属性的取值和作用？"></a>简述a标签超链接target属性的取值和作用？</h3><p>a 标签的 target 属性一共有四个值：</p>
-<ul>
-<li><code>_self</code> ：默认属性。在当前窗口或者框架中加载目标文档。</li>
-<li><code>_blank</code> ：打开新的窗口或者新的标签页。在使用这个属性时，最好添加 <code>rel=&quot;noopener norefferrer&quot;</code> 属性，防止打开的新窗口对原窗口进行篡改。防止 <code>window.opener</code> API 的恶意行为。</li>
-<li><code>_parent</code> ：在 frame 或者 iframe 中使用较多。在父级框架中载入目标文档，当 a 标签本身在顶层时，与 <code>_self</code> 相同。</li>
-<li><code>_top</code> ：在 frame 或者 iframe 中使用较多。直接在顶层的框架中载入目标文档，加载整个窗口</li>
-</ul>
-<h2 id="浏览器内多个标签页之间的通信方式"><a href="#浏览器内多个标签页之间的通信方式" class="headerlink" title="浏览器内多个标签页之间的通信方式"></a>浏览器内多个标签页之间的通信方式</h2><h3 id="浏览器内多个标签页之间的通信方式有哪些？"><a href="#浏览器内多个标签页之间的通信方式有哪些？" class="headerlink" title="浏览器内多个标签页之间的通信方式有哪些？"></a>浏览器内多个标签页之间的通信方式有哪些？</h3><p>即在浏览器中，两个不同页面（A页面的window ！&#x3D; B页面的window）网页之间的消息传递。</p>
-<ul>
-<li>WebSocket （可跨域）</li>
-<li>postMessage（可跨域）</li>
-<li>Worker之SharedWorker</li>
-<li>Server-Sent Events</li>
-<li>localStorage</li>
-<li>BroadcastChannel</li>
-<li>Cookies</li>
-</ul>
-<h2 id="viewport常见设置"><a href="#viewport常见设置" class="headerlink" title="viewport常见设置"></a>viewport常见设置</h2><h3 id="viewport常见设置都有哪些？"><a href="#viewport常见设置都有哪些？" class="headerlink" title="viewport常见设置都有哪些？"></a>viewport常见设置都有哪些？</h3><p>在移动端做开发时，必须要搞清楚 viewport 这一设置。</p>
-<ul>
-<li><code>width</code> ：设置 layout viewport 的宽度，为一个正整数，或字符串”width-device”</li>
-<li><code>initial-scale</code> ：设置页面的初始缩放值，为一个数字，可以带小数</li>
-<li><code>minimum-scale</code> ：允许用户的最小缩放值，为一个数字，可以带小数</li>
-<li><code>maximum-scale</code> ：允许用户的最大缩放值，为一个数字，可以带小数</li>
-<li><code>height</code> ：设置 layout viewport 的高度，这个属性对我们并不重要，很少使用</li>
-<li><code>user-scalable</code> ：是否允许用户进行缩放，值为”no”或”yes”， no 代表不允许，yes 代表允许</li>
-</ul>
-<h2 id="常见的浏览器内核"><a href="#常见的浏览器内核" class="headerlink" title="常见的浏览器内核"></a>常见的浏览器内核</h2><h3 id="常见的浏览器内核都有哪些？并介绍下你对内核的理解"><a href="#常见的浏览器内核都有哪些？并介绍下你对内核的理解" class="headerlink" title="常见的浏览器内核都有哪些？并介绍下你对内核的理解"></a>常见的浏览器内核都有哪些？并介绍下你对内核的理解</h3><p>常见浏览器所用内核：</p>
-<ul>
-<li>IE 浏览器内核：Trident 内核，也是俗称的 IE 内核；</li>
-<li>Chrome 浏览器内核：统称为 Chromium 内核或 Chrome 内核，以前是 Webkit 内核，现在是 Blink内核；</li>
-<li>Firefox 浏览器内核：Gecko 内核，俗称 Firefox 内核；</li>
-<li>Safari 浏览器内核：Webkit 内核；</li>
-<li>Opera 浏览器内核：最初是自己的 Presto 内核，后来加入谷歌大军，从 Webkit 又到了 Blink 内核；</li>
-<li>360浏览器、猎豹浏览器内核：IE + Chrome 双内核；</li>
-<li>搜狗、遨游、QQ 浏览器内核：Trident（兼容模式）+ Webkit（高速模式）；</li>
-<li>百度浏览器、世界之窗内核：IE 内核；</li>
-<li>2345浏览器内核：好像以前是 IE 内核，现在也是 IE + Chrome 双内核了；</li>
-<li>UC 浏览器内核：这个众口不一，UC 说是他们自己研发的 U3 内核，但好像还是基于 Webkit 和 Trident ，还有说是基于火狐内核。</li>
-</ul>
-<h3 id="内核理解"><a href="#内核理解" class="headerlink" title="内核理解"></a>内核理解</h3><p>主要分成两部分：渲染引擎和 JS 引擎。</p>
-<ul>
-<li>渲染引擎的职责就是渲染，即在浏览器窗口中显示所请求的内容。默认情况下，渲染引擎可以显示 html、xml 文档及图片，它也可以借助插件（一种浏览器扩展）显示其他类型数据，例如使用 PDF 阅读器插件，可以显示 PDF 格式。</li>
-<li>JS 引擎：解析和执行 javascript 来实现网页的动态效果。</li>
-</ul>
-<h2 id="置换元素和非置换元素"><a href="#置换元素和非置换元素" class="headerlink" title="置换元素和非置换元素"></a>置换元素和非置换元素</h2><h3 id="说说你对html中的置换元素和非置换元素的理解？"><a href="#说说你对html中的置换元素和非置换元素的理解？" class="headerlink" title="说说你对html中的置换元素和非置换元素的理解？"></a>说说你对html中的置换元素和非置换元素的理解？</h3><p><strong>置换元素（Replaced Element）</strong></p>
-<p>一个内容不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。<br>例如：img会在没有css属性前，会根据图片的实际宽高来显示。</p>
-<p><strong>非置换元素（non-Replaced Element）</strong></p>
-<p>就是除了 img、input、textarea、select、object 等置换元素以外的元素。内容直接展示给浏览器。例如标签，标签里的内容会被浏览器直接显示给用户。</p>
-<h2 id="js放在html的-body-和-head-有什么区别？"><a href="#js放在html的-body-和-head-有什么区别？" class="headerlink" title="js放在html的&lt; body &gt;和&lt; head &gt;有什么区别？"></a>js放在html的&lt; body &gt;和&lt; head &gt;有什么区别？</h2><p>将 JavaScript 代码放在 HTML 文档的 <head> 和 <body> 部分的主要区别在于页面加载和渲染的行为。</p>
-<p>放在 <head> 中<br>当 JavaScript 文件放在 <head> 部分时，浏览器在解析 HTML 文档之前会先加载和执行这些 JavaScript 文件。如果不使用 async 或 defer 属性，浏览器会阻塞 DOM 树的构建，直到脚本加载和执行完毕。这意味着，如果 <head> 中包含多个 JavaScript 文件或者这些文件较大，页面的首次渲染和用户看到内容的时间会显著延迟，可能导致长时间的白屏现象。</p>
-<p>放在 <body> 中<br>将 JavaScript 文件放在文档的 <body> 部分，通常是在 </body> 标签之前，可以避免阻塞 DOM 的解析。浏览器会先解析整个 HTML 文档，然后再加载和执行 JavaScript 文件。这种做法可以加快页面的渲染速度，使用户更快看到页面内容。对于那些需要在 DOM 加载之后执行的功能，放在 <body> 中更为合适。</p>
-<p>使用 async 或 defer<br>async: JavaScript 文件会异步加载，一旦加载完成，就会立即执行，这可能会影响 DOM 的解析顺序。<br>defer: JavaScript 文件会异步加载，但会在 DOM 解析完成后按照它们在文档中出现的顺序执行，这样可以避免阻塞 DOM 的解析过程。<br>因此，根据需要执行的 JavaScript 功能，可以选择将脚本放在不同的位置或使用相应的属性来优化页面加载性能。</p>
-<h2 id="img-的-title-和-alt-有什么区别"><a href="#img-的-title-和-alt-有什么区别" class="headerlink" title="&lt; img &gt;的 title 和 alt 有什么区别?"></a>&lt; img &gt;的 title 和 alt 有什么区别?</h2><ul>
-<li><code>alt</code> ： 图片加载失败时，显示在网页上的替代文字</li>
-<li><code>title</code> ：鼠标悬浮在图片上显示的文字</li>
-</ul>
-<p>注 : alt是必要属性，title非必要</p>
-<h2 id="SVG-与-Canvas的区别"><a href="#SVG-与-Canvas的区别" class="headerlink" title="SVG 与 Canvas的区别"></a>SVG 与 Canvas的区别</h2><p>SVG 可缩放矢量图形（Scalable Vector Graphics）是基于可扩展标记语言（XML）， 用于描述二维矢量图形的一种图形格式。</p>
-<table>
-<thead>
-<tr>
-<th>Canvas</th>
-<th>SVG</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>依赖分辨率</td>
-<td>不依赖分辨率</td>
-</tr>
-<tr>
-<td>不支持事件处理器</td>
-<td>支持事件处理器</td>
-</tr>
-<tr>
-<td>弱的文本渲染能力</td>
-<td>最适合带有大型渲染区域的应用程序（比如谷歌地图）</td>
-</tr>
-<tr>
-<td>能够以 .png 或 .jpg 格式保存结果图像</td>
-<td>复杂度高会减慢渲染速度（任何过度使用 DOM 的应用都不快）</td>
-</tr>
-<tr>
-<td>最适合图像密集型的游戏，其中的许多对象会被频繁重绘</td>
-<td>不适合游戏应用</td>
-</tr>
-</tbody></table>
-<h2 id="行内元素与块级元素"><a href="#行内元素与块级元素" class="headerlink" title="行内元素与块级元素"></a>行内元素与块级元素</h2><h3 id="行内元素有哪些？块级元素有哪些？-空-void-元素有那些？行内元素和块级元素有什么区别？"><a href="#行内元素有哪些？块级元素有哪些？-空-void-元素有那些？行内元素和块级元素有什么区别？" class="headerlink" title="行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？行内元素和块级元素有什么区别？"></a>行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？行内元素和块级元素有什么区别？</h3><p><strong>行内元素</strong>有：a b span img input select strong</p>
-<p><strong>块级元素</strong>有：div ul ol li dl dt dd h1~h6 p</p>
-<p><strong>空元素</strong>：br hr img input link meta</p>
-<ul>
-<li>行内元素不可以设置宽高,margin仅设置左右方向有效，不独占一行</li>
-<li>块级元素可以设置宽高，独占一行</li>
-</ul>
-<h2 id="async-和-defer-的作用是什么？有什么区别？"><a href="#async-和-defer-的作用是什么？有什么区别？" class="headerlink" title="async 和 defer 的作用是什么？有什么区别？"></a>async 和 defer 的作用是什么？有什么区别？</h2><ul>
-<li>脚本没有 defer 或 async，浏览器会立即加载并执行指定的脚本，也就是说不等待后续载入的文档元素，读到就加载并执行。</li>
-<li><code>defer</code> 属性表示延迟执行引入的 JavaScript，即这段 JavaScript 加载时， HTML 并未停止解析，这两个过程是并行的。当整个 document 解析完毕后再执行脚本文件，在 DOMContentLoaded 事件触发之前完成。多个脚本按顺序执行。</li>
-<li><code>async</code> 属性表示异步执行引入的 JavaScript，与 defer 的区别在于，如果已经加载好，就会开始执行，也就是说它的执行仍然会阻塞文档的解析，只是它的加载过程不会阻塞。多个脚本的执行顺序无法保证。</li>
-</ul>
-<h2 id="常⽤的meta标签"><a href="#常⽤的meta标签" class="headerlink" title="常⽤的meta标签"></a>常⽤的meta标签</h2><p>meta标签由name和content属性定义，用来描述一个网页文档的属性，比如网页的作者，网页描述，关键词等，除了HTTP标准固定了一些name作为大家使用的共识，开发者还可以自定义name。</p>
-<ul>
-<li><p><code>charset</code>: 文档的编码类型</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>keywords</code>: 页面关键词</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;keywords&quot;</span> <span class="attr">content</span>=<span class="string">&quot;关键词&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>description</code>: 页面描述</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;description&quot;</span> <span class="attr">content</span>=<span class="string">&quot;描述内容&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>refresh</code>: 页面重定向和刷新</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;refresh&quot;</span> <span class="attr">content</span>=<span class="string">&quot;0;url=&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>viewport</code>: 适配移动端，视口</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width-device-width, initial-scale=1, maximum-scale=1&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>content 参数有以下几种：</p>
-<ul>
-<li>width viewport ：宽度(数值&#x2F;device-width)</li>
-<li>height viewport ：高度(数值&#x2F;device-height)</li>
-<li>initial-scale ：初始缩放比例</li>
-<li>maximum-scale ：最大缩放比例</li>
-<li>minimum-scale ：最小缩放比例</li>
-<li>user-scalable ：是否允许用户缩放(yes&#x2F;no）</li>
-</ul>
-</li>
-<li><p>搜索引擎索引方式</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;robots&quot;</span> <span class="attr">content</span>=<span class="string">&quot;index,follow&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>content 参数有以下几种：</p>
-<ul>
-<li>all：文件将被检索，且页面上的链接可以被查询</li>
-<li>none：文件将不被检索，且页面上的链接不可以被查询</li>
-<li>index：文件将被检索</li>
-<li>follow：页面上的链接可以被查询</li>
-<li>noindex：文件将不被检索</li>
-<li>nofollow：页面上的链接不可以被查询</li>
-</ul>
-</li>
-</ul>
-<h2 id="浏览器页面的三层构成"><a href="#浏览器页面的三层构成" class="headerlink" title="浏览器页面的三层构成"></a>浏览器页面的三层构成</h2><h3 id="浏览器页面有哪三层构成，分别是什么，作用是什么"><a href="#浏览器页面有哪三层构成，分别是什么，作用是什么" class="headerlink" title="浏览器页面有哪三层构成，分别是什么，作用是什么?"></a>浏览器页面有哪三层构成，分别是什么，作用是什么?</h3><p>构成： 结构层（HTML）、表示层（CSS）、行为层（JavaScript）</p>
-<p>作用：HTML实现页面结构、CSS实现页面样式、JS实现业务逻辑功能</p>
-<h2 id="HTML5的优缺点"><a href="#HTML5的优缺点" class="headerlink" title="HTML5的优缺点"></a>HTML5的优缺点</h2><h3 id="HTML5的优缺点？"><a href="#HTML5的优缺点？" class="headerlink" title="HTML5的优缺点？"></a>HTML5的优缺点？</h3><p><strong>优点：</strong></p>
-<ul>
-<li>网络标准统一</li>
-<li>多设备、跨平台</li>
-<li>即时更新</li>
-<li>提高可用性和改进用户体验</li>
-<li>被大量应用于移动应用程序和游戏</li>
-<li>还有html5的一些新特性等等</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li>安全性： 像之前 Firefox4 的 web socket 和透明代理的实现存在严重的安全问题，同时 web storage、web socket 这样的功能很容易被黑客利用，来盗取用户的信息和资料</li>
-<li>完善性： 许多特性各浏览器的支持程度也不一样</li>
-<li>技术门槛： HTML5 简化开发者工作的同时代表了有许多新的属性和 API 需要开发者学习，像 web worker、web socket、web storage 等新特性，后台甚至浏览器原理的知识</li>
-<li>性能： 某些平台上的引擎问题导致HTML5性能低下</li>
-<li>浏览器兼容性： IE9一下浏览器几乎全军覆没</li>
-</ul>
-<h2 id="对-WEB-标准以及-W3C-的理解与认识"><a href="#对-WEB-标准以及-W3C-的理解与认识" class="headerlink" title="对 WEB 标准以及 W3C 的理解与认识"></a>对 WEB 标准以及 W3C 的理解与认识</h2><ul>
-<li>标签闭合、标签小写、不乱嵌套、提高搜索几率利于SEO、使用外链CSS和JS脚本、结构行为表现得分离、文件下载与页面速度更快、内容能被更多的用户访问、内容能被更广泛的设备所访问、更少的代码和组件，容易维护、版本迭代方便，不需要变动页面内容、提供打印版本而不需要复制内容、提高网站易用性。</li>
-</ul>
-<h2 id="WebGL"><a href="#WebGL" class="headerlink" title="WebGL"></a>WebGL</h2><h3 id="什么是-WebGL-它有什么优点"><a href="#什么是-WebGL-它有什么优点" class="headerlink" title="什么是 WebGL,它有什么优点?"></a>什么是 WebGL,它有什么优点?</h3><p>WebGL（全写 Web Graphics Library ）是一种 3D 绘图标准，这种绘图技术标准允许把 JavaScript 和 OpenGL ES 2.0 结合在一起，通过增加 OpenGL ES 2.0 的一个 JavaScript 绑定，WebGL 可以为 HTML5 Canvas 提供硬件 3D 加速渲染，这样 Web 开发人员就可以借助系统显卡来在浏览器里更流畅地展示 3D 场景和模型了，还能创建复杂的导航和数据视觉化。显然，WebGL 技术标准免去了开发网页专用渲染插件的麻烦，可被用于创建具有复杂 3D 结构的网站页面，甚至可以用来设计 3D 网页游戏等等。</p>
-<p>WebGL 完美地解决了现有的 Web 交互式三维动画的两个问题：</p>
-<ul>
-<li>第一，它通过 HTML 脚本本身实现 Web 交互式三维动画的制作，无需任何浏览器插件支持 ;</li>
-<li>第二，它利用底层的图形硬件加速功能进行的图形渲染，是通过统一的、标准的、跨平台的 OpenGL 接口实现的。 通俗说 WebGL 中 canvas 绘图中的 3D 版本。因为原生的 WebGL 很复杂，我们经常会使用一些三方的库，如 three.js 等，这些库多数用于 HTML5 游戏开发。</li>
-</ul>
-<h2 id="cookies，sessionStorage-和-localStorage-的区别"><a href="#cookies，sessionStorage-和-localStorage-的区别" class="headerlink" title="cookies，sessionStorage 和 localStorage 的区别"></a>cookies，sessionStorage 和 localStorage 的区别</h2><h3 id="简述-cookies，sessionStorage-和-localStorage-的区别"><a href="#简述-cookies，sessionStorage-和-localStorage-的区别" class="headerlink" title="简述 cookies，sessionStorage 和 localStorage 的区别?"></a>简述 cookies，sessionStorage 和 localStorage 的区别?</h3><p>sessionStorage 和 localStorage 是 HTML5 Web Storage API 提供的，可以方便的在 web 请求之间保存数据。有了本地数据，就可以避免数据在浏览器和服务器间不必要地来回传递。sessionStorage、 localStorage 、 cookie 都是在浏览器端存储的数据，其中 sessionStorage 的概念很特别，引入了一个”浏览器窗口”的概念。sessionStorage 是在同源的同窗口（或 tab ）中，始终存在的数据。也就是说只要这个浏览器窗口没有关闭，即使刷新页面或进入同源另一页面，数据仍然存在。关闭窗口后， sessionStorage 即被销毁。同时”独立”打开的不同窗口，即使是同一页面， sessionStorage 对象也是不同的 cookies 会发送到服务器端。其余两个不会。</p>
-<ul>
-<li>Cookie 每个域名存储量比较小（各浏览器不同，大致 4K ） 所有域名的存储量有限制（各浏览器不同，大致 4K ） 有个数限制（各浏览器不同） 会随请求发送到服务器 (浪费带宽)</li>
-<li>Cookie只在设置了有限时间内有效</li>
-<li>LocalStorage 永久存储 单个域名存储量比较大（推荐 5MB ，各浏览器不同） 总体数量无限制</li>
-<li>LocalStorage 用于持久化的本地存储，数据永远不会过期，关闭浏览器也不会丢失。</li>
-<li>SessionStorage 只在 Session 内有效 存储量更大（推荐没有限制，但是实际上各浏览器也不同）</li>
-<li>SessionStorage 同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此 sessionStorage 不是一种持久化的本地存储，仅仅是会话级别的存储</li>
-</ul>
-<h2 id="data-属性"><a href="#data-属性" class="headerlink" title="data- 属性"></a>data- 属性</h2><h3 id="data-属性的作用是什么？"><a href="#data-属性的作用是什么？" class="headerlink" title="data- 属性的作用是什么？"></a>data- 属性的作用是什么？</h3><p>data-为 H5 新增的为前端开发者提供自定义的属性，这些属性集可以通过对象的dataset属性获取，不支持该属性的浏览器可以通过getAttribute方法获取，需要注意的是：data-之后的以连字符分割的多个单词组成的属性，获取的时候使用驼峰风格。所有主流浏览器都支持 data-* 属性。 即：当没有合适的属性和元素时，自定义的 data 属性是能够存储页面或 App 的私有的自定义数据。</p>
-<h2 id="iframe-的缺点"><a href="#iframe-的缺点" class="headerlink" title="iframe 的缺点"></a>iframe 的缺点</h2><h3 id="iframe-有那些缺点？"><a href="#iframe-有那些缺点？" class="headerlink" title="iframe 有那些缺点？"></a>iframe 有那些缺点？</h3><ul>
-<li>iframe会阻塞主页面的onload事件</li>
-<li>搜索引擎的检索程序无法解读这种页面，不易于SEO</li>
-<li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。</li>
-</ul>
-<p>注：若使用iframe，最好通过JS动态给iframe添加src属性值</p>
-<h2 id="src-与-href-的区别"><a href="#src-与-href-的区别" class="headerlink" title="src 与 href 的区别"></a>src 与 href 的区别</h2><h3 id="简述一下-src-与-href-的区别？"><a href="#简述一下-src-与-href-的区别？" class="headerlink" title="简述一下 src 与 href 的区别？"></a>简述一下 src 与 href 的区别？</h3><p>src:当浏览器遇到 src 属性时，会暂停解析 HTML 并开始下载资源。资源下载完成后，浏览器会立即执行或显示该资源。<br>href：用于指定链接的目标位置，通常用于引用外部资源，但不会替换当前元素的内容。浏览器会异步解析 href 属性，即在解析 HTML 的同时下载资源，不会阻塞 HTML 的解析过程。</p>
-<h2 id="WebSocket-与消息推送"><a href="#WebSocket-与消息推送" class="headerlink" title="WebSocket 与消息推送"></a>WebSocket 与消息推送</h2><h3 id="WebSocket-与消息推送？"><a href="#WebSocket-与消息推送？" class="headerlink" title="WebSocket 与消息推送？"></a>WebSocket 与消息推送？</h3><p>B&#x2F;S 架构的系统多使用 HTTP 协议</p>
-<p><strong>HTTP协议：</strong></p>
-<ul>
-<li>连接无状态</li>
-<li>数据明文传输</li>
-<li>端口默认为80,底层通信还是使用 Socket 完成</li>
-</ul>
-<p>HTTP 协议决定了服务器与客户端之间的连接方式，无法直接实现消息推送,一些变相的解决办法：</p>
-<p><strong>双向通信与消息推送</strong></p>
-<ul>
-<li><p>轮询： 客户端定时向服务器发送 Ajax 请求，服务器接到请求后马上返回响应信息并关闭连接。</p>
-<p>优点：后端程序编写比较容易<br>缺点：请求中有大半无用，浪费带宽和服务器资源<br>实例：适用于小型应用</p>
-</li>
-<li><p>长轮询： 客户端向服务器发送 Ajax 请求，服务器接到请求后 hold 住连接，直到有新消息才返回响应信息并关闭连接，客户端处理完响应信息后再向服务器发送新的请求。</p>
-<p>优点：在无消息的情况下不会频繁的请求，耗费资源小<br>缺点：服务器 hold 连接会消耗资源，返回数据顺序无保证，难于管理维护。Comet 异步的 ashx<br>实例：WebQQ、Hi 网页版、Facebook IM。</p>
-</li>
-<li><p>长连接： 在页面里嵌入一个隐蔵 iframe，将这个隐蔵 iframe 的 src 属性设为对一个长连接的请求或是采用 xhr 请求，服务器端就能源源不断地往客户端输入数据。</p>
-<p>优点：消息即时到达，不发无用请求；管理起来也相对便。<br>缺点：服务器维护一个长连接会增加开销。<br>实例：Gmail 聊天</p>
-</li>
-<li><p>Flash Socket： 在页面中内嵌入一个使用了 Socket 类的 Flash 程序 JavaScript 通过调用此 Flash 程序提供的 Socket 接口与服务器端的 Socket 接口进行通信， JavaScript 在收到服务器端传送的信息后控制页面的显示。</p>
-<p>优点：实现真正的即时通信，而不是伪即时<br>缺点：客户端必须安装 Flash 插件；非 HTTP 协议，无法自动穿越防火墙<br>实例：网络互动游戏</p>
-</li>
-<li><p>Websocket： WebSocket 是 HTML5 开始提供的一种浏览器与服务器间进行全双工通讯的网络技术。依靠这种技术可以实现客户端和服务器端的长连接，双向实时通信。</p>
-<p>优点：事件驱动、异步、使用ws或者wss协议的客户端socket、能实现真正意义上的推送功能<br>缺点：少部分浏览器不支持，浏览器支持的程度与方式有区别。</p>
-</li>
-</ul>
-<p>原文链接：<a href="https://blog.csdn.net/weixin_43106777/article/details/96842011">https://blog.csdn.net/weixin_43106777&#x2F;article&#x2F;details&#x2F;96842011</a></p>
-]]></content>
-      <categories>
-        <category>前端基础</category>
-      </categories>
-      <tags>
-        <tag>HTML5</tag>
       </tags>
   </entry>
   <entry>
@@ -1655,94 +1655,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CentOS7下MySQL8.0安装指南与常见问题解决</title>
-    <url>/blog.github.io/2025/03/05/%E7%AC%AC%E5%85%AB%E7%AF%87%EF%BC%9Acentos7%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85MySQL/</url>
-    <content><![CDATA[<h1 id="CentOS7下MySQL8-0安装指南与常见问题解决"><a href="#CentOS7下MySQL8-0安装指南与常见问题解决" class="headerlink" title="CentOS7下MySQL8.0安装指南与常见问题解决"></a>CentOS7下MySQL8.0安装指南与常见问题解决</h1><h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><h3 id="检查系统环境"><a href="#检查系统环境" class="headerlink" title="检查系统环境"></a>检查系统环境</h3><ol>
-<li><p><strong>检查是否已安装MySQL</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br><span class="line"><span class="comment"># 如果有安装，需要卸载</span></span><br><span class="line">rpm -e --nodeps mysql-xxx</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>检查&#x2F;tmp目录权限</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l /| grep tmp</span><br><span class="line"><span class="comment"># 确保权限为 drwxrwxrwt</span></span><br><span class="line"><span class="built_in">chmod</span> -R 777 /tmp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>下载MySQL安装包</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><h3 id="安装MySQL仓库"><a href="#安装MySQL仓库" class="headerlink" title="安装MySQL仓库"></a>安装MySQL仓库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -ivh mysql80-community-release-el7-3.noarch.rpm</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure>
-
-<h3 id="启动MySQL服务"><a href="#启动MySQL服务" class="headerlink" title="启动MySQL服务"></a>启动MySQL服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld</span><br><span class="line">systemctl status mysqld</span><br><span class="line">systemctl <span class="built_in">enable</span> mysqld</span><br></pre></td></tr></table></figure>
-
-<h2 id="常见错误与解决方案"><a href="#常见错误与解决方案" class="headerlink" title="常见错误与解决方案"></a>常见错误与解决方案</h2><h3 id="1-初始密码相关问题"><a href="#1-初始密码相关问题" class="headerlink" title="1. 初始密码相关问题"></a>1. 初始密码相关问题</h3><p><strong>错误现象：</strong></p>
-<ul>
-<li>无法找到初始密码</li>
-<li>密码修改失败</li>
-<li>忘记原密码</li>
-</ul>
-<p><strong>解决方案：</strong></p>
-<ol>
-<li><p>首次安装后查看临时密码：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看初始密码</span></span><br><span class="line">grep <span class="string">&#x27;temporary password&#x27;</span> /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用临时密码登录：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mysql -uroot -p</span><br><span class="line"><span class="comment"># 输入临时密码</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果忘记密码，按以下步骤重置：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 停止MySQL服务</span></span><br><span class="line">systemctl stop mysqld</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 以跳过密码验证方式启动</span></span><br><span class="line"><span class="comment"># 编辑/etc/my.cnf，在[mysqld]下添加</span></span><br><span class="line">[mysqld]</span><br><span class="line">skip-grant-tables</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 重启MySQL服务</span></span><br><span class="line">systemctl restart mysqld</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 无密码登录MySQL</span></span><br><span class="line">mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 重置root密码</span></span><br><span class="line"><span class="comment"># MySQL 8.0的密码重置命令</span></span><br><span class="line">ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;NewPassword123!&#x27;</span>;</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">UPDATE mysql.user SET authentication_string=<span class="string">&#x27;&#x27;</span> WHERE user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;NewPassword123!&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 删除skip-grant-tables配置</span></span><br><span class="line"><span class="comment"># 编辑/etc/my.cnf，删除skip-grant-tables行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 重启MySQL服务</span></span><br><span class="line">systemctl restart mysqld</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8. 使用新密码登录</span></span><br><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>注意：</p>
-<ul>
-<li>新密码必须符合MySQL 8.0的密码策略要求</li>
-<li>建议包含大小写字母、数字和特殊字符</li>
-<li>密码长度至少8位</li>
-</ul>
-<h3 id="2-远程连接失败"><a href="#2-远程连接失败" class="headerlink" title="2. 远程连接失败"></a>2. 远程连接失败</h3><p><strong>错误现象：</strong></p>
-<ul>
-<li>ERROR 1130 (HY000): Host xxx is not allowed to connect</li>
-</ul>
-<p><strong>解决方案：</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 登录MySQL后执行</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;password&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> PRIVILEGES <span class="keyword">ON</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">TO</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-密码策略问题"><a href="#3-密码策略问题" class="headerlink" title="3. 密码策略问题"></a>3. 密码策略问题</h3><p><strong>错误现象：</strong></p>
-<ul>
-<li>ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</li>
-</ul>
-<p><strong>解决方案：</strong></p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 查看密码策略</span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;validate_password%&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 修改密码策略</span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">GLOBAL</span> validate_password.policy<span class="operator">=</span>LOW;</span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">GLOBAL</span> validate_password.length<span class="operator">=</span><span class="number">6</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-内存不足问题"><a href="#4-内存不足问题" class="headerlink" title="4. 内存不足问题"></a>4. 内存不足问题</h3><p><strong>错误现象：</strong></p>
-<ul>
-<li>MySQL服务无法启动</li>
-<li>日志显示内存不足</li>
-</ul>
-<p><strong>解决方案：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 编辑/etc/my.cnf，添加或修改以下参数</span></span><br><span class="line">[mysqld]</span><br><span class="line">performance_schema_max_table_instances=400</span><br><span class="line">table_definition_cache=400</span><br><span class="line">table_open_cache=256</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-端口占用问题"><a href="#5-端口占用问题" class="headerlink" title="5. 端口占用问题"></a>5. 端口占用问题</h3><p><strong>错误现象：</strong></p>
-<ul>
-<li>Can’t start server: Bind on TCP&#x2F;IP port</li>
-</ul>
-<p><strong>解决方案：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看端口占用</span></span><br><span class="line">netstat -tulpn | grep 3306</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改端口号，编辑/etc/my.cnf</span></span><br><span class="line">[mysqld]</span><br><span class="line">port=3307</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查防火墙</span></span><br><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
-
-<h2 id="优化配置"><a href="#优化配置" class="headerlink" title="优化配置"></a>优化配置</h2><h3 id="基础配置优化"><a href="#基础配置优化" class="headerlink" title="基础配置优化"></a>基础配置优化</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 字符集</span></span><br><span class="line"><span class="attr">character-set-server</span>=utf8mb4</span><br><span class="line"><span class="attr">collation-server</span>=utf8mb4_general_ci</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最大连接数</span></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 缓冲池大小</span></span><br><span class="line"><span class="attr">innodb_buffer_pool_size</span>=<span class="number">1</span>G</span><br><span class="line"></span><br><span class="line"><span class="comment"># 日志配置</span></span><br><span class="line"><span class="attr">slow_query_log</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">slow_query_log_file</span>=/var/log/mysql/slow.log</span><br><span class="line"><span class="attr">long_query_time</span>=<span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="安装后检查"><a href="#安装后检查" class="headerlink" title="安装后检查"></a>安装后检查</h2><h3 id="安全性检查"><a href="#安全性检查" class="headerlink" title="安全性检查"></a>安全性检查</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 运行安全性检查脚本</span></span><br><span class="line">mysql_secure_installation</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查项包括：</span></span><br><span class="line"><span class="comment"># 1. 设置root密码</span></span><br><span class="line"><span class="comment"># 2. 删除匿名用户</span></span><br><span class="line"><span class="comment"># 3. 禁止root远程登录</span></span><br><span class="line"><span class="comment"># 4. 删除test数据库</span></span><br><span class="line"><span class="comment"># 5. 重新加载权限表</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="性能检查"><a href="#性能检查" class="headerlink" title="性能检查"></a>性能检查</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 检查系统变量</span></span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;%max_connections%&#x27;</span>;</span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;%buffer_pool%&#x27;</span>;</span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;%timeout%&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 检查状态变量</span></span><br><span class="line"><span class="keyword">SHOW</span> STATUS <span class="keyword">LIKE</span> <span class="string">&#x27;Threads_%&#x27;</span>;</span><br><span class="line"><span class="keyword">SHOW</span> STATUS <span class="keyword">LIKE</span> <span class="string">&#x27;Questions&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用运维命令"><a href="#常用运维命令" class="headerlink" title="常用运维命令"></a>常用运维命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 服务管理</span></span><br><span class="line">systemctl start mysqld    <span class="comment"># 启动</span></span><br><span class="line">systemctl stop mysqld     <span class="comment"># 停止</span></span><br><span class="line">systemctl restart mysqld  <span class="comment"># 重启</span></span><br><span class="line">systemctl status mysqld   <span class="comment"># 状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 日志查看</span></span><br><span class="line"><span class="built_in">tail</span> -f /var/log/mysqld.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件位置</span></span><br><span class="line">/etc/my.cnf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据目录</span></span><br><span class="line">/var/lib/mysql</span><br></pre></td></tr></table></figure>
-
-<p>这篇文档涵盖了MySQL8.0在CentOS7上安装过程中的常见问题和解决方案，以及基本的优化配置和运维命令。建议在实际操作时，根据服务器配置和业务需求适当调整参数。</p>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL8.0</tag>
-        <tag>centos7</tag>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Nginx基础</title>
     <url>/blog.github.io/2025/02/24/%E7%AC%AC%E5%85%AD%E7%AF%87%EF%BC%9ANginx%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="Nginx基础"><a href="#Nginx基础" class="headerlink" title="Nginx基础"></a>Nginx基础</h1><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><h3 id="什么是Nginx？为什么要使用它？"><a href="#什么是Nginx？为什么要使用它？" class="headerlink" title="什么是Nginx？为什么要使用它？"></a>什么是Nginx？为什么要使用它？</h3><p>Nginx是一个高性能的HTTP和反向代理服务器，同时也是一个IMAP&#x2F;POP3&#x2F;SMTP代理服务器。</p>
@@ -1839,31 +1751,6 @@
       </tags>
   </entry>
   <entry>
-    <title>浏览器渲染原理</title>
-    <url>/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p>
-<p>在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。<br>如果主线程解析到link位置，此时外部的CSS文件还没有下载好，主线程不会等待，而是继续解析HTML，外部的预解析线程会去下载外部的CSS文件并解析成CSSOM树返回给主线程，主线程合并目前生成好的DOM和CSSOM。这就是CSS不会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="CSS预解析"><br>如果主线程解析到script位置，会停止解析HTML，转而等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML，这是因为JS代码的执行过程中可能会修改当前的DOM树，所以DOM树的生成必须暂停。这就是JS会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="JS预解析"><br>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式，内联样式，外部样式，行内样式均会包含在CSSOM树中。</p>
-<p>渲染的下一步是样式计算：<br>主线程会遍历得到的DOM树，依次为树中的每个节点计算出它最终的样式，称之为Computed Style。<br>在这一过程中，很多预设值会变成绝对值，比如red会变成rgb（255，0，0）;相对单位会变成绝对单位，比如em会变成px。<br>这一步完成后，会得到一颗带有样式的DOM树。</p>
-<p>接下来是布局，布局完成后会得到布局树。<br>布局阶段会依次遍历DOM树的每一个节点，计算每个节点的几何信息。例如节点的宽高，相对包含块的位置。<br>大部分时候，DOM树和布局树并非一一对应。<br>比如display:none的节点没有几何信息，因此不会生成到布局树；又比如使用了伪元素选择器，虽然DOM树中不存在这些伪元素节点，但它们拥有几何信息，使用会生成到布局树匿名行盒，匿名块盒等等都会导致DOM树和布局树无法一一对应。</p>
-<p>下一步是分层<br>主线程会使用一套复杂的策略对整个布局树中进行分层。<br>分层的好处在于，将来其某一个层改变后，仅会对该层进行后续处理，从而提升效率。<br>滚动条，堆叠上下文，transform，opacity等样式都会或多或少的影响分层结果，也可以通过will-change属性更大程度的影响分层结果。</p>
-<p>再下一步，绘制 paint<br>canvas的绘制是由浏览器开放出来的绘制功能。<br>主线程会为每个层单独产生绘制指令集，用于描述这一层的内容该如何画出来。</p>
-<p>分块：Tiles<br>完成绘制之后，主线程会将每个图层的绘制信息提交给合成线程，剩余工作将由合成线程完成。合成线程首先对每个图层进行分块，将其划分为更多的小区域。<br>它会从线程池中拿取多个线程来完成分块工作。</p>
-<p>光栅化Raster :将每个块变成位图，优先处理靠近视图的块。<br>分块完成后，进入光栅化阶段<br>合成线程会将块信息交给GPU进程，以极高的速度完成光栅化。<br>GPU进程会开启多个线程来完成光栅化，并优先处理靠近视口区域的块。<br>光栅化的结果就是一块一块的位图。</p>
-<p>画 draw<br>合成线程拿到每个层，每个块的位图后，生成一个个指引【quad】信息。<br>指引会标识出每个位图应该画到屏幕的哪个位置，以及会考虑到旋转，缩放等变形。变形发生在合成线程，与渲染主线程无关，这就是transform效率高的本质原因。<br>合成线程会把quad提交给GPU进程，由GPU进程产生系统调用，提交给GPU硬件，完成最终的屏幕成像。</p>
-<p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。<br>渲染主线程的主要工作内容为：parse HTML，computed style，生成layout布局树，对dom树进行分层，绘制dom树。后续步骤由其他线程完成。<br>完整流程：<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染的完整流程"></p>
-<h3 id="面试题：什么是reflow？"><a href="#面试题：什么是reflow？" class="headerlink" title="面试题：什么是reflow？"></a>面试题：什么是reflow？</h3><p>reflow的本质是重新计算layout树。<br>当进行了会影响布局树的操作后，需要重新计算布局树，会引发layout。<br>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后再进行计算。所以，改动属性造成的reflow是异步完成的。<br>也同样因为如此，当JS获取布局属性时，就可能造成无法获取到最新的布局信息。<br>浏览器在反复权衡下，最终决定获取属性立即reflow。</p>
-<h3 id="面试题：什么是repaint？"><a href="#面试题：什么是repaint？" class="headerlink" title="面试题：什么是repaint？"></a>面试题：什么是repaint？</h3><p>repaint的本质就是重新根据分层信息计算了绘制指令，<br>当改动了可见样式后，就需要重新计算，会引发repaint。<br>由于元素的布局信息也属于可见样式，所以reflow一定会引发repaint。</p>
-<h3 id="面试题：为什么transform的效率高？"><a href="#面试题：为什么transform的效率高？" class="headerlink" title="面试题：为什么transform的效率高？"></a>面试题：为什么transform的效率高？</h3><p>因为transform既不会影响布局也不会影响绘制指令，影响的只是渲染流程的最后一个【draw】阶段。由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。</p>
-]]></content>
-      <categories>
-        <category>前端基础</category>
-      </categories>
-      <tags>
-        <tag>前端基础</tag>
-        <tag>浏览器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>事件循环</title>
     <url>/blog.github.io/2025/03/15/%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</url>
     <content><![CDATA[<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><h3 id="浏览器的进程模型"><a href="#浏览器的进程模型" class="headerlink" title="浏览器的进程模型"></a>浏览器的进程模型</h3><p>什么是进程？<br>程序运行时需要有自己专属的内存空间，可以把这块内存空间简单的理解为进程。<br>每个应用至少有一个进程，进程之间相互独立，即使要通信，也需要双方同意。</p>
@@ -1891,8 +1778,121 @@
       </categories>
       <tags>
         <tag>前端基础</tag>
-        <tag>浏览器</tag>
         <tag>事件循环</tag>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>浏览器渲染原理</title>
+    <url>/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p>
+<p>在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。<br>如果主线程解析到link位置，此时外部的CSS文件还没有下载好，主线程不会等待，而是继续解析HTML，外部的预解析线程会去下载外部的CSS文件并解析成CSSOM树返回给主线程，主线程合并目前生成好的DOM和CSSOM。这就是CSS不会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="CSS预解析"><br>如果主线程解析到script位置，会停止解析HTML，转而等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML，这是因为JS代码的执行过程中可能会修改当前的DOM树，所以DOM树的生成必须暂停。这就是JS会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="JS预解析"><br>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式，内联样式，外部样式，行内样式均会包含在CSSOM树中。</p>
+<p>渲染的下一步是样式计算：<br>主线程会遍历得到的DOM树，依次为树中的每个节点计算出它最终的样式，称之为Computed Style。<br>在这一过程中，很多预设值会变成绝对值，比如red会变成rgb（255，0，0）;相对单位会变成绝对单位，比如em会变成px。<br>这一步完成后，会得到一颗带有样式的DOM树。</p>
+<p>接下来是布局，布局完成后会得到布局树。<br>布局阶段会依次遍历DOM树的每一个节点，计算每个节点的几何信息。例如节点的宽高，相对包含块的位置。<br>大部分时候，DOM树和布局树并非一一对应。<br>比如display:none的节点没有几何信息，因此不会生成到布局树；又比如使用了伪元素选择器，虽然DOM树中不存在这些伪元素节点，但它们拥有几何信息，使用会生成到布局树匿名行盒，匿名块盒等等都会导致DOM树和布局树无法一一对应。</p>
+<p>下一步是分层<br>主线程会使用一套复杂的策略对整个布局树中进行分层。<br>分层的好处在于，将来其某一个层改变后，仅会对该层进行后续处理，从而提升效率。<br>滚动条，堆叠上下文，transform，opacity等样式都会或多或少的影响分层结果，也可以通过will-change属性更大程度的影响分层结果。</p>
+<p>再下一步，绘制 paint<br>canvas的绘制是由浏览器开放出来的绘制功能。<br>主线程会为每个层单独产生绘制指令集，用于描述这一层的内容该如何画出来。</p>
+<p>分块：Tiles<br>完成绘制之后，主线程会将每个图层的绘制信息提交给合成线程，剩余工作将由合成线程完成。合成线程首先对每个图层进行分块，将其划分为更多的小区域。<br>它会从线程池中拿取多个线程来完成分块工作。</p>
+<p>光栅化Raster :将每个块变成位图，优先处理靠近视图的块。<br>分块完成后，进入光栅化阶段<br>合成线程会将块信息交给GPU进程，以极高的速度完成光栅化。<br>GPU进程会开启多个线程来完成光栅化，并优先处理靠近视口区域的块。<br>光栅化的结果就是一块一块的位图。</p>
+<p>画 draw<br>合成线程拿到每个层，每个块的位图后，生成一个个指引【quad】信息。<br>指引会标识出每个位图应该画到屏幕的哪个位置，以及会考虑到旋转，缩放等变形。变形发生在合成线程，与渲染主线程无关，这就是transform效率高的本质原因。<br>合成线程会把quad提交给GPU进程，由GPU进程产生系统调用，提交给GPU硬件，完成最终的屏幕成像。</p>
+<p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。<br>渲染主线程的主要工作内容为：parse HTML，computed style，生成layout布局树，对dom树进行分层，绘制dom树。后续步骤由其他线程完成。<br>完整流程：<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染的完整流程"></p>
+<h3 id="面试题：什么是reflow？"><a href="#面试题：什么是reflow？" class="headerlink" title="面试题：什么是reflow？"></a>面试题：什么是reflow？</h3><p>reflow的本质是重新计算layout树。<br>当进行了会影响布局树的操作后，需要重新计算布局树，会引发layout。<br>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后再进行计算。所以，改动属性造成的reflow是异步完成的。<br>也同样因为如此，当JS获取布局属性时，就可能造成无法获取到最新的布局信息。<br>浏览器在反复权衡下，最终决定获取属性立即reflow。</p>
+<h3 id="面试题：什么是repaint？"><a href="#面试题：什么是repaint？" class="headerlink" title="面试题：什么是repaint？"></a>面试题：什么是repaint？</h3><p>repaint的本质就是重新根据分层信息计算了绘制指令，<br>当改动了可见样式后，就需要重新计算，会引发repaint。<br>由于元素的布局信息也属于可见样式，所以reflow一定会引发repaint。</p>
+<h3 id="面试题：为什么transform的效率高？"><a href="#面试题：为什么transform的效率高？" class="headerlink" title="面试题：为什么transform的效率高？"></a>面试题：为什么transform的效率高？</h3><p>因为transform既不会影响布局也不会影响绘制指令，影响的只是渲染流程的最后一个【draw】阶段。由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。</p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>前端基础</tag>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CentOS7下MySQL8.0安装指南与常见问题解决</title>
+    <url>/blog.github.io/2025/03/05/%E7%AC%AC%E5%85%AB%E7%AF%87%EF%BC%9Acentos7%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85MySQL/</url>
+    <content><![CDATA[<h1 id="CentOS7下MySQL8-0安装指南与常见问题解决"><a href="#CentOS7下MySQL8-0安装指南与常见问题解决" class="headerlink" title="CentOS7下MySQL8.0安装指南与常见问题解决"></a>CentOS7下MySQL8.0安装指南与常见问题解决</h1><h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><h3 id="检查系统环境"><a href="#检查系统环境" class="headerlink" title="检查系统环境"></a>检查系统环境</h3><ol>
+<li><p><strong>检查是否已安装MySQL</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br><span class="line"><span class="comment"># 如果有安装，需要卸载</span></span><br><span class="line">rpm -e --nodeps mysql-xxx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>检查&#x2F;tmp目录权限</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l /| grep tmp</span><br><span class="line"><span class="comment"># 确保权限为 drwxrwxrwt</span></span><br><span class="line"><span class="built_in">chmod</span> -R 777 /tmp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>下载MySQL安装包</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><h3 id="安装MySQL仓库"><a href="#安装MySQL仓库" class="headerlink" title="安装MySQL仓库"></a>安装MySQL仓库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -ivh mysql80-community-release-el7-3.noarch.rpm</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动MySQL服务"><a href="#启动MySQL服务" class="headerlink" title="启动MySQL服务"></a>启动MySQL服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld</span><br><span class="line">systemctl status mysqld</span><br><span class="line">systemctl <span class="built_in">enable</span> mysqld</span><br></pre></td></tr></table></figure>
+
+<h2 id="常见错误与解决方案"><a href="#常见错误与解决方案" class="headerlink" title="常见错误与解决方案"></a>常见错误与解决方案</h2><h3 id="1-初始密码相关问题"><a href="#1-初始密码相关问题" class="headerlink" title="1. 初始密码相关问题"></a>1. 初始密码相关问题</h3><p><strong>错误现象：</strong></p>
+<ul>
+<li>无法找到初始密码</li>
+<li>密码修改失败</li>
+<li>忘记原密码</li>
+</ul>
+<p><strong>解决方案：</strong></p>
+<ol>
+<li><p>首次安装后查看临时密码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看初始密码</span></span><br><span class="line">grep <span class="string">&#x27;temporary password&#x27;</span> /var/log/mysqld.log</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用临时密码登录：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mysql -uroot -p</span><br><span class="line"><span class="comment"># 输入临时密码</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果忘记密码，按以下步骤重置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 停止MySQL服务</span></span><br><span class="line">systemctl stop mysqld</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 以跳过密码验证方式启动</span></span><br><span class="line"><span class="comment"># 编辑/etc/my.cnf，在[mysqld]下添加</span></span><br><span class="line">[mysqld]</span><br><span class="line">skip-grant-tables</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 重启MySQL服务</span></span><br><span class="line">systemctl restart mysqld</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 无密码登录MySQL</span></span><br><span class="line">mysql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 重置root密码</span></span><br><span class="line"><span class="comment"># MySQL 8.0的密码重置命令</span></span><br><span class="line">ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;NewPassword123!&#x27;</span>;</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">UPDATE mysql.user SET authentication_string=<span class="string">&#x27;&#x27;</span> WHERE user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line">ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;NewPassword123!&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6. 删除skip-grant-tables配置</span></span><br><span class="line"><span class="comment"># 编辑/etc/my.cnf，删除skip-grant-tables行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 重启MySQL服务</span></span><br><span class="line">systemctl restart mysqld</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8. 使用新密码登录</span></span><br><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>注意：</p>
+<ul>
+<li>新密码必须符合MySQL 8.0的密码策略要求</li>
+<li>建议包含大小写字母、数字和特殊字符</li>
+<li>密码长度至少8位</li>
+</ul>
+<h3 id="2-远程连接失败"><a href="#2-远程连接失败" class="headerlink" title="2. 远程连接失败"></a>2. 远程连接失败</h3><p><strong>错误现象：</strong></p>
+<ul>
+<li>ERROR 1130 (HY000): Host xxx is not allowed to connect</li>
+</ul>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 登录MySQL后执行</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED <span class="keyword">BY</span> <span class="string">&#x27;password&#x27;</span>;</span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> PRIVILEGES <span class="keyword">ON</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">TO</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-密码策略问题"><a href="#3-密码策略问题" class="headerlink" title="3. 密码策略问题"></a>3. 密码策略问题</h3><p><strong>错误现象：</strong></p>
+<ul>
+<li>ERROR 1819 (HY000): Your password does not satisfy the current policy requirements</li>
+</ul>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"># 查看密码策略</span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;validate_password%&#x27;</span>;</span><br><span class="line"></span><br><span class="line"># 修改密码策略</span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">GLOBAL</span> validate_password.policy<span class="operator">=</span>LOW;</span><br><span class="line"><span class="keyword">SET</span> <span class="keyword">GLOBAL</span> validate_password.length<span class="operator">=</span><span class="number">6</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-内存不足问题"><a href="#4-内存不足问题" class="headerlink" title="4. 内存不足问题"></a>4. 内存不足问题</h3><p><strong>错误现象：</strong></p>
+<ul>
+<li>MySQL服务无法启动</li>
+<li>日志显示内存不足</li>
+</ul>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 编辑/etc/my.cnf，添加或修改以下参数</span></span><br><span class="line">[mysqld]</span><br><span class="line">performance_schema_max_table_instances=400</span><br><span class="line">table_definition_cache=400</span><br><span class="line">table_open_cache=256</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-端口占用问题"><a href="#5-端口占用问题" class="headerlink" title="5. 端口占用问题"></a>5. 端口占用问题</h3><p><strong>错误现象：</strong></p>
+<ul>
+<li>Can’t start server: Bind on TCP&#x2F;IP port</li>
+</ul>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看端口占用</span></span><br><span class="line">netstat -tulpn | grep 3306</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改端口号，编辑/etc/my.cnf</span></span><br><span class="line">[mysqld]</span><br><span class="line">port=3307</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查防火墙</span></span><br><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h2 id="优化配置"><a href="#优化配置" class="headerlink" title="优化配置"></a>优化配置</h2><h3 id="基础配置优化"><a href="#基础配置优化" class="headerlink" title="基础配置优化"></a>基础配置优化</h3><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 字符集</span></span><br><span class="line"><span class="attr">character-set-server</span>=utf8mb4</span><br><span class="line"><span class="attr">collation-server</span>=utf8mb4_general_ci</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最大连接数</span></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 缓冲池大小</span></span><br><span class="line"><span class="attr">innodb_buffer_pool_size</span>=<span class="number">1</span>G</span><br><span class="line"></span><br><span class="line"><span class="comment"># 日志配置</span></span><br><span class="line"><span class="attr">slow_query_log</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">slow_query_log_file</span>=/var/log/mysql/slow.log</span><br><span class="line"><span class="attr">long_query_time</span>=<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="安装后检查"><a href="#安装后检查" class="headerlink" title="安装后检查"></a>安装后检查</h2><h3 id="安全性检查"><a href="#安全性检查" class="headerlink" title="安全性检查"></a>安全性检查</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 运行安全性检查脚本</span></span><br><span class="line">mysql_secure_installation</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查项包括：</span></span><br><span class="line"><span class="comment"># 1. 设置root密码</span></span><br><span class="line"><span class="comment"># 2. 删除匿名用户</span></span><br><span class="line"><span class="comment"># 3. 禁止root远程登录</span></span><br><span class="line"><span class="comment"># 4. 删除test数据库</span></span><br><span class="line"><span class="comment"># 5. 重新加载权限表</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="性能检查"><a href="#性能检查" class="headerlink" title="性能检查"></a>性能检查</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 检查系统变量</span></span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;%max_connections%&#x27;</span>;</span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;%buffer_pool%&#x27;</span>;</span><br><span class="line"><span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;%timeout%&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 检查状态变量</span></span><br><span class="line"><span class="keyword">SHOW</span> STATUS <span class="keyword">LIKE</span> <span class="string">&#x27;Threads_%&#x27;</span>;</span><br><span class="line"><span class="keyword">SHOW</span> STATUS <span class="keyword">LIKE</span> <span class="string">&#x27;Questions&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用运维命令"><a href="#常用运维命令" class="headerlink" title="常用运维命令"></a>常用运维命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 服务管理</span></span><br><span class="line">systemctl start mysqld    <span class="comment"># 启动</span></span><br><span class="line">systemctl stop mysqld     <span class="comment"># 停止</span></span><br><span class="line">systemctl restart mysqld  <span class="comment"># 重启</span></span><br><span class="line">systemctl status mysqld   <span class="comment"># 状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 日志查看</span></span><br><span class="line"><span class="built_in">tail</span> -f /var/log/mysqld.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置文件位置</span></span><br><span class="line">/etc/my.cnf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据目录</span></span><br><span class="line">/var/lib/mysql</span><br></pre></td></tr></table></figure>
+
+<p>这篇文档涵盖了MySQL8.0在CentOS7上安装过程中的常见问题和解决方案，以及基本的优化配置和运维命令。建议在实际操作时，根据服务器配置和业务需求适当调整参数。</p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>MySQL8.0</tag>
+        <tag>centos7</tag>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
