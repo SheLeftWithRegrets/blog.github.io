@@ -20,26 +20,20 @@
     var CONFIG = {"hostname":"sheleftwithregrets.github.io","root":"/blog.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":{"enable":false},"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="浏览器渲染原理###面试题：浏览器是如何渲染页面的？当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。 在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。如果主线程解析到l">
+  <meta name="description" content="使用key可以优化vue高效的DOM更新,key属性帮助Vue识别虚拟Dom中的节点.vnode,当数据变化时,Vue会基于key值高效的更新DOM,而不是重新渲染整个列表.在v-for循环中使用key可以确保组件的状态不会混淆,每个组件实例都能保持独立的状态.Vue的diff算法会使用key来判断节点是新创建的还是被移动的.有了唯一的key,vue可以最小化DOM操作.没有key时,vue会采用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器渲染原理">
-<meta property="og:url" content="https://sheleftwithregrets.github.io/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:title" content="vue的优化手段">
+<meta property="og:url" content="https://sheleftwithregrets.github.io/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/index.html">
 <meta property="og:site_name" content="37的技术博客">
-<meta property="og:description" content="浏览器渲染原理###面试题：浏览器是如何渲染页面的？当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。 在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。如果主线程解析到l">
+<meta property="og:description" content="使用key可以优化vue高效的DOM更新,key属性帮助Vue识别虚拟Dom中的节点.vnode,当数据变化时,Vue会基于key值高效的更新DOM,而不是重新渲染整个列表.在v-for循环中使用key可以确保组件的状态不会混淆,每个组件实例都能保持独立的状态.Vue的diff算法会使用key来判断节点是新创建的还是被移动的.有了唯一的key,vue可以最小化DOM操作.没有key时,vue会采用">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://sheleftwithregrets.github.io/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG">
-<meta property="og:image" content="https://sheleftwithregrets.github.io/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG">
-<meta property="og:image" content="https://sheleftwithregrets.github.io/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG">
-<meta property="og:image" content="https://sheleftwithregrets.github.io/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.JPG">
-<meta property="article:published_time" content="2025-03-16T03:00:00.000Z">
-<meta property="article:modified_time" content="2025-03-17T02:49:19.827Z">
+<meta property="article:published_time" content="2025-03-24T12:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-24T13:08:37.195Z">
 <meta property="article:author" content="她带着遗憾走了">
-<meta property="article:tag" content="前端基础">
-<meta property="article:tag" content="浏览器">
+<meta property="article:tag" content="Vue.js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sheleftwithregrets.github.io/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG">
 
-<link rel="canonical" href="https://sheleftwithregrets.github.io/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/">
+<link rel="canonical" href="https://sheleftwithregrets.github.io/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/">
 
 
 <script id="page-configurations">
@@ -52,7 +46,7 @@
   };
 </script>
 
-  <title>浏览器渲染原理 | 37的技术博客</title>
+  <title>vue的优化手段 | 37的技术博客</title>
   
   
 
@@ -188,7 +182,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sheleftwithregrets.github.io/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://sheleftwithregrets.github.io/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog.github.io/images/avatar.png">
@@ -201,7 +195,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          浏览器渲染原理
+          vue的优化手段
         </h1>
 
         <div class="post-meta">
@@ -212,16 +206,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2025-03-16 11:00:00" itemprop="dateCreated datePublished" datetime="2025-03-16T11:00:00+08:00">2025-03-16</time>
+              <time title="创建时间：2025-03-24 20:00:00 / 修改时间：21:08:37" itemprop="dateCreated datePublished" datetime="2025-03-24T20:00:00+08:00">2025-03-24</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-03-17 10:49:19" itemprop="dateModified" datetime="2025-03-17T10:49:19+08:00">2025-03-17</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -243,19 +231,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p>
-<p>在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。<br>如果主线程解析到link位置，此时外部的CSS文件还没有下载好，主线程不会等待，而是继续解析HTML，外部的预解析线程会去下载外部的CSS文件并解析成CSSOM树返回给主线程，主线程合并目前生成好的DOM和CSSOM。这就是CSS不会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="CSS预解析"><br>如果主线程解析到script位置，会停止解析HTML，转而等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML，这是因为JS代码的执行过程中可能会修改当前的DOM树，所以DOM树的生成必须暂停。这就是JS会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="JS预解析"><br>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式，内联样式，外部样式，行内样式均会包含在CSSOM树中。</p>
-<p>渲染的下一步是样式计算：<br>主线程会遍历得到的DOM树，依次为树中的每个节点计算出它最终的样式，称之为Computed Style。<br>在这一过程中，很多预设值会变成绝对值，比如red会变成rgb（255，0，0）;相对单位会变成绝对单位，比如em会变成px。<br>这一步完成后，会得到一颗带有样式的DOM树。</p>
-<p>接下来是布局，布局完成后会得到布局树。<br>布局阶段会依次遍历DOM树的每一个节点，计算每个节点的几何信息。例如节点的宽高，相对包含块的位置。<br>大部分时候，DOM树和布局树并非一一对应。<br>比如display:none的节点没有几何信息，因此不会生成到布局树；又比如使用了伪元素选择器，虽然DOM树中不存在这些伪元素节点，但它们拥有几何信息，使用会生成到布局树匿名行盒，匿名块盒等等都会导致DOM树和布局树无法一一对应。</p>
-<p>下一步是分层<br>主线程会使用一套复杂的策略对整个布局树中进行分层。<br>分层的好处在于，将来其某一个层改变后，仅会对该层进行后续处理，从而提升效率。<br>滚动条，堆叠上下文，transform，opacity等样式都会或多或少的影响分层结果，也可以通过will-change属性更大程度的影响分层结果。</p>
-<p>再下一步，绘制 paint<br>canvas的绘制是由浏览器开放出来的绘制功能。<br>主线程会为每个层单独产生绘制指令集，用于描述这一层的内容该如何画出来。</p>
-<p>分块：Tiles<br>完成绘制之后，主线程会将每个图层的绘制信息提交给合成线程，剩余工作将由合成线程完成。合成线程首先对每个图层进行分块，将其划分为更多的小区域。<br>它会从线程池中拿取多个线程来完成分块工作。</p>
-<p>光栅化Raster :将每个块变成位图，优先处理靠近视图的块。<br>分块完成后，进入光栅化阶段<br>合成线程会将块信息交给GPU进程，以极高的速度完成光栅化。<br>GPU进程会开启多个线程来完成光栅化，并优先处理靠近视口区域的块。<br>光栅化的结果就是一块一块的位图。</p>
-<p>画 draw<br>合成线程拿到每个层，每个块的位图后，生成一个个指引【quad】信息。<br>指引会标识出每个位图应该画到屏幕的哪个位置，以及会考虑到旋转，缩放等变形。变形发生在合成线程，与渲染主线程无关，这就是transform效率高的本质原因。<br>合成线程会把quad提交给GPU进程，由GPU进程产生系统调用，提交给GPU硬件，完成最终的屏幕成像。</p>
-<p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。<br>渲染主线程的主要工作内容为：parse HTML，computed style，生成layout布局树，对dom树进行分层，绘制dom树。后续步骤由其他线程完成。<br>完整流程：<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染的完整流程"></p>
-<h3 id="面试题：什么是reflow？"><a href="#面试题：什么是reflow？" class="headerlink" title="面试题：什么是reflow？"></a>面试题：什么是reflow？</h3><p>reflow的本质是重新计算layout树。<br>当进行了会影响布局树的操作后，需要重新计算布局树，会引发layout。<br>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后再进行计算。所以，改动属性造成的reflow是异步完成的。<br>也同样因为如此，当JS获取布局属性时，就可能造成无法获取到最新的布局信息。<br>浏览器在反复权衡下，最终决定获取属性立即reflow。</p>
-<h3 id="面试题：什么是repaint？"><a href="#面试题：什么是repaint？" class="headerlink" title="面试题：什么是repaint？"></a>面试题：什么是repaint？</h3><p>repaint的本质就是重新根据分层信息计算了绘制指令，<br>当改动了可见样式后，就需要重新计算，会引发repaint。<br>由于元素的布局信息也属于可见样式，所以reflow一定会引发repaint。</p>
-<h3 id="面试题：为什么transform的效率高？"><a href="#面试题：为什么transform的效率高？" class="headerlink" title="面试题：为什么transform的效率高？"></a>面试题：为什么transform的效率高？</h3><p>因为transform既不会影响布局也不会影响绘制指令，影响的只是渲染流程的最后一个【draw】阶段。由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。</p>
+        <h2 id="使用key可以优化vue"><a href="#使用key可以优化vue" class="headerlink" title="使用key可以优化vue"></a>使用key可以优化vue</h2><p>高效的DOM更新,key属性帮助Vue识别虚拟Dom中的节点.vnode,当数据变化时,Vue会基于key值高效的更新DOM,而不是重新渲染整个列表.<br>在v-for循环中使用key可以确保组件的状态不会混淆,每个组件实例都能保持独立的状态.<br>Vue的diff算法会使用key来判断节点是新创建的还是被移动的.有了唯一的key,vue可以最小化DOM操作.<br>没有key时,vue会采用”就地复用”策略,可能导致一些意外行为,特别是在列表项包含状态或子组件时.<br>Vue官方强烈建议在使用v-for时提供key属性,并且应该使用唯一的稳定的标识符.而不是索引.</p>
+<h2 id="使用freeze来冻结数据，避免数据被修改-（主要用于vue2）"><a href="#使用freeze来冻结数据，避免数据被修改-（主要用于vue2）" class="headerlink" title="使用freeze来冻结数据，避免数据被修改 （主要用于vue2）"></a>使用freeze来冻结数据，避免数据被修改 （主要用于vue2）</h2><p>阻止响应式转换 ：当我们将一个JavaScript对象传入Vue实例作为data选项，Vue将遍历此对象所有的属性，并使用Object.defineProperty把这些属性全部转为getter&#x2F;setter，这是Vue响应式系统的核心。而使用Object.freeze()可以冻结一个对象，阻止Vue对其进行响应式处理。<br>减少观察者 ：对于大型数据集或不需要变化的数据，使用freeze可以避免Vue创建大量的getter&#x2F;setter，从而减少内存占用。<br>提高性能 ：由于被冻结的对象不再是响应式的，Vue不再需要追踪其变化，这可以在处理大量数据时显著提高性能。<br>适用场景 ：特别适合那些一旦初始化就不再变化的数据，如常量配置、固定选项列表等。</p>
+<h2 id="使用函数式组件优化"><a href="#使用函数式组件优化" class="headerlink" title="使用函数式组件优化"></a>使用函数式组件优化</h2><p>函数式组件没有实例，没有生命周期钩子，也没有this上下文，因此渲染开销更小<br>没有状态管理和实例化过程，函数式组件的渲染速度更快。<br>更少的内存占用，不需要维护Vue实例，减少内存占用。<br>适用于纯展示型的组件。<br>函数式组件的代码通常更简洁，更容易维护和理解</p>
+<h2 id="使用计算属性优化"><a href="#使用计算属性优化" class="headerlink" title="使用计算属性优化"></a>使用计算属性优化</h2><p>计算属性会基于响应式依赖进行缓存.只有当依赖项发生变化时,才会重新计算,避免了每次渲染都进行复杂计算.<br>使用模板中某个数据多次使用，并该数据是通过计算得到的，可以使用计算属性来缓存它们.<br>计算属性能够智能的追踪其依赖关系,只有在相关依赖发生变化时,才会更新.<br>将复杂的逻辑从模板中抽离出来,使模板更加简洁易读.</p>
+<h2 id="非实时绑定的表单项"><a href="#非实时绑定的表单项" class="headerlink" title="非实时绑定的表单项"></a>非实时绑定的表单项</h2><p>当使用v-model绑定一个表单时,当用户改变表单项的状态时,也会随之改变数据,从而导致vue发生重渲染(rerender)<br>这会带来一些性能的开销.<br>我们可以通过使用lazy或不使用v-model的方式来解决该问题.但要注意,这样可能会导致在某一个时间段内数据和表单项的值是不一致的.<br>当使用v-model.lazy时,数据和表单项的值是异步的,只有当用户停止输入时,才会更新数据.使用lazy监听@change事件<br>当不使用v-model时,我们可以手动的监听表单项的change事件,并更新数据. 不使用v-model监听@input</p>
+<h2 id="保持对象引用稳定"><a href="#保持对象引用稳定" class="headerlink" title="保持对象引用稳定"></a>保持对象引用稳定</h2><p>避免不必要的响应式更新 ：Vue的响应式系统会追踪对象的变化，当对象引用改变时，Vue会认为整个对象都变了，从而触发相关组件的重新渲染。保持对象引用稳定可以避免这种情况。<br>减少虚拟DOM的比较开销 ：当父组件向子组件传递props时，如果每次都创建新的对象引用，即使内容相同，Vue也会认为props发生了变化，导致子组件重新渲染。<br>优化memo和缓存 ：使用v-memo、computed或Vue3的shallowRef等特性时，它们依赖于引用比较来判断是否需要重新计算或渲染。<br>实现方式 ：可以通过使用不可变数据模式、Object.assign()更新对象而不是创建新对象、使用Vue的响应式API如reactive()等方式来保持对象引用的稳定性。</p>
+<h2 id="使用延迟装载来优化vue项目"><a href="#使用延迟装载来优化vue项目" class="headerlink" title="使用延迟装载来优化vue项目"></a>使用延迟装载来优化vue项目</h2><p>减小初始包体积 ：只加载当前路由需要的组件，减少首屏加载时间和资源消耗。<br>按需加载资源 ：路由组件、大型库、图片等资源只在需要时才加载，提高应用启动速度。<br>提升用户体验 ：首屏渲染更快，用户可以更快地与应用交互，减少等待时间。<br>优化资源利用 ：减少不必要的网络请求和浏览器解析工作，节省带宽和设备资源。</p>
+<h2 id="使用keep-alive来优化vue项目"><a href="#使用keep-alive来优化vue项目" class="headerlink" title="使用keep-alive来优化vue项目"></a>使用keep-alive来优化vue项目</h2><p>缓存组件状态 ：keep-alive可以缓存不活动的组件实例，而不是销毁它们，保留组件的状态和避免重新渲染。<br>减少性能开销 ：避免了组件的重复创建和销毁过程，减少了DOM操作，提高了应用性能，特别是对于频繁切换的组件。<br>提升用户体验 ：保持组件状态意味着用户在组件间切换时不会丢失之前的操作和数据，如表单输入、滚动位置等。<br>特有的生命周期钩子 ：提供了activated和deactivated钩子，便于管理缓存组件的生命周期事件。<br>可配置性强 ：通过include、exclude和max属性可以精确控制缓存策略，只缓存需要的组件，避免内存浪费。</p>
+<h2 id="长列表优化"><a href="#长列表优化" class="headerlink" title="长列表优化"></a>长列表优化</h2><ul>
+<li>什么是长列表优化?<br>即渲染大量数据时,容易出现卡顿的情况.<br>采取使用分页的方式获取数据.<br>使用虚拟滚动方案只渲染浏览器视口范围内的的数据.<br>使用v-once,方式只渲染一次<br>通过v-memo缓存子树,有条件更新,提高复用,避免不必要更新.<br>按需加载数据</li>
+</ul>
+<p>虚拟滚动 ：只渲染可视区域内的元素，其他元素在滚动到视口时才渲染，可使用vue-virtual-scroller等库实现。<br>分页加载 ：将大量数据分批次加载和渲染，减轻一次性渲染的压力。<br>时间分片 ：利用requestAnimationFrame或setTimeout将渲染任务分割成小块，避免长时间占用主线程。<br>列表项组件化 ：将列表项抽离为单独组件，并使用v-once、函数式组件等技术减少更新开销。<br>使用key ：为列表项提供稳定的key值，帮助Vue高效地进行DOM更新。</p>
+<h2 id="打包体积优化"><a href="#打包体积优化" class="headerlink" title="打包体积优化"></a>打包体积优化</h2><p>路由懒加载，使用动态import实现按需加载组件；<br>第三方库按需引入，避免引入整个库；<br>使用webpack的splitChunks分割代码，提取公共模块<br>使用compression-webpack-plugin开启Gzip压缩<br>使用webpack的Tree Shaking删除未使用的代码<br>合理使用CDN加载外部资源<br>图片资源压缩和合理使用</p>
 
     </div>
 
@@ -281,7 +269,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://sheleftwithregrets.github.io/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/" title="浏览器渲染原理">https://sheleftwithregrets.github.io/blog.github.io/2025/03/16/第十一章：浏览器渲染原理/</a>
+    <a href="https://sheleftwithregrets.github.io/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/" title="vue的优化手段">https://sheleftwithregrets.github.io/blog.github.io/2025/03/24/第十四章：vue的优化手段/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -311,8 +299,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog.github.io/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" rel="tag"># 前端基础</a>
-              <a href="/blog.github.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag"># 浏览器</a>
+              <a href="/blog.github.io/tags/Vue-js/" rel="tag"># Vue.js</a>
           </div>
 
         
@@ -321,13 +308,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog.github.io/2025/03/15/%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" rel="prev" title="事件循环">
-      <i class="fa fa-chevron-left"></i> 事件循环
+    <a href="/blog.github.io/2025/03/20/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%B4%AD%E7%89%A9%E8%BD%A6%E6%95%88%E6%9E%9C/" rel="prev" title="购物车动态效果">
+      <i class="fa fa-chevron-left"></i> 购物车动态效果
     </a></div>
-      <div class="post-nav-item">
-    <a href="/blog.github.io/2025/03/17/CSS%20%E5%B1%9E%E6%80%A7%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B/" rel="next" title="CSS属性计算过程">
-      CSS属性计算过程 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -387,7 +371,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">浏览器渲染原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AFreflow%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">面试题：什么是reflow？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AFrepaint%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">面试题：什么是repaint？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88transform%E7%9A%84%E6%95%88%E7%8E%87%E9%AB%98%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">面试题：为什么transform的效率高？</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8key%E5%8F%AF%E4%BB%A5%E4%BC%98%E5%8C%96vue"><span class="nav-number">1.</span> <span class="nav-text">使用key可以优化vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8freeze%E6%9D%A5%E5%86%BB%E7%BB%93%E6%95%B0%E6%8D%AE%EF%BC%8C%E9%81%BF%E5%85%8D%E6%95%B0%E6%8D%AE%E8%A2%AB%E4%BF%AE%E6%94%B9-%EF%BC%88%E4%B8%BB%E8%A6%81%E7%94%A8%E4%BA%8Evue2%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">使用freeze来冻结数据，避免数据被修改 （主要用于vue2）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6%E4%BC%98%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">使用函数式组件优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E4%BC%98%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">使用计算属性优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E5%AE%9E%E6%97%B6%E7%BB%91%E5%AE%9A%E7%9A%84%E8%A1%A8%E5%8D%95%E9%A1%B9"><span class="nav-number">5.</span> <span class="nav-text">非实时绑定的表单项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E6%8C%81%E5%AF%B9%E8%B1%A1%E5%BC%95%E7%94%A8%E7%A8%B3%E5%AE%9A"><span class="nav-number">6.</span> <span class="nav-text">保持对象引用稳定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%BB%B6%E8%BF%9F%E8%A3%85%E8%BD%BD%E6%9D%A5%E4%BC%98%E5%8C%96vue%E9%A1%B9%E7%9B%AE"><span class="nav-number">7.</span> <span class="nav-text">使用延迟装载来优化vue项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8keep-alive%E6%9D%A5%E4%BC%98%E5%8C%96vue%E9%A1%B9%E7%9B%AE"><span class="nav-number">8.</span> <span class="nav-text">使用keep-alive来优化vue项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%95%BF%E5%88%97%E8%A1%A8%E4%BC%98%E5%8C%96"><span class="nav-number">9.</span> <span class="nav-text">长列表优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%8C%85%E4%BD%93%E7%A7%AF%E4%BC%98%E5%8C%96"><span class="nav-number">10.</span> <span class="nav-text">打包体积优化</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -527,7 +511,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'blog.github.io',
       owner       : 'sheleftwithregrets',
       admin       : ['sheleftwithregrets'],
-      id          : 'b5155e10aece31ed8ff4629af67c60e2',
+      id          : '58271a4120da7e4cbc63818ff258f9fd',
         language: 'zh-CN',
       distractionFreeMode: true
     });

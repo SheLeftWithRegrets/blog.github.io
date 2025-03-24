@@ -166,6 +166,30 @@
       </tags>
   </entry>
   <entry>
+    <title>vue的优化手段</title>
+    <url>/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/</url>
+    <content><![CDATA[<h2 id="使用key可以优化vue"><a href="#使用key可以优化vue" class="headerlink" title="使用key可以优化vue"></a>使用key可以优化vue</h2><p>高效的DOM更新,key属性帮助Vue识别虚拟Dom中的节点.vnode,当数据变化时,Vue会基于key值高效的更新DOM,而不是重新渲染整个列表.<br>在v-for循环中使用key可以确保组件的状态不会混淆,每个组件实例都能保持独立的状态.<br>Vue的diff算法会使用key来判断节点是新创建的还是被移动的.有了唯一的key,vue可以最小化DOM操作.<br>没有key时,vue会采用”就地复用”策略,可能导致一些意外行为,特别是在列表项包含状态或子组件时.<br>Vue官方强烈建议在使用v-for时提供key属性,并且应该使用唯一的稳定的标识符.而不是索引.</p>
+<h2 id="使用freeze来冻结数据，避免数据被修改-（主要用于vue2）"><a href="#使用freeze来冻结数据，避免数据被修改-（主要用于vue2）" class="headerlink" title="使用freeze来冻结数据，避免数据被修改 （主要用于vue2）"></a>使用freeze来冻结数据，避免数据被修改 （主要用于vue2）</h2><p>阻止响应式转换 ：当我们将一个JavaScript对象传入Vue实例作为data选项，Vue将遍历此对象所有的属性，并使用Object.defineProperty把这些属性全部转为getter&#x2F;setter，这是Vue响应式系统的核心。而使用Object.freeze()可以冻结一个对象，阻止Vue对其进行响应式处理。<br>减少观察者 ：对于大型数据集或不需要变化的数据，使用freeze可以避免Vue创建大量的getter&#x2F;setter，从而减少内存占用。<br>提高性能 ：由于被冻结的对象不再是响应式的，Vue不再需要追踪其变化，这可以在处理大量数据时显著提高性能。<br>适用场景 ：特别适合那些一旦初始化就不再变化的数据，如常量配置、固定选项列表等。</p>
+<h2 id="使用函数式组件优化"><a href="#使用函数式组件优化" class="headerlink" title="使用函数式组件优化"></a>使用函数式组件优化</h2><p>函数式组件没有实例，没有生命周期钩子，也没有this上下文，因此渲染开销更小<br>没有状态管理和实例化过程，函数式组件的渲染速度更快。<br>更少的内存占用，不需要维护Vue实例，减少内存占用。<br>适用于纯展示型的组件。<br>函数式组件的代码通常更简洁，更容易维护和理解</p>
+<h2 id="使用计算属性优化"><a href="#使用计算属性优化" class="headerlink" title="使用计算属性优化"></a>使用计算属性优化</h2><p>计算属性会基于响应式依赖进行缓存.只有当依赖项发生变化时,才会重新计算,避免了每次渲染都进行复杂计算.<br>使用模板中某个数据多次使用，并该数据是通过计算得到的，可以使用计算属性来缓存它们.<br>计算属性能够智能的追踪其依赖关系,只有在相关依赖发生变化时,才会更新.<br>将复杂的逻辑从模板中抽离出来,使模板更加简洁易读.</p>
+<h2 id="非实时绑定的表单项"><a href="#非实时绑定的表单项" class="headerlink" title="非实时绑定的表单项"></a>非实时绑定的表单项</h2><p>当使用v-model绑定一个表单时,当用户改变表单项的状态时,也会随之改变数据,从而导致vue发生重渲染(rerender)<br>这会带来一些性能的开销.<br>我们可以通过使用lazy或不使用v-model的方式来解决该问题.但要注意,这样可能会导致在某一个时间段内数据和表单项的值是不一致的.<br>当使用v-model.lazy时,数据和表单项的值是异步的,只有当用户停止输入时,才会更新数据.使用lazy监听@change事件<br>当不使用v-model时,我们可以手动的监听表单项的change事件,并更新数据. 不使用v-model监听@input</p>
+<h2 id="保持对象引用稳定"><a href="#保持对象引用稳定" class="headerlink" title="保持对象引用稳定"></a>保持对象引用稳定</h2><p>避免不必要的响应式更新 ：Vue的响应式系统会追踪对象的变化，当对象引用改变时，Vue会认为整个对象都变了，从而触发相关组件的重新渲染。保持对象引用稳定可以避免这种情况。<br>减少虚拟DOM的比较开销 ：当父组件向子组件传递props时，如果每次都创建新的对象引用，即使内容相同，Vue也会认为props发生了变化，导致子组件重新渲染。<br>优化memo和缓存 ：使用v-memo、computed或Vue3的shallowRef等特性时，它们依赖于引用比较来判断是否需要重新计算或渲染。<br>实现方式 ：可以通过使用不可变数据模式、Object.assign()更新对象而不是创建新对象、使用Vue的响应式API如reactive()等方式来保持对象引用的稳定性。</p>
+<h2 id="使用延迟装载来优化vue项目"><a href="#使用延迟装载来优化vue项目" class="headerlink" title="使用延迟装载来优化vue项目"></a>使用延迟装载来优化vue项目</h2><p>减小初始包体积 ：只加载当前路由需要的组件，减少首屏加载时间和资源消耗。<br>按需加载资源 ：路由组件、大型库、图片等资源只在需要时才加载，提高应用启动速度。<br>提升用户体验 ：首屏渲染更快，用户可以更快地与应用交互，减少等待时间。<br>优化资源利用 ：减少不必要的网络请求和浏览器解析工作，节省带宽和设备资源。</p>
+<h2 id="使用keep-alive来优化vue项目"><a href="#使用keep-alive来优化vue项目" class="headerlink" title="使用keep-alive来优化vue项目"></a>使用keep-alive来优化vue项目</h2><p>缓存组件状态 ：keep-alive可以缓存不活动的组件实例，而不是销毁它们，保留组件的状态和避免重新渲染。<br>减少性能开销 ：避免了组件的重复创建和销毁过程，减少了DOM操作，提高了应用性能，特别是对于频繁切换的组件。<br>提升用户体验 ：保持组件状态意味着用户在组件间切换时不会丢失之前的操作和数据，如表单输入、滚动位置等。<br>特有的生命周期钩子 ：提供了activated和deactivated钩子，便于管理缓存组件的生命周期事件。<br>可配置性强 ：通过include、exclude和max属性可以精确控制缓存策略，只缓存需要的组件，避免内存浪费。</p>
+<h2 id="长列表优化"><a href="#长列表优化" class="headerlink" title="长列表优化"></a>长列表优化</h2><ul>
+<li>什么是长列表优化?<br>即渲染大量数据时,容易出现卡顿的情况.<br>采取使用分页的方式获取数据.<br>使用虚拟滚动方案只渲染浏览器视口范围内的的数据.<br>使用v-once,方式只渲染一次<br>通过v-memo缓存子树,有条件更新,提高复用,避免不必要更新.<br>按需加载数据</li>
+</ul>
+<p>虚拟滚动 ：只渲染可视区域内的元素，其他元素在滚动到视口时才渲染，可使用vue-virtual-scroller等库实现。<br>分页加载 ：将大量数据分批次加载和渲染，减轻一次性渲染的压力。<br>时间分片 ：利用requestAnimationFrame或setTimeout将渲染任务分割成小块，避免长时间占用主线程。<br>列表项组件化 ：将列表项抽离为单独组件，并使用v-once、函数式组件等技术减少更新开销。<br>使用key ：为列表项提供稳定的key值，帮助Vue高效地进行DOM更新。</p>
+<h2 id="打包体积优化"><a href="#打包体积优化" class="headerlink" title="打包体积优化"></a>打包体积优化</h2><p>路由懒加载，使用动态import实现按需加载组件；<br>第三方库按需引入，避免引入整个库；<br>使用webpack的splitChunks分割代码，提取公共模块<br>使用compression-webpack-plugin开启Gzip压缩<br>使用webpack的Tree Shaking删除未使用的代码<br>合理使用CDN加载外部资源<br>图片资源压缩和合理使用</p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>Vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>购物车动态效果</title>
     <url>/blog.github.io/2025/03/20/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%B4%AD%E7%89%A9%E8%BD%A6%E6%95%88%E6%9E%9C/</url>
     <content><![CDATA[<h2 id="使用面向对象编程的思想实现购物车效果"><a href="#使用面向对象编程的思想实现购物车效果" class="headerlink" title="使用面向对象编程的思想实现购物车效果"></a>使用面向对象编程的思想实现购物车效果</h2><ul>
@@ -181,6 +205,7 @@
 <li>使用html+&#x3D;语法可以动态生成HTML字符串,然后使用innerHTML属性动态添加到页面中。也可以使用${}来对变量进行插值。</li>
 <li>使用document.querySelector()方法获取的值，可以通过使用textcontent来对其进行内容上的修改。</li>
 <li>使用translateX可以实现X轴的位移，使用translateY可以实现Y轴的位移。</li>
+<li>使用es6的class类来实现定义效果。</li>
 </ul>
 ]]></content>
       <categories>
@@ -646,8 +671,10 @@
 <h2 id="主要收获"><a href="#主要收获" class="headerlink" title="主要收获"></a>主要收获</h2><p>1.学会了使用DrissionPage对淘宝的母婴商品进行数据爬取，并进行数据分析和数据可视化。<br>2.对于简单系统的搭建有一定的了解。稍微熟悉了使用nginx反向代理。</p>
 <h2 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h2><p>能约到面试，但是自身的基础还是不太牢固。还是需要对于js，vue，css，html等基础知识进行巩固。</p>
 <h2 id="下周计划"><a href="#下周计划" class="headerlink" title="下周计划"></a>下周计划</h2><p>1.做一个简单的小程序项目，熟悉一下小程序开发。<br>2.争取开发一个网站，实现web前端知识的模拟练题。而不是只靠背，最好配合代码块。</p>
-<p>##3.10<br>场景：用户对于分页板块，进行多次点击页面按钮，发送了多次请求，需要正确的响应到最后一次的点击页面。<br>昨天复习到了一个知识点。关于xhr.abort()方法，可以取消xhr请求。可以用于用户多次点击按钮，重复多次请求时，确认正确的点击页面，取消上一次的请求。<br>涉及后端的话，可以给每次请求添加一个reqest_id，在响应中返回该id，前端根据id判断是否是最后一次的请求。<br>添加londing状态，从根源上解决问题。（降低用户体验）</p>
-<p>##3.10 -3.14<br>完整整个毕业论文整体流程和内容，是否完整需要指导老师的查看后再次修改。</p>
+<h2 id="3-10"><a href="#3-10" class="headerlink" title="3.10"></a>3.10</h2><p>场景：用户对于分页板块，进行多次点击页面按钮，发送了多次请求，需要正确的响应到最后一次的点击页面。<br>昨天复习到了一个知识点。关于xhr.abort()方法，可以取消xhr请求。可以用于用户多次点击按钮，重复多次请求时，确认正确的点击页面，取消上一次的请求。<br>涉及后端的话，可以给每次请求添加一个reqest_id，在响应中返回该id，前端根据id判断是否是最后一次的请求。<br>添加londing状态，从根源上解决问题。（降低用户体验）</p>
+<h2 id="3-10-3-14"><a href="#3-10-3-14" class="headerlink" title="3.10 -3.14"></a>3.10 -3.14</h2><p>完整整个毕业论文整体流程和内容，是否完整需要指导老师的查看后再次修改。</p>
+<h2 id="3-14-3-20"><a href="#3-14-3-20" class="headerlink" title="3.14-3.20"></a>3.14-3.20</h2><p>学习完渡一教育的六节大师课，补全了一些知识基础。更加感觉自己目前存在的技术栈还存在很多的问题。</p>
+<h2 id="3-24"><a href="#3-24" class="headerlink" title="3.24"></a>3.24</h2><p>Nan &#x3D;&#x3D;&#x3D; Nan 为false<br>+0 &#x3D;&#x3D;&#x3D; -0 为true</p>
 ]]></content>
       <categories>
         <category>周记</category>
@@ -933,6 +960,10 @@
 </ul>
 </li>
 </ol>
+<hr>
+<ul>
+<li>在vue中使用：class&#x3D;”{active:isActive}”来实现根据一个对象的值动态切换class状态</li>
+</ul>
 ]]></content>
       <categories>
         <category>前端框架</category>
