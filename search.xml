@@ -891,208 +891,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue基础</title>
-    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="Vue基础"><a href="#Vue基础" class="headerlink" title="Vue基础"></a>Vue基础</h1><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h3 id="Vue组件之间有哪些通信方式？"><a href="#Vue组件之间有哪些通信方式？" class="headerlink" title="Vue组件之间有哪些通信方式？"></a>Vue组件之间有哪些通信方式？</h3><p>组件通信的基本原则：谁向谁传，数据写在发送方。主要通信方式包括：</p>
-<ol>
-<li><strong>父传子</strong>：props</li>
-<li><strong>子传父</strong>：$emit</li>
-<li><strong>兄弟组件</strong>：<ul>
-<li>$attrs&#x2F;$emit</li>
-<li>$parent&#x2F;$root</li>
-<li>Vuex</li>
-<li>Event Bus($emit&#x2F;$on)</li>
-</ul>
-</li>
-</ol>
-<p>注：$attrs 是一个包含父组件传递给子组件但未在子组件的 props 中定义的属性的对象。</p>
-<h2 id="指令优先级"><a href="#指令优先级" class="headerlink" title="指令优先级"></a>指令优先级</h2><h3 id="v-if和v-for的优先级是怎样的？"><a href="#v-if和v-for的优先级是怎样的？" class="headerlink" title="v-if和v-for的优先级是怎样的？"></a>v-if和v-for的优先级是怎样的？</h3><ul>
-<li>Vue2中v-for优先级更高</li>
-<li>Vue3中v-if优先级更高</li>
-<li>官方文档明确表明不要在同一个标签中同时使用这两个指令</li>
-</ul>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="Vue的生命周期有哪些？各自的作用是什么？"><a href="#Vue的生命周期有哪些？各自的作用是什么？" class="headerlink" title="Vue的生命周期有哪些？各自的作用是什么？"></a>Vue的生命周期有哪些？各自的作用是什么？</h3><p><strong>Vue2生命周期：</strong></p>
-<ol>
-<li><p><strong>beforeCreate</strong></p>
-<ul>
-<li>在实例初始化之后，数据观测和事件配置之前调用</li>
-<li>用途：初始化操作，但不能访问响应式数据</li>
-</ul>
-</li>
-<li><p><strong>created</strong></p>
-<ul>
-<li>实例创建完成后调用</li>
-<li>已完成数据观测、属性和方法的运算，watch&#x2F;event事件回调</li>
-<li>用途：数据获取、事件监听等初始化操作</li>
-</ul>
-</li>
-<li><p><strong>beforeMount</strong></p>
-<ul>
-<li>挂载开始前调用</li>
-<li>用途：渲染前的准备工作，如数据格式化</li>
-</ul>
-</li>
-<li><p><strong>mounted</strong></p>
-<ul>
-<li>DOM挂载完成后调用</li>
-<li>用途：DOM操作、第三方库初始化</li>
-</ul>
-</li>
-<li><p><strong>beforeUpdate</strong></p>
-<ul>
-<li>数据更新时调用，发生在虚拟DOM打补丁之前</li>
-<li>用途：更新前访问现有DOM，如移除事件监听器</li>
-</ul>
-</li>
-<li><p><strong>updated</strong></p>
-<ul>
-<li>虚拟DOM重新渲染和打补丁之后调用</li>
-<li>用途：更新后的DOM操作，但应避免在此阶段更改状态</li>
-</ul>
-</li>
-<li><p><strong>beforeDestroy</strong></p>
-<ul>
-<li>实例销毁前调用</li>
-<li>用途：清理操作，如移除事件监听器、定时器</li>
-</ul>
-</li>
-<li><p><strong>destroyed</strong></p>
-<ul>
-<li>实例销毁后调用</li>
-<li>用途：最终的清理工作</li>
-</ul>
-</li>
-</ol>
-<p><strong>Vue3新增：</strong></p>
-<ul>
-<li><strong>setup</strong><ul>
-<li>在组件实例创建之前执行</li>
-<li>组合式API的入口</li>
-<li>可访问props和context，但不能访问this</li>
-</ul>
-</li>
-</ul>
-<h2 id="组件扩展"><a href="#组件扩展" class="headerlink" title="组件扩展"></a>组件扩展</h2><h3 id="如何扩展一个组件？"><a href="#如何扩展一个组件？" class="headerlink" title="如何扩展一个组件？"></a>如何扩展一个组件？</h3><ol>
-<li><strong>使用Composition API进行逻辑扩展</strong></li>
-<li><strong>使用slots进行内容扩展</strong><ul>
-<li>默认插槽</li>
-<li>具名插槽</li>
-<li>作用域插槽</li>
-</ul>
-</li>
-</ol>
-<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><h3 id="什么是虚拟DOM？有什么优点？"><a href="#什么是虚拟DOM？有什么优点？" class="headerlink" title="什么是虚拟DOM？有什么优点？"></a>什么是虚拟DOM？有什么优点？</h3><p>虚拟DOM是一个虚拟的DOM对象，本质是一个JS对象。</p>
-<p><strong>优点：</strong></p>
-<ol>
-<li>减少操作真实DOM的次数，提高程序性能</li>
-<li>方便实现跨平台</li>
-</ol>
-<h2 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h2><h3 id="Vue3相比Vue2有哪些重要的新特性？"><a href="#Vue3相比Vue2有哪些重要的新特性？" class="headerlink" title="Vue3相比Vue2有哪些重要的新特性？"></a>Vue3相比Vue2有哪些重要的新特性？</h3><ol>
-<li><p><strong>Composition API</strong></p>
-<ul>
-<li>用于组织和复用组件逻辑</li>
-<li>将相同功能的代码放在一起，便于管理</li>
-</ul>
-</li>
-<li><p><strong>响应式系统升级</strong></p>
-<ul>
-<li>使用Proxy替代Object.defineProperty</li>
-<li>更好的性能和更完整的响应式支持</li>
-</ul>
-</li>
-<li><p><strong>动态路由</strong></p>
-<ul>
-<li>更灵活的路由配置</li>
-<li>在params后添加反斜杠和冒号实现动态路由</li>
-</ul>
-</li>
-</ol>
-<hr>
-<ul>
-<li>在vue中使用：class&#x3D;”{active:isActive}”来实现根据一个对象的值动态切换class状态</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端框架</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-        <tag>前端框架</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用DrissionPage进行高效的数据爬虫</title>
-    <url>/blog.github.io/2025/03/07/%E7%AC%AC%E4%B9%9D%E7%AF%87%EF%BC%9A%E4%BD%BF%E7%94%A8DrissionPage%E8%BF%9B%E8%A1%8C%E9%AB%98%E6%95%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%88%AC%E8%99%AB/</url>
-    <content><![CDATA[<h1 id="使用DrissionPage进行高效的数据爬虫"><a href="#使用DrissionPage进行高效的数据爬虫" class="headerlink" title="使用DrissionPage进行高效的数据爬虫"></a>使用DrissionPage进行高效的数据爬虫</h1><h2 id="1-DrissionPage简介"><a href="#1-DrissionPage简介" class="headerlink" title="1. DrissionPage简介"></a>1. DrissionPage简介</h2><p>DrissionPage是一个功能强大的Python爬虫库，它结合了Selenium和Requests的优点，提供了更简单的API和更高效的性能。</p>
-<h3 id="1-1-安装必要的库"><a href="#1-1-安装必要的库" class="headerlink" title="1.1 安装必要的库"></a>1.1 安装必要的库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install DrissionPage</span><br><span class="line">pip install pandas</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-DrissionPage的优势"><a href="#1-2-DrissionPage的优势" class="headerlink" title="1.2 DrissionPage的优势"></a>1.2 DrissionPage的优势</h3><ul>
-<li>无需配置webdriver</li>
-<li>支持多种页面操作方式</li>
-<li>内置反检测功能</li>
-<li>性能优于Selenium</li>
-<li>使用简单直观</li>
-</ul>
-<h2 id="2-爬取淘宝母婴商品实战"><a href="#2-爬取淘宝母婴商品实战" class="headerlink" title="2. 爬取淘宝母婴商品实战"></a>2. 爬取淘宝母婴商品实战</h2><h3 id="2-1-登录淘宝"><a href="#2-1-登录淘宝" class="headerlink" title="2.1 登录淘宝"></a>2.1 登录淘宝</h3><h4 id="2-1-1-扫码登录（推荐）"><a href="#2-1-1-扫码登录（推荐）" class="headerlink" title="2.1.1 扫码登录（推荐）"></a>2.1.1 扫码登录（推荐）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> DrissionPage <span class="keyword">import</span> ChromiumPage</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login_by_qrcode</span>():</span><br><span class="line">    <span class="comment"># 创建浏览器对象</span></span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 访问淘宝登录页</span></span><br><span class="line">    page.get(<span class="string">&#x27;https://login.taobao.com&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 等待扫码登录</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;请在30秒内完成扫码登录...&#x27;</span>)</span><br><span class="line">    page.wait.ele_displayed(<span class="string">&#x27;#login-form&#x27;</span>, timeout=<span class="number">30</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> page</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-1-2-账号密码登录"><a href="#2-1-2-账号密码登录" class="headerlink" title="2.1.2 账号密码登录"></a>2.1.2 账号密码登录</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">login_by_password</span>(<span class="params">username, password</span>):</span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    page.get(<span class="string">&#x27;https://login.taobao.com&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 切换到密码登录</span></span><br><span class="line">        switch_btn = page.ele(<span class="string">&#x27;.password-login-tab&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> switch_btn:</span><br><span class="line">            switch_btn.click()</span><br><span class="line">            </span><br><span class="line">        <span class="comment"># 输入账号密码</span></span><br><span class="line">        page.ele(<span class="string">&#x27;#username&#x27;</span>).<span class="built_in">input</span>(username)</span><br><span class="line">        page.ele(<span class="string">&#x27;#password&#x27;</span>).<span class="built_in">input</span>(password)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 点击登录按钮</span></span><br><span class="line">        page.ele(<span class="string">&#x27;#btn-submit&#x27;</span>).click()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 处理可能的滑块验证</span></span><br><span class="line">        handle_slider(page)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 等待登录成功</span></span><br><span class="line">        page.wait.load_complete()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> page</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;密码登录失败：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">handle_slider</span>(<span class="params">page</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;处理滑块验证&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 等待滑块出现</span></span><br><span class="line">        slider = page.wait.ele_displayed(<span class="string">&#x27;#nc_1_n1z&#x27;</span>, timeout=<span class="number">3</span>)</span><br><span class="line">        <span class="keyword">if</span> slider:</span><br><span class="line">            <span class="comment"># 获取滑块和轨道信息</span></span><br><span class="line">            track = page.ele(<span class="string">&#x27;#nc_1_n1t&#x27;</span>)</span><br><span class="line">            slider_width = track.size[<span class="string">&#x27;width&#x27;</span>]</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 模拟人工滑动</span></span><br><span class="line">            page.actions.drag.move_to(slider)\</span><br><span class="line">                           .hold()\</span><br><span class="line">                           .move_by_offset(slider_width, <span class="number">0</span>, duration=<span class="number">0.5</span>)\</span><br><span class="line">                           .release()\</span><br><span class="line">                           .perform()</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 等待验证结果</span></span><br><span class="line">            time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-1-3-Cookie登录"><a href="#2-1-3-Cookie登录" class="headerlink" title="2.1.3 Cookie登录"></a>2.1.3 Cookie登录</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">login_by_cookies</span>(<span class="params">cookies_str</span>):</span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 访问淘宝首页</span></span><br><span class="line">    page.get(<span class="string">&#x27;https://www.taobao.com&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 设置cookies</span></span><br><span class="line">    cookies = parse_cookies(cookies_str)</span><br><span class="line">    <span class="keyword">for</span> cookie <span class="keyword">in</span> cookies:</span><br><span class="line">        page.<span class="built_in">set</span>.cookie(cookie)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 刷新页面</span></span><br><span class="line">    page.refresh()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 验证登录状态</span></span><br><span class="line">    <span class="keyword">if</span> check_login_status(page):</span><br><span class="line">        <span class="keyword">return</span> page</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_cookies</span>(<span class="params">cookies_str</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;解析cookies字符串&quot;&quot;&quot;</span></span><br><span class="line">    cookies = []</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> cookies_str.split(<span class="string">&#x27;;&#x27;</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;=&#x27;</span> <span class="keyword">in</span> item:</span><br><span class="line">            name, value = item.strip().split(<span class="string">&#x27;=&#x27;</span>, <span class="number">1</span>)</span><br><span class="line">            cookies.append(&#123;<span class="string">&#x27;name&#x27;</span>: name, <span class="string">&#x27;value&#x27;</span>: value&#125;)</span><br><span class="line">    <span class="keyword">return</span> cookies</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check_login_status</span>(<span class="params">page</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;检查登录状态&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 检查是否存在登录标识</span></span><br><span class="line">        nickname = page.ele(<span class="string">&#x27;.site-nav-login-info-nick&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> nickname <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2-1-4-登录状态保存与恢复"><a href="#2-1-4-登录状态保存与恢复" class="headerlink" title="2.1.4 登录状态保存与恢复"></a>2.1.4 登录状态保存与恢复</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">save_cookies</span>(<span class="params">page, file_path=<span class="string">&#x27;taobao_cookies.json&#x27;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;保存登录cookies&quot;&quot;&quot;</span></span><br><span class="line">    cookies = page.get.cookies()</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        json.dump(cookies, f)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_cookies</span>(<span class="params">file_path=<span class="string">&#x27;taobao_cookies.json&#x27;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;加载已保存的cookies&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">return</span> json.load(f)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login_with_saved_cookies</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;使用保存的cookies登录&quot;&quot;&quot;</span></span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    cookies = load_cookies()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> cookies:</span><br><span class="line">        page.get(<span class="string">&#x27;https://www.taobao.com&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> cookie <span class="keyword">in</span> cookies:</span><br><span class="line">            page.<span class="built_in">set</span>.cookie(cookie)</span><br><span class="line">        page.refresh()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> check_login_status(page):</span><br><span class="line">            <span class="keyword">return</span> page</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 如果cookie无效，使用扫码登录</span></span><br><span class="line">    page = login_by_qrcode()</span><br><span class="line">    <span class="keyword">if</span> page:</span><br><span class="line">        save_cookies(page)</span><br><span class="line">    <span class="keyword">return</span> page</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-1-5-登录异常处理"><a href="#2-1-5-登录异常处理" class="headerlink" title="2.1.5 登录异常处理"></a>2.1.5 登录异常处理</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">safe_login</span>(<span class="params">retry_times=<span class="number">3</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;安全登录处理&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(retry_times):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 优先使用保存的cookies</span></span><br><span class="line">            page = login_with_saved_cookies()</span><br><span class="line">            <span class="keyword">if</span> page:</span><br><span class="line">                <span class="keyword">return</span> page</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># cookies失效，使用扫码登录</span></span><br><span class="line">            page = login_by_qrcode()</span><br><span class="line">            <span class="keyword">if</span> page:</span><br><span class="line">                save_cookies(page)</span><br><span class="line">                <span class="keyword">return</span> page</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&#x27;第<span class="subst">&#123;i+<span class="number">1</span>&#125;</span>次登录失败：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&#x27;</span>)</span><br><span class="line">            time.sleep(<span class="number">2</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">&#x27;登录失败，请稍后重试&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>使用示例：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 方式1：扫码登录</span></span><br><span class="line">        page = login_by_qrcode()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方式2：账号密码登录</span></span><br><span class="line">        <span class="comment"># page = login_by_password(&#x27;your_username&#x27;, &#x27;your_password&#x27;)</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方式3：Cookie登录</span></span><br><span class="line">        <span class="comment"># page = login_by_cookies(&#x27;cookie字符串&#x27;)</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方式4：使用保存的登录状态</span></span><br><span class="line">        <span class="comment"># page = login_with_saved_cookies()</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> page:</span><br><span class="line">            <span class="comment"># 开始爬取数据</span></span><br><span class="line">            taobao_crawler(page, <span class="string">&#x27;婴儿奶粉&#x27;</span>, max_pages=<span class="number">5</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;登录失败&#x27;</span>)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;程序出错：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&#x27;</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="keyword">if</span> page:</span><br><span class="line">            page.quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-<p>注意事项：</p>
-<ol>
-<li>账号密码登录容易触发验证码</li>
-<li>Cookie登录需要定期更新Cookie</li>
-<li>建议优先使用扫码登录</li>
-<li>保存登录状态可以避免频繁登录</li>
-<li>注意处理各种异常情况</li>
-</ol>
-<h3 id="2-2-搜索母婴商品"><a href="#2-2-搜索母婴商品" class="headerlink" title="2.2 搜索母婴商品"></a>2.2 搜索母婴商品</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">search_products</span>(<span class="params">keyword</span>):</span><br><span class="line">    <span class="comment"># 访问淘宝首页</span></span><br><span class="line">    page.get(<span class="string">&#x27;https://www.taobao.com&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 定位搜索框并输入关键词</span></span><br><span class="line">    search_input = page.ele(<span class="string">&#x27;#q&#x27;</span>)</span><br><span class="line">    search_input.<span class="built_in">input</span>(keyword)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 点击搜索按钮</span></span><br><span class="line">    search_button = page.ele(<span class="string">&#x27;.btn-search&#x27;</span>)</span><br><span class="line">    search_button.click()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 等待搜索结果加载</span></span><br><span class="line">    page.wait.load_complete()</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-获取商品信息"><a href="#2-3-获取商品信息" class="headerlink" title="2.3 获取商品信息"></a>2.3 获取商品信息</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_product_info</span>():</span><br><span class="line">    products = []</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取商品列表</span></span><br><span class="line">    items = page.eles(<span class="string">&#x27;.item&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 提取商品信息</span></span><br><span class="line">            product = &#123;</span><br><span class="line">                <span class="string">&#x27;title&#x27;</span>: item.ele(<span class="string">&#x27;.title&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;price&#x27;</span>: item.ele(<span class="string">&#x27;.price&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;sales&#x27;</span>: item.ele(<span class="string">&#x27;.deal-cnt&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;shop&#x27;</span>: item.ele(<span class="string">&#x27;.shop&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;location&#x27;</span>: item.ele(<span class="string">&#x27;.location&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;url&#x27;</span>: item.ele(<span class="string">&#x27;.title a&#x27;</span>).attr(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">            products.append(product)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> products</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-4-翻页操作"><a href="#2-4-翻页操作" class="headerlink" title="2.4 翻页操作"></a>2.4 翻页操作</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">next_page</span>():</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 点击下一页</span></span><br><span class="line">        next_btn = page.ele(<span class="string">&#x27;.next&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> next_btn <span class="keyword">and</span> <span class="keyword">not</span> next_btn.attr(<span class="string">&#x27;disabled&#x27;</span>):</span><br><span class="line">            next_btn.click()</span><br><span class="line">            page.wait.load_complete()</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="2-5-完整爬虫代码"><a href="#2-5-完整爬虫代码" class="headerlink" title="2.5 完整爬虫代码"></a>2.5 完整爬虫代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> DrissionPage <span class="keyword">import</span> ChromiumPage</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">taobao_crawler</span>(<span class="params">keyword, max_pages=<span class="number">10</span></span>):</span><br><span class="line">    <span class="comment"># 初始化浏览器</span></span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 登录淘宝</span></span><br><span class="line">    page.get(<span class="string">&#x27;https://login.taobao.com&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;请在30秒内完成扫码登录...&#x27;</span>)</span><br><span class="line">    page.wait.ele_displayed(<span class="string">&#x27;#login-form&#x27;</span>, timeout=<span class="number">30</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 搜索商品</span></span><br><span class="line">    search_products(keyword)</span><br><span class="line">    </span><br><span class="line">    all_products = []</span><br><span class="line">    current_page = <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 开始爬取数据</span></span><br><span class="line">    <span class="keyword">while</span> current_page &lt;= max_pages:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;正在爬取第<span class="subst">&#123;current_page&#125;</span>页...&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取当前页商品信息</span></span><br><span class="line">        products = get_product_info()</span><br><span class="line">        all_products.extend(products)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 翻页</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> next_page():</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        current_page += <span class="number">1</span></span><br><span class="line">        time.sleep(<span class="number">2</span>)  <span class="comment"># 防止请求过快</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 保存数据</span></span><br><span class="line">    df = pd.DataFrame(all_products)</span><br><span class="line">    df.to_csv(<span class="string">f&#x27;taobao_<span class="subst">&#123;keyword&#125;</span>_<span class="subst">&#123;time.strftime(<span class="string">&quot;%Y%m%d&quot;</span>)&#125;</span>.csv&#x27;</span>, </span><br><span class="line">              index=<span class="literal">False</span>, encoding=<span class="string">&#x27;utf-8-sig&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;爬取完成，共获取<span class="subst">&#123;<span class="built_in">len</span>(all_products)&#125;</span>条商品信息&#x27;</span>)</span><br><span class="line">    page.quit()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用示例</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    taobao_crawler(<span class="string">&#x27;婴儿奶粉&#x27;</span>, max_pages=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-数据处理与分析"><a href="#3-数据处理与分析" class="headerlink" title="3. 数据处理与分析"></a>3. 数据处理与分析</h2><h3 id="3-1-数据清洗"><a href="#3-1-数据清洗" class="headerlink" title="3.1 数据清洗"></a>3.1 数据清洗</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">clean_data</span>(<span class="params">df</span>):</span><br><span class="line">    <span class="comment"># 处理价格数据</span></span><br><span class="line">    df[<span class="string">&#x27;price&#x27;</span>] = df[<span class="string">&#x27;price&#x27;</span>].<span class="built_in">str</span>.replace(<span class="string">&#x27;¥&#x27;</span>, <span class="string">&#x27;&#x27;</span>).astype(<span class="built_in">float</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 处理销量数据</span></span><br><span class="line">    df[<span class="string">&#x27;sales&#x27;</span>] = df[<span class="string">&#x27;sales&#x27;</span>].<span class="built_in">str</span>.extract(<span class="string">&#x27;(\d+)&#x27;</span>).astype(<span class="built_in">int</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 删除重复数据</span></span><br><span class="line">    df.drop_duplicates(inplace=<span class="literal">True</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-2-数据分析"><a href="#3-2-数据分析" class="headerlink" title="3.2 数据分析"></a>3.2 数据分析</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">analyze_data</span>(<span class="params">df</span>):</span><br><span class="line">    <span class="comment"># 基本统计</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;价格统计：&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(df[<span class="string">&#x27;price&#x27;</span>].describe())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 销量排名</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;\n销量TOP10：&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(df.nlargest(<span class="number">10</span>, <span class="string">&#x27;sales&#x27;</span>)[[<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;price&#x27;</span>, <span class="string">&#x27;sales&#x27;</span>]])</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 地区分布</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;\n地区分布：&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(df[<span class="string">&#x27;location&#x27;</span>].value_counts().head())</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h2><h3 id="4-1-反爬虫处理"><a href="#4-1-反爬虫处理" class="headerlink" title="4.1 反爬虫处理"></a>4.1 反爬虫处理</h3><ul>
-<li>添加随机延时</li>
-<li>使用代理IP</li>
-<li>模拟真实用户行为</li>
-<li>处理验证码</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">random_sleep</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;随机延时&quot;&quot;&quot;</span></span><br><span class="line">    time.sleep(random.uniform(<span class="number">1</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">handle_verification</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;处理验证码&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span>  <span class="comment"># 根据实际情况实现</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-异常处理"><a href="#4-2-异常处理" class="headerlink" title="4.2 异常处理"></a>4.2 异常处理</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">safe_crawler</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;装饰器：处理爬虫异常&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&#x27;爬取出错：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&#x27;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-进阶优化"><a href="#5-进阶优化" class="headerlink" title="5. 进阶优化"></a>5. 进阶优化</h2><h3 id="5-1-多线程爬取"><a href="#5-1-多线程爬取" class="headerlink" title="5.1 多线程爬取"></a>5.1 多线程爬取</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">multi_thread_crawler</span>(<span class="params">keywords, max_pages=<span class="number">5</span></span>):</span><br><span class="line">    <span class="keyword">with</span> ThreadPoolExecutor(max_workers=<span class="number">3</span>) <span class="keyword">as</span> executor:</span><br><span class="line">        executor.<span class="built_in">map</span>(<span class="keyword">lambda</span> kw: taobao_crawler(kw, max_pages), keywords)</span><br></pre></td></tr></table></figure>
-
-<h3 id="5-2-自动化部署"><a href="#5-2-自动化部署" class="headerlink" title="5.2 自动化部署"></a>5.2 自动化部署</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> apscheduler.schedulers.blocking <span class="keyword">import</span> BlockingScheduler</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">schedule_crawler</span>():</span><br><span class="line">    scheduler = BlockingScheduler()</span><br><span class="line">    scheduler.add_job(</span><br><span class="line">        taobao_crawler, </span><br><span class="line">        <span class="string">&#x27;cron&#x27;</span>, </span><br><span class="line">        args=[<span class="string">&#x27;婴儿奶粉&#x27;</span>], </span><br><span class="line">        hour=<span class="number">2</span>,  <span class="comment"># 每天凌晨2点执行</span></span><br><span class="line">        max_instances=<span class="number">1</span></span><br><span class="line">    )</span><br><span class="line">    scheduler.start()</span><br></pre></td></tr></table></figure>
-
-<p>本教程详细介绍了如何使用DrissionPage爬取淘宝母婴商品数据，包括登录、搜索、数据提取、翻页等核心功能，以及数据处理、异常处理、反爬虫等进阶内容。通过这个实例，读者可以掌握DrissionPage的基本使用方法，并能够应用到其他网站的爬虫开发中。</p>
-]]></content>
-      <categories>
-        <category>数据爬虫</category>
-      </categories>
-      <tags>
-        <tag>数据爬虫</tag>
-        <tag>python</tag>
-        <tag>DrissionPage</tag>
-        <tag>淘宝</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTML5 基础</title>
     <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%89%E7%AF%87%EF%BC%9AHTML5%20%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="HTML5-基础"><a href="#HTML5-基础" class="headerlink" title="HTML5 基础"></a>HTML5 基础</h1><h2 id="网页请求过程"><a href="#网页请求过程" class="headerlink" title="网页请求过程"></a>网页请求过程</h2><h3 id="请描述一个网页从开始请求到最终显示的完整过程？"><a href="#请描述一个网页从开始请求到最终显示的完整过程？" class="headerlink" title="请描述一个网页从开始请求到最终显示的完整过程？"></a>请描述一个网页从开始请求到最终显示的完整过程？</h3><p>一个网页从请求到最终显示的完整过程一般可分为如下7个步骤：</p>
@@ -1402,6 +1200,208 @@
       </categories>
       <tags>
         <tag>HTML5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue基础</title>
+    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="Vue基础"><a href="#Vue基础" class="headerlink" title="Vue基础"></a>Vue基础</h1><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h3 id="Vue组件之间有哪些通信方式？"><a href="#Vue组件之间有哪些通信方式？" class="headerlink" title="Vue组件之间有哪些通信方式？"></a>Vue组件之间有哪些通信方式？</h3><p>组件通信的基本原则：谁向谁传，数据写在发送方。主要通信方式包括：</p>
+<ol>
+<li><strong>父传子</strong>：props</li>
+<li><strong>子传父</strong>：$emit</li>
+<li><strong>兄弟组件</strong>：<ul>
+<li>$attrs&#x2F;$emit</li>
+<li>$parent&#x2F;$root</li>
+<li>Vuex</li>
+<li>Event Bus($emit&#x2F;$on)</li>
+</ul>
+</li>
+</ol>
+<p>注：$attrs 是一个包含父组件传递给子组件但未在子组件的 props 中定义的属性的对象。</p>
+<h2 id="指令优先级"><a href="#指令优先级" class="headerlink" title="指令优先级"></a>指令优先级</h2><h3 id="v-if和v-for的优先级是怎样的？"><a href="#v-if和v-for的优先级是怎样的？" class="headerlink" title="v-if和v-for的优先级是怎样的？"></a>v-if和v-for的优先级是怎样的？</h3><ul>
+<li>Vue2中v-for优先级更高</li>
+<li>Vue3中v-if优先级更高</li>
+<li>官方文档明确表明不要在同一个标签中同时使用这两个指令</li>
+</ul>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="Vue的生命周期有哪些？各自的作用是什么？"><a href="#Vue的生命周期有哪些？各自的作用是什么？" class="headerlink" title="Vue的生命周期有哪些？各自的作用是什么？"></a>Vue的生命周期有哪些？各自的作用是什么？</h3><p><strong>Vue2生命周期：</strong></p>
+<ol>
+<li><p><strong>beforeCreate</strong></p>
+<ul>
+<li>在实例初始化之后，数据观测和事件配置之前调用</li>
+<li>用途：初始化操作，但不能访问响应式数据</li>
+</ul>
+</li>
+<li><p><strong>created</strong></p>
+<ul>
+<li>实例创建完成后调用</li>
+<li>已完成数据观测、属性和方法的运算，watch&#x2F;event事件回调</li>
+<li>用途：数据获取、事件监听等初始化操作</li>
+</ul>
+</li>
+<li><p><strong>beforeMount</strong></p>
+<ul>
+<li>挂载开始前调用</li>
+<li>用途：渲染前的准备工作，如数据格式化</li>
+</ul>
+</li>
+<li><p><strong>mounted</strong></p>
+<ul>
+<li>DOM挂载完成后调用</li>
+<li>用途：DOM操作、第三方库初始化</li>
+</ul>
+</li>
+<li><p><strong>beforeUpdate</strong></p>
+<ul>
+<li>数据更新时调用，发生在虚拟DOM打补丁之前</li>
+<li>用途：更新前访问现有DOM，如移除事件监听器</li>
+</ul>
+</li>
+<li><p><strong>updated</strong></p>
+<ul>
+<li>虚拟DOM重新渲染和打补丁之后调用</li>
+<li>用途：更新后的DOM操作，但应避免在此阶段更改状态</li>
+</ul>
+</li>
+<li><p><strong>beforeDestroy</strong></p>
+<ul>
+<li>实例销毁前调用</li>
+<li>用途：清理操作，如移除事件监听器、定时器</li>
+</ul>
+</li>
+<li><p><strong>destroyed</strong></p>
+<ul>
+<li>实例销毁后调用</li>
+<li>用途：最终的清理工作</li>
+</ul>
+</li>
+</ol>
+<p><strong>Vue3新增：</strong></p>
+<ul>
+<li><strong>setup</strong><ul>
+<li>在组件实例创建之前执行</li>
+<li>组合式API的入口</li>
+<li>可访问props和context，但不能访问this</li>
+</ul>
+</li>
+</ul>
+<h2 id="组件扩展"><a href="#组件扩展" class="headerlink" title="组件扩展"></a>组件扩展</h2><h3 id="如何扩展一个组件？"><a href="#如何扩展一个组件？" class="headerlink" title="如何扩展一个组件？"></a>如何扩展一个组件？</h3><ol>
+<li><strong>使用Composition API进行逻辑扩展</strong></li>
+<li><strong>使用slots进行内容扩展</strong><ul>
+<li>默认插槽</li>
+<li>具名插槽</li>
+<li>作用域插槽</li>
+</ul>
+</li>
+</ol>
+<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><h3 id="什么是虚拟DOM？有什么优点？"><a href="#什么是虚拟DOM？有什么优点？" class="headerlink" title="什么是虚拟DOM？有什么优点？"></a>什么是虚拟DOM？有什么优点？</h3><p>虚拟DOM是一个虚拟的DOM对象，本质是一个JS对象。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li>减少操作真实DOM的次数，提高程序性能</li>
+<li>方便实现跨平台</li>
+</ol>
+<h2 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h2><h3 id="Vue3相比Vue2有哪些重要的新特性？"><a href="#Vue3相比Vue2有哪些重要的新特性？" class="headerlink" title="Vue3相比Vue2有哪些重要的新特性？"></a>Vue3相比Vue2有哪些重要的新特性？</h3><ol>
+<li><p><strong>Composition API</strong></p>
+<ul>
+<li>用于组织和复用组件逻辑</li>
+<li>将相同功能的代码放在一起，便于管理</li>
+</ul>
+</li>
+<li><p><strong>响应式系统升级</strong></p>
+<ul>
+<li>使用Proxy替代Object.defineProperty</li>
+<li>更好的性能和更完整的响应式支持</li>
+</ul>
+</li>
+<li><p><strong>动态路由</strong></p>
+<ul>
+<li>更灵活的路由配置</li>
+<li>在params后添加反斜杠和冒号实现动态路由</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ul>
+<li>在vue中使用：class&#x3D;”{active:isActive}”来实现根据一个对象的值动态切换class状态</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端框架</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>前端框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用DrissionPage进行高效的数据爬虫</title>
+    <url>/blog.github.io/2025/03/07/%E7%AC%AC%E4%B9%9D%E7%AF%87%EF%BC%9A%E4%BD%BF%E7%94%A8DrissionPage%E8%BF%9B%E8%A1%8C%E9%AB%98%E6%95%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%88%AC%E8%99%AB/</url>
+    <content><![CDATA[<h1 id="使用DrissionPage进行高效的数据爬虫"><a href="#使用DrissionPage进行高效的数据爬虫" class="headerlink" title="使用DrissionPage进行高效的数据爬虫"></a>使用DrissionPage进行高效的数据爬虫</h1><h2 id="1-DrissionPage简介"><a href="#1-DrissionPage简介" class="headerlink" title="1. DrissionPage简介"></a>1. DrissionPage简介</h2><p>DrissionPage是一个功能强大的Python爬虫库，它结合了Selenium和Requests的优点，提供了更简单的API和更高效的性能。</p>
+<h3 id="1-1-安装必要的库"><a href="#1-1-安装必要的库" class="headerlink" title="1.1 安装必要的库"></a>1.1 安装必要的库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install DrissionPage</span><br><span class="line">pip install pandas</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-DrissionPage的优势"><a href="#1-2-DrissionPage的优势" class="headerlink" title="1.2 DrissionPage的优势"></a>1.2 DrissionPage的优势</h3><ul>
+<li>无需配置webdriver</li>
+<li>支持多种页面操作方式</li>
+<li>内置反检测功能</li>
+<li>性能优于Selenium</li>
+<li>使用简单直观</li>
+</ul>
+<h2 id="2-爬取淘宝母婴商品实战"><a href="#2-爬取淘宝母婴商品实战" class="headerlink" title="2. 爬取淘宝母婴商品实战"></a>2. 爬取淘宝母婴商品实战</h2><h3 id="2-1-登录淘宝"><a href="#2-1-登录淘宝" class="headerlink" title="2.1 登录淘宝"></a>2.1 登录淘宝</h3><h4 id="2-1-1-扫码登录（推荐）"><a href="#2-1-1-扫码登录（推荐）" class="headerlink" title="2.1.1 扫码登录（推荐）"></a>2.1.1 扫码登录（推荐）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> DrissionPage <span class="keyword">import</span> ChromiumPage</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login_by_qrcode</span>():</span><br><span class="line">    <span class="comment"># 创建浏览器对象</span></span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 访问淘宝登录页</span></span><br><span class="line">    page.get(<span class="string">&#x27;https://login.taobao.com&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 等待扫码登录</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;请在30秒内完成扫码登录...&#x27;</span>)</span><br><span class="line">    page.wait.ele_displayed(<span class="string">&#x27;#login-form&#x27;</span>, timeout=<span class="number">30</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> page</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-2-账号密码登录"><a href="#2-1-2-账号密码登录" class="headerlink" title="2.1.2 账号密码登录"></a>2.1.2 账号密码登录</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">login_by_password</span>(<span class="params">username, password</span>):</span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    page.get(<span class="string">&#x27;https://login.taobao.com&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 切换到密码登录</span></span><br><span class="line">        switch_btn = page.ele(<span class="string">&#x27;.password-login-tab&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> switch_btn:</span><br><span class="line">            switch_btn.click()</span><br><span class="line">            </span><br><span class="line">        <span class="comment"># 输入账号密码</span></span><br><span class="line">        page.ele(<span class="string">&#x27;#username&#x27;</span>).<span class="built_in">input</span>(username)</span><br><span class="line">        page.ele(<span class="string">&#x27;#password&#x27;</span>).<span class="built_in">input</span>(password)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 点击登录按钮</span></span><br><span class="line">        page.ele(<span class="string">&#x27;#btn-submit&#x27;</span>).click()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 处理可能的滑块验证</span></span><br><span class="line">        handle_slider(page)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 等待登录成功</span></span><br><span class="line">        page.wait.load_complete()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> page</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;密码登录失败：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">handle_slider</span>(<span class="params">page</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;处理滑块验证&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 等待滑块出现</span></span><br><span class="line">        slider = page.wait.ele_displayed(<span class="string">&#x27;#nc_1_n1z&#x27;</span>, timeout=<span class="number">3</span>)</span><br><span class="line">        <span class="keyword">if</span> slider:</span><br><span class="line">            <span class="comment"># 获取滑块和轨道信息</span></span><br><span class="line">            track = page.ele(<span class="string">&#x27;#nc_1_n1t&#x27;</span>)</span><br><span class="line">            slider_width = track.size[<span class="string">&#x27;width&#x27;</span>]</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 模拟人工滑动</span></span><br><span class="line">            page.actions.drag.move_to(slider)\</span><br><span class="line">                           .hold()\</span><br><span class="line">                           .move_by_offset(slider_width, <span class="number">0</span>, duration=<span class="number">0.5</span>)\</span><br><span class="line">                           .release()\</span><br><span class="line">                           .perform()</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 等待验证结果</span></span><br><span class="line">            time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-3-Cookie登录"><a href="#2-1-3-Cookie登录" class="headerlink" title="2.1.3 Cookie登录"></a>2.1.3 Cookie登录</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">login_by_cookies</span>(<span class="params">cookies_str</span>):</span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 访问淘宝首页</span></span><br><span class="line">    page.get(<span class="string">&#x27;https://www.taobao.com&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 设置cookies</span></span><br><span class="line">    cookies = parse_cookies(cookies_str)</span><br><span class="line">    <span class="keyword">for</span> cookie <span class="keyword">in</span> cookies:</span><br><span class="line">        page.<span class="built_in">set</span>.cookie(cookie)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 刷新页面</span></span><br><span class="line">    page.refresh()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 验证登录状态</span></span><br><span class="line">    <span class="keyword">if</span> check_login_status(page):</span><br><span class="line">        <span class="keyword">return</span> page</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_cookies</span>(<span class="params">cookies_str</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;解析cookies字符串&quot;&quot;&quot;</span></span><br><span class="line">    cookies = []</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> cookies_str.split(<span class="string">&#x27;;&#x27;</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="string">&#x27;=&#x27;</span> <span class="keyword">in</span> item:</span><br><span class="line">            name, value = item.strip().split(<span class="string">&#x27;=&#x27;</span>, <span class="number">1</span>)</span><br><span class="line">            cookies.append(&#123;<span class="string">&#x27;name&#x27;</span>: name, <span class="string">&#x27;value&#x27;</span>: value&#125;)</span><br><span class="line">    <span class="keyword">return</span> cookies</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check_login_status</span>(<span class="params">page</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;检查登录状态&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 检查是否存在登录标识</span></span><br><span class="line">        nickname = page.ele(<span class="string">&#x27;.site-nav-login-info-nick&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> nickname <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-4-登录状态保存与恢复"><a href="#2-1-4-登录状态保存与恢复" class="headerlink" title="2.1.4 登录状态保存与恢复"></a>2.1.4 登录状态保存与恢复</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">save_cookies</span>(<span class="params">page, file_path=<span class="string">&#x27;taobao_cookies.json&#x27;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;保存登录cookies&quot;&quot;&quot;</span></span><br><span class="line">    cookies = page.get.cookies()</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        json.dump(cookies, f)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_cookies</span>(<span class="params">file_path=<span class="string">&#x27;taobao_cookies.json&#x27;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;加载已保存的cookies&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">return</span> json.load(f)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login_with_saved_cookies</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;使用保存的cookies登录&quot;&quot;&quot;</span></span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    cookies = load_cookies()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> cookies:</span><br><span class="line">        page.get(<span class="string">&#x27;https://www.taobao.com&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> cookie <span class="keyword">in</span> cookies:</span><br><span class="line">            page.<span class="built_in">set</span>.cookie(cookie)</span><br><span class="line">        page.refresh()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> check_login_status(page):</span><br><span class="line">            <span class="keyword">return</span> page</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 如果cookie无效，使用扫码登录</span></span><br><span class="line">    page = login_by_qrcode()</span><br><span class="line">    <span class="keyword">if</span> page:</span><br><span class="line">        save_cookies(page)</span><br><span class="line">    <span class="keyword">return</span> page</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-5-登录异常处理"><a href="#2-1-5-登录异常处理" class="headerlink" title="2.1.5 登录异常处理"></a>2.1.5 登录异常处理</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">safe_login</span>(<span class="params">retry_times=<span class="number">3</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;安全登录处理&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(retry_times):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 优先使用保存的cookies</span></span><br><span class="line">            page = login_with_saved_cookies()</span><br><span class="line">            <span class="keyword">if</span> page:</span><br><span class="line">                <span class="keyword">return</span> page</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># cookies失效，使用扫码登录</span></span><br><span class="line">            page = login_by_qrcode()</span><br><span class="line">            <span class="keyword">if</span> page:</span><br><span class="line">                save_cookies(page)</span><br><span class="line">                <span class="keyword">return</span> page</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&#x27;第<span class="subst">&#123;i+<span class="number">1</span>&#125;</span>次登录失败：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&#x27;</span>)</span><br><span class="line">            time.sleep(<span class="number">2</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">raise</span> Exception(<span class="string">&#x27;登录失败，请稍后重试&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>使用示例：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 方式1：扫码登录</span></span><br><span class="line">        page = login_by_qrcode()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方式2：账号密码登录</span></span><br><span class="line">        <span class="comment"># page = login_by_password(&#x27;your_username&#x27;, &#x27;your_password&#x27;)</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方式3：Cookie登录</span></span><br><span class="line">        <span class="comment"># page = login_by_cookies(&#x27;cookie字符串&#x27;)</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 方式4：使用保存的登录状态</span></span><br><span class="line">        <span class="comment"># page = login_with_saved_cookies()</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> page:</span><br><span class="line">            <span class="comment"># 开始爬取数据</span></span><br><span class="line">            taobao_crawler(page, <span class="string">&#x27;婴儿奶粉&#x27;</span>, max_pages=<span class="number">5</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;登录失败&#x27;</span>)</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;程序出错：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&#x27;</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="keyword">if</span> page:</span><br><span class="line">            page.quit()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<ol>
+<li>账号密码登录容易触发验证码</li>
+<li>Cookie登录需要定期更新Cookie</li>
+<li>建议优先使用扫码登录</li>
+<li>保存登录状态可以避免频繁登录</li>
+<li>注意处理各种异常情况</li>
+</ol>
+<h3 id="2-2-搜索母婴商品"><a href="#2-2-搜索母婴商品" class="headerlink" title="2.2 搜索母婴商品"></a>2.2 搜索母婴商品</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">search_products</span>(<span class="params">keyword</span>):</span><br><span class="line">    <span class="comment"># 访问淘宝首页</span></span><br><span class="line">    page.get(<span class="string">&#x27;https://www.taobao.com&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 定位搜索框并输入关键词</span></span><br><span class="line">    search_input = page.ele(<span class="string">&#x27;#q&#x27;</span>)</span><br><span class="line">    search_input.<span class="built_in">input</span>(keyword)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 点击搜索按钮</span></span><br><span class="line">    search_button = page.ele(<span class="string">&#x27;.btn-search&#x27;</span>)</span><br><span class="line">    search_button.click()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 等待搜索结果加载</span></span><br><span class="line">    page.wait.load_complete()</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-获取商品信息"><a href="#2-3-获取商品信息" class="headerlink" title="2.3 获取商品信息"></a>2.3 获取商品信息</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_product_info</span>():</span><br><span class="line">    products = []</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 获取商品列表</span></span><br><span class="line">    items = page.eles(<span class="string">&#x27;.item&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="comment"># 提取商品信息</span></span><br><span class="line">            product = &#123;</span><br><span class="line">                <span class="string">&#x27;title&#x27;</span>: item.ele(<span class="string">&#x27;.title&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;price&#x27;</span>: item.ele(<span class="string">&#x27;.price&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;sales&#x27;</span>: item.ele(<span class="string">&#x27;.deal-cnt&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;shop&#x27;</span>: item.ele(<span class="string">&#x27;.shop&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;location&#x27;</span>: item.ele(<span class="string">&#x27;.location&#x27;</span>).text,</span><br><span class="line">                <span class="string">&#x27;url&#x27;</span>: item.ele(<span class="string">&#x27;.title a&#x27;</span>).attr(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">            products.append(product)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> products</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-翻页操作"><a href="#2-4-翻页操作" class="headerlink" title="2.4 翻页操作"></a>2.4 翻页操作</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">next_page</span>():</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 点击下一页</span></span><br><span class="line">        next_btn = page.ele(<span class="string">&#x27;.next&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> next_btn <span class="keyword">and</span> <span class="keyword">not</span> next_btn.attr(<span class="string">&#x27;disabled&#x27;</span>):</span><br><span class="line">            next_btn.click()</span><br><span class="line">            page.wait.load_complete()</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-完整爬虫代码"><a href="#2-5-完整爬虫代码" class="headerlink" title="2.5 完整爬虫代码"></a>2.5 完整爬虫代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> DrissionPage <span class="keyword">import</span> ChromiumPage</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">taobao_crawler</span>(<span class="params">keyword, max_pages=<span class="number">10</span></span>):</span><br><span class="line">    <span class="comment"># 初始化浏览器</span></span><br><span class="line">    page = ChromiumPage()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 登录淘宝</span></span><br><span class="line">    page.get(<span class="string">&#x27;https://login.taobao.com&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;请在30秒内完成扫码登录...&#x27;</span>)</span><br><span class="line">    page.wait.ele_displayed(<span class="string">&#x27;#login-form&#x27;</span>, timeout=<span class="number">30</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 搜索商品</span></span><br><span class="line">    search_products(keyword)</span><br><span class="line">    </span><br><span class="line">    all_products = []</span><br><span class="line">    current_page = <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 开始爬取数据</span></span><br><span class="line">    <span class="keyword">while</span> current_page &lt;= max_pages:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;正在爬取第<span class="subst">&#123;current_page&#125;</span>页...&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取当前页商品信息</span></span><br><span class="line">        products = get_product_info()</span><br><span class="line">        all_products.extend(products)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 翻页</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> next_page():</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">        current_page += <span class="number">1</span></span><br><span class="line">        time.sleep(<span class="number">2</span>)  <span class="comment"># 防止请求过快</span></span><br><span class="line">        </span><br><span class="line">    <span class="comment"># 保存数据</span></span><br><span class="line">    df = pd.DataFrame(all_products)</span><br><span class="line">    df.to_csv(<span class="string">f&#x27;taobao_<span class="subst">&#123;keyword&#125;</span>_<span class="subst">&#123;time.strftime(<span class="string">&quot;%Y%m%d&quot;</span>)&#125;</span>.csv&#x27;</span>, </span><br><span class="line">              index=<span class="literal">False</span>, encoding=<span class="string">&#x27;utf-8-sig&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;爬取完成，共获取<span class="subst">&#123;<span class="built_in">len</span>(all_products)&#125;</span>条商品信息&#x27;</span>)</span><br><span class="line">    page.quit()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用示例</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    taobao_crawler(<span class="string">&#x27;婴儿奶粉&#x27;</span>, max_pages=<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-数据处理与分析"><a href="#3-数据处理与分析" class="headerlink" title="3. 数据处理与分析"></a>3. 数据处理与分析</h2><h3 id="3-1-数据清洗"><a href="#3-1-数据清洗" class="headerlink" title="3.1 数据清洗"></a>3.1 数据清洗</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">clean_data</span>(<span class="params">df</span>):</span><br><span class="line">    <span class="comment"># 处理价格数据</span></span><br><span class="line">    df[<span class="string">&#x27;price&#x27;</span>] = df[<span class="string">&#x27;price&#x27;</span>].<span class="built_in">str</span>.replace(<span class="string">&#x27;¥&#x27;</span>, <span class="string">&#x27;&#x27;</span>).astype(<span class="built_in">float</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 处理销量数据</span></span><br><span class="line">    df[<span class="string">&#x27;sales&#x27;</span>] = df[<span class="string">&#x27;sales&#x27;</span>].<span class="built_in">str</span>.extract(<span class="string">&#x27;(\d+)&#x27;</span>).astype(<span class="built_in">int</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 删除重复数据</span></span><br><span class="line">    df.drop_duplicates(inplace=<span class="literal">True</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> df</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-数据分析"><a href="#3-2-数据分析" class="headerlink" title="3.2 数据分析"></a>3.2 数据分析</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">analyze_data</span>(<span class="params">df</span>):</span><br><span class="line">    <span class="comment"># 基本统计</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;价格统计：&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(df[<span class="string">&#x27;price&#x27;</span>].describe())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 销量排名</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;\n销量TOP10：&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(df.nlargest(<span class="number">10</span>, <span class="string">&#x27;sales&#x27;</span>)[[<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;price&#x27;</span>, <span class="string">&#x27;sales&#x27;</span>]])</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 地区分布</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;\n地区分布：&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(df[<span class="string">&#x27;location&#x27;</span>].value_counts().head())</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h2><h3 id="4-1-反爬虫处理"><a href="#4-1-反爬虫处理" class="headerlink" title="4.1 反爬虫处理"></a>4.1 反爬虫处理</h3><ul>
+<li>添加随机延时</li>
+<li>使用代理IP</li>
+<li>模拟真实用户行为</li>
+<li>处理验证码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">random_sleep</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;随机延时&quot;&quot;&quot;</span></span><br><span class="line">    time.sleep(random.uniform(<span class="number">1</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">handle_verification</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;处理验证码&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">pass</span>  <span class="comment"># 根据实际情况实现</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-异常处理"><a href="#4-2-异常处理" class="headerlink" title="4.2 异常处理"></a>4.2 异常处理</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">safe_crawler</span>(<span class="params">func</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;装饰器：处理爬虫异常&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&#x27;爬取出错：<span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&#x27;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-进阶优化"><a href="#5-进阶优化" class="headerlink" title="5. 进阶优化"></a>5. 进阶优化</h2><h3 id="5-1-多线程爬取"><a href="#5-1-多线程爬取" class="headerlink" title="5.1 多线程爬取"></a>5.1 多线程爬取</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">multi_thread_crawler</span>(<span class="params">keywords, max_pages=<span class="number">5</span></span>):</span><br><span class="line">    <span class="keyword">with</span> ThreadPoolExecutor(max_workers=<span class="number">3</span>) <span class="keyword">as</span> executor:</span><br><span class="line">        executor.<span class="built_in">map</span>(<span class="keyword">lambda</span> kw: taobao_crawler(kw, max_pages), keywords)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-自动化部署"><a href="#5-2-自动化部署" class="headerlink" title="5.2 自动化部署"></a>5.2 自动化部署</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> apscheduler.schedulers.blocking <span class="keyword">import</span> BlockingScheduler</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">schedule_crawler</span>():</span><br><span class="line">    scheduler = BlockingScheduler()</span><br><span class="line">    scheduler.add_job(</span><br><span class="line">        taobao_crawler, </span><br><span class="line">        <span class="string">&#x27;cron&#x27;</span>, </span><br><span class="line">        args=[<span class="string">&#x27;婴儿奶粉&#x27;</span>], </span><br><span class="line">        hour=<span class="number">2</span>,  <span class="comment"># 每天凌晨2点执行</span></span><br><span class="line">        max_instances=<span class="number">1</span></span><br><span class="line">    )</span><br><span class="line">    scheduler.start()</span><br></pre></td></tr></table></figure>
+
+<p>本教程详细介绍了如何使用DrissionPage爬取淘宝母婴商品数据，包括登录、搜索、数据提取、翻页等核心功能，以及数据处理、异常处理、反爬虫等进阶内容。通过这个实例，读者可以掌握DrissionPage的基本使用方法，并能够应用到其他网站的爬虫开发中。</p>
+]]></content>
+      <categories>
+        <category>数据爬虫</category>
+      </categories>
+      <tags>
+        <tag>数据爬虫</tag>
+        <tag>python</tag>
+        <tag>DrissionPage</tag>
+        <tag>淘宝</tag>
       </tags>
   </entry>
   <entry>
@@ -1857,6 +1857,31 @@
       </tags>
   </entry>
   <entry>
+    <title>浏览器渲染原理</title>
+    <url>/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p>
+<p>在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。<br>如果主线程解析到link位置，此时外部的CSS文件还没有下载好，主线程不会等待，而是继续解析HTML，外部的预解析线程会去下载外部的CSS文件并解析成CSSOM树返回给主线程，主线程合并目前生成好的DOM和CSSOM。这就是CSS不会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="CSS预解析"><br>如果主线程解析到script位置，会停止解析HTML，转而等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML，这是因为JS代码的执行过程中可能会修改当前的DOM树，所以DOM树的生成必须暂停。这就是JS会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="JS预解析"><br>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式，内联样式，外部样式，行内样式均会包含在CSSOM树中。</p>
+<p>渲染的下一步是样式计算：<br>主线程会遍历得到的DOM树，依次为树中的每个节点计算出它最终的样式，称之为Computed Style。<br>在这一过程中，很多预设值会变成绝对值，比如red会变成rgb（255，0，0）;相对单位会变成绝对单位，比如em会变成px。<br>这一步完成后，会得到一颗带有样式的DOM树。</p>
+<p>接下来是布局，布局完成后会得到布局树。<br>布局阶段会依次遍历DOM树的每一个节点，计算每个节点的几何信息。例如节点的宽高，相对包含块的位置。<br>大部分时候，DOM树和布局树并非一一对应。<br>比如display:none的节点没有几何信息，因此不会生成到布局树；又比如使用了伪元素选择器，虽然DOM树中不存在这些伪元素节点，但它们拥有几何信息，使用会生成到布局树匿名行盒，匿名块盒等等都会导致DOM树和布局树无法一一对应。</p>
+<p>下一步是分层<br>主线程会使用一套复杂的策略对整个布局树中进行分层。<br>分层的好处在于，将来其某一个层改变后，仅会对该层进行后续处理，从而提升效率。<br>滚动条，堆叠上下文，transform，opacity等样式都会或多或少的影响分层结果，也可以通过will-change属性更大程度的影响分层结果。</p>
+<p>再下一步，绘制 paint<br>canvas的绘制是由浏览器开放出来的绘制功能。<br>主线程会为每个层单独产生绘制指令集，用于描述这一层的内容该如何画出来。</p>
+<p>分块：Tiles<br>完成绘制之后，主线程会将每个图层的绘制信息提交给合成线程，剩余工作将由合成线程完成。合成线程首先对每个图层进行分块，将其划分为更多的小区域。<br>它会从线程池中拿取多个线程来完成分块工作。</p>
+<p>光栅化Raster :将每个块变成位图，优先处理靠近视图的块。<br>分块完成后，进入光栅化阶段<br>合成线程会将块信息交给GPU进程，以极高的速度完成光栅化。<br>GPU进程会开启多个线程来完成光栅化，并优先处理靠近视口区域的块。<br>光栅化的结果就是一块一块的位图。</p>
+<p>画 draw<br>合成线程拿到每个层，每个块的位图后，生成一个个指引【quad】信息。<br>指引会标识出每个位图应该画到屏幕的哪个位置，以及会考虑到旋转，缩放等变形。变形发生在合成线程，与渲染主线程无关，这就是transform效率高的本质原因。<br>合成线程会把quad提交给GPU进程，由GPU进程产生系统调用，提交给GPU硬件，完成最终的屏幕成像。</p>
+<p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。<br>渲染主线程的主要工作内容为：parse HTML，computed style，生成layout布局树，对dom树进行分层，绘制dom树。后续步骤由其他线程完成。<br>完整流程：<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染的完整流程"></p>
+<h3 id="面试题：什么是reflow？"><a href="#面试题：什么是reflow？" class="headerlink" title="面试题：什么是reflow？"></a>面试题：什么是reflow？</h3><p>reflow的本质是重新计算layout树。<br>当进行了会影响布局树的操作后，需要重新计算布局树，会引发layout。<br>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后再进行计算。所以，改动属性造成的reflow是异步完成的。<br>也同样因为如此，当JS获取布局属性时，就可能造成无法获取到最新的布局信息。<br>浏览器在反复权衡下，最终决定获取属性立即reflow。</p>
+<h3 id="面试题：什么是repaint？"><a href="#面试题：什么是repaint？" class="headerlink" title="面试题：什么是repaint？"></a>面试题：什么是repaint？</h3><p>repaint的本质就是重新根据分层信息计算了绘制指令，<br>当改动了可见样式后，就需要重新计算，会引发repaint。<br>由于元素的布局信息也属于可见样式，所以reflow一定会引发repaint。</p>
+<h3 id="面试题：为什么transform的效率高？"><a href="#面试题：为什么transform的效率高？" class="headerlink" title="面试题：为什么transform的效率高？"></a>面试题：为什么transform的效率高？</h3><p>因为transform既不会影响布局也不会影响绘制指令，影响的只是渲染流程的最后一个【draw】阶段。由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。</p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>前端基础</tag>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS7下MySQL8.0安装指南与常见问题解决</title>
     <url>/blog.github.io/2025/03/05/%E7%AC%AC%E5%85%AB%E7%AF%87%EF%BC%9Acentos7%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85MySQL/</url>
     <content><![CDATA[<h1 id="CentOS7下MySQL8-0安装指南与常见问题解决"><a href="#CentOS7下MySQL8-0安装指南与常见问题解决" class="headerlink" title="CentOS7下MySQL8.0安装指南与常见问题解决"></a>CentOS7下MySQL8.0安装指南与常见问题解决</h1><h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><h3 id="检查系统环境"><a href="#检查系统环境" class="headerlink" title="检查系统环境"></a>检查系统环境</h3><ol>
@@ -2041,31 +2066,6 @@
       </tags>
   </entry>
   <entry>
-    <title>浏览器渲染原理</title>
-    <url>/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p>
-<p>在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。<br>如果主线程解析到link位置，此时外部的CSS文件还没有下载好，主线程不会等待，而是继续解析HTML，外部的预解析线程会去下载外部的CSS文件并解析成CSSOM树返回给主线程，主线程合并目前生成好的DOM和CSSOM。这就是CSS不会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="CSS预解析"><br>如果主线程解析到script位置，会停止解析HTML，转而等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML，这是因为JS代码的执行过程中可能会修改当前的DOM树，所以DOM树的生成必须暂停。这就是JS会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="JS预解析"><br>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式，内联样式，外部样式，行内样式均会包含在CSSOM树中。</p>
-<p>渲染的下一步是样式计算：<br>主线程会遍历得到的DOM树，依次为树中的每个节点计算出它最终的样式，称之为Computed Style。<br>在这一过程中，很多预设值会变成绝对值，比如red会变成rgb（255，0，0）;相对单位会变成绝对单位，比如em会变成px。<br>这一步完成后，会得到一颗带有样式的DOM树。</p>
-<p>接下来是布局，布局完成后会得到布局树。<br>布局阶段会依次遍历DOM树的每一个节点，计算每个节点的几何信息。例如节点的宽高，相对包含块的位置。<br>大部分时候，DOM树和布局树并非一一对应。<br>比如display:none的节点没有几何信息，因此不会生成到布局树；又比如使用了伪元素选择器，虽然DOM树中不存在这些伪元素节点，但它们拥有几何信息，使用会生成到布局树匿名行盒，匿名块盒等等都会导致DOM树和布局树无法一一对应。</p>
-<p>下一步是分层<br>主线程会使用一套复杂的策略对整个布局树中进行分层。<br>分层的好处在于，将来其某一个层改变后，仅会对该层进行后续处理，从而提升效率。<br>滚动条，堆叠上下文，transform，opacity等样式都会或多或少的影响分层结果，也可以通过will-change属性更大程度的影响分层结果。</p>
-<p>再下一步，绘制 paint<br>canvas的绘制是由浏览器开放出来的绘制功能。<br>主线程会为每个层单独产生绘制指令集，用于描述这一层的内容该如何画出来。</p>
-<p>分块：Tiles<br>完成绘制之后，主线程会将每个图层的绘制信息提交给合成线程，剩余工作将由合成线程完成。合成线程首先对每个图层进行分块，将其划分为更多的小区域。<br>它会从线程池中拿取多个线程来完成分块工作。</p>
-<p>光栅化Raster :将每个块变成位图，优先处理靠近视图的块。<br>分块完成后，进入光栅化阶段<br>合成线程会将块信息交给GPU进程，以极高的速度完成光栅化。<br>GPU进程会开启多个线程来完成光栅化，并优先处理靠近视口区域的块。<br>光栅化的结果就是一块一块的位图。</p>
-<p>画 draw<br>合成线程拿到每个层，每个块的位图后，生成一个个指引【quad】信息。<br>指引会标识出每个位图应该画到屏幕的哪个位置，以及会考虑到旋转，缩放等变形。变形发生在合成线程，与渲染主线程无关，这就是transform效率高的本质原因。<br>合成线程会把quad提交给GPU进程，由GPU进程产生系统调用，提交给GPU硬件，完成最终的屏幕成像。</p>
-<p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。<br>渲染主线程的主要工作内容为：parse HTML，computed style，生成layout布局树，对dom树进行分层，绘制dom树。后续步骤由其他线程完成。<br>完整流程：<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染的完整流程"></p>
-<h3 id="面试题：什么是reflow？"><a href="#面试题：什么是reflow？" class="headerlink" title="面试题：什么是reflow？"></a>面试题：什么是reflow？</h3><p>reflow的本质是重新计算layout树。<br>当进行了会影响布局树的操作后，需要重新计算布局树，会引发layout。<br>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后再进行计算。所以，改动属性造成的reflow是异步完成的。<br>也同样因为如此，当JS获取布局属性时，就可能造成无法获取到最新的布局信息。<br>浏览器在反复权衡下，最终决定获取属性立即reflow。</p>
-<h3 id="面试题：什么是repaint？"><a href="#面试题：什么是repaint？" class="headerlink" title="面试题：什么是repaint？"></a>面试题：什么是repaint？</h3><p>repaint的本质就是重新根据分层信息计算了绘制指令，<br>当改动了可见样式后，就需要重新计算，会引发repaint。<br>由于元素的布局信息也属于可见样式，所以reflow一定会引发repaint。</p>
-<h3 id="面试题：为什么transform的效率高？"><a href="#面试题：为什么transform的效率高？" class="headerlink" title="面试题：为什么transform的效率高？"></a>面试题：为什么transform的效率高？</h3><p>因为transform既不会影响布局也不会影响绘制指令，影响的只是渲染流程的最后一个【draw】阶段。由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。</p>
-]]></content>
-      <categories>
-        <category>前端基础</category>
-      </categories>
-      <tags>
-        <tag>前端基础</tag>
-        <tag>浏览器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>购物车动态效果</title>
     <url>/blog.github.io/2025/03/20/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%B4%AD%E7%89%A9%E8%BD%A6%E6%95%88%E6%9E%9C/</url>
     <content><![CDATA[<h2 id="使用面向对象编程的思想实现购物车效果"><a href="#使用面向对象编程的思想实现购物车效果" class="headerlink" title="使用面向对象编程的思想实现购物车效果"></a>使用面向对象编程的思想实现购物车效果</h2><ul>
@@ -2089,6 +2089,62 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>事件循环</title>
+    <url>/blog.github.io/2025/03/15/%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</url>
+    <content><![CDATA[<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><h3 id="浏览器的进程模型"><a href="#浏览器的进程模型" class="headerlink" title="浏览器的进程模型"></a>浏览器的进程模型</h3><p>什么是进程？<br>程序运行时需要有自己专属的内存空间，可以把这块内存空间简单的理解为进程。<br>每个应用至少有一个进程，进程之间相互独立，即使要通信，也需要双方同意。</p>
+<p>什么是线程？<br>一个进程至少有一个线程，所以在进程开启后，会自动创建一个线程来运行代码，该线程称之为主线程。tips：主线程是唯一的，其他线程都是由主线程创建的。当主线程关闭后进程也就关闭了</p>
+<p>如果程序需要同时执行多个代码块，主线程就会启动更多的线程来执行代码，所以一个进程中可以包含多个线程。</p>
+<h3 id="浏览器有哪些进程和线程？"><a href="#浏览器有哪些进程和线程？" class="headerlink" title="浏览器有哪些进程和线程？"></a>浏览器有哪些进程和线程？</h3><p>浏览器是一个多进程多线程的应用程序。内部工作极其复杂。<br>为了避免相互影响，为了减少连环崩溃的几率，当启动浏览器后，它会自动启动多个进程。<br>最主要的进程有：<br>浏览器进程：主要负责界面显示，用户交互，子进程管理等。浏览器进程内部会启动多个线程处理不同的任务。<br>网络进程：负责加载网络资源。网络进程内部会启动多个线程来处理不同的网络任务。<br>渲染进程：渲染进程启动后，会开启一个渲染主线程，主线程负责执行HTML,CSS,JS代码，解析渲染页面。<br>默认情况下，浏览器会为每个标签页开启一个新的渲染进程，以保证不同的标签页之间不相互影响。</p>
+<h3 id="渲染主线程时如何工作的？"><a href="#渲染主线程时如何工作的？" class="headerlink" title="渲染主线程时如何工作的？"></a>渲染主线程时如何工作的？</h3><p>渲染主线程是浏览器中最繁忙的线程，需要它处理的任务包括但不限于：<br>解析HTML、CSS、计算样式，布局，处理图层，每秒把页面画60次即60HZ（主要是为了用户的浏览感知效果），执行全局JS代码，执行事件处理函数，执行计时器的回调函数。</p>
+<p>思考题：为什么渲染进程不适用多个线程来处理这些事情？</p>
+<p>渲染主线程想出了一个办法来处理同一时间来自多个线程的任务。即开启消息队列。<br>1.在最开始的时候，渲染主线程会进入一个无限循环<br>2.每一次循环会检查消息队列中是否有任务存在。如果有，则会取出第一个任务并执行，执行完一个后进入下一次循环；如果没有，则进入休眠状态。<br>3.其他所有线程（包括其他进程的线程）可以随时向消息队列添加任务。新任务会加到消息队列的末尾。在添加新任务使，如果主线程是休眠状态，则会将其唤醒以继续循环拿取任务。<br>整个过程被称之为事件循环。<br><img data-src="/blog.github.io/images/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%AE%80%E5%8D%95%E5%9B%BE%E7%A4%BA.JPG" alt="事件循环"></p>
+<p>##何为异步<br>代码在执行过程中，会遇到一些无法立即处理的任务，比如：<br>计时完成后需要执行的任务–setTimeout()，setInterval()<br>网络通信完成后需要执行的任务–XHR，Fetch<br>用户操作后需要执行的任务–addEventListener()<br>如果让渲染主线程等待这些任务的时机达到，就会导致主线程长期处于【阻塞】的状态，从而导致浏览器【卡死】。例如计时器计时五秒钟，则不会等待五秒钟后才开始处理。</p>
+<p>所以计时器的原理：<br>1.渲染主线程会创建一个计时器对象，并将其添加到消息队列中。<br>2.当渲染主线程执行到计时器对象时，会通知计时器线程开始计时，并将计时器对象对应的任务结束。<br>3.渲染主线程继续执行消息队列中待处理的任务。计时线程开始计时<br>4.计时结束后，计时线程会将计时器对象对应的任务添加到消息队列中。<br>这就是异步的处理方式，渲染主线程永远不会阻塞。<br><img data-src="/blog.github.io/images/%E5%BC%82%E6%AD%A5%E6%B5%81%E7%A8%8B.JPG" alt="异步操作"></p>
+<p>###面试题：如何解释js中的异步？<br>js是一门单线程的语言，这是因为它运行在浏览器的渲染主线程中，而渲染主线程只有一个，而渲染主线程承担着很多的工作，渲染页面，执行JS都在其中运行。<br>如果使用同步的方式，就极有可能导致主线程产生阻塞，从而导致消息队列中很多其他任务无法得到执行。<br>这样一来，一方面会导致繁忙的主线程白白的浪费时间，另一方面导致页面无法及时更新，给用户造成卡死现象。<br>所以，浏览器采用异步的方式避免，具体做法是当某些任务发生时，比如计时器，网络，事件监听，主线程将任务交给其他线程去处理，自身立即结束任务的执行，转而执行后续代码，当其他线程完成时，将事先传递的回调函数包装成任务（任务是一个对象！！），加入到消息队列的末尾排队，等待主线程调度执行。<br>在这种异步模式下，浏览器永不阻塞，从而最大限度的保证了单线程的流畅运行。</p>
+<p>###js是怎么阻碍渲染的？<br>因为js的渲染任务和一些计时器的任务都在渲染主线程上运行。当一个定义的计时器的函数被调用后，计时器之前的修改内容不会立即在主线程上渲染，而是会加载在消息队列中，等待主线程结束计时器的任务后，才会渲染。<br>因此会导致即使值发生了修改，但是不会立即渲染在页面。同理如果存在这种情况点击其他事件也不会立即响应，因为事件也在消息队列中，等待主线程执行。<br><img data-src="/blog.github.io/images/%E8%AE%A1%E6%97%B6%E5%99%A8%E5%AF%BC%E8%87%B4%E9%98%BB%E5%A1%9E.JPG" alt="计时器导致阻塞"></p>
+<p>###任务有优先级吗？<br>任务没有优先级，在消息队列中先进先出。但是消息队列存在优先级。</p>
+<p>W3C的最新解释：<br>每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属于不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。<br>浏览器必须准备好一个微队列，微队列的任务优先所有其他任务执行。</p>
+<p>chrome浏览器的实现，至少包含了下面的队列：<br>延时队列：用于存放计时器到达后的回调任务，优先级【中】<br>交互队列：用于存放用户操作后产生的事件处理任务，优先级【高】<br>微队列：用户存放需要最快执行的任务，优先级【最高】</p>
+<p>添加任务到微队列的主要方式主要是使用promise，MutationObserver，requestAnimationFrame等。<br>promise：使用promise.resolve().then()方法可以将任务添加到微队列。</p>
+<p>！！！渲染主队列会将代码中所有需要执行的任务添加在消息队列中，按照消息队列的顺序执行，根据消息队列中不同类型的任务放置在不同的队列上，但是微队列优先级最高，所以微队列中的任务会优先执行。等待微队列中的任务执行完毕后，在看交互队列。其中使用promise会将任务直接防止在微队列中。</p>
+<p>面试题：阐述一下JS的事件循环机制：<br>事件循环又叫消息循环，是浏览器渲染主线程的工作方式。<br>在chrome的源码中，它开启一个不会结束的for循环，每次循环从消息队列中取出第一个任务执行，而其他线程只需要在合适的时候将任务加入到队列末尾即可。<br>过去把消息队列简单分为宏队列和微队列，这种说法目前已无法满足复杂的浏览器环境，取而代之的是一种更加灵活多变的处理方式。<br>根据W3C的最新解释，每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属于不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。但是浏览器必须准备好一个微队列，微队列的任务优先所有其他任务执行。</p>
+<p>面试题：JS中的计时器能做到精确计时吗？为什么？<br>不行，<br>1.计算机硬件没有原子钟，无法做到精确计时。<br>2.操作系统的计时函数本身就有少量偏差，因为js的计时器最终调用的是操作系统的函数，也就是有些偏差。<br>3.按照W3C的标准，浏览器实现计时器时，如果嵌套层数超过五层，则会带有4ms的等待时间。<br>4.受事件循环的影响，计时器的回调函数只能在主线程空闲时运行，因此带来了偏差。</p>
+<p>原子钟（英文：atomic clock），是一种利用原子量子特性产生高度稳定且准确频率信号的仪器，是目前测量时间最精确的工具。原子钟的运作核心是利用原子作为基准物质，构建一个类似电子振荡器的装置，当振荡器产生的电磁波频率与原子固有的振动频率相匹配时，原子将经历“能级跃迁”，表明振荡器发射的频率与原子的共振频率相一致，构成了原子钟运作的基本原理</p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>前端基础</tag>
+        <tag>浏览器</tag>
+        <tag>事件循环</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue的优化手段</title>
+    <url>/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/</url>
+    <content><![CDATA[<h2 id="使用key可以优化vue"><a href="#使用key可以优化vue" class="headerlink" title="使用key可以优化vue"></a>使用key可以优化vue</h2><p>高效的DOM更新,key属性帮助Vue识别虚拟Dom中的节点.vnode,当数据变化时,Vue会基于key值高效的更新DOM,而不是重新渲染整个列表.<br>在v-for循环中使用key可以确保组件的状态不会混淆,每个组件实例都能保持独立的状态.<br>Vue的diff算法会使用key来判断节点是新创建的还是被移动的.有了唯一的key,vue可以最小化DOM操作.<br>没有key时,vue会采用”就地复用”策略,可能导致一些意外行为,特别是在列表项包含状态或子组件时.<br>Vue官方强烈建议在使用v-for时提供key属性,并且应该使用唯一的稳定的标识符.而不是索引.</p>
+<h2 id="使用freeze来冻结数据，避免数据被修改-（主要用于vue2）"><a href="#使用freeze来冻结数据，避免数据被修改-（主要用于vue2）" class="headerlink" title="使用freeze来冻结数据，避免数据被修改 （主要用于vue2）"></a>使用freeze来冻结数据，避免数据被修改 （主要用于vue2）</h2><p>阻止响应式转换 ：当我们将一个JavaScript对象传入Vue实例作为data选项，Vue将遍历此对象所有的属性，并使用Object.defineProperty把这些属性全部转为getter&#x2F;setter，这是Vue响应式系统的核心。而使用Object.freeze()可以冻结一个对象，阻止Vue对其进行响应式处理。<br>减少观察者 ：对于大型数据集或不需要变化的数据，使用freeze可以避免Vue创建大量的getter&#x2F;setter，从而减少内存占用。<br>提高性能 ：由于被冻结的对象不再是响应式的，Vue不再需要追踪其变化，这可以在处理大量数据时显著提高性能。<br>适用场景 ：特别适合那些一旦初始化就不再变化的数据，如常量配置、固定选项列表等。</p>
+<h2 id="使用函数式组件优化"><a href="#使用函数式组件优化" class="headerlink" title="使用函数式组件优化"></a>使用函数式组件优化</h2><p>函数式组件没有实例，没有生命周期钩子，也没有this上下文，因此渲染开销更小<br>没有状态管理和实例化过程，函数式组件的渲染速度更快。<br>更少的内存占用，不需要维护Vue实例，减少内存占用。<br>适用于纯展示型的组件。<br>函数式组件的代码通常更简洁，更容易维护和理解</p>
+<h2 id="使用计算属性优化"><a href="#使用计算属性优化" class="headerlink" title="使用计算属性优化"></a>使用计算属性优化</h2><p>计算属性会基于响应式依赖进行缓存.只有当依赖项发生变化时,才会重新计算,避免了每次渲染都进行复杂计算.<br>使用模板中某个数据多次使用，并该数据是通过计算得到的，可以使用计算属性来缓存它们.<br>计算属性能够智能的追踪其依赖关系,只有在相关依赖发生变化时,才会更新.<br>将复杂的逻辑从模板中抽离出来,使模板更加简洁易读.</p>
+<h2 id="非实时绑定的表单项"><a href="#非实时绑定的表单项" class="headerlink" title="非实时绑定的表单项"></a>非实时绑定的表单项</h2><p>当使用v-model绑定一个表单时,当用户改变表单项的状态时,也会随之改变数据,从而导致vue发生重渲染(rerender)<br>这会带来一些性能的开销.<br>我们可以通过使用lazy或不使用v-model的方式来解决该问题.但要注意,这样可能会导致在某一个时间段内数据和表单项的值是不一致的.<br>当使用v-model.lazy时,数据和表单项的值是异步的,只有当用户停止输入时,才会更新数据.使用lazy监听@change事件<br>当不使用v-model时,我们可以手动的监听表单项的change事件,并更新数据. 不使用v-model监听@input</p>
+<h2 id="保持对象引用稳定"><a href="#保持对象引用稳定" class="headerlink" title="保持对象引用稳定"></a>保持对象引用稳定</h2><p>避免不必要的响应式更新 ：Vue的响应式系统会追踪对象的变化，当对象引用改变时，Vue会认为整个对象都变了，从而触发相关组件的重新渲染。保持对象引用稳定可以避免这种情况。<br>减少虚拟DOM的比较开销 ：当父组件向子组件传递props时，如果每次都创建新的对象引用，即使内容相同，Vue也会认为props发生了变化，导致子组件重新渲染。<br>优化memo和缓存 ：使用v-memo、computed或Vue3的shallowRef等特性时，它们依赖于引用比较来判断是否需要重新计算或渲染。<br>实现方式 ：可以通过使用不可变数据模式、Object.assign()更新对象而不是创建新对象、使用Vue的响应式API如reactive()等方式来保持对象引用的稳定性。</p>
+<h2 id="使用延迟装载来优化vue项目"><a href="#使用延迟装载来优化vue项目" class="headerlink" title="使用延迟装载来优化vue项目"></a>使用延迟装载来优化vue项目</h2><p>减小初始包体积 ：只加载当前路由需要的组件，减少首屏加载时间和资源消耗。<br>按需加载资源 ：路由组件、大型库、图片等资源只在需要时才加载，提高应用启动速度。<br>提升用户体验 ：首屏渲染更快，用户可以更快地与应用交互，减少等待时间。<br>优化资源利用 ：减少不必要的网络请求和浏览器解析工作，节省带宽和设备资源。</p>
+<h2 id="使用keep-alive来优化vue项目"><a href="#使用keep-alive来优化vue项目" class="headerlink" title="使用keep-alive来优化vue项目"></a>使用keep-alive来优化vue项目</h2><p>缓存组件状态 ：keep-alive可以缓存不活动的组件实例，而不是销毁它们，保留组件的状态和避免重新渲染。<br>减少性能开销 ：避免了组件的重复创建和销毁过程，减少了DOM操作，提高了应用性能，特别是对于频繁切换的组件。<br>提升用户体验 ：保持组件状态意味着用户在组件间切换时不会丢失之前的操作和数据，如表单输入、滚动位置等。<br>特有的生命周期钩子 ：提供了activated和deactivated钩子，便于管理缓存组件的生命周期事件。<br>可配置性强 ：通过include、exclude和max属性可以精确控制缓存策略，只缓存需要的组件，避免内存浪费。</p>
+<h2 id="长列表优化"><a href="#长列表优化" class="headerlink" title="长列表优化"></a>长列表优化</h2><ul>
+<li>什么是长列表优化?<br>即渲染大量数据时,容易出现卡顿的情况.<br>采取使用分页的方式获取数据.<br>使用虚拟滚动方案只渲染浏览器视口范围内的的数据.<br>使用v-once,方式只渲染一次<br>通过v-memo缓存子树,有条件更新,提高复用,避免不必要更新.<br>按需加载数据</li>
+</ul>
+<p>虚拟滚动 ：只渲染可视区域内的元素，其他元素在滚动到视口时才渲染，可使用vue-virtual-scroller等库实现。<br>分页加载 ：将大量数据分批次加载和渲染，减轻一次性渲染的压力。<br>时间分片 ：利用requestAnimationFrame或setTimeout将渲染任务分割成小块，避免长时间占用主线程。<br>列表项组件化 ：将列表项抽离为单独组件，并使用v-once、函数式组件等技术减少更新开销。<br>使用key ：为列表项提供稳定的key值，帮助Vue高效地进行DOM更新。</p>
+<h2 id="打包体积优化"><a href="#打包体积优化" class="headerlink" title="打包体积优化"></a>打包体积优化</h2><p>路由懒加载，使用动态import实现按需加载组件；<br>第三方库按需引入，避免引入整个库；<br>使用webpack的splitChunks分割代码，提取公共模块<br>使用compression-webpack-plugin开启Gzip压缩<br>使用webpack的Tree Shaking删除未使用的代码<br>合理使用CDN加载外部资源<br>图片资源压缩和合理使用</p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
@@ -2277,62 +2333,6 @@
       </categories>
       <tags>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue的优化手段</title>
-    <url>/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/</url>
-    <content><![CDATA[<h2 id="使用key可以优化vue"><a href="#使用key可以优化vue" class="headerlink" title="使用key可以优化vue"></a>使用key可以优化vue</h2><p>高效的DOM更新,key属性帮助Vue识别虚拟Dom中的节点.vnode,当数据变化时,Vue会基于key值高效的更新DOM,而不是重新渲染整个列表.<br>在v-for循环中使用key可以确保组件的状态不会混淆,每个组件实例都能保持独立的状态.<br>Vue的diff算法会使用key来判断节点是新创建的还是被移动的.有了唯一的key,vue可以最小化DOM操作.<br>没有key时,vue会采用”就地复用”策略,可能导致一些意外行为,特别是在列表项包含状态或子组件时.<br>Vue官方强烈建议在使用v-for时提供key属性,并且应该使用唯一的稳定的标识符.而不是索引.</p>
-<h2 id="使用freeze来冻结数据，避免数据被修改-（主要用于vue2）"><a href="#使用freeze来冻结数据，避免数据被修改-（主要用于vue2）" class="headerlink" title="使用freeze来冻结数据，避免数据被修改 （主要用于vue2）"></a>使用freeze来冻结数据，避免数据被修改 （主要用于vue2）</h2><p>阻止响应式转换 ：当我们将一个JavaScript对象传入Vue实例作为data选项，Vue将遍历此对象所有的属性，并使用Object.defineProperty把这些属性全部转为getter&#x2F;setter，这是Vue响应式系统的核心。而使用Object.freeze()可以冻结一个对象，阻止Vue对其进行响应式处理。<br>减少观察者 ：对于大型数据集或不需要变化的数据，使用freeze可以避免Vue创建大量的getter&#x2F;setter，从而减少内存占用。<br>提高性能 ：由于被冻结的对象不再是响应式的，Vue不再需要追踪其变化，这可以在处理大量数据时显著提高性能。<br>适用场景 ：特别适合那些一旦初始化就不再变化的数据，如常量配置、固定选项列表等。</p>
-<h2 id="使用函数式组件优化"><a href="#使用函数式组件优化" class="headerlink" title="使用函数式组件优化"></a>使用函数式组件优化</h2><p>函数式组件没有实例，没有生命周期钩子，也没有this上下文，因此渲染开销更小<br>没有状态管理和实例化过程，函数式组件的渲染速度更快。<br>更少的内存占用，不需要维护Vue实例，减少内存占用。<br>适用于纯展示型的组件。<br>函数式组件的代码通常更简洁，更容易维护和理解</p>
-<h2 id="使用计算属性优化"><a href="#使用计算属性优化" class="headerlink" title="使用计算属性优化"></a>使用计算属性优化</h2><p>计算属性会基于响应式依赖进行缓存.只有当依赖项发生变化时,才会重新计算,避免了每次渲染都进行复杂计算.<br>使用模板中某个数据多次使用，并该数据是通过计算得到的，可以使用计算属性来缓存它们.<br>计算属性能够智能的追踪其依赖关系,只有在相关依赖发生变化时,才会更新.<br>将复杂的逻辑从模板中抽离出来,使模板更加简洁易读.</p>
-<h2 id="非实时绑定的表单项"><a href="#非实时绑定的表单项" class="headerlink" title="非实时绑定的表单项"></a>非实时绑定的表单项</h2><p>当使用v-model绑定一个表单时,当用户改变表单项的状态时,也会随之改变数据,从而导致vue发生重渲染(rerender)<br>这会带来一些性能的开销.<br>我们可以通过使用lazy或不使用v-model的方式来解决该问题.但要注意,这样可能会导致在某一个时间段内数据和表单项的值是不一致的.<br>当使用v-model.lazy时,数据和表单项的值是异步的,只有当用户停止输入时,才会更新数据.使用lazy监听@change事件<br>当不使用v-model时,我们可以手动的监听表单项的change事件,并更新数据. 不使用v-model监听@input</p>
-<h2 id="保持对象引用稳定"><a href="#保持对象引用稳定" class="headerlink" title="保持对象引用稳定"></a>保持对象引用稳定</h2><p>避免不必要的响应式更新 ：Vue的响应式系统会追踪对象的变化，当对象引用改变时，Vue会认为整个对象都变了，从而触发相关组件的重新渲染。保持对象引用稳定可以避免这种情况。<br>减少虚拟DOM的比较开销 ：当父组件向子组件传递props时，如果每次都创建新的对象引用，即使内容相同，Vue也会认为props发生了变化，导致子组件重新渲染。<br>优化memo和缓存 ：使用v-memo、computed或Vue3的shallowRef等特性时，它们依赖于引用比较来判断是否需要重新计算或渲染。<br>实现方式 ：可以通过使用不可变数据模式、Object.assign()更新对象而不是创建新对象、使用Vue的响应式API如reactive()等方式来保持对象引用的稳定性。</p>
-<h2 id="使用延迟装载来优化vue项目"><a href="#使用延迟装载来优化vue项目" class="headerlink" title="使用延迟装载来优化vue项目"></a>使用延迟装载来优化vue项目</h2><p>减小初始包体积 ：只加载当前路由需要的组件，减少首屏加载时间和资源消耗。<br>按需加载资源 ：路由组件、大型库、图片等资源只在需要时才加载，提高应用启动速度。<br>提升用户体验 ：首屏渲染更快，用户可以更快地与应用交互，减少等待时间。<br>优化资源利用 ：减少不必要的网络请求和浏览器解析工作，节省带宽和设备资源。</p>
-<h2 id="使用keep-alive来优化vue项目"><a href="#使用keep-alive来优化vue项目" class="headerlink" title="使用keep-alive来优化vue项目"></a>使用keep-alive来优化vue项目</h2><p>缓存组件状态 ：keep-alive可以缓存不活动的组件实例，而不是销毁它们，保留组件的状态和避免重新渲染。<br>减少性能开销 ：避免了组件的重复创建和销毁过程，减少了DOM操作，提高了应用性能，特别是对于频繁切换的组件。<br>提升用户体验 ：保持组件状态意味着用户在组件间切换时不会丢失之前的操作和数据，如表单输入、滚动位置等。<br>特有的生命周期钩子 ：提供了activated和deactivated钩子，便于管理缓存组件的生命周期事件。<br>可配置性强 ：通过include、exclude和max属性可以精确控制缓存策略，只缓存需要的组件，避免内存浪费。</p>
-<h2 id="长列表优化"><a href="#长列表优化" class="headerlink" title="长列表优化"></a>长列表优化</h2><ul>
-<li>什么是长列表优化?<br>即渲染大量数据时,容易出现卡顿的情况.<br>采取使用分页的方式获取数据.<br>使用虚拟滚动方案只渲染浏览器视口范围内的的数据.<br>使用v-once,方式只渲染一次<br>通过v-memo缓存子树,有条件更新,提高复用,避免不必要更新.<br>按需加载数据</li>
-</ul>
-<p>虚拟滚动 ：只渲染可视区域内的元素，其他元素在滚动到视口时才渲染，可使用vue-virtual-scroller等库实现。<br>分页加载 ：将大量数据分批次加载和渲染，减轻一次性渲染的压力。<br>时间分片 ：利用requestAnimationFrame或setTimeout将渲染任务分割成小块，避免长时间占用主线程。<br>列表项组件化 ：将列表项抽离为单独组件，并使用v-once、函数式组件等技术减少更新开销。<br>使用key ：为列表项提供稳定的key值，帮助Vue高效地进行DOM更新。</p>
-<h2 id="打包体积优化"><a href="#打包体积优化" class="headerlink" title="打包体积优化"></a>打包体积优化</h2><p>路由懒加载，使用动态import实现按需加载组件；<br>第三方库按需引入，避免引入整个库；<br>使用webpack的splitChunks分割代码，提取公共模块<br>使用compression-webpack-plugin开启Gzip压缩<br>使用webpack的Tree Shaking删除未使用的代码<br>合理使用CDN加载外部资源<br>图片资源压缩和合理使用</p>
-]]></content>
-      <categories>
-        <category>前端基础</category>
-      </categories>
-      <tags>
-        <tag>Vue.js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>事件循环</title>
-    <url>/blog.github.io/2025/03/15/%E7%AC%AC%E5%8D%81%E7%AB%A0%EF%BC%9A%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/</url>
-    <content><![CDATA[<h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><h3 id="浏览器的进程模型"><a href="#浏览器的进程模型" class="headerlink" title="浏览器的进程模型"></a>浏览器的进程模型</h3><p>什么是进程？<br>程序运行时需要有自己专属的内存空间，可以把这块内存空间简单的理解为进程。<br>每个应用至少有一个进程，进程之间相互独立，即使要通信，也需要双方同意。</p>
-<p>什么是线程？<br>一个进程至少有一个线程，所以在进程开启后，会自动创建一个线程来运行代码，该线程称之为主线程。tips：主线程是唯一的，其他线程都是由主线程创建的。当主线程关闭后进程也就关闭了</p>
-<p>如果程序需要同时执行多个代码块，主线程就会启动更多的线程来执行代码，所以一个进程中可以包含多个线程。</p>
-<h3 id="浏览器有哪些进程和线程？"><a href="#浏览器有哪些进程和线程？" class="headerlink" title="浏览器有哪些进程和线程？"></a>浏览器有哪些进程和线程？</h3><p>浏览器是一个多进程多线程的应用程序。内部工作极其复杂。<br>为了避免相互影响，为了减少连环崩溃的几率，当启动浏览器后，它会自动启动多个进程。<br>最主要的进程有：<br>浏览器进程：主要负责界面显示，用户交互，子进程管理等。浏览器进程内部会启动多个线程处理不同的任务。<br>网络进程：负责加载网络资源。网络进程内部会启动多个线程来处理不同的网络任务。<br>渲染进程：渲染进程启动后，会开启一个渲染主线程，主线程负责执行HTML,CSS,JS代码，解析渲染页面。<br>默认情况下，浏览器会为每个标签页开启一个新的渲染进程，以保证不同的标签页之间不相互影响。</p>
-<h3 id="渲染主线程时如何工作的？"><a href="#渲染主线程时如何工作的？" class="headerlink" title="渲染主线程时如何工作的？"></a>渲染主线程时如何工作的？</h3><p>渲染主线程是浏览器中最繁忙的线程，需要它处理的任务包括但不限于：<br>解析HTML、CSS、计算样式，布局，处理图层，每秒把页面画60次即60HZ（主要是为了用户的浏览感知效果），执行全局JS代码，执行事件处理函数，执行计时器的回调函数。</p>
-<p>思考题：为什么渲染进程不适用多个线程来处理这些事情？</p>
-<p>渲染主线程想出了一个办法来处理同一时间来自多个线程的任务。即开启消息队列。<br>1.在最开始的时候，渲染主线程会进入一个无限循环<br>2.每一次循环会检查消息队列中是否有任务存在。如果有，则会取出第一个任务并执行，执行完一个后进入下一次循环；如果没有，则进入休眠状态。<br>3.其他所有线程（包括其他进程的线程）可以随时向消息队列添加任务。新任务会加到消息队列的末尾。在添加新任务使，如果主线程是休眠状态，则会将其唤醒以继续循环拿取任务。<br>整个过程被称之为事件循环。<br><img data-src="/blog.github.io/images/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%AE%80%E5%8D%95%E5%9B%BE%E7%A4%BA.JPG" alt="事件循环"></p>
-<p>##何为异步<br>代码在执行过程中，会遇到一些无法立即处理的任务，比如：<br>计时完成后需要执行的任务–setTimeout()，setInterval()<br>网络通信完成后需要执行的任务–XHR，Fetch<br>用户操作后需要执行的任务–addEventListener()<br>如果让渲染主线程等待这些任务的时机达到，就会导致主线程长期处于【阻塞】的状态，从而导致浏览器【卡死】。例如计时器计时五秒钟，则不会等待五秒钟后才开始处理。</p>
-<p>所以计时器的原理：<br>1.渲染主线程会创建一个计时器对象，并将其添加到消息队列中。<br>2.当渲染主线程执行到计时器对象时，会通知计时器线程开始计时，并将计时器对象对应的任务结束。<br>3.渲染主线程继续执行消息队列中待处理的任务。计时线程开始计时<br>4.计时结束后，计时线程会将计时器对象对应的任务添加到消息队列中。<br>这就是异步的处理方式，渲染主线程永远不会阻塞。<br><img data-src="/blog.github.io/images/%E5%BC%82%E6%AD%A5%E6%B5%81%E7%A8%8B.JPG" alt="异步操作"></p>
-<p>###面试题：如何解释js中的异步？<br>js是一门单线程的语言，这是因为它运行在浏览器的渲染主线程中，而渲染主线程只有一个，而渲染主线程承担着很多的工作，渲染页面，执行JS都在其中运行。<br>如果使用同步的方式，就极有可能导致主线程产生阻塞，从而导致消息队列中很多其他任务无法得到执行。<br>这样一来，一方面会导致繁忙的主线程白白的浪费时间，另一方面导致页面无法及时更新，给用户造成卡死现象。<br>所以，浏览器采用异步的方式避免，具体做法是当某些任务发生时，比如计时器，网络，事件监听，主线程将任务交给其他线程去处理，自身立即结束任务的执行，转而执行后续代码，当其他线程完成时，将事先传递的回调函数包装成任务（任务是一个对象！！），加入到消息队列的末尾排队，等待主线程调度执行。<br>在这种异步模式下，浏览器永不阻塞，从而最大限度的保证了单线程的流畅运行。</p>
-<p>###js是怎么阻碍渲染的？<br>因为js的渲染任务和一些计时器的任务都在渲染主线程上运行。当一个定义的计时器的函数被调用后，计时器之前的修改内容不会立即在主线程上渲染，而是会加载在消息队列中，等待主线程结束计时器的任务后，才会渲染。<br>因此会导致即使值发生了修改，但是不会立即渲染在页面。同理如果存在这种情况点击其他事件也不会立即响应，因为事件也在消息队列中，等待主线程执行。<br><img data-src="/blog.github.io/images/%E8%AE%A1%E6%97%B6%E5%99%A8%E5%AF%BC%E8%87%B4%E9%98%BB%E5%A1%9E.JPG" alt="计时器导致阻塞"></p>
-<p>###任务有优先级吗？<br>任务没有优先级，在消息队列中先进先出。但是消息队列存在优先级。</p>
-<p>W3C的最新解释：<br>每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属于不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。<br>浏览器必须准备好一个微队列，微队列的任务优先所有其他任务执行。</p>
-<p>chrome浏览器的实现，至少包含了下面的队列：<br>延时队列：用于存放计时器到达后的回调任务，优先级【中】<br>交互队列：用于存放用户操作后产生的事件处理任务，优先级【高】<br>微队列：用户存放需要最快执行的任务，优先级【最高】</p>
-<p>添加任务到微队列的主要方式主要是使用promise，MutationObserver，requestAnimationFrame等。<br>promise：使用promise.resolve().then()方法可以将任务添加到微队列。</p>
-<p>！！！渲染主队列会将代码中所有需要执行的任务添加在消息队列中，按照消息队列的顺序执行，根据消息队列中不同类型的任务放置在不同的队列上，但是微队列优先级最高，所以微队列中的任务会优先执行。等待微队列中的任务执行完毕后，在看交互队列。其中使用promise会将任务直接防止在微队列中。</p>
-<p>面试题：阐述一下JS的事件循环机制：<br>事件循环又叫消息循环，是浏览器渲染主线程的工作方式。<br>在chrome的源码中，它开启一个不会结束的for循环，每次循环从消息队列中取出第一个任务执行，而其他线程只需要在合适的时候将任务加入到队列末尾即可。<br>过去把消息队列简单分为宏队列和微队列，这种说法目前已无法满足复杂的浏览器环境，取而代之的是一种更加灵活多变的处理方式。<br>根据W3C的最新解释，每个任务都有一个任务类型，同一个类型的任务必须在一个队列，不同类型的任务可以分属于不同的队列。在一次事件循环中，浏览器可以根据实际情况从不同的队列中取出任务执行。但是浏览器必须准备好一个微队列，微队列的任务优先所有其他任务执行。</p>
-<p>面试题：JS中的计时器能做到精确计时吗？为什么？<br>不行，<br>1.计算机硬件没有原子钟，无法做到精确计时。<br>2.操作系统的计时函数本身就有少量偏差，因为js的计时器最终调用的是操作系统的函数，也就是有些偏差。<br>3.按照W3C的标准，浏览器实现计时器时，如果嵌套层数超过五层，则会带有4ms的等待时间。<br>4.受事件循环的影响，计时器的回调函数只能在主线程空闲时运行，因此带来了偏差。</p>
-<p>原子钟（英文：atomic clock），是一种利用原子量子特性产生高度稳定且准确频率信号的仪器，是目前测量时间最精确的工具。原子钟的运作核心是利用原子作为基准物质，构建一个类似电子振荡器的装置，当振荡器产生的电磁波频率与原子固有的振动频率相匹配时，原子将经历“能级跃迁”，表明振荡器发射的频率与原子的共振频率相一致，构成了原子钟运作的基本原理</p>
-]]></content>
-      <categories>
-        <category>前端基础</category>
-      </categories>
-      <tags>
-        <tag>前端基础</tag>
-        <tag>浏览器</tag>
-        <tag>事件循环</tag>
       </tags>
   </entry>
 </search>
