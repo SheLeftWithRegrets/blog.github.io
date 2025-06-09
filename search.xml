@@ -363,6 +363,136 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue基础</title>
+    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="Vue基础"><a href="#Vue基础" class="headerlink" title="Vue基础"></a>Vue基础</h1><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h3 id="Vue组件之间有哪些通信方式？"><a href="#Vue组件之间有哪些通信方式？" class="headerlink" title="Vue组件之间有哪些通信方式？"></a>Vue组件之间有哪些通信方式？</h3><p>组件通信的基本原则：谁向谁传，数据写在发送方。主要通信方式包括：</p>
+<ol>
+<li><strong>父传子</strong>：props</li>
+<li><strong>子传父</strong>：$emit</li>
+<li><strong>兄弟组件</strong>：<ul>
+<li>$attrs&#x2F;$emit</li>
+<li>$parent&#x2F;$root</li>
+<li>Vuex</li>
+<li>Event Bus($emit&#x2F;$on)</li>
+</ul>
+</li>
+</ol>
+<p>注：$attrs 是一个包含父组件传递给子组件但未在子组件的 props 中定义的属性的对象。</p>
+<h2 id="指令优先级"><a href="#指令优先级" class="headerlink" title="指令优先级"></a>指令优先级</h2><h3 id="v-if和v-for的优先级是怎样的？"><a href="#v-if和v-for的优先级是怎样的？" class="headerlink" title="v-if和v-for的优先级是怎样的？"></a>v-if和v-for的优先级是怎样的？</h3><ul>
+<li>Vue2中v-for优先级更高</li>
+<li>Vue3中v-if优先级更高</li>
+<li>官方文档明确表明不要在同一个标签中同时使用这两个指令</li>
+</ul>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="Vue的生命周期有哪些？各自的作用是什么？"><a href="#Vue的生命周期有哪些？各自的作用是什么？" class="headerlink" title="Vue的生命周期有哪些？各自的作用是什么？"></a>Vue的生命周期有哪些？各自的作用是什么？</h3><p><strong>Vue2生命周期：</strong></p>
+<ol>
+<li><p><strong>beforeCreate</strong></p>
+<ul>
+<li>在实例初始化之后，数据观测和事件配置之前调用</li>
+<li>用途：初始化操作，但不能访问响应式数据</li>
+</ul>
+</li>
+<li><p><strong>created</strong></p>
+<ul>
+<li>实例创建完成后调用</li>
+<li>已完成数据观测、属性和方法的运算，watch&#x2F;event事件回调</li>
+<li>用途：数据获取、事件监听等初始化操作</li>
+</ul>
+</li>
+<li><p><strong>beforeMount</strong></p>
+<ul>
+<li>挂载开始前调用</li>
+<li>用途：渲染前的准备工作，如数据格式化</li>
+</ul>
+</li>
+<li><p><strong>mounted</strong></p>
+<ul>
+<li>DOM挂载完成后调用</li>
+<li>用途：DOM操作、第三方库初始化</li>
+</ul>
+</li>
+<li><p><strong>beforeUpdate</strong></p>
+<ul>
+<li>数据更新时调用，发生在虚拟DOM打补丁之前</li>
+<li>用途：更新前访问现有DOM，如移除事件监听器</li>
+</ul>
+</li>
+<li><p><strong>updated</strong></p>
+<ul>
+<li>虚拟DOM重新渲染和打补丁之后调用</li>
+<li>用途：更新后的DOM操作，但应避免在此阶段更改状态</li>
+</ul>
+</li>
+<li><p><strong>beforeDestroy</strong></p>
+<ul>
+<li>实例销毁前调用</li>
+<li>用途：清理操作，如移除事件监听器、定时器</li>
+</ul>
+</li>
+<li><p><strong>destroyed</strong></p>
+<ul>
+<li>实例销毁后调用</li>
+<li>用途：最终的清理工作</li>
+</ul>
+</li>
+</ol>
+<p><strong>Vue3新增：</strong></p>
+<ul>
+<li><strong>setup</strong><ul>
+<li>在组件实例创建之前执行</li>
+<li>组合式API的入口</li>
+<li>可访问props和context，但不能访问this</li>
+</ul>
+</li>
+</ul>
+<h2 id="组件扩展"><a href="#组件扩展" class="headerlink" title="组件扩展"></a>组件扩展</h2><h3 id="如何扩展一个组件？"><a href="#如何扩展一个组件？" class="headerlink" title="如何扩展一个组件？"></a>如何扩展一个组件？</h3><ol>
+<li><strong>使用Composition API进行逻辑扩展</strong></li>
+<li><strong>使用slots进行内容扩展</strong><ul>
+<li>默认插槽</li>
+<li>具名插槽</li>
+<li>作用域插槽</li>
+</ul>
+</li>
+</ol>
+<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><h3 id="什么是虚拟DOM？有什么优点？"><a href="#什么是虚拟DOM？有什么优点？" class="headerlink" title="什么是虚拟DOM？有什么优点？"></a>什么是虚拟DOM？有什么优点？</h3><p>虚拟DOM是一个虚拟的DOM对象，本质是一个JS对象。</p>
+<p><strong>优点：</strong></p>
+<ol>
+<li>减少操作真实DOM的次数，提高程序性能</li>
+<li>方便实现跨平台</li>
+</ol>
+<h2 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h2><h3 id="Vue3相比Vue2有哪些重要的新特性？"><a href="#Vue3相比Vue2有哪些重要的新特性？" class="headerlink" title="Vue3相比Vue2有哪些重要的新特性？"></a>Vue3相比Vue2有哪些重要的新特性？</h3><ol>
+<li><p><strong>Composition API</strong></p>
+<ul>
+<li>用于组织和复用组件逻辑</li>
+<li>将相同功能的代码放在一起，便于管理</li>
+</ul>
+</li>
+<li><p><strong>响应式系统升级</strong></p>
+<ul>
+<li>使用Proxy替代Object.defineProperty</li>
+<li>更好的性能和更完整的响应式支持</li>
+</ul>
+</li>
+<li><p><strong>动态路由</strong></p>
+<ul>
+<li>更灵活的路由配置</li>
+<li>在params后添加反斜杠和冒号实现动态路由</li>
+</ul>
+</li>
+</ol>
+<hr>
+<ul>
+<li>在vue中使用：class&#x3D;”{active:isActive}”来实现根据一个对象的值动态切换class状态</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端框架</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>前端框架</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS包含块</title>
     <url>/blog.github.io/2025/03/17/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%20CSS%20%E4%B9%8B%E5%8C%85%E5%90%AB%E5%9D%97/</url>
     <content><![CDATA[<h1 id="你不知道的-CSS-之包含块"><a href="#你不知道的-CSS-之包含块" class="headerlink" title="你不知道的 CSS 之包含块"></a>你不知道的 CSS 之包含块</h1><p>包含块英语全称为<strong>containing block</strong>，实际上平时你在书写 CSS 时，大多数情况下你是感受不到它的存在，因此你不知道这个知识点也是一件很正常的事情。但是这玩意儿是确确实实存在的，在 CSS 规范中也是明确书写了的：</p>
@@ -1203,136 +1333,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue基础</title>
-    <url>/blog.github.io/2025/02/24/%E7%AC%AC%E4%B8%83%E7%AF%87%EF%BC%9AVue%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="Vue基础"><a href="#Vue基础" class="headerlink" title="Vue基础"></a>Vue基础</h1><h2 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h2><h3 id="Vue组件之间有哪些通信方式？"><a href="#Vue组件之间有哪些通信方式？" class="headerlink" title="Vue组件之间有哪些通信方式？"></a>Vue组件之间有哪些通信方式？</h3><p>组件通信的基本原则：谁向谁传，数据写在发送方。主要通信方式包括：</p>
-<ol>
-<li><strong>父传子</strong>：props</li>
-<li><strong>子传父</strong>：$emit</li>
-<li><strong>兄弟组件</strong>：<ul>
-<li>$attrs&#x2F;$emit</li>
-<li>$parent&#x2F;$root</li>
-<li>Vuex</li>
-<li>Event Bus($emit&#x2F;$on)</li>
-</ul>
-</li>
-</ol>
-<p>注：$attrs 是一个包含父组件传递给子组件但未在子组件的 props 中定义的属性的对象。</p>
-<h2 id="指令优先级"><a href="#指令优先级" class="headerlink" title="指令优先级"></a>指令优先级</h2><h3 id="v-if和v-for的优先级是怎样的？"><a href="#v-if和v-for的优先级是怎样的？" class="headerlink" title="v-if和v-for的优先级是怎样的？"></a>v-if和v-for的优先级是怎样的？</h3><ul>
-<li>Vue2中v-for优先级更高</li>
-<li>Vue3中v-if优先级更高</li>
-<li>官方文档明确表明不要在同一个标签中同时使用这两个指令</li>
-</ul>
-<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><h3 id="Vue的生命周期有哪些？各自的作用是什么？"><a href="#Vue的生命周期有哪些？各自的作用是什么？" class="headerlink" title="Vue的生命周期有哪些？各自的作用是什么？"></a>Vue的生命周期有哪些？各自的作用是什么？</h3><p><strong>Vue2生命周期：</strong></p>
-<ol>
-<li><p><strong>beforeCreate</strong></p>
-<ul>
-<li>在实例初始化之后，数据观测和事件配置之前调用</li>
-<li>用途：初始化操作，但不能访问响应式数据</li>
-</ul>
-</li>
-<li><p><strong>created</strong></p>
-<ul>
-<li>实例创建完成后调用</li>
-<li>已完成数据观测、属性和方法的运算，watch&#x2F;event事件回调</li>
-<li>用途：数据获取、事件监听等初始化操作</li>
-</ul>
-</li>
-<li><p><strong>beforeMount</strong></p>
-<ul>
-<li>挂载开始前调用</li>
-<li>用途：渲染前的准备工作，如数据格式化</li>
-</ul>
-</li>
-<li><p><strong>mounted</strong></p>
-<ul>
-<li>DOM挂载完成后调用</li>
-<li>用途：DOM操作、第三方库初始化</li>
-</ul>
-</li>
-<li><p><strong>beforeUpdate</strong></p>
-<ul>
-<li>数据更新时调用，发生在虚拟DOM打补丁之前</li>
-<li>用途：更新前访问现有DOM，如移除事件监听器</li>
-</ul>
-</li>
-<li><p><strong>updated</strong></p>
-<ul>
-<li>虚拟DOM重新渲染和打补丁之后调用</li>
-<li>用途：更新后的DOM操作，但应避免在此阶段更改状态</li>
-</ul>
-</li>
-<li><p><strong>beforeDestroy</strong></p>
-<ul>
-<li>实例销毁前调用</li>
-<li>用途：清理操作，如移除事件监听器、定时器</li>
-</ul>
-</li>
-<li><p><strong>destroyed</strong></p>
-<ul>
-<li>实例销毁后调用</li>
-<li>用途：最终的清理工作</li>
-</ul>
-</li>
-</ol>
-<p><strong>Vue3新增：</strong></p>
-<ul>
-<li><strong>setup</strong><ul>
-<li>在组件实例创建之前执行</li>
-<li>组合式API的入口</li>
-<li>可访问props和context，但不能访问this</li>
-</ul>
-</li>
-</ul>
-<h2 id="组件扩展"><a href="#组件扩展" class="headerlink" title="组件扩展"></a>组件扩展</h2><h3 id="如何扩展一个组件？"><a href="#如何扩展一个组件？" class="headerlink" title="如何扩展一个组件？"></a>如何扩展一个组件？</h3><ol>
-<li><strong>使用Composition API进行逻辑扩展</strong></li>
-<li><strong>使用slots进行内容扩展</strong><ul>
-<li>默认插槽</li>
-<li>具名插槽</li>
-<li>作用域插槽</li>
-</ul>
-</li>
-</ol>
-<h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><h3 id="什么是虚拟DOM？有什么优点？"><a href="#什么是虚拟DOM？有什么优点？" class="headerlink" title="什么是虚拟DOM？有什么优点？"></a>什么是虚拟DOM？有什么优点？</h3><p>虚拟DOM是一个虚拟的DOM对象，本质是一个JS对象。</p>
-<p><strong>优点：</strong></p>
-<ol>
-<li>减少操作真实DOM的次数，提高程序性能</li>
-<li>方便实现跨平台</li>
-</ol>
-<h2 id="Vue3新特性"><a href="#Vue3新特性" class="headerlink" title="Vue3新特性"></a>Vue3新特性</h2><h3 id="Vue3相比Vue2有哪些重要的新特性？"><a href="#Vue3相比Vue2有哪些重要的新特性？" class="headerlink" title="Vue3相比Vue2有哪些重要的新特性？"></a>Vue3相比Vue2有哪些重要的新特性？</h3><ol>
-<li><p><strong>Composition API</strong></p>
-<ul>
-<li>用于组织和复用组件逻辑</li>
-<li>将相同功能的代码放在一起，便于管理</li>
-</ul>
-</li>
-<li><p><strong>响应式系统升级</strong></p>
-<ul>
-<li>使用Proxy替代Object.defineProperty</li>
-<li>更好的性能和更完整的响应式支持</li>
-</ul>
-</li>
-<li><p><strong>动态路由</strong></p>
-<ul>
-<li>更灵活的路由配置</li>
-<li>在params后添加反斜杠和冒号实现动态路由</li>
-</ul>
-</li>
-</ol>
-<hr>
-<ul>
-<li>在vue中使用：class&#x3D;”{active:isActive}”来实现根据一个对象的值动态切换class状态</li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端框架</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-        <tag>前端框架</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用DrissionPage进行高效的数据爬虫</title>
     <url>/blog.github.io/2025/03/07/%E7%AC%AC%E4%B9%9D%E7%AF%87%EF%BC%9A%E4%BD%BF%E7%94%A8DrissionPage%E8%BF%9B%E8%A1%8C%E9%AB%98%E6%95%88%E7%9A%84%E6%95%B0%E6%8D%AE%E7%88%AC%E8%99%AB/</url>
     <content><![CDATA[<h1 id="使用DrissionPage进行高效的数据爬虫"><a href="#使用DrissionPage进行高效的数据爬虫" class="headerlink" title="使用DrissionPage进行高效的数据爬虫"></a>使用DrissionPage进行高效的数据爬虫</h1><h2 id="1-DrissionPage简介"><a href="#1-DrissionPage简介" class="headerlink" title="1. DrissionPage简介"></a>1. DrissionPage简介</h2><p>DrissionPage是一个功能强大的Python爬虫库，它结合了Selenium和Requests的优点，提供了更简单的API和更高效的性能。</p>
@@ -1857,31 +1857,6 @@
       </tags>
   </entry>
   <entry>
-    <title>浏览器渲染原理</title>
-    <url>/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</url>
-    <content><![CDATA[<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p>
-<p>在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。<br>如果主线程解析到link位置，此时外部的CSS文件还没有下载好，主线程不会等待，而是继续解析HTML，外部的预解析线程会去下载外部的CSS文件并解析成CSSOM树返回给主线程，主线程合并目前生成好的DOM和CSSOM。这就是CSS不会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="CSS预解析"><br>如果主线程解析到script位置，会停止解析HTML，转而等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML，这是因为JS代码的执行过程中可能会修改当前的DOM树，所以DOM树的生成必须暂停。这就是JS会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="JS预解析"><br>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式，内联样式，外部样式，行内样式均会包含在CSSOM树中。</p>
-<p>渲染的下一步是样式计算：<br>主线程会遍历得到的DOM树，依次为树中的每个节点计算出它最终的样式，称之为Computed Style。<br>在这一过程中，很多预设值会变成绝对值，比如red会变成rgb（255，0，0）;相对单位会变成绝对单位，比如em会变成px。<br>这一步完成后，会得到一颗带有样式的DOM树。</p>
-<p>接下来是布局，布局完成后会得到布局树。<br>布局阶段会依次遍历DOM树的每一个节点，计算每个节点的几何信息。例如节点的宽高，相对包含块的位置。<br>大部分时候，DOM树和布局树并非一一对应。<br>比如display:none的节点没有几何信息，因此不会生成到布局树；又比如使用了伪元素选择器，虽然DOM树中不存在这些伪元素节点，但它们拥有几何信息，使用会生成到布局树匿名行盒，匿名块盒等等都会导致DOM树和布局树无法一一对应。</p>
-<p>下一步是分层<br>主线程会使用一套复杂的策略对整个布局树中进行分层。<br>分层的好处在于，将来其某一个层改变后，仅会对该层进行后续处理，从而提升效率。<br>滚动条，堆叠上下文，transform，opacity等样式都会或多或少的影响分层结果，也可以通过will-change属性更大程度的影响分层结果。</p>
-<p>再下一步，绘制 paint<br>canvas的绘制是由浏览器开放出来的绘制功能。<br>主线程会为每个层单独产生绘制指令集，用于描述这一层的内容该如何画出来。</p>
-<p>分块：Tiles<br>完成绘制之后，主线程会将每个图层的绘制信息提交给合成线程，剩余工作将由合成线程完成。合成线程首先对每个图层进行分块，将其划分为更多的小区域。<br>它会从线程池中拿取多个线程来完成分块工作。</p>
-<p>光栅化Raster :将每个块变成位图，优先处理靠近视图的块。<br>分块完成后，进入光栅化阶段<br>合成线程会将块信息交给GPU进程，以极高的速度完成光栅化。<br>GPU进程会开启多个线程来完成光栅化，并优先处理靠近视口区域的块。<br>光栅化的结果就是一块一块的位图。</p>
-<p>画 draw<br>合成线程拿到每个层，每个块的位图后，生成一个个指引【quad】信息。<br>指引会标识出每个位图应该画到屏幕的哪个位置，以及会考虑到旋转，缩放等变形。变形发生在合成线程，与渲染主线程无关，这就是transform效率高的本质原因。<br>合成线程会把quad提交给GPU进程，由GPU进程产生系统调用，提交给GPU硬件，完成最终的屏幕成像。</p>
-<p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。<br>渲染主线程的主要工作内容为：parse HTML，computed style，生成layout布局树，对dom树进行分层，绘制dom树。后续步骤由其他线程完成。<br>完整流程：<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染的完整流程"></p>
-<h3 id="面试题：什么是reflow？"><a href="#面试题：什么是reflow？" class="headerlink" title="面试题：什么是reflow？"></a>面试题：什么是reflow？</h3><p>reflow的本质是重新计算layout树。<br>当进行了会影响布局树的操作后，需要重新计算布局树，会引发layout。<br>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后再进行计算。所以，改动属性造成的reflow是异步完成的。<br>也同样因为如此，当JS获取布局属性时，就可能造成无法获取到最新的布局信息。<br>浏览器在反复权衡下，最终决定获取属性立即reflow。</p>
-<h3 id="面试题：什么是repaint？"><a href="#面试题：什么是repaint？" class="headerlink" title="面试题：什么是repaint？"></a>面试题：什么是repaint？</h3><p>repaint的本质就是重新根据分层信息计算了绘制指令，<br>当改动了可见样式后，就需要重新计算，会引发repaint。<br>由于元素的布局信息也属于可见样式，所以reflow一定会引发repaint。</p>
-<h3 id="面试题：为什么transform的效率高？"><a href="#面试题：为什么transform的效率高？" class="headerlink" title="面试题：为什么transform的效率高？"></a>面试题：为什么transform的效率高？</h3><p>因为transform既不会影响布局也不会影响绘制指令，影响的只是渲染流程的最后一个【draw】阶段。由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。</p>
-]]></content>
-      <categories>
-        <category>前端基础</category>
-      </categories>
-      <tags>
-        <tag>前端基础</tag>
-        <tag>浏览器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CentOS7下MySQL8.0安装指南与常见问题解决</title>
     <url>/blog.github.io/2025/03/05/%E7%AC%AC%E5%85%AB%E7%AF%87%EF%BC%9Acentos7%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85MySQL/</url>
     <content><![CDATA[<h1 id="CentOS7下MySQL8-0安装指南与常见问题解决"><a href="#CentOS7下MySQL8-0安装指南与常见问题解决" class="headerlink" title="CentOS7下MySQL8.0安装指南与常见问题解决"></a>CentOS7下MySQL8.0安装指南与常见问题解决</h1><h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><h3 id="检查系统环境"><a href="#检查系统环境" class="headerlink" title="检查系统环境"></a>检查系统环境</h3><ol>
@@ -2066,6 +2041,31 @@
       </tags>
   </entry>
   <entry>
+    <title>浏览器渲染原理</title>
+    <url>/blog.github.io/2025/03/16/%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/</url>
+    <content><![CDATA[<h2 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h2><p>###面试题：浏览器是如何渲染页面的？<br>当浏览器的网络线程获取到html文档后，会产生一个渲染任务，并将其加入在渲染主线程的消息队列。<br>在事件循环机制下，渲染主线程取出消息队列中的渲染任务，开始渲染流程。<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染流程"></p>
+<p>在解析过程中，遇到CSS解析CSS，遇到JS解析JS，为了提高解析效率，浏览器在开始解析前，会创建一个预解析的线程，率先下载HTML中外部CSS文件和外部的JS文件。<br>如果主线程解析到link位置，此时外部的CSS文件还没有下载好，主线程不会等待，而是继续解析HTML，外部的预解析线程会去下载外部的CSS文件并解析成CSSOM树返回给主线程，主线程合并目前生成好的DOM和CSSOM。这就是CSS不会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/CSS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="CSS预解析"><br>如果主线程解析到script位置，会停止解析HTML，转而等待JS文件下载好，并将全局代码解析执行完成后，才继续解析HTML，这是因为JS代码的执行过程中可能会修改当前的DOM树，所以DOM树的生成必须暂停。这就是JS会阻塞HTML解析的原因。<br><img data-src="/blog.github.io/images/JS%E9%A2%84%E8%A7%A3%E6%9E%90.JPG" alt="JS预解析"><br>第一步完成后，会得到DOM树和CSSOM树，浏览器的默认样式，内联样式，外部样式，行内样式均会包含在CSSOM树中。</p>
+<p>渲染的下一步是样式计算：<br>主线程会遍历得到的DOM树，依次为树中的每个节点计算出它最终的样式，称之为Computed Style。<br>在这一过程中，很多预设值会变成绝对值，比如red会变成rgb（255，0，0）;相对单位会变成绝对单位，比如em会变成px。<br>这一步完成后，会得到一颗带有样式的DOM树。</p>
+<p>接下来是布局，布局完成后会得到布局树。<br>布局阶段会依次遍历DOM树的每一个节点，计算每个节点的几何信息。例如节点的宽高，相对包含块的位置。<br>大部分时候，DOM树和布局树并非一一对应。<br>比如display:none的节点没有几何信息，因此不会生成到布局树；又比如使用了伪元素选择器，虽然DOM树中不存在这些伪元素节点，但它们拥有几何信息，使用会生成到布局树匿名行盒，匿名块盒等等都会导致DOM树和布局树无法一一对应。</p>
+<p>下一步是分层<br>主线程会使用一套复杂的策略对整个布局树中进行分层。<br>分层的好处在于，将来其某一个层改变后，仅会对该层进行后续处理，从而提升效率。<br>滚动条，堆叠上下文，transform，opacity等样式都会或多或少的影响分层结果，也可以通过will-change属性更大程度的影响分层结果。</p>
+<p>再下一步，绘制 paint<br>canvas的绘制是由浏览器开放出来的绘制功能。<br>主线程会为每个层单独产生绘制指令集，用于描述这一层的内容该如何画出来。</p>
+<p>分块：Tiles<br>完成绘制之后，主线程会将每个图层的绘制信息提交给合成线程，剩余工作将由合成线程完成。合成线程首先对每个图层进行分块，将其划分为更多的小区域。<br>它会从线程池中拿取多个线程来完成分块工作。</p>
+<p>光栅化Raster :将每个块变成位图，优先处理靠近视图的块。<br>分块完成后，进入光栅化阶段<br>合成线程会将块信息交给GPU进程，以极高的速度完成光栅化。<br>GPU进程会开启多个线程来完成光栅化，并优先处理靠近视口区域的块。<br>光栅化的结果就是一块一块的位图。</p>
+<p>画 draw<br>合成线程拿到每个层，每个块的位图后，生成一个个指引【quad】信息。<br>指引会标识出每个位图应该画到屏幕的哪个位置，以及会考虑到旋转，缩放等变形。变形发生在合成线程，与渲染主线程无关，这就是transform效率高的本质原因。<br>合成线程会把quad提交给GPU进程，由GPU进程产生系统调用，提交给GPU硬件，完成最终的屏幕成像。</p>
+<p>整个渲染流程分为多个阶段，包括：HTML解析，样式计算，布局，分层，绘制，分块，光栅化，画。每个阶段都有明确的输入输出，上一个阶段的输出会成为下一个阶段的输入。<br>这样，整个渲染流程就形成了一套组织严密的生产流水线。<br>渲染主线程的主要工作内容为：parse HTML，computed style，生成layout布局树，对dom树进行分层，绘制dom树。后续步骤由其他线程完成。<br>完整流程：<br><img data-src="/blog.github.io/images/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E7%9A%84%E5%AE%8C%E6%95%B4%E6%B5%81%E7%A8%8B.JPG" alt="浏览器渲染的完整流程"></p>
+<h3 id="面试题：什么是reflow？"><a href="#面试题：什么是reflow？" class="headerlink" title="面试题：什么是reflow？"></a>面试题：什么是reflow？</h3><p>reflow的本质是重新计算layout树。<br>当进行了会影响布局树的操作后，需要重新计算布局树，会引发layout。<br>为了避免连续的多次操作导致布局树反复计算，浏览器会合并这些操作，当JS代码全部完成后再进行计算。所以，改动属性造成的reflow是异步完成的。<br>也同样因为如此，当JS获取布局属性时，就可能造成无法获取到最新的布局信息。<br>浏览器在反复权衡下，最终决定获取属性立即reflow。</p>
+<h3 id="面试题：什么是repaint？"><a href="#面试题：什么是repaint？" class="headerlink" title="面试题：什么是repaint？"></a>面试题：什么是repaint？</h3><p>repaint的本质就是重新根据分层信息计算了绘制指令，<br>当改动了可见样式后，就需要重新计算，会引发repaint。<br>由于元素的布局信息也属于可见样式，所以reflow一定会引发repaint。</p>
+<h3 id="面试题：为什么transform的效率高？"><a href="#面试题：为什么transform的效率高？" class="headerlink" title="面试题：为什么transform的效率高？"></a>面试题：为什么transform的效率高？</h3><p>因为transform既不会影响布局也不会影响绘制指令，影响的只是渲染流程的最后一个【draw】阶段。由于draw阶段在合成线程中，所以transform的变化几乎不会影响渲染主线程。反之，渲染主线程无论如何忙碌，也不会影响transform的变化。</p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>前端基础</tag>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>购物车动态效果</title>
     <url>/blog.github.io/2025/03/20/%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0%EF%BC%9A%E8%B4%AD%E7%89%A9%E8%BD%A6%E6%95%88%E6%9E%9C/</url>
     <content><![CDATA[<h2 id="使用面向对象编程的思想实现购物车效果"><a href="#使用面向对象编程的思想实现购物车效果" class="headerlink" title="使用面向对象编程的思想实现购物车效果"></a>使用面向对象编程的思想实现购物车效果</h2><ul>
@@ -2089,6 +2089,55 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简单音乐播放器的实现</title>
+    <url>/blog.github.io/2025/03/18/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%EF%BC%9A%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="HTML实现"><a href="#HTML实现" class="headerlink" title="HTML实现"></a>HTML实现</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;list&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">&quot;mp3路径&quot;</span> <span class="attr">controls</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用html中定义音频的标签audio，通过使用controls属性，来显示音频控制器来控制音频控制。通过使用ul来展示歌词部分。</p>
+<h2 id="CSS实现"><a href="#CSS实现" class="headerlink" title="CSS实现"></a>CSS实现</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> <span class="selector-tag">ul</span>&#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: <span class="number">0</span>.s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.highLight</span>&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.2</span>);</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过css来实现高亮，隐藏超出container块的内容。通过list-style来隐藏列表项。</p>
+<h2 id="JavaScript实现"><a href="#JavaScript实现" class="headerlink" title="JavaScript实现"></a>JavaScript实现</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置ul元素的偏移量</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setOffset</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> index = <span class="title function_">findIndex</span>();</span><br><span class="line">    <span class="keyword">var</span> offSet =  liHeight*(index+<span class="number">1</span>) - containerHeight/<span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span>(offSet &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        offSet = <span class="number">0</span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(offSet &gt; maxOffset)&#123;</span><br><span class="line">        offSet = maxOffset</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 清除之前存在高亮的样式</span></span><br><span class="line">    <span class="keyword">var</span> li = doms.<span class="property">ul</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.highLight&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> (li)&#123;</span><br><span class="line">        li.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;highLight&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 添加高亮的样式</span></span><br><span class="line">    <span class="keyword">var</span> li = doms.<span class="property">ul</span>.<span class="property">children</span>[index]</span><br><span class="line">    <span class="keyword">if</span> (li)&#123;</span><br><span class="line">        <span class="comment">// li.className = &quot;highLight&quot;</span></span><br><span class="line">        li.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;highLight&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    doms.<span class="property">ul</span>.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`translateY(-<span class="subst">$&#123;offSet&#125;</span>px)`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>主要展示如何实现ul元素的偏移.</p>
+<h2 id="获取到的新JavaScript知识"><a href="#获取到的新JavaScript知识" class="headerlink" title="获取到的新JavaScript知识."></a>获取到的新JavaScript知识.</h2><ul>
+<li>使用document.querySelector(“”)<br>文档对象模型Document引用的querySelector()方法返回文档中与指定选择器或选择器组匹配的第一个Element对象。如果找不到匹配项，则返回null。主要通过搜索DOM树上节点来获取到需要的对象</li>
+<li>clientHeigh：元素的像素高度，包含元素的高度+内边距，不包含水平滚动条，边框和外边距。</li>
+<li>offsetHeight：元素的像素高度，包含元素的高度，垂直内边距和边框，水平滚动条的高度，且是一个整数。</li>
+<li>scrollHeight：元素内容的高度，包括溢出的不可见内容。</li>
+<li>offsetLeft：返回元素左上角相对于offsetParent的左边界的偏移像素值。</li>
+<li>audio标签存在自带的监听器，可以监听音频的播放、暂停、停止、音量调整等事件。也快有用于监听时间的改变，并可以根据监听，实现对应的函数方法。<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 监听音频播放事件</span></span><br><span class="line">audio.<span class="title function_">addEventListener</span>(<span class="string">&#x27;timeupdate&#x27;</span>,setOffset)</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue的优化手段</title>
+    <url>/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/</url>
+    <content><![CDATA[<h2 id="使用key可以优化vue"><a href="#使用key可以优化vue" class="headerlink" title="使用key可以优化vue"></a>使用key可以优化vue</h2><p>高效的DOM更新,key属性帮助Vue识别虚拟Dom中的节点.vnode,当数据变化时,Vue会基于key值高效的更新DOM,而不是重新渲染整个列表.<br>在v-for循环中使用key可以确保组件的状态不会混淆,每个组件实例都能保持独立的状态.<br>Vue的diff算法会使用key来判断节点是新创建的还是被移动的.有了唯一的key,vue可以最小化DOM操作.<br>没有key时,vue会采用”就地复用”策略,可能导致一些意外行为,特别是在列表项包含状态或子组件时.<br>Vue官方强烈建议在使用v-for时提供key属性,并且应该使用唯一的稳定的标识符.而不是索引.</p>
+<h2 id="使用freeze来冻结数据，避免数据被修改-（主要用于vue2）"><a href="#使用freeze来冻结数据，避免数据被修改-（主要用于vue2）" class="headerlink" title="使用freeze来冻结数据，避免数据被修改 （主要用于vue2）"></a>使用freeze来冻结数据，避免数据被修改 （主要用于vue2）</h2><p>阻止响应式转换 ：当我们将一个JavaScript对象传入Vue实例作为data选项，Vue将遍历此对象所有的属性，并使用Object.defineProperty把这些属性全部转为getter&#x2F;setter，这是Vue响应式系统的核心。而使用Object.freeze()可以冻结一个对象，阻止Vue对其进行响应式处理。<br>减少观察者 ：对于大型数据集或不需要变化的数据，使用freeze可以避免Vue创建大量的getter&#x2F;setter，从而减少内存占用。<br>提高性能 ：由于被冻结的对象不再是响应式的，Vue不再需要追踪其变化，这可以在处理大量数据时显著提高性能。<br>适用场景 ：特别适合那些一旦初始化就不再变化的数据，如常量配置、固定选项列表等。</p>
+<h2 id="使用函数式组件优化"><a href="#使用函数式组件优化" class="headerlink" title="使用函数式组件优化"></a>使用函数式组件优化</h2><p>函数式组件没有实例，没有生命周期钩子，也没有this上下文，因此渲染开销更小<br>没有状态管理和实例化过程，函数式组件的渲染速度更快。<br>更少的内存占用，不需要维护Vue实例，减少内存占用。<br>适用于纯展示型的组件。<br>函数式组件的代码通常更简洁，更容易维护和理解</p>
+<h2 id="使用计算属性优化"><a href="#使用计算属性优化" class="headerlink" title="使用计算属性优化"></a>使用计算属性优化</h2><p>计算属性会基于响应式依赖进行缓存.只有当依赖项发生变化时,才会重新计算,避免了每次渲染都进行复杂计算.<br>使用模板中某个数据多次使用，并该数据是通过计算得到的，可以使用计算属性来缓存它们.<br>计算属性能够智能的追踪其依赖关系,只有在相关依赖发生变化时,才会更新.<br>将复杂的逻辑从模板中抽离出来,使模板更加简洁易读.</p>
+<h2 id="非实时绑定的表单项"><a href="#非实时绑定的表单项" class="headerlink" title="非实时绑定的表单项"></a>非实时绑定的表单项</h2><p>当使用v-model绑定一个表单时,当用户改变表单项的状态时,也会随之改变数据,从而导致vue发生重渲染(rerender)<br>这会带来一些性能的开销.<br>我们可以通过使用lazy或不使用v-model的方式来解决该问题.但要注意,这样可能会导致在某一个时间段内数据和表单项的值是不一致的.<br>当使用v-model.lazy时,数据和表单项的值是异步的,只有当用户停止输入时,才会更新数据.使用lazy监听@change事件<br>当不使用v-model时,我们可以手动的监听表单项的change事件,并更新数据. 不使用v-model监听@input</p>
+<h2 id="保持对象引用稳定"><a href="#保持对象引用稳定" class="headerlink" title="保持对象引用稳定"></a>保持对象引用稳定</h2><p>避免不必要的响应式更新 ：Vue的响应式系统会追踪对象的变化，当对象引用改变时，Vue会认为整个对象都变了，从而触发相关组件的重新渲染。保持对象引用稳定可以避免这种情况。<br>减少虚拟DOM的比较开销 ：当父组件向子组件传递props时，如果每次都创建新的对象引用，即使内容相同，Vue也会认为props发生了变化，导致子组件重新渲染。<br>优化memo和缓存 ：使用v-memo、computed或Vue3的shallowRef等特性时，它们依赖于引用比较来判断是否需要重新计算或渲染。<br>实现方式 ：可以通过使用不可变数据模式、Object.assign()更新对象而不是创建新对象、使用Vue的响应式API如reactive()等方式来保持对象引用的稳定性。</p>
+<h2 id="使用延迟装载来优化vue项目"><a href="#使用延迟装载来优化vue项目" class="headerlink" title="使用延迟装载来优化vue项目"></a>使用延迟装载来优化vue项目</h2><p>减小初始包体积 ：只加载当前路由需要的组件，减少首屏加载时间和资源消耗。<br>按需加载资源 ：路由组件、大型库、图片等资源只在需要时才加载，提高应用启动速度。<br>提升用户体验 ：首屏渲染更快，用户可以更快地与应用交互，减少等待时间。<br>优化资源利用 ：减少不必要的网络请求和浏览器解析工作，节省带宽和设备资源。</p>
+<h2 id="使用keep-alive来优化vue项目"><a href="#使用keep-alive来优化vue项目" class="headerlink" title="使用keep-alive来优化vue项目"></a>使用keep-alive来优化vue项目</h2><p>缓存组件状态 ：keep-alive可以缓存不活动的组件实例，而不是销毁它们，保留组件的状态和避免重新渲染。<br>减少性能开销 ：避免了组件的重复创建和销毁过程，减少了DOM操作，提高了应用性能，特别是对于频繁切换的组件。<br>提升用户体验 ：保持组件状态意味着用户在组件间切换时不会丢失之前的操作和数据，如表单输入、滚动位置等。<br>特有的生命周期钩子 ：提供了activated和deactivated钩子，便于管理缓存组件的生命周期事件。<br>可配置性强 ：通过include、exclude和max属性可以精确控制缓存策略，只缓存需要的组件，避免内存浪费。</p>
+<h2 id="长列表优化"><a href="#长列表优化" class="headerlink" title="长列表优化"></a>长列表优化</h2><ul>
+<li>什么是长列表优化?<br>即渲染大量数据时,容易出现卡顿的情况.<br>采取使用分页的方式获取数据.<br>使用虚拟滚动方案只渲染浏览器视口范围内的的数据.<br>使用v-once,方式只渲染一次<br>通过v-memo缓存子树,有条件更新,提高复用,避免不必要更新.<br>按需加载数据</li>
+</ul>
+<p>虚拟滚动 ：只渲染可视区域内的元素，其他元素在滚动到视口时才渲染，可使用vue-virtual-scroller等库实现。<br>分页加载 ：将大量数据分批次加载和渲染，减轻一次性渲染的压力。<br>时间分片 ：利用requestAnimationFrame或setTimeout将渲染任务分割成小块，避免长时间占用主线程。<br>列表项组件化 ：将列表项抽离为单独组件，并使用v-once、函数式组件等技术减少更新开销。<br>使用key ：为列表项提供稳定的key值，帮助Vue高效地进行DOM更新。</p>
+<h2 id="打包体积优化"><a href="#打包体积优化" class="headerlink" title="打包体积优化"></a>打包体积优化</h2><p>路由懒加载，使用动态import实现按需加载组件；<br>第三方库按需引入，避免引入整个库；<br>使用webpack的splitChunks分割代码，提取公共模块<br>使用compression-webpack-plugin开启Gzip压缩<br>使用webpack的Tree Shaking删除未使用的代码<br>合理使用CDN加载外部资源<br>图片资源压缩和合理使用</p>
+]]></content>
+      <categories>
+        <category>前端基础</category>
+      </categories>
+      <tags>
+        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
@@ -2121,55 +2170,6 @@
         <tag>前端基础</tag>
         <tag>浏览器</tag>
         <tag>事件循环</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue的优化手段</title>
-    <url>/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/</url>
-    <content><![CDATA[<h2 id="使用key可以优化vue"><a href="#使用key可以优化vue" class="headerlink" title="使用key可以优化vue"></a>使用key可以优化vue</h2><p>高效的DOM更新,key属性帮助Vue识别虚拟Dom中的节点.vnode,当数据变化时,Vue会基于key值高效的更新DOM,而不是重新渲染整个列表.<br>在v-for循环中使用key可以确保组件的状态不会混淆,每个组件实例都能保持独立的状态.<br>Vue的diff算法会使用key来判断节点是新创建的还是被移动的.有了唯一的key,vue可以最小化DOM操作.<br>没有key时,vue会采用”就地复用”策略,可能导致一些意外行为,特别是在列表项包含状态或子组件时.<br>Vue官方强烈建议在使用v-for时提供key属性,并且应该使用唯一的稳定的标识符.而不是索引.</p>
-<h2 id="使用freeze来冻结数据，避免数据被修改-（主要用于vue2）"><a href="#使用freeze来冻结数据，避免数据被修改-（主要用于vue2）" class="headerlink" title="使用freeze来冻结数据，避免数据被修改 （主要用于vue2）"></a>使用freeze来冻结数据，避免数据被修改 （主要用于vue2）</h2><p>阻止响应式转换 ：当我们将一个JavaScript对象传入Vue实例作为data选项，Vue将遍历此对象所有的属性，并使用Object.defineProperty把这些属性全部转为getter&#x2F;setter，这是Vue响应式系统的核心。而使用Object.freeze()可以冻结一个对象，阻止Vue对其进行响应式处理。<br>减少观察者 ：对于大型数据集或不需要变化的数据，使用freeze可以避免Vue创建大量的getter&#x2F;setter，从而减少内存占用。<br>提高性能 ：由于被冻结的对象不再是响应式的，Vue不再需要追踪其变化，这可以在处理大量数据时显著提高性能。<br>适用场景 ：特别适合那些一旦初始化就不再变化的数据，如常量配置、固定选项列表等。</p>
-<h2 id="使用函数式组件优化"><a href="#使用函数式组件优化" class="headerlink" title="使用函数式组件优化"></a>使用函数式组件优化</h2><p>函数式组件没有实例，没有生命周期钩子，也没有this上下文，因此渲染开销更小<br>没有状态管理和实例化过程，函数式组件的渲染速度更快。<br>更少的内存占用，不需要维护Vue实例，减少内存占用。<br>适用于纯展示型的组件。<br>函数式组件的代码通常更简洁，更容易维护和理解</p>
-<h2 id="使用计算属性优化"><a href="#使用计算属性优化" class="headerlink" title="使用计算属性优化"></a>使用计算属性优化</h2><p>计算属性会基于响应式依赖进行缓存.只有当依赖项发生变化时,才会重新计算,避免了每次渲染都进行复杂计算.<br>使用模板中某个数据多次使用，并该数据是通过计算得到的，可以使用计算属性来缓存它们.<br>计算属性能够智能的追踪其依赖关系,只有在相关依赖发生变化时,才会更新.<br>将复杂的逻辑从模板中抽离出来,使模板更加简洁易读.</p>
-<h2 id="非实时绑定的表单项"><a href="#非实时绑定的表单项" class="headerlink" title="非实时绑定的表单项"></a>非实时绑定的表单项</h2><p>当使用v-model绑定一个表单时,当用户改变表单项的状态时,也会随之改变数据,从而导致vue发生重渲染(rerender)<br>这会带来一些性能的开销.<br>我们可以通过使用lazy或不使用v-model的方式来解决该问题.但要注意,这样可能会导致在某一个时间段内数据和表单项的值是不一致的.<br>当使用v-model.lazy时,数据和表单项的值是异步的,只有当用户停止输入时,才会更新数据.使用lazy监听@change事件<br>当不使用v-model时,我们可以手动的监听表单项的change事件,并更新数据. 不使用v-model监听@input</p>
-<h2 id="保持对象引用稳定"><a href="#保持对象引用稳定" class="headerlink" title="保持对象引用稳定"></a>保持对象引用稳定</h2><p>避免不必要的响应式更新 ：Vue的响应式系统会追踪对象的变化，当对象引用改变时，Vue会认为整个对象都变了，从而触发相关组件的重新渲染。保持对象引用稳定可以避免这种情况。<br>减少虚拟DOM的比较开销 ：当父组件向子组件传递props时，如果每次都创建新的对象引用，即使内容相同，Vue也会认为props发生了变化，导致子组件重新渲染。<br>优化memo和缓存 ：使用v-memo、computed或Vue3的shallowRef等特性时，它们依赖于引用比较来判断是否需要重新计算或渲染。<br>实现方式 ：可以通过使用不可变数据模式、Object.assign()更新对象而不是创建新对象、使用Vue的响应式API如reactive()等方式来保持对象引用的稳定性。</p>
-<h2 id="使用延迟装载来优化vue项目"><a href="#使用延迟装载来优化vue项目" class="headerlink" title="使用延迟装载来优化vue项目"></a>使用延迟装载来优化vue项目</h2><p>减小初始包体积 ：只加载当前路由需要的组件，减少首屏加载时间和资源消耗。<br>按需加载资源 ：路由组件、大型库、图片等资源只在需要时才加载，提高应用启动速度。<br>提升用户体验 ：首屏渲染更快，用户可以更快地与应用交互，减少等待时间。<br>优化资源利用 ：减少不必要的网络请求和浏览器解析工作，节省带宽和设备资源。</p>
-<h2 id="使用keep-alive来优化vue项目"><a href="#使用keep-alive来优化vue项目" class="headerlink" title="使用keep-alive来优化vue项目"></a>使用keep-alive来优化vue项目</h2><p>缓存组件状态 ：keep-alive可以缓存不活动的组件实例，而不是销毁它们，保留组件的状态和避免重新渲染。<br>减少性能开销 ：避免了组件的重复创建和销毁过程，减少了DOM操作，提高了应用性能，特别是对于频繁切换的组件。<br>提升用户体验 ：保持组件状态意味着用户在组件间切换时不会丢失之前的操作和数据，如表单输入、滚动位置等。<br>特有的生命周期钩子 ：提供了activated和deactivated钩子，便于管理缓存组件的生命周期事件。<br>可配置性强 ：通过include、exclude和max属性可以精确控制缓存策略，只缓存需要的组件，避免内存浪费。</p>
-<h2 id="长列表优化"><a href="#长列表优化" class="headerlink" title="长列表优化"></a>长列表优化</h2><ul>
-<li>什么是长列表优化?<br>即渲染大量数据时,容易出现卡顿的情况.<br>采取使用分页的方式获取数据.<br>使用虚拟滚动方案只渲染浏览器视口范围内的的数据.<br>使用v-once,方式只渲染一次<br>通过v-memo缓存子树,有条件更新,提高复用,避免不必要更新.<br>按需加载数据</li>
-</ul>
-<p>虚拟滚动 ：只渲染可视区域内的元素，其他元素在滚动到视口时才渲染，可使用vue-virtual-scroller等库实现。<br>分页加载 ：将大量数据分批次加载和渲染，减轻一次性渲染的压力。<br>时间分片 ：利用requestAnimationFrame或setTimeout将渲染任务分割成小块，避免长时间占用主线程。<br>列表项组件化 ：将列表项抽离为单独组件，并使用v-once、函数式组件等技术减少更新开销。<br>使用key ：为列表项提供稳定的key值，帮助Vue高效地进行DOM更新。</p>
-<h2 id="打包体积优化"><a href="#打包体积优化" class="headerlink" title="打包体积优化"></a>打包体积优化</h2><p>路由懒加载，使用动态import实现按需加载组件；<br>第三方库按需引入，避免引入整个库；<br>使用webpack的splitChunks分割代码，提取公共模块<br>使用compression-webpack-plugin开启Gzip压缩<br>使用webpack的Tree Shaking删除未使用的代码<br>合理使用CDN加载外部资源<br>图片资源压缩和合理使用</p>
-]]></content>
-      <categories>
-        <category>前端基础</category>
-      </categories>
-      <tags>
-        <tag>Vue.js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>简单音乐播放器的实现</title>
-    <url>/blog.github.io/2025/03/18/%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0%EF%BC%9A%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9FJS%E5%AE%9E%E7%8E%B0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</url>
-    <content><![CDATA[<h2 id="HTML实现"><a href="#HTML实现" class="headerlink" title="HTML实现"></a>HTML实现</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;list&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">&quot;mp3路径&quot;</span> <span class="attr">controls</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>使用html中定义音频的标签audio，通过使用controls属性，来显示音频控制器来控制音频控制。通过使用ul来展示歌词部分。</p>
-<h2 id="CSS实现"><a href="#CSS实现" class="headerlink" title="CSS实现"></a>CSS实现</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> <span class="selector-tag">ul</span>&#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.container</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">transition</span>: <span class="number">0</span>.s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.highLight</span>&#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1.2</span>);</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过css来实现高亮，隐藏超出container块的内容。通过list-style来隐藏列表项。</p>
-<h2 id="JavaScript实现"><a href="#JavaScript实现" class="headerlink" title="JavaScript实现"></a>JavaScript实现</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 设置ul元素的偏移量</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">setOffset</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> index = <span class="title function_">findIndex</span>();</span><br><span class="line">    <span class="keyword">var</span> offSet =  liHeight*(index+<span class="number">1</span>) - containerHeight/<span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span>(offSet &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        offSet = <span class="number">0</span></span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(offSet &gt; maxOffset)&#123;</span><br><span class="line">        offSet = maxOffset</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 清除之前存在高亮的样式</span></span><br><span class="line">    <span class="keyword">var</span> li = doms.<span class="property">ul</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;.highLight&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> (li)&#123;</span><br><span class="line">        li.<span class="property">classList</span>.<span class="title function_">remove</span>(<span class="string">&#x27;highLight&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 添加高亮的样式</span></span><br><span class="line">    <span class="keyword">var</span> li = doms.<span class="property">ul</span>.<span class="property">children</span>[index]</span><br><span class="line">    <span class="keyword">if</span> (li)&#123;</span><br><span class="line">        <span class="comment">// li.className = &quot;highLight&quot;</span></span><br><span class="line">        li.<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;highLight&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    doms.<span class="property">ul</span>.<span class="property">style</span>.<span class="property">transform</span> = <span class="string">`translateY(-<span class="subst">$&#123;offSet&#125;</span>px)`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>主要展示如何实现ul元素的偏移.</p>
-<h2 id="获取到的新JavaScript知识"><a href="#获取到的新JavaScript知识" class="headerlink" title="获取到的新JavaScript知识."></a>获取到的新JavaScript知识.</h2><ul>
-<li>使用document.querySelector(“”)<br>文档对象模型Document引用的querySelector()方法返回文档中与指定选择器或选择器组匹配的第一个Element对象。如果找不到匹配项，则返回null。主要通过搜索DOM树上节点来获取到需要的对象</li>
-<li>clientHeigh：元素的像素高度，包含元素的高度+内边距，不包含水平滚动条，边框和外边距。</li>
-<li>offsetHeight：元素的像素高度，包含元素的高度，垂直内边距和边框，水平滚动条的高度，且是一个整数。</li>
-<li>scrollHeight：元素内容的高度，包括溢出的不可见内容。</li>
-<li>offsetLeft：返回元素左上角相对于offsetParent的左边界的偏移像素值。</li>
-<li>audio标签存在自带的监听器，可以监听音频的播放、暂停、停止、音量调整等事件。也快有用于监听时间的改变，并可以根据监听，实现对应的函数方法。<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 监听音频播放事件</span></span><br><span class="line">audio.<span class="title function_">addEventListener</span>(<span class="string">&#x27;timeupdate&#x27;</span>,setOffset)</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>前端基础</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
