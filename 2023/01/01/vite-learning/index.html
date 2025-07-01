@@ -20,19 +20,22 @@
     var CONFIG = {"hostname":"sheleftwithregrets.github.io","root":"/blog.github.io/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":{"enable":false},"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="npx学习笔记">
-<meta property="og:url" content="https://sheleftwithregrets.github.io/blog.github.io/2025/05/21/npx-learning/index.html">
+  <meta name="description" content="vite学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vite学习笔记">
+<meta property="og:url" content="https://sheleftwithregrets.github.io/blog.github.io/2023/01/01/vite-learning/index.html">
 <meta property="og:site_name" content="37的技术博客">
+<meta property="og:description" content="vite学习笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-05-21T00:00:00.000Z">
-<meta property="article:modified_time" content="2025-06-09T13:50:42.111Z">
+<meta property="article:published_time" content="2023-01-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-01T11:49:10.119Z">
 <meta property="article:author" content="她带着遗憾走了">
 <meta property="article:tag" content="前端开发">
-<meta property="article:tag" content="node">
+<meta property="article:tag" content="vite">
+<meta property="article:tag" content="ES">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://sheleftwithregrets.github.io/blog.github.io/2025/05/21/npx-learning/">
+<link rel="canonical" href="https://sheleftwithregrets.github.io/blog.github.io/2023/01/01/vite-learning/">
 
 
 <script id="page-configurations">
@@ -45,7 +48,7 @@
   };
 </script>
 
-  <title>npx学习笔记 | 37的技术博客</title>
+  <title>vite学习笔记 | 37的技术博客</title>
   
   
 
@@ -181,7 +184,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sheleftwithregrets.github.io/blog.github.io/2025/05/21/npx-learning/">
+    <link itemprop="mainEntityOfPage" href="https://sheleftwithregrets.github.io/blog.github.io/2023/01/01/vite-learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog.github.io/images/avatar.png">
@@ -194,7 +197,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          npx学习笔记
+          vite学习笔记
         </h1>
 
         <div class="post-meta">
@@ -206,18 +209,18 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2025-05-21 08:00:00" itemprop="dateCreated datePublished" datetime="2025-05-21T08:00:00+08:00">2025-05-21</time>
+              <time title="创建时间：2023-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="2023-01-01T08:00:00+08:00">2023-01-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-06-09 21:50:42" itemprop="dateModified" datetime="2025-06-09T21:50:42+08:00">2025-06-09</time>
+                <time title="修改时间：2025-07-01 19:49:10" itemprop="dateModified" datetime="2025-07-01T19:49:10+08:00">2025-07-01</time>
               </span>
 
           
-            <div class="post-description"> </div>
+            <div class="post-description">vite学习笔记</div>
 
         </div>
       </header>
@@ -228,49 +231,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="npx学习笔记"><a href="#npx学习笔记" class="headerlink" title="npx学习笔记"></a>npx学习笔记</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>npx是Node.js的一个工具，用于执行本地安装的命令行工具，而不需要全局安装。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>npx是Node.js的一部分，不需要单独安装。若不能使用则需要手动安装。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g npx</span><br></pre></td></tr></table></figure>
-
-<h2 id="调用项目安装的模块"><a href="#调用项目安装的模块" class="headerlink" title="调用项目安装的模块"></a>调用项目安装的模块</h2><p>项目内部安装了测试工具Mocha，使用npx可以直接调用。<br>一般来说，调用Mocha，只能在项目脚本和package.json的scripts字段里面，如果想在命令行下调用，必须如下使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node-modules/.bin/mocha --version</span><br></pre></td></tr></table></figure>
-<p>npx就是想解决这个问题，让项目内部安装的模块用起来更方便，只要像下面这样调用就行了。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx mocha --version</span><br></pre></td></tr></table></figure>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>npx运行的时候，会从node_modules&#x2F;.bin路径和环境变量$PATH里面检查命令是否存在。由于npx会检查环境变量$PATH,所以系统命令也可以调用</p>
-<blockquote>
-<p>注意，Bash内置的命令不在$PATH里面，所以不能用。比如，cd是Bash命令，因此就不能使用npx cd</p>
-</blockquote>
-<h2 id="避免全局安装模块"><a href="#避免全局安装模块" class="headerlink" title="避免全局安装模块"></a>避免全局安装模块</h2><p>除了调用项目内部模块，npx还能避免全局安装模块。<br>例如，create-react-app这个模块是全局安装，npx可以运行它而且不进行全局安装。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br></pre></td></tr></table></figure>
-<p>上面代码运行时，npx将create-react-app下载到一个临时目录，使用以后再删除。以后再次执行上面的命令，会重新下载create-react-app。<br>下载全局模块时，npx允许指定版本。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app@3.0.0 my-app</span><br></pre></td></tr></table></figure>
-<p>上面代码指定版本为3.0.0。</p>
-<blockquote>
-<p>注意，只要npx后面的模块无法在本地发现，就会下载同名模块。比如，本地没有安装http-server模块，但是npx http-server就会自动下载这个模块，在当前目录启动一个web服务。</p>
-</blockquote>
-<h2 id="–no-install参数和–ignore-existing参数。"><a href="#–no-install参数和–ignore-existing参数。" class="headerlink" title="–no-install参数和–ignore-existing参数。"></a>–no-install参数和–ignore-existing参数。</h2><ul>
-<li>–no-install参数强制npx使用本地模块，不下载远程模块，如果本地不存在该模块则报错</li>
-<li>–ignore-existing参数强制npx总是从远程下载模块，即使本地存在同名模块。</li>
+        <h1 id="vite学习笔记"><a href="#vite学习笔记" class="headerlink" title="vite学习笔记"></a>vite学习笔记</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>vite是一个前端项目的构建工具，主要用于快速构建前端项目.</p>
+<h2 id="vite作用以及实现原理"><a href="#vite作用以及实现原理" class="headerlink" title="vite作用以及实现原理"></a>vite作用以及实现原理</h2><p>主要面向现代开发者,针对现代浏览器的es module特性进行优化,不适配低版本的浏览器同时也不适配vue2.<br>利用浏览器去解析imports,在服务器端按需编译返回,跳过打包过程.</p>
+<h2 id="vite的使用"><a href="#vite的使用" class="headerlink" title="vite的使用"></a>vite的使用</h2><p>vite基于create-vite-app脚手架搭建的。<br>基本创建流程为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm init vite-app &lt;project-name&gt;</span><br><span class="line"><span class="built_in">cd</span> &lt;project-name&gt;</span><br><span class="line">npm i</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p>即可在localhost:3000看到已经启动的项目.(如果没有修改过配置的话)</p>
+<h2 id="vite的工作机制"><a href="#vite的工作机制" class="headerlink" title="vite的工作机制"></a>vite的工作机制</h2><ul>
+<li>vite实际上也是一个server,在启动vite构建web server后，访问这个地址，该页面会向web server发送请求，请求对应的文件,但是这些资源并非直接返回，而是通过vite拦截后，经过编译后才返回对应的内容，同时vite会缓存这些资源，下次访问时直接返回缓存的内容。所以可以看到请求资源的接口状态码是304，对应的则是缓存。vite通过这种缓存机制，极快的加载了用户更改的代码，因为只需要重新编译用户更改的代码即可。</li>
+<li>同时vite由于只会拦截请求的资源并进行编译，未被引用的文件则不会被编译，做到了按需编译的功能实现。</li>
 </ul>
-<h2 id="使用不同版本的node"><a href="#使用不同版本的node" class="headerlink" title="使用不同版本的node"></a>使用不同版本的node</h2><p>npx可以指定某个版本的node来运行脚本，而不影响其他版本。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx node@10.13.0 node --version</span><br></pre></td></tr></table></figure>
-<p>原理是，npx会将指定版本的node下载到临时目录，然后运行脚本。</p>
-<h2 id="p参数"><a href="#p参数" class="headerlink" title="-p参数"></a>-p参数</h2><p>用于指定npx所要安装的模块</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx -p node@10.13.0 node --version</span><br></pre></td></tr></table></figure>
-<p>对于需要安装多个模块的场景很有用。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx -p localcatjs -p cowsay [<span class="built_in">command</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="c参数"><a href="#c参数" class="headerlink" title="-c参数"></a>-c参数</h2><p>如果npx安装多个模块，默认情况下，所执行的命令之中，只有第一个可执行项会使用npx安装的模块，后面的可执行项还是会交给shell解释。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx -p localcatjs -p cowsay <span class="string">&#x27;cowsay hello | localcatjs’</span></span><br><span class="line"><span class="string"># 报错</span></span><br></pre></td></tr></table></figure>
-<p>因为上述执行的代码中，第一项cowsay由npx解释，而第二项localcatjs由shell解释，所以会报错。<br>-c参数可以将所有命令都用npx解释，有了它，代码就可以正常执行了。<br>-c另一个作用则是将环境变量带入所要执行的命令。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx run <span class="built_in">env</span> | grep npm_</span><br></pre></td></tr></table></figure>
-<p>npm提供当前项目的一些环境变量，可以用-c参数带入命令之中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx -c <span class="string">&#x27;echo $npm_package_name&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>上面代码会输出当前项目的项目名。</p>
-<h3 id="执行GitHub源码"><a href="#执行GitHub源码" class="headerlink" title="执行GitHub源码"></a>执行GitHub源码</h3><p>npx还可以执行GitHub上的源码。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 执行 Gist 代码</span></span><br><span class="line">$ npx https://gist.github.com/zkat/4bc19503fe9e9309e2bfaa2c58074d32</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行仓库代码</span></span><br><span class="line">$ npx github:piuccio/cowsay hello</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意，远程代码必须是一个模块，即必须包含package.json和入口脚本。</p>
-</blockquote>
 
     </div>
 
@@ -296,7 +265,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://sheleftwithregrets.github.io/blog.github.io/2025/05/21/npx-learning/" title="npx学习笔记">https://sheleftwithregrets.github.io/blog.github.io/2025/05/21/npx-learning/</a>
+    <a href="https://sheleftwithregrets.github.io/blog.github.io/2023/01/01/vite-learning/" title="vite学习笔记">https://sheleftwithregrets.github.io/blog.github.io/2023/01/01/vite-learning/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -327,7 +296,8 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/blog.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" rel="tag"># 前端开发</a>
-              <a href="/blog.github.io/tags/node/" rel="tag"># node</a>
+              <a href="/blog.github.io/tags/vite/" rel="tag"># vite</a>
+              <a href="/blog.github.io/tags/ES/" rel="tag"># ES</a>
           </div>
 
         
@@ -335,13 +305,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/blog.github.io/2025/03/24/%E7%AC%AC%E5%8D%81%E5%9B%9B%E7%AB%A0%EF%BC%9Avue%E7%9A%84%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5/" rel="prev" title="vue的优化手段">
-      <i class="fa fa-chevron-left"></i> vue的优化手段
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/blog.github.io/2025/06/09/HTML-learning/" rel="next" title="HTML学习笔记">
-      HTML学习笔记 <i class="fa fa-chevron-right"></i>
+    <a href="/blog.github.io/2023/01/01/es6-learning/" rel="next" title="ES6学习笔记">
+      ES6学习笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -402,7 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#npx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">npx学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="nav-number">1.3.</span> <span class="nav-text">调用项目安装的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86"><span class="nav-number">1.4.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97"><span class="nav-number">1.5.</span> <span class="nav-text">避免全局安装模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%93no-install%E5%8F%82%E6%95%B0%E5%92%8C%E2%80%93ignore-existing%E5%8F%82%E6%95%B0%E3%80%82"><span class="nav-number">1.6.</span> <span class="nav-text">–no-install参数和–ignore-existing参数。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84node"><span class="nav-number">1.7.</span> <span class="nav-text">使用不同版本的node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#p%E5%8F%82%E6%95%B0"><span class="nav-number">1.8.</span> <span class="nav-text">-p参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c%E5%8F%82%E6%95%B0"><span class="nav-number">1.9.</span> <span class="nav-text">-c参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8CGitHub%E6%BA%90%E7%A0%81"><span class="nav-number">1.9.1.</span> <span class="nav-text">执行GitHub源码</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vite%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">vite学习笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vite%E4%BD%9C%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">vite作用以及实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vite%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">vite的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vite%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">1.4.</span> <span class="nav-text">vite的工作机制</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -472,7 +439,7 @@
   </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共34.7k字</span>
+  <span class="post-count">博客全站共38.2k字</span>
 </div>
         
 
@@ -542,7 +509,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'blog.github.io',
       owner       : 'sheleftwithregrets',
       admin       : ['sheleftwithregrets'],
-      id          : '71a40b70847b9349e31b87efb1619471',
+      id          : '2ccff015d407299775d4466a14547047',
         language: 'zh-CN',
       distractionFreeMode: true
     });
