@@ -425,8 +425,8 @@
 </ul>
 ]]></content>
       <tags>
-        <tag>HTML</tag>
         <tag>前端开发</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -2440,8 +2440,8 @@ promise的结构为  promise.then().then().then().catch()，的链式调用，�
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// ESM模块化的导出</span></span><br><span class="line"><span class="comment">// 当需要使用模块化的js文件时，需要在引入的script中添加type=&quot;module&quot;的类型</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> aTitle = <span class="string">&#x27;a模块的标题&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">aFn</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a模块的方法&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;a模块&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ESM的引入方式</span></span><br><span class="line"><span class="keyword">import</span> aTitle <span class="keyword">from</span> <span class="string">&#x27;./a.js&#x27;</span></span><br><span class="line"><span class="keyword">import</span> aFn <span class="keyword">from</span> <span class="string">&#x27;./a.js&#x27;</span></span><br><span class="line"><span class="keyword">import</span> aModule <span class="keyword">from</span> <span class="string">&#x27;./a.js&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// commonJS</span></span><br><span class="line"><span class="comment">// 模块化的两种导出方式</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">a</span>:<span class="number">1</span>,</span><br><span class="line">    <span class="attr">b</span>:<span class="number">2</span>,</span><br><span class="line">    <span class="attr">c</span>:<span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">exports</span>.<span class="property">a</span> = <span class="number">1</span></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">b</span> = <span class="number">2</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>前端开发</tag>
         <tag>Javascript</tag>
+        <tag>前端开发</tag>
       </tags>
   </entry>
   <entry>
